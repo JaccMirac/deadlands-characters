@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CHI MASTER (Chi-Meister)</title>
+<style>
+:root{
+  --bg:#f4efe4; --panel:#fbf8f1; --ink:#241d16; --muted:#6b5d4c;
+  --rule:#d8cdb8; --accent:#8c2f1d; --accent-soft:#b5563f;
+  --quote-bg:#efe7d6; --code-bg:#e9e0cd; --link:#7a3b12;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+    --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+    --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+  --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+  --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+nav.top{
+  font:600 .72rem/1 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+}
+nav.top a{color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--accent)}
+h1{
+  font-size:2rem;line-height:1.15;margin:0 0 1.5rem;
+  font-weight:700;letter-spacing:-.01em;
+}
+h2{
+  font-size:1.05rem;margin:2.75rem 0 .9rem;color:var(--accent);
+  font:700 .82rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+h3{font-size:1.12rem;margin:2rem 0 .6rem;font-weight:700}
+p,ul,ol{margin:0 0 1.05rem}
+ul,ol{padding-left:1.35rem}
+li{margin-bottom:.4rem}
+li>ul,li>ol{margin-top:.4rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent-soft)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
+blockquote{
+  margin:1.5rem 0;padding:.9rem 1.25rem;background:var(--quote-bg);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+  font-size:1.05rem;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote h3{margin-top:0;font-size:1rem;color:var(--accent)}
+code{
+  background:var(--code-bg);padding:.12em .38em;border-radius:3px;
+  font:.86em/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+pre{background:var(--code-bg);padding:1rem;border-radius:5px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tablewrap{overflow-x:auto;margin:0 0 1.25rem}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--rule);
+      vertical-align:top}
+th{
+  font:700 .72rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:0}
+footer{
+  margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:.85rem;
+}
+footer a{color:var(--muted)}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.top{display:none}
+  .wrap{max-width:none;padding:0}
+  a{color:#000;border:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
+<h1>CHI MASTER (Chi-Meister)</h1>
+<h2>Regelnotizen</h2>
+<p><em>Voraussetzungen (S. 55): Novize, Geschicklichkeit W6+, Willenskraft W6+, </em><em>Kampfkünstler</em><em>, Fokus W4+. Arkane Fertigkeit </em><em>Fokus</em><em> (Willenskraft), 3 Mächte, 15 Machtpunkte.</em></p>
+<p><strong>Drei Regelbefunde, die den Build bestimmen:</strong>
+1. <strong>Abwehren ist Pflicht</strong>, nicht „typisch“: „Startmächte: 3 (<strong>Abwehren</strong>, plus zwei nach Wahl)“.
+2. <strong>Innerer Fokus</strong> — die entscheidende Einschränkung, die oft übersehen wird: nützliche Mächte haben Reichweite <strong>Selbst</strong> und können <strong>niemals</strong> auf andere gewirkt werden. Schädliche Mächte wirken auf andere, aber nur mit Reichweite <strong>Berührung</strong>, was einen Berührungsangriff erfordert und das Wirken damit zur Mehrfachhandlung macht. Diese Reichweitenreduktion ist ausdrücklich <strong>keine</strong> Beschränkung und senkt die Machtpunktkosten nicht. <strong>Ein Chi-Meister kann also niemals der Buffer oder Heiler der Gruppe sein</strong> — selbst mit Heilen heilt er nur sich.
+3. <strong>Ausweichen, Chi und Kriegersegen sind auf Novize alle nicht verfügbar</strong> (Ausweichen ist Fortgeschritten, Chi faktisch Veteran, Kriegersegen eine Fortgeschritten-Macht). <strong>Finte</strong> dagegen ist Novize und funktioniert.</p>
+<p><strong>Das eigentliche Signaturtalent des Archetyps — ÜBERLEGENES KUNG FU</strong> (S. 56, Novize, Willenskraft W6+, AH Chi-Meister, Kämpfen W8+): Wahl einer von sieben benannten Haltungen, als freie Aktion zu Beginn des Zuges wechselbar.
+- <em>Der Affe</em> — +2 Parade; eine Aktion testet alle angrenzenden Gegner mit Athletik
+- <em>Der Betrunkene</em> — Gegner bei −2 auf Treffer gegen dich, deine Bewegung −2
+- <em>Die Gottesanbeterin</em> — einmal pro Runde wird ein Gegner, der dich mit Kämpfen verfehlt, Abgelenkt oder Verwundbar (deine Wahl)
+- <em>Die Kralle des Adlers</em> — waffenlose Angriffe erhalten <strong>DB 4 und gelten als schwere Waffen</strong> (das Buch nennt ausdrücklich Hellstrommes Automaten)
+- <em>Shuaijiao</em> — einmal pro Runde gewährt ein verfehlter Angriff gegen dich ein freies Ringen
+- <em>Tan Tui</em> — ein waffenloser Angriff pro Runde mit +1 Schadenswürfeltyp und 1W4 Zoll Rückstoß
+- <em>Wing Tsun</em> — +1 Parade und <strong>−2 auf allen Nahkampfschaden, den du erleidest</strong></p>
+<p><em>Außerdem: </em><em>Waffe verbessern</em><em> deckt ausdrücklich Fäuste ab („Hände und Füße zählen bei dieser Macht als Waffe“). Chi-Meister gelten als </em><em>Begabt</em><em> und dürfen Talente nehmen, die AH (Begabt) verlangen.</em></p>
+<p><strong>Was ihr am Tisch besprechen solltet.</strong> Das Buch leitet Chi als „Kraft aus den <strong>Ewigen Jagdgründen</strong>“ her — ein chinesisches Konzept (氣) durch ein anglo-erfundenes pseudo-indianisches Jenseits geroutet. Zwei-Wort-Fix: Chi ist Chi, im Körper kultiviert, und die Jagdgründe sind schlicht das, was die Agency-Akten die andere Seite nennen. „Die alten asiatischen Kampfkünste“ (S. 17) behandelt einen Kontinent als eine Tradition — benennt stattdessen die Linie (Hung Ga aus Foshan, Wing Chun aus Fatshan, Shuaijiao aus dem Norden); die Haltungsliste auf S. 56 ist tatsächlich präzise und echt, nur der Einleitungsabsatz ist schlampig. Der Eintrag <em>Der Betrunkene</em> benutzt „Feuerwasser“ — ein Plains-Indianer-Stereotyp, in einen chinesischen Kampfkunsttext gefallen; sagt einfach Whiskey.
+<strong>Das größte Problem: Kriegsherr Kang</strong> (S. 119f., 141f.) befehligt „Zehntausende loyaler Kampfkünstler“, besitzt die Iron-Dragon-Eisenbahn und betreibt Laster und Piraterie aus Festungen namens Drachenatem, Löwengebrüll und Bärenklaue, mit einer Leutnantin namens Red Petals Su. Das ist Fu Manchu mit Eisenbahnkonzession. Wenn die einzigen NSCs gleicher Herkunft für einen chinesischen SC Kangs Leute sind, hat das Spiel den Archetyp still zur Verwandtschaft des Bösewichts gemacht. Die Gegengewichte stehen im Buch und sind es wert, betont zu werden: <strong>China Mary / Sing Choy in Tombstone</strong> (S. 137 — eine reale historische Frau, die die Ehrlichkeit ihrer Arbeiter aus eigener Tasche garantierte), <strong>Deadwoods Chinatown</strong> (S. 132) und <strong>Olympia</strong>, von dem das Buch schlicht feststellt, es sei größtenteils von chinesischen Einwanderern erbaut worden, die seinen Markt gründeten (S. 123).</p>
+<p><strong>Zeitrahmen 1884</strong> hilft hier: Page Act (1875), die Sandlot-Unruhen in San Francisco (1877) und der Chinese Exclusion Act (1882) liegen alle zurück — und Rock Springs (September 1885) liegt etwa ein Jahr in der Zukunft der Figuren, was niemand am Tisch kommen sieht.</p>
+<h2>Charaktere</h2>
+<ul>
+<li><a href="../Charaktere/11-1-lam-ah-yuen.html">Lam Ah-Yuen 林亞元</a></li>
+<li><a href="../Charaktere/11-2-kuroda-sae.html">Kuroda Sae 黒田 冴</a></li>
+</ul>
+<hr />
+<p><a href="../Charakterideen.html">Zur Übersicht</a></p>
+<footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus 11-chi-master.md</footer>
+</div>
+</body>
+</html>

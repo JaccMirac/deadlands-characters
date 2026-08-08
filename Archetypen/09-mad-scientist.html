@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAD SCIENTIST (Verrückte Wissenschaftler)</title>
+<style>
+:root{
+  --bg:#f4efe4; --panel:#fbf8f1; --ink:#241d16; --muted:#6b5d4c;
+  --rule:#d8cdb8; --accent:#8c2f1d; --accent-soft:#b5563f;
+  --quote-bg:#efe7d6; --code-bg:#e9e0cd; --link:#7a3b12;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+    --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+    --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+  --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+  --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+nav.top{
+  font:600 .72rem/1 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+}
+nav.top a{color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--accent)}
+h1{
+  font-size:2rem;line-height:1.15;margin:0 0 1.5rem;
+  font-weight:700;letter-spacing:-.01em;
+}
+h2{
+  font-size:1.05rem;margin:2.75rem 0 .9rem;color:var(--accent);
+  font:700 .82rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+h3{font-size:1.12rem;margin:2rem 0 .6rem;font-weight:700}
+p,ul,ol{margin:0 0 1.05rem}
+ul,ol{padding-left:1.35rem}
+li{margin-bottom:.4rem}
+li>ul,li>ol{margin-top:.4rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent-soft)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
+blockquote{
+  margin:1.5rem 0;padding:.9rem 1.25rem;background:var(--quote-bg);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+  font-size:1.05rem;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote h3{margin-top:0;font-size:1rem;color:var(--accent)}
+code{
+  background:var(--code-bg);padding:.12em .38em;border-radius:3px;
+  font:.86em/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+pre{background:var(--code-bg);padding:1rem;border-radius:5px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tablewrap{overflow-x:auto;margin:0 0 1.25rem}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--rule);
+      vertical-align:top}
+th{
+  font:700 .72rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:0}
+footer{
+  margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:.85rem;
+}
+footer a{color:var(--muted)}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.top{display:none}
+  .wrap{max-width:none;padding:0}
+  a{color:#000;border:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
+<h1>MAD SCIENTIST (Verrückte Wissenschaftler)</h1>
+<h2>Regelnotizen</h2>
+<p><em>Voraussetzungen (S. 72): Novize, Verstand W8+, </em><em>Naturwissenschaften W6+</em><em>, </em><em>Verrückte Wissenschaft W4+</em><em>. 15 Machtpunkte, 2 Mächte.</em></p>
+<p><em>Zwei Tabellen, die oft verwechselt werden: </em><em>Höllenmaschinen</em><em> (S. 33) nutzen bei einem Patzer eine </em><em>W6</em><em>-Tabelle (1–2 katastrophal: motorisierte Geräte explodieren mit 3W6 in einer großen Schablone; 3–5 schwer: 2W6 Runden Reparatur; 6 gering). </em><em>Eigene Mächte eines verrückten Wissenschaftlers</em><em> nutzen dagegen die </em><em>W20-Fehlfunktionstabelle auf S. 90</em><em>: </em><em>1</em><em> Gedächtnislöschung (Verrückte-Wissenschaft-Würfel sinkt </em><em>dauerhaft</em><em> eine Stufe) · </em><em>2–3</em><em> </em><em>dauerhafter</em><em> Wahnsinn · </em><em>4–6</em><em> Kaboom! (3W6, große Schablone) · </em><em>7–10</em><em> Ausfall · </em><em>11–14</em><em> Gremlin (2W6 Gremlins aus den Jagdgründen) · </em><em>15–17</em><em> Missgeschick (Erschöpfung, alle anhaltenden Mächte enden) · </em><em>18–19</em><em> Störung · </em><em>20</em><em> vorübergehender Wahnsinn. Die dauerhaften Ergebnisse sind der eigentliche Biss — und der Grund, warum </em><em>Wahres Genie</em><em> einen Talentslot wert ist.</em></p>
+<p><em>Weitere Befunde: </em><em>Schrumpfen ist auf Novize nicht wählbar</em><em> (Wachsen/Schrumpfen ist Fortgeschritten). Verrückte Wissenschaftler dürfen das Handicap </em><em>Talisman ausdrücklich nicht</em><em> nehmen (S. 16). Auf Novize sind nur </em><em>drei</em><em> Talente verfügbar: </em><em>Wahres Genie</em><em>, </em><em>Erzfresser</em><em> und </em><em>Mit Eisen beschlagen</em><em>. </em><em>Artefakterschaffer</em><em> — die einzige Möglichkeit, einem Kameraden ein funktionierendes Gerät in die Hand zu geben — ist Fortgeschritten. </em><em>Auf Novize kann niemand außer dir deine Apparate benutzen. Punkt.</em>**</p>
+<h2>Charaktere</h2>
+<ul>
+<li><a href="../Charaktere/09-1-doktor-konstanze-hallweg.html">Doktor Konstanze Hallweg</a></li>
+<li><a href="../Charaktere/09-2-obadiah-pigeon-tuck.html">Obadiah „Pigeon“ Tuck</a></li>
+</ul>
+<hr />
+<p><a href="../Charakterideen.html">Zur Übersicht</a></p>
+<footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus 09-mad-scientist.md</footer>
+</div>
+</body>
+</html>
