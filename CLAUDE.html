@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLAUDE.md</title>
+<style>
+:root{
+  --bg:#f4efe4; --panel:#fbf8f1; --ink:#241d16; --muted:#6b5d4c;
+  --rule:#d8cdb8; --accent:#8c2f1d; --accent-soft:#b5563f;
+  --quote-bg:#efe7d6; --code-bg:#e9e0cd; --link:#7a3b12;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+    --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+    --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+  --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+  --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+nav.top{
+  font:600 .72rem/1 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+}
+nav.top a{color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--accent)}
+h1{
+  font-size:2rem;line-height:1.15;margin:0 0 1.5rem;
+  font-weight:700;letter-spacing:-.01em;
+}
+h2{
+  font-size:1.05rem;margin:2.75rem 0 .9rem;color:var(--accent);
+  font:700 .82rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+h3{font-size:1.12rem;margin:2rem 0 .6rem;font-weight:700}
+p,ul,ol{margin:0 0 1.05rem}
+ul,ol{padding-left:1.35rem}
+li{margin-bottom:.4rem}
+li>ul,li>ol{margin-top:.4rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent-soft)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
+blockquote{
+  margin:1.5rem 0;padding:.9rem 1.25rem;background:var(--quote-bg);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+  font-size:1.05rem;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote h3{margin-top:0;font-size:1rem;color:var(--accent)}
+code{
+  background:var(--code-bg);padding:.12em .38em;border-radius:3px;
+  font:.86em/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+pre{background:var(--code-bg);padding:1rem;border-radius:5px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tablewrap{overflow-x:auto;margin:0 0 1.25rem}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--rule);
+      vertical-align:top}
+th{
+  font:700 .72rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:0}
+footer{
+  margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:.85rem;
+}
+footer a{color:var(--muted)}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.top{display:none}
+  .wrap{max-width:none;padding:0}
+  a{color:#000;border:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="README.html">Repo</a><a href="Charakterideen.html">Charaktere</a><a href="Regelnotizen.html">Regelnotizen</a></nav>
+<h1>CLAUDE.md</h1>
+<p>Handreichung für eine Sitzung, die dieses Repo zum ersten Mal sieht.</p>
+<h2>Was das hier ist</h2>
+<p>Spielleiter-Vorbereitung für eine Runde <strong>Deadlands: The Weird West</strong> auf
+<strong>SWADE</strong>. Kein Code-Projekt — der Inhalt sind Charaktere, der einzige Code ist
+ein kleiner Renderer. 13 Archetypen, je 2 Figuren, macht 26 Charaktere. Alles
+auf Deutsch, weil am Tisch Deutsch gesprochen wird.</p>
+<p>Einstieg zum Lesen: <a href="Charakterideen.html"><code>Charakterideen.md</code></a> — die Übersicht,
+von der alles verlinkt ist.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Pfad</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Charakterideen.md</code></td>
+<td>Inhaltsverzeichnis aller 26 Figuren, nach Archetyp</td>
+</tr>
+<tr>
+<td><code>Regelnotizen.md</code></td>
+<td>Regelkorrekturen, die für <strong>alle</strong> Builds gelten</td>
+</tr>
+<tr>
+<td><code>Bildprompts.md</code></td>
+<td>Ein Midjourney-Prompt je Figur + Stilklammer</td>
+</tr>
+<tr>
+<td><code>Charaktere/NN-N-slug.md</code></td>
+<td>Eine Datei je Figur — Hintergrund, Build, Aufhänger</td>
+</tr>
+<tr>
+<td><code>Archetypen/NN-slug.md</code></td>
+<td>Eine Datei je Archetyp — Voraussetzungen, Fallen</td>
+</tr>
+<tr>
+<td><code>Bilder/NN-N-slug.png</code></td>
+<td>Die Midjourney-Bilder, flach, benannt wie die Figuren</td>
+</tr>
+<tr>
+<td><code>build_html.py</code></td>
+<td>Rendert jede <code>.md</code> als <code>.html</code> daneben</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Regeln, die nicht verhandelbar sind</h2>
+<p><strong>Jede <code>.md</code> hat eine <code>.html</code> daneben.</strong> Nach <em>jeder</em> Änderung an einer
+Markdown-Datei:</p>
+<pre><code>python build_html.py
+</code></pre>
+<p>Beides wird zusammen committet. Eine <code>.md</code> ohne aktuelle <code>.html</code> gilt als
+kaputt. Einzige Abhängigkeit: <code>pip install markdown</code>.</p>
+<p><strong>Die PDFs gehören nicht ins Repo.</strong> <code>Deadlands_Grundbuch.pdf</code>,
+<code>SWADE_…_Core_Rules.pdf</code>, <code>Deadlands_Character_Sheet.pdf</code>,
+<code>Pregens_Deadlands01.pdf</code> liegen lokal im Ordner und sind per <code>.gitignore</code>
+(<code>*.pdf</code>) ausgeschlossen. Sie sind gekaufte, urheberrechtlich geschützte
+Bücher — <strong>nie stagen, nie committen, nie irgendwohin hochladen.</strong> Sie dienen
+ausschließlich zum Nachschlagen. Das Remote ist deshalb auch privat.</p>
+<p><strong>Sprache.</strong> Fließtext deutsch. Talente und Handicaps stehen <strong>englisch</strong>, mit
+dem deutschen Grundbuch-Begriff in Klammern:
+<code>**Quick Draw** (*Schnell Ziehen*)</code>. Die Klammer entfällt, wo das Grundbuch
+keinen eigenen deutschen Begriff führt — siehe die Warnung am Ende von
+<code>Regelnotizen.md</code>, die deutschen Namen sind nur für die Deadlands-<em>eigenen</em>
+Neuzugänge belegt.</p>
+<p><strong>Alle Builds sind Novize</strong>, Standard-Erschaffung: 5 Attributspunkte,
+12 Fertigkeitspunkte, bis zu 4 Handicap-Punkte, <strong>250 Dollar</strong> Startgeld
+(Deadlands weicht hier von SWADE ab). Wer einen Build anfasst, liest vorher
+<code>Regelnotizen.md</code> ganz — dort steht gesammelt, welche Talente entgegen der
+üblichen Netzlisten erst ab Erfahren oder Fortgeschritten verfügbar sind.
+Mehrere dieser Fallen wurden teuer gefunden; sie wieder einzubauen ist der
+wahrscheinlichste Fehler.</p>
+<p><strong>Dateinamen.</strong> <code>NN-N-slug</code> — Archetypnummer, Figurnummer, Slug ohne Umlaute
+und Sonderzeichen (<code>ü</code>→<code>u</code>, nicht <code>ue</code>; siehe
+<code>06-2-delphine-della-tourneur-die-unterstutzungsschutzin.md</code>). Der Bildname ist
+derselbe Name mit <code>.png</code>. Weitere Fassungen bekommen <code>-b</code>, <code>-c</code>; <strong>der Name
+ohne Buchstaben ist immer die gültige Fassung.</strong></p>
+<h2>Fallen im Werkzeug</h2>
+<p><strong><code>build_html.py</code> hat den Repo-Pfad fest verdrahtet</strong> (<code>REPO = r"C:\Users\…"</code>).
+Auf einem anderen Rechner oder nach einem Umzug des Ordners muss die Zeile
+angepasst werden, sonst schreibt das Skript ins Leere oder bricht ab. Der
+Glob deckt nur <code>*.md</code> im Wurzelverzeichnis, <code>Archetypen/</code> und <code>Charaktere/</code> ab
+— eine neue <code>.md</code> in einem <em>anderen</em> Unterordner bekommt still keine HTML.</p>
+<p><strong>Smartypants frisst <code>--</code>.</strong> Der Renderer läuft mit der <code>smarty</code>-Erweiterung,
+die doppelte Bindestriche zu Halbgeviertstrichen macht. In Codeblöcken tut sie
+das nachweislich <em>nicht</em>, und genau darauf verlassen sich die 26
+Midjourney-Prompts, deren Parameter (<code>--ar 2:3 --stylize 150</code>) sonst lautlos
+unbrauchbar würden. <strong>Prompts gehören deshalb immer in einen Fenced Code
+Block.</strong> Nach Änderungen an <code>Bildprompts.md</code> gegenprüfen:</p>
+<pre><code>grep -c -- &quot;--ar 2:3 --stylize 150&quot; Bildprompts.html   # muss 26 sein
+grep -c &quot;&amp;ndash;ar&quot; Bildprompts.html                   # muss 0 sein
+</code></pre>
+<p>Ebenfalls schon repariert und nicht wieder kaputtmachen: das <code>re.sub</code> auf
+<code>&amp;lsquo;(?=\d)</code>, das aus Jahreszahlen wie ’84 wieder einen Apostroph macht.</p>
+<h2>Was als Nächstes ansteht</h2>
+<ol>
+<li><strong>12 Bilder fehlen.</strong> Vorhanden sind die Archetypen 01–07, offen sind
+   <code>08-1</code> bis <code>13-2</code> (Schamanen, Verrückte Wissenschaftler, Agenten,
+   Chi-Meister, Krieger, Entdecker). Die Prompts dafür stehen fertig in
+   <code>Bildprompts.md</code>, jeder mit seinem Zieldateinamen darunter.</li>
+<li><strong>Die Stilklammer ist noch nicht gesetzt.</strong> Der Plan steht in
+   <code>Bildprompts.md</code>: einen Prompt laufen lassen, vom schönsten Ergebnis den
+   <code>--sref</code>-Code ziehen, ihn an <em>alle</em> 26 anhängen. Solange das nicht passiert
+   ist, sind die Bilder 26 Einzelstücke statt eines Kartensatzes. Ob die ersten
+   14 danach neu gezogen werden müssen, ist eine offene Entscheidung.</li>
+<li><strong>Bilder sind noch nirgends eingebunden.</strong> Naheliegender nächster Schritt am
+   Code: <code>build_html.py</code> beim Rendern von <code>Charaktere/X.md</code> nachsehen lassen, ob
+   <code>Bilder/X.png</code> existiert, und es oben in die Seite setzen. Der flache Ordner
+   und die Namensgleichheit sind genau dafür angelegt. Erst sinnvoll zu bauen,
+   wenn Bilder zum Prüfen da sind.</li>
+<li><strong>Zwei Tischabsprachen sind offen</strong>, beschrieben am Ende von <code>README.md</code>:
+   die Sitting-Bull-Umdeutung im Grundbuch und Kriegsherr Kang als einziger
+   prominenter chinesischer NSC. Beide brauchen eine Entscheidung des
+   Spielleiters, keine Datei.</li>
+</ol>
+<h2>Arbeitsweise</h2>
+<p>Die Charakterdateien sind dicht und eigenwillig geschrieben — konkrete
+Gegenstände statt Adjektive (ein Wagenspeichen-Knüppel, sechs Löffelstiele zu
+einem Pelikanschnabel gelötet, Kerben im Rückenriemen). Wer etwas ergänzt,
+trifft diesen Ton, statt zu erklären. Der Aufbau je Figur ist immer gleich:
+Zitat, Hintergrund, <strong>Build</strong>, <strong>Aufhänger</strong>, <strong>Warum es Spaß macht</strong>.</p>
+<p>Was regeltechnisch behauptet wird, muss aus dem Grundbuch oder den Core Rules
+belegbar sein; im Zweifel im PDF nachschlagen, nicht aus dem Gedächtnis
+schreiben. Falsche Voraussetzungen sind hier der teuerste Fehler, weil sie erst
+am Spieltisch auffallen.</p>
+<p>Committet wird auf <code>master</code>, Remote ist <code>origin</code>
+(github.com/JaccMirac/deadlands-characters, privat).</p>
+<footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus CLAUDE.md</footer>
+</div>
+</body>
+</html>

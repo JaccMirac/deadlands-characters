@@ -13,6 +13,7 @@ Charaktere fuer Deadlands: The Weird West (Savage Worlds Adventure Edition).
 | `Archetypen/` | Eine Datei pro Archetyp (13) — Voraussetzungen, archetyp-spezifische Regelnotizen |
 | `Bilder/` | Die fertigen Midjourney-Bilder, flach, benannt wie die Charakterdateien |
 | `build_html.py` | Rendert jede `.md` als `.html` daneben |
+| [`CLAUDE.md`](CLAUDE.md) | Konventionen, Werkzeugfallen und offene Punkte — für Claude Code |
 
 Jede Markdown-Datei liegt zusätzlich als HTML daneben — gleicher Name, Endung
 `.html`, interne Links sind mitgebogen. Die Seiten sind eigenständig (CSS
