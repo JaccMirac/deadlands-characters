@@ -8,6 +8,8 @@ Regelgrundlage: **[Regelnotizen.md](Regelnotizen.md)**
 
 Jede Figur liegt als eigene Datei unter `Charaktere/`, die Regelnotizen je Archetyp unter `Archetypen/`.
 
+Ein Midjourney-Prompt pro Figur: **[Bildprompts.md](Bildprompts.md)**
+
 ---
 
 
