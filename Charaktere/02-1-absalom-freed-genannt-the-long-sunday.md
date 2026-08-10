@@ -4,6 +4,13 @@
 
 > *Er hat noch nie einen Mann tot eingeliefert, und er gedenkt mit dieser Bilanz zu sterben.*
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d6, Strength d4, Vigor d6
+Skills: Shooting d8, Survival d8, Riding d6, Notice d6, Fighting d4, Intimidation d4
+Hindrances: Code of Honor (Major), Loyal (Minor), Cautious (Minor)
+Edges: Woodsman | Alertness | Grit
+```
+
 **Hintergrund.** Absalom wurde als Eigentum auf einer Hanffarm in Missouri geboren und lernte Spuren lesen, bevor er Buchstaben lesen lernte. Als der lange Krieg sich '71 endlich selbst erwürgte, ging er westwärts ins Indianer-Territorium und heuerte als Posseman bei einem Bundesdeputy aus Fort Smith an — die weißen Deputies konnten der Fährte durch die Kiamichi-Niederungen nicht folgen, er schon, also zahlten sie ihm ein Drittel Anteil und ließen ihn bei den Pferden schlafen. Elf Jahre ritt er das, dann machte er sich selbständig, denn wer für sich selbst arbeitet, muss nicht erklären, warum er die Beute atmend zurückbringt. Er ist einundfünfzig, langsam im Reden und beunruhigend geduldig. Er reitet mit der Posse, weil eine Posse Zeugen bedeutet — und Zeugen sind das Einzige, was verhindert, dass der Gefangene eines Schwarzen „auf der Flucht erschossen" wird, kaum dass sie die Stadt erreichen.
 
 **Aktuelles Kopfgeld.** **Wilbur „Sunday" Kinch** — 600 Dollar, tot oder lebendig, für den Mord an Deputy Marshal Owen Reddick. Absalom hat Kinch das Spurenlesen beigebracht. Jetzt flieht Kinch — und flieht *absichtlich schlecht*: Zweige auf Kniehöhe geknickt, Steine drei-und-eins gestapelt, ein Fetzen roter Flanell an einem Mesquite-Dorn. Das ist der private Fährtencode, den Absalom erfunden und genau einer lebenden Seele beigebracht hat. Kinch flieht nicht. Er **führt**. Die letzte Markierung war in einen Kuhschädel geritzt und bedeutete *bring mehr Gewehre*. Und der Haftbefehl wurde von dem Mann unterzeichnet, der Reddick nach Absaloms Überzeugung selbst erschossen hat.

@@ -4,6 +4,13 @@
 
 > *Er knackte die Chiffre in elf Monaten. Die vier Jahre seither versucht er, sie wieder zu ver-lernen.*
 
+```build
+Attributes: Agility d4, Smarts d10, Spirit d6, Strength d4, Vigor d6
+Skills: Spellcasting d8, Occult d8, Research d8, Gambling d6, Notice d6
+Hindrances: Night Terrors (Major), Talisman (Minor), Habit (Minor)
+Edges: Arcane Background (Huckster) [free: Human] | Power Points [Hindrance] | Scholar [Hindrance]
+```
+
 **Hintergrund.** Teague ging auf Subskription seiner Kirchengemeinde nach Oberlin, unterrichtete Mathematik an einer Freedmen's-Bureau-Schule in Helena, Arkansas, und verbrachte die Kriegsjahre als Chiffrierschreiber, der erbeutete Depeschen für einen Unionsoberst übersetzte, dem gefiel, dass er still und gründlich war. '80 kam eine Kiste „unknackbaren" Materials von Rock Island, und ganz unten lag ein wasserfleckiger *Hoyle's Book of Games* von 1769, gekennzeichnet als vermuteter konföderierter Codeschlüssel. Das war er nicht. Teague knackte ihn trotzdem — zuerst die Bridge-Diagramme, dann die Zahlenfolge in den Musterblättern — und in der Nacht, in der er fertig wurde, sagte etwas auf der anderen Seite der Seite seinen Namen zurück. Korrekt. Einschließlich des zweiten Vornamens, den seine Mutter ihm gab und nie jemandem nannte. Er hat seither keine Nacht durchgeschlafen.
 
 **Build.** Geschicklichkeit W4, Verstand W10, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5

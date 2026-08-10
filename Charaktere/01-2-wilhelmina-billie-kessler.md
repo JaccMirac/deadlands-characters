@@ -4,6 +4,13 @@
 
 > *Sie hat nie einen Mann näher als achtzig Meter getötet. Ihr Mundwerk arbeitet nach Kräften daran, das zu ändern.*
 
+```build
+Attributes: Agility d8, Smarts d6, Spirit d4, Strength d6, Vigor d6
+Skills: Shooting d10, Taunt d8, Notice d6, Stealth d6, Riding d4
+Hindrances: Arrogant (Major), Thin Skinned (Minor), Vengeful (Minor)
+Edges: Trademark Weapon | Gallows Humor | Steady Hands
+```
+
 **Hintergrund.** Ihr Vater Anselm war ein preußischer Jäger, der nach '48 floh und in Salina, Kansas, eine Büchsenmacherbank aufstellte; er brachte seiner Tochter Windabweichung und Erhöhung bei, bevor er ihr Englisch beibrachte. Mit elf schoss sie Antilopen für Eisenbahn-Trupps, mit neunzehn traf sie einen Hasen auf dreihundert Meter mit der riesigen Vorderlader-Sharps, die ihr Vater gebaut und nie abbezahlt hatte. Im Frühjahr '83 kamen drei Männer der Bell-Ridge-Bande wegen eines bestimmten Gewehrs — und erschossen Anselm über seiner eigenen Werkbank. Billie folgte ihnen und tötete alle drei über zwei Tage von einer Anhöhe, die sie nie fanden.
 
 **Build.** Geschicklichkeit W8, Verstand W6, Geist W4, Stärke W6, Konstitution W6 · Parade 2 (3 mit angelegter Sharps), Robustheit 5

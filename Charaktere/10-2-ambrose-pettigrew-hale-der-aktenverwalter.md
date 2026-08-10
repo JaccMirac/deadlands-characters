@@ -6,6 +6,13 @@
 
 > *Er hat über alles hier draußen gelesen und fast nichts davon überlebt.*
 
+```build
+Attributes: Agility d6, Smarts d10, Spirit d4, Strength d4, Vigor d4
+Skills: Fighting d6, Shooting d6, Occult d8, Research d8, Notice d6, Common Knowledge d6
+Hindrances: Curious (Major), Lying Eyes (Minor), Loyal (Minor)
+Edges: Agent [free: Human] | Investigator [Hindrance] | Scholar [Hindrance]
+```
+
 **Hintergrund.** Hale führte das Register des *Bureau of Special Correspondence* der Texas Rangers in Austin — die konföderierte Antwort auf die Agency — und er war sehr gut darin, auf die Art, wie ein Mann sehr gut sein kann, auf den noch nie geschossen wurde, wenn er die Berichte von Männern liest, auf die geschossen wurde. Als '71 Washington brannte, starb seine Regierung unter seinem Schreibtisch weg, und er saß acht Monate in einem ungeheizten Aktenraum und bewachte Schränke, die niemand mehr abholen würde. 1872 kam die Fusion, das Twilight-Protokoll wurde über seinen Kopf hinweg angewendet, und ein Pinkerton-Mann betrat sein Archiv, las vier Seiten und bot ihm eine Bundeskarte an. Er nahm sie. Er ist seit zwölf Jahren Agent, und bis zu diesem Frühjahr hatte er nie einen Feldeinsatz, weil Denver seine Querverweise wollte, nicht seine Treffsicherheit — was großzügig ist, denn die Anmerkung des Schießausbilders in seiner Akte lautet: *„bestanden, knapp, nicht links von ihm stehen."*
 
 **Tarnung, Führung, stehende Befehle.**

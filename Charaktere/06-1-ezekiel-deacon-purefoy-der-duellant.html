@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,12 +140,14 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Ezekiel „Deacon“ Purefoy — der Duellant</h1>
+<figure class="portrait"><img src="../Bilder/06-1-ezekiel-deacon-purefoy-der-duellant.png" alt="Ezekiel „Deacon" Purefoy — der Duellant"></figure>
 <p><em>Archetyp: <a href="../Archetypen/06-hexslinger.html">HEXSLINGER (Runenschütze)</a></em></p>
 <blockquote>
 <p><em>„Mein Daddy predigte, das Wort schneide schärfer als jede Klinge. Er hat nie gesagt, welches Wort.“</em></p>
 </blockquote>
 <p><strong>Die Waffe — AMEN.</strong> Ein <strong>Colt Dragoon</strong>, .44, eine Pferdepistole für einen Krieg, den sein Vater nie führte — zweieinhalb Kilo Eisen mit einem Lauf, lang genug, um einen Mann totzuschlagen, falls das Pulver versagt. Ein Schmied in Wichita baute sie &rsquo;79 auf Patronen um und pfuschte dabei; der Umbauring ist blank, wo der Rest braun vor Alter ist. Das Wort <strong>AMEN</strong> ist in der klobigen Handschrift seines Vaters in den Rückenriemen gefeilt, ein Buchstabe pro Finger. Alles Übrige ist Zekes Arbeit: über beide Laufflächen laufen vier Reihen nordischer Stäbe, mit einer Nadelfeile über elf Nächte geschnitten, Holzschnitt für Holzschnitt abgemalt aus <em>Die Abenteuer des Doc Holliday, Nr. 14</em>. In den Nussbaumgriff ist Silberdraht in einem Muster gehämmert, das ein Bridgespieler als Blattdiagramm erkennen würde und sonst niemand als irgendetwas.
 Amen hat keine Persönlichkeit. Genau das ist das Problem. Zeke redet ununterbrochen mit ihr — vor Duellen, beim Kaffee, im Dunkeln — und sie hat nie geantwortet, und er wird das Gefühl nicht los, dass sie <strong>höflich zuhört und wartet</strong>. Die Runen sind tot. Sie haben noch nie geleuchtet. <em>Noch nicht.</em></p>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Smarts</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Spirit</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Strength</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Shooting</td><td class="lnk">Agi</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Spellcasting</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Gambling</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Intimidation</td><td class="lnk">Spi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Fighting</td><td class="lnk">Agi</td><td class="die">d4</td><td class="num">1</td></tr><tr><td>Riding</td><td class="lnk">Agi</td><td class="die">d4</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>4</b><span>Toughness</span> <b>5</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Grim Servant o' Death (Major) <span class="tag">2</span></li><li>Talisman (Minor) <span class="tag">1</span></li><li>Death Wish (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Huckster) <span class="tag">free: Human</span></li><li>Duelist <span class="tag">Hindrance</span></li><li>Quick Draw <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Hintergrund.</strong> Zekes Vater ritt die Ozark-Runde und predigte Höllenfeuer von einem Wagen herunter, und unter dem Kanzelbrett lag der Dragoon für die Teile des Countys, die das Wort nicht erreichte. Im Herbst 1881 erschoss ihn ein Mann namens Court Habersham auf den Stufen eines Hotels in Fayetteville wegen elf Dollar Schulden, und Zeke — neunzehn, ohne Waffe, ohne Nerven — sah von der anderen Straßenseite zu und rührte sich nicht. Er nahm den Dragoon von der Leiche seines Vaters, ging nach Westen und brachte sich das Kämpfen bei, wie ein Feigling alles lernt: indem er Fremde dafür bezahlte und die, die ihn betrogen, am Leben ließ. Die Groschenhefte fand er im Kaufladen eines Eisenbahnlagers in Colorado. Die meisten lesen sie wegen der Schießereien. Zeke las die <strong>Bilder</strong> — die Bridge-Diagramme am Rand, die „Druckfehler“ in den Kartenblättern — und etwas hinter seinen Augen setzte sich auf und begann zu geben.</p>
 <p><strong>Build.</strong> Geschicklichkeit W8, Verstand W6, Geist W6, Stärke W4, Konstitution W6 · Parade 4, Robustheit 5
 <strong>Schießen W8</strong>, Zaubern W6, Glücksspiel W6, Einschüchtern W6, Bemerken W6, Kämpfen W4, Reiten W4

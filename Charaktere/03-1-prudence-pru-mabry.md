@@ -4,6 +4,14 @@
 
 > *Sie haben in Bitter Creek die Falsche gehängt, und etwas im Boden war mit dem Urteil nicht einverstanden.*
 
+```build
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d4, Vigor d6
+Skills: Survival d8, Shooting d8, Stealth d8, Notice d6, Athletics d6, Fighting d4
+Hindrances: Secret (Major), Vengeful (Minor), Habit (Minor)
+Edges: Harrowed [free: Human] | Woodsman [Hindrance] | Alertness [Hindrance] | Cat Eyes [Harrowed: free]
+Toughness: 7 (5 + 2 Undead)
+```
+
 **Hintergrund.** Pru war Trail-Scout für einen Vermessungstrupp, der eine Nebenstrecke nach Norden aus Kansas trieb — diejenige, die einen Tag vorausritt, das Wasser las und die Pässe fand. Im Frühjahr '82 holte ein Bürgerwehr-Komitee aus Bitter Creek sie vom Pferd wegen eines Lohnraubs, mit dem sie nichts zu tun hatte, und sieben Männer hängten sie in weniger als einer Stunde an eine Pappel, weil der wahre Dieb einen Bruder im Komitee hatte. Sie hing zwei Tage, dann schnitten sie sie ab und verscharrten sie in einem flachen Graben außerhalb des Zauns. In der dritten Nacht grub sie sich mit bloßen Händen aus und ging los. Sie kam zurück wegen einer **Liste** — sieben Namen, zwei durchgestrichen.
 
 **Der Manitu — „Richter Alder".** Er knurrt nicht. Er ist ausnehmend höflich und besteht auf dem Titel. Zu Lebzeiten war er Bezirksrichter irgendwo im Osten, hängte einundvierzig Männer und genoss jeden einzelnen, und er hat den ganzen Gerichtssaal mit in Prus Schädel gebracht. Er nennt sie „Miss Mabry". Er spricht im flachen, geduldigen Tonfall eines Protokollführers, meist gerade dann, wenn sie still wird — *„Antrag stattgegeben. Das Gericht vermerkt, dass der Angeklagte unbewaffnet und die Stunde spät ist."* Wenn sie jemanden von der Liste tötet, gratuliert er ihr aufrichtig und warm und trägt den Tod in ein Register ein, dessen Kratzen sie hören kann. Sein Ziel ist nicht Chaos, sondern **Verfahren**: er will, dass sie weiter Urteile spricht, denn jede Hinrichtung muss sie sich hinterher selbst rechtfertigen — und die Rechtfertigungen sind das, was er in Wahrheit frisst. Er hat mehr als einmal angeboten, „das Register zu erweitern"; er hat Meinungen über zwei Mitglieder der Posse. Er hat sie noch nie belogen, und das ist das Schlimmste daran.

@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,10 +140,12 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Wilhelmina „Willa“ Kerner — Naturforscherin der Akademie der Entdecker</h1>
+<figure class="portrait"><img src="../Bilder/13-1-wilhelmina-willa-kerner-naturforscherin-der-akademie-der-entdecker.png" alt="Wilhelmina „Willa" Kerner — Naturforscherin der Akademie der Entdecker"></figure>
 <p><em>Archetyp: <a href="../Archetypen/13-explorer.html">EXPLORER (Entdecker)</a></em></p>
 <blockquote>
 <p><em>Sie kann das Ding, das dich gerade frisst, auf Latein benennen, und sie wird es publizieren, ob du überlebst oder nicht.</em></p>
 </blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Smarts</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Spirit</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Strength</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills (12&#8202;+&#8202;1 bonus) <span class="cs-pts">13 / 13</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Survival</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Academics</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Science</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Shooting</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Riding</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>2</b><span>Toughness</span> <b>5</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Curious (Major) <span class="tag">2</span></li><li>Ailin' (Minor) <span class="tag">1</span></li><li>Big Mouth (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Woodsman <span class="tag">free: Human</span></li><li>Alertness <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Hintergrund.</strong> 1855 in Bremen geboren, mit vier von Freidenker-Eltern nach Fredericksburg, Texas getragen, die vor den Trümmern von 1848 flohen. Ihr Vater führte ein Gemischtwarengeschäft und ließ ihr ein Hinterzimmer voller aufgespießter Käfer und eingelegter Schlangen. Keine Universität in zwei Ländern nahm sie, also korrespondierte sie sich in die <strong>Akademie der Entdecker</strong> hinein, auf die Kraft ihrer Tafeln — akribische, unsentimentale anatomische Zeichnungen, die drei Professoren jahrelang an „Herrn W. Kerner“ schreiben ließen. Ihre Monographie über den <em>Salzrassler</em> der Salzwüsten Utahs machte gleichzeitig ihren Namen und ihr Problem. Sie reitet mit einer Posse aus dem krassesten aller Gründe: die Akademie zahlt 50 Dollar für eine verifizierte neue Art und 500 für ein lebensfähiges Exemplar, eine Posse ist viel billiger als eine Expedition, und anders als Träger schießt eine Posse zurück. Sie hat einen schwindsüchtigen Husten, den sie Fremden gegenüber „die Höhenluft“ nennt.</p>
 <p><strong>Build.</strong> Geschicklichkeit W6, <strong>Verstand W8</strong>, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5
 <strong>Überleben W8</strong>, <strong>Bildung W8</strong>, Naturwissenschaften W6, Schießen W6, Reiten W6, Bemerken W6 <em>(13 Punkte: 12 + 1 aus einem Handicap-Punkt)</em>. Deutsch, Englisch, Leselatein und genug Französisch, um sich mit einem belgischen Taxonomen zu streiten.

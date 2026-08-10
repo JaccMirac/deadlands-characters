@@ -4,6 +4,13 @@
 
 > *Er hat den Revolver zweimal begraben, und zweimal hat der Boden ihn wieder ausgespuckt.*
 
+```build
+Attributes: Agility d8, Smarts d6, Spirit d8, Strength d4, Vigor d4
+Skills: Shooting d10, Intimidation d10, Athletics d6, Riding d4
+Hindrances: Ailin' (Major), Habit (Minor), Enemy (Minor)
+Edges: Duelist | Quick Draw | Elan
+```
+
 **Hintergrund.** Silas verdingte sich im Weidekrieg von Platte County an die Bar-Cross-Fraktion und kam mit elf Toten hinter sich und einem Ruf heraus, den er nie wieder abschütteln konnte. Drei gute Jahre predigte er in einem Zelt bei Ogallala — die Leute nannten ihn Deacon, halb aus Respekt, halb im Spott — bis ein konföderierter Deserteur ins Zelt kam, um sich einen Namen zu machen, und Silas ihn zwischen der zweiten und dritten Strophe von „Rock of Ages" erschoss. Die Schwindsucht kam im Winter darauf. Er hustet Blut in ein graues Taschentuch, ist neununddreißig und sieht aus wie sechzig. Er reitet mit der Posse, weil das die einzige Gesellschaft ist, in der sein Name ihm einen Platz statt einer Herausforderung einbringt.
 
 **Build.** Geschicklichkeit W8, Verstand W6, Geist W8, Stärke W4, Konstitution W4 · Parade 2, Robustheit 4

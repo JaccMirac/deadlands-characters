@@ -4,10 +4,17 @@
 
 > *Ein Vertragsvollstrecker mit einer Klingenkeule, der die Beweise sammelt, die den Deal seiner eigenen Familie in Brand setzen werden.*
 
+```build
+Attributes: Agility d6, Smarts d4, Spirit d6, Strength d8, Vigor d6
+Skills: Fighting d8, Athletics d6, Riding d6, Notice d6, Shooting d4, Survival d4, Intimidation d4, Stealth d4
+Hindrances: Obligation (Major), Oath of the Old Ways (Minor), Outsider (Minor)
+Edges: Don't Get 'im Riled! [free: Human] | Guts [Hindrance] | Trademark Weapon [Hindrance]
+```
+
 **Hintergrund.** Geboren 1857 am Powder River, mit neunzehn in die Tȟokála-Kriegergesellschaft (Kit Fox) aufgenommen. 1884 halten die Sioux-Nationen ihre Grenzen noch — Maschinen verrotten darin, und die US-Armee hat für die Plains keinen Magen mehr —, also ist die Arbeit von Walking Thunder nicht glorreich: er patrouilliert die Geisterstein-Konzession in den Black Hills, jene, die der Rat seines Onkels aushandelte, damit Deadwood weitergraben darf. Er hat gesehen, wie das Wild um die Gruben dünn wurde, wie ein Bach die Farbe eines alten Pennys annahm und wie die Kinder der Bergleute auf eine Art krank wurden, für die der wašíču-Arzt keinen Namen hat. Er reitet mit Fremden hinaus, weil die Konzession die Probleme der Fremden zu Lakota-Problemen gemacht hat und weil eine Posse in Deadwood Fragen stellen kann, wo ein akíčhita in Farbe nur beschossen würde. Er will die Konzession für nichtig erklärt sehen. Er ist weder sentimental gegenüber den Alten Bräuchen noch naiv gegenüber den neuen — er will schlicht das Argument gewinnen, und er ist zu der Auffassung gelangt, dass er dafür Beweise braucht statt eines Kampfes.
 
 **Build.** Geschicklichkeit W6, Verstand W4, Geist W6, **Stärke W8**, Konstitution W6 · Parade 6 (5 mit der Klingenkeule), Robustheit 5
-**Kämpfen W8**, Athletik W6, Schießen W6, Reiten W6, Überleben W6, Einschüchtern W6, Bemerken W6, Heimlichkeit W6. Spricht Lakota, brauchbares Englisch, Plains-Zeichensprache.
+**Kämpfen W8**, Athletik W6, Reiten W6, Bemerken W6, Schießen W4, Überleben W4, Einschüchtern W4, Heimlichkeit W4. Spricht Lakota, brauchbares Englisch, Plains-Zeichensprache.
 Talente: **Don't Get 'im Riled!** (*Mach ihn nicht wütend!*), **Guts** (*Mumm*), **Trademark Weapon** (*Lieblingswaffe* — die Klingenkeule)
 Handicaps: **Obligation** (*Verpflichtung, schwer*) — Major: an die Kit-Fox-Gesellschaft und den Rat gebunden; sie können ihn mitten in der Geschichte zurückrufen · **Oath of the Old Ways** (*Eid auf die Alten Bräuche, leicht*) — Minor: keine moderne Technik, auf keinen Fall Geisterstein; Gratis-Neuwurf auf Geist-Proben, solange er ihn hält · **Outsider** (*Außenseiter, leicht*) — Minor
 Ausrüstung: Klingenkeule (St+W8, DB 2, Parade −1, zweihändig, Mindeststärke W8), Bogen, Tomahawk, Messer, Büffelpony mit Polster und Rohhautzaum, Satteltaschen, Schlafrolle, Feldflasche, Proviant. Sein Vater trug die Keule am Greasy Grass; die Schäftung wird jedes Frühjahr neu gewickelt.

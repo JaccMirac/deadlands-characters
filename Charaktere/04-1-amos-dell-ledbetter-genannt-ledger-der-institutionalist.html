@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,6 +140,7 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Amos Dell Ledbetter, genannt „Ledger“ — der Institutionalist</h1>
+<figure class="portrait"><img src="../Bilder/04-1-amos-dell-ledbetter-genannt-ledger-der-institutionalist.png" alt="Amos Dell Ledbetter, genannt „Ledger" — der Institutionalist"></figure>
 <p><em>Archetyp: <a href="../Archetypen/04-territorial-ranger.html">TERRITORIAL RANGER (Territorialer Ranger)</a></em></p>
 <blockquote>
 <p><em>„Da draußen gibt&rsquo;s nichts, was der Stern nicht überdauern kann, solange der Mann, der ihn trägt, nicht aufgibt.“</em></p>
@@ -106,6 +152,7 @@ Talente: <strong>Territorial Ranger</strong> (<em>Territorialer Ranger</em>), <s
 Handicaps: <strong>Vow</strong> (<em>Schwur</em>) — Major: kein Ruf bleibt unbeantwortet, und er lügt nicht, solange der Stern an der Brust ist · <strong>Stubborn</strong> (<em>Stur</em>) — Minor · <strong>Loyal</strong> — Minor
 Ausrüstung: gepanzerter Reitermantel, <strong>Winchester-Vorderschaftrepetierflinte</strong> als gewählte Schrotflinte, Colt Peacemaker, Bowiemesser, drei Stangen Dynamit am Sattel, der Stern, das Fahndungsbuch und das Feldbuch in Ölzeug. Rund 160 seiner 250 Dollar liegen noch als Bankanweisung da, weil er nichts ausgibt.
 <em>Erste Steigerung auf Erfahren:</em> <strong>Double Tap</strong>.</p>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Smarts</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Spirit</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Strength</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Shooting</td><td class="lnk">Agi</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Fighting</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Riding</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Intimidation</td><td class="lnk">Spi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Survival</td><td class="lnk">Sma</td><td class="die">d4</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>5</b><span>Toughness</span> <b>7 (5+2)</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Vow (Major) <span class="tag">2</span></li><li>Stubborn (Minor) <span class="tag">1</span></li><li>Loyal (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Territorial Ranger <span class="tag">free: Human</span></li><li>Guts <span class="tag">Hindrance</span></li><li>Brave <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Aufhänger.</strong> Amos&rsquo; Eid und seine Befehle sind nicht dasselbe Dokument, und Kompanie C ist im Begriff, das zu beweisen. Sein Leutnant stempelt neuerdings bestimmte Vorfälle als <strong>„erledigt — keine weiteren Maßnahmen“</strong> und sagt ihm leise, welche Witwen er nicht befragen soll. Amos hat für jeden dieser Fälle eine Seite im Feldbuch, datiert und abgezeichnet. Kapitel 13 darf er nicht lesen — er ist kein Leutnant —, also kann er schlicht nicht beurteilen, ob die Vertuschungen die Rangers sind, die die Öffentlichkeit vor einer zu großen Wahrheit schützen, oder die Rangers, die jemandes Mineninvestition schützen. Schlimmer: der Leutnant, der stempelt, ist der Mann, der ihn empfohlen hat.</p>
 <p><strong>Warum es Spaß macht.</strong> Er ist das unbewegliche Objekt in der Tischmitte — der Mann, der mit einer Schrotflinte und einem Notizbuch auf das Heulen zugeht und an dessen Mumm+Mutig sich alle anderen Angstproben festhalten. Verstand W4 heißt, dass ihn alles, was einen Plan erfordert, herrlich überfordert: er streitet nicht, er bewegt sich nur nicht.</p>
 <hr />

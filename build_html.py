@@ -3,7 +3,7 @@
 import os, re, io, glob
 import markdown
 
-REPO = r"C:\Users\JacobEdler\dev\deadlands-characters"
+REPO = r"D:\DnD\SWADE\Deadlands\deadlands-characters"
 
 CSS = u"""
 :root{
@@ -79,11 +79,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -128,6 +173,224 @@ def first_h1(md_text):
     return t.strip()
 
 
+# --------------------------------------------------------------------------
+# Baukasten: berechnet die Punktkosten aus den Wuerfeln und rendert den
+# Charakterbogen. Die Kostenlogik lebt NUR hier -- die Bloecke in den
+# Charakterdateien transkribieren blosse Wuerfelwerte, keine Arithmetik.
+# --------------------------------------------------------------------------
+DIE_STEPS = {4: 1, 6: 2, 8: 3, 10: 4, 12: 5}   # Wuerfeltyp -> Stufen ab W4/d4
+AGI, SMA, SPI = u"Agility", u"Smarts", u"Spirit"
+ATTR_ORDER = [AGI, SMA, SPI, u"Strength", u"Vigor"]
+
+# Attribut-Alias -> englischer Anzeigename (dt. Eingabe wird normalisiert)
+ATTR_EN = {
+    u"Geschicklichkeit": AGI, u"Agility": AGI,
+    u"Verstand": SMA, u"Smarts": SMA,
+    u"Geist": SPI, u"Willenskraft": SPI, u"Spirit": SPI,
+    u"Stärke": u"Strength", u"Strength": u"Strength",
+    u"Konstitution": u"Vigor", u"Vigor": u"Vigor",
+}
+
+# (englischer Anzeigename, verknuepftes Attribut, Kernfertigkeit?, [dt. Aliasse])
+SKILLS_DEF = [
+    (u"Athletics", AGI, True, [u"Athletik"]),
+    (u"Common Knowledge", SMA, True, [u"Allgemeinwissen"]),
+    (u"Notice", SMA, True, [u"Bemerken"]),
+    (u"Persuasion", SPI, True, [u"Überreden"]),
+    (u"Stealth", AGI, True, [u"Heimlichkeit"]),
+    (u"Fighting", AGI, False, [u"Kämpfen"]),
+    (u"Shooting", AGI, False, [u"Schießen"]),
+    (u"Riding", AGI, False, [u"Reiten"]),
+    (u"Driving", AGI, False, [u"Fahren"]),
+    (u"Boating", AGI, False, [u"Booten"]),
+    (u"Piloting", AGI, False, [u"Fliegen"]),
+    (u"Thievery", AGI, False, [u"Fingerfertigkeit", u"Schlösser knacken",
+                               u"Diebeshandwerk"]),
+    (u"Faith", SPI, False, [u"Glaube"]),
+    (u"Focus", SPI, False, [u"Fokus"]),
+    (u"Intimidation", SPI, False, [u"Einschüchtern"]),
+    (u"Performance", SPI, False, [u"Auftreten", u"Aufführen"]),
+    (u"Taunt", SMA, False, [u"Provozieren", u"Verspotten", u"Spotten", u"Spott"]),
+    (u"Healing", SMA, False, [u"Heilen", u"Heilkunde"]),
+    (u"Occult", SMA, False, [u"Okkultismus"]),
+    (u"Research", SMA, False, [u"Nachforschungen", u"Nachforschung",
+                               u"Nachforschen", u"Recherche"]),
+    (u"Science", SMA, False, [u"Wissenschaft", u"Naturwissenschaften"]),
+    (u"Academics", SMA, False, [u"Bildung", u"Gelehrsamkeit"]),
+    (u"Survival", SMA, False, [u"Überleben"]),
+    (u"Gambling", SMA, False, [u"Glücksspiel"]),
+    (u"Language", SMA, False, [u"Sprache", u"Sprachen"]),
+    (u"Repair", SMA, False, [u"Reparieren", u"Handwerk"]),
+    (u"Weird Science", SMA, False, [u"Seltsame Wissenschaft",
+                                    u"Verrückte Wissenschaft"]),
+    (u"Spellcasting", SMA, False, [u"Zaubern", u"Hexerei", u"Zauberei"]),
+    (u"Alchemy", SMA, False, [u"Alchemie"]),
+]
+
+# Alias (engl. + dt.) -> (Anzeigename, Attribut, Kern?)
+SKILL_LINK = {}
+for _en, _at, _core, _al in SKILLS_DEF:
+    SKILL_LINK[_en] = (_en, _at, _core)
+    for _a in _al:
+        SKILL_LINK[_a] = (_en, _at, _core)
+
+# Handicap-Schwere: Eingabe -> (Punkte, Anzeige)
+SEVERITY = {u"schwer": (2, u"Major"), u"Major": (2, u"Major"),
+            u"leicht": (1, u"Minor"), u"Minor": (1, u"Minor")}
+
+WARNINGS = []
+
+
+def _die_step(tok):  # akzeptiert d8 (engl.) wie W8 (dt.)
+    m = re.search(r"\d+", tok or "")
+    return DIE_STEPS.get(int(m.group())) if m else None
+
+
+def _half(die):  # halber Wuerfeltyp: d8 -> 4
+    return int(re.search(r"\d+", die).group()) // 2
+
+
+def _split_die(entry):
+    m = re.match(r"^(.*?)\s+([WwDd]\d+(?:[+-]\d+)?)$", entry.strip())
+    return (m.group(1).strip(), m.group(2)) if m else (entry.strip(), None)
+
+
+def _attr_cost(die):
+    return _die_step(die) - 1
+
+
+def _skill_cost(die, attr_die, core):
+    s, a = _die_step(die), _die_step(attr_die)
+    start = 2 if core else 1          # Kernfertigkeit besitzt W4 gratis
+    return sum(1 if lv <= a else 2 for lv in range(start, s + 1))
+
+
+def _parse_build(text):
+    d = {}
+    for line in text.splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            d[k.strip().lower()] = v.strip()
+    return d
+
+
+def _pts_badge(got, want):
+    # Ueberziehen ist regelwidrig (rot); Unterschreiten ist erlaubt (neutral)
+    cls = " bad" if got > want else ""
+    return '<span class="cs-pts%s">%d / %d</span>' % (cls, got, want)
+
+
+def render_build(text, base):
+    d = _parse_build(text)
+    esc = lambda s: (s.replace("&", "&amp;").replace("<", "&lt;")
+                     .replace(">", "&gt;"))
+
+    # -- Attributes ------------------------------------------------------
+    attr_die = {}
+    for x in (d.get("attribute") or d.get("attributes", "")).split(","):
+        if not x.strip():
+            continue
+        nm, die = _split_die(x)
+        attr_die[ATTR_EN.get(nm, nm)] = die
+    arows, acost = [], 0
+    for name in ATTR_ORDER:
+        die = attr_die.get(name)
+        if not die:
+            WARNINGS.append("%s: Attribut fehlt: %s" % (base, name))
+            continue
+        c = _attr_cost(die)
+        acost += c
+        arows.append('<tr><td>%s</td><td class="die">%s</td>'
+                     '<td class="num">%d</td></tr>' % (esc(name), die, c))
+    attr_html = (
+        '<div class="cs-block"><h3>Attributes %s</h3><table><tbody>%s</tbody>'
+        '</table></div>' % (_pts_badge(acost, 5), "".join(arows)))
+
+    # -- Fertigkeiten ----------------------------------------------------
+    bonus = int(re.match(r"\d+", d.get("bonus", "0") or "0").group() or 0) \
+        if re.match(r"\d+", d.get("bonus", "0") or "0") else 0
+    srows, scost, fight = [], 0, None
+    for entry in [x for x in (d.get("fertigkeiten") or
+                              d.get("skills", "")).split(",") if x.strip()]:
+        name, die = _split_die(entry)
+        lookup = re.sub(r"\s*\(.*?\)\s*$", "", name).strip()  # "Language (English)"
+        link = SKILL_LINK.get(lookup)
+        if not link:
+            WARNINGS.append("%s: unbekannte Fertigkeit: %s" % (base, name))
+            srows.append('<tr><td>%s</td><td class="lnk">?</td>'
+                         '<td class="die">%s</td><td class="num">?</td></tr>'
+                         % (esc(name), die or "?"))
+            continue
+        disp, latt, lcore = link
+        if disp == u"Fighting":
+            fight = die
+        paren = re.search(r"\((.*?)\)\s*$", name)
+        show = disp + (" (%s)" % paren.group(1) if paren else "")
+        adie = attr_die.get(latt)
+        c = _skill_cost(die, adie, lcore)
+        scost += c
+        cost_txt = ('<span class="free">core</span>' if (lcore and c == 0)
+                    else str(c))
+        srows.append('<tr><td>%s</td><td class="lnk">%s</td>'
+                     '<td class="die">%s</td><td class="num">%s</td></tr>'
+                     % (esc(show), latt[:3], die, cost_txt))
+    want = 12 + bonus
+    hdr = "Skills" + (" (12&#8202;+&#8202;%d bonus)" % bonus if bonus else "")
+    skill_html = (
+        '<div class="cs-block"><h3>%s %s</h3><table><thead><tr>'
+        '<th>Skill</th><th>Attr.</th><th>Die</th>'
+        '<th class="num">Pts.</th></tr></thead><tbody>%s</tbody></table></div>'
+        % (hdr, _pts_badge(scost, want), "".join(srows)))
+
+    # -- Derived stats ---------------------------------------------------
+    pace = d.get("tempo") or d.get("pace") or "6"
+    armraw = d.get("rüstung") or d.get("armor") or "0"
+    armor = int(re.match(r"\d+", armraw).group()) if re.match(r"\d+", armraw) else 0
+    parry = 2 + (_half(fight) if fight else 0)
+    vig = attr_die.get(u"Vigor")
+    tough = 2 + (_half(vig) if vig else 0) + armor
+    tough_txt = str(tough) + (" (%d+%d)" % (tough - armor, armor) if armor else "")
+    # Vorlagen-Boni (Untot, Groesse ...) sind keine Punktkaeufe -> Override
+    parry_txt = d.get("parade") or d.get("parry") or str(parry)
+    tough_txt = d.get("robustheit") or d.get("toughness") or tough_txt
+    derived = ('<div class="cs-derived"><span>Pace</span> <b>%s</b>'
+               '<span>Parry</span> <b>%s</b>'
+               '<span>Toughness</span> <b>%s</b></div>'
+               % (esc(pace), esc(parry_txt), esc(tough_txt)))
+
+    # -- Handicaps & Talente (Kontobuch) --------------------------------
+    def _hind_items(raw_):
+        items, tot = [], 0
+        for h in [x.strip() for x in raw_.split(",") if x.strip()]:
+            m = re.search(r"\((schwer|leicht|Major|Minor)\)", h)
+            if m:
+                pts, label = SEVERITY[m.group(1)]
+                tot += pts
+                disp = re.sub(r"\((schwer|leicht|Major|Minor)\)",
+                              "(%s)" % label, h)
+                items.append('<li>%s <span class="tag">%d</span></li>'
+                             % (esc(disp), pts))
+            else:
+                items.append('<li>%s</li>' % esc(h))
+        return items, tot
+
+    # dt. Schluessel (Handicaps/Talente) und engl. (Hindrances/Edges) erlaubt
+    hitems, htot = _hind_items(d.get("handicaps") or d.get("hindrances", ""))
+    edges_raw = d.get("talente") or d.get("edges", "")
+    # Edges durch " | " getrennt; [Anmerkung] wird zu einem Tag
+    titems = ['<li>%s</li>' % re.sub(r"\[([^\]]*)\]",
+                                     r'<span class="tag">\1</span>', esc(t.strip()))
+              for t in edges_raw.split("|") if t.strip()]
+    ledger = (
+        '<div class="cs-ledger"><div class="cs-block">'
+        '<h3>Hindrances %s</h3><ul>%s</ul></div>'
+        '<div class="cs-block"><h3>Edges</h3><ul>%s</ul></div></div>'
+        % (_pts_badge(htot, 4), "".join(hitems), "".join(titems)))
+
+    return ('<section class="charsheet"><div class="cs-cols">%s%s</div>%s%s'
+            '</section>' % (attr_html, skill_html, derived, ledger))
+
+
 targets = (glob.glob(os.path.join(REPO, "*.md"))
            + glob.glob(os.path.join(REPO, "Archetypen", "*.md"))
            + glob.glob(os.path.join(REPO, "Charaktere", "*.md")))
@@ -140,8 +403,19 @@ md = markdown.Markdown(extensions=["extra", "sane_lists", "smarty"],
 count = 0
 for src in sorted(targets):
     raw = io.open(src, encoding="utf-8").read()
+
+    # Baukasten-Block herausloesen und durch Platzhalter ersetzen
+    base = os.path.splitext(os.path.basename(src))[0]
+    card_html = ""
+    bm = re.search(r"(?ms)^```build[ \t]*\n(.*?)\n```[ \t]*$", raw)
+    if bm:
+        card_html = render_build(bm.group(1), base)
+        raw = raw[:bm.start()] + "\nBUILDCARDPLACEHOLDER\n" + raw[bm.end():]
+
     md.reset()
     html = md.convert(raw)
+    if card_html:
+        html = html.replace("<p>BUILDCARDPLACEHOLDER</p>", card_html)
 
     # interne .md-Links auf .html umbiegen
     html = re.sub(r'(href="[^"]*?)\.md(?=("|#))', r"\1.html", html)
@@ -152,6 +426,14 @@ for src in sorted(targets):
     html = html.replace("<table>", '<div class="tablewrap"><table>')
     html = html.replace("</table>", "</table></div>")
 
+    # Charakterseiten: gleichnamiges Portraet aus Bilder/ unter den Titel setzen
+    base = os.path.splitext(os.path.basename(src))[0]
+    if (os.path.basename(os.path.dirname(src)) == "Charaktere"
+            and os.path.exists(os.path.join(REPO, "Bilder", base + ".png"))):
+        fig = ('<figure class="portrait"><img src="../Bilder/%s.png" '
+               'alt="%s"></figure>' % (base, first_h1(raw)))
+        html = html.replace("</h1>", "</h1>\n" + fig, 1)
+
     rel = os.path.relpath(src, REPO)
     depth = rel.count(os.sep)
     out = os.path.splitext(src)[0] + ".html"
@@ -160,4 +442,24 @@ for src in sorted(targets):
         "body": html, "src": os.path.basename(src)})
     count += 1
 
+# GitHub-Pages-Einstieg: index.html leitet auf die Charakteruebersicht,
+# .nojekyll verhindert Jekyll-Verarbeitung (Dateien werden 1:1 ausgeliefert).
+io.open(os.path.join(REPO, ".nojekyll"), "w", encoding="utf-8").write(u"")
+io.open(os.path.join(REPO, "index.html"), "w", encoding="utf-8",
+        newline="\n").write(
+    u'<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n'
+    u'<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+    u'<meta http-equiv="refresh" content="0; url=Charakterideen.html">\n'
+    u'<title>Deadlands: The Weird West — Charaktere</title>\n'
+    u'<style>body{margin:0;min-height:100vh;display:flex;align-items:center;'
+    u'justify-content:center;background:#17140f;color:#ece4d6;'
+    u'font:16px/1.6 "Iowan Old Style",Palatino,Georgia,serif}'
+    u'a{color:#e2a06f}</style>\n</head>\n<body>\n'
+    u'<p><a href="Charakterideen.html">Deadlands-Charaktere &rarr;</a></p>\n'
+    u'</body>\n</html>\n')
+
 print("HTML-Dateien geschrieben: %d" % count)
+if WARNINGS:
+    print("\nBaukasten-Warnungen (%d):" % len(WARNINGS))
+    for w in WARNINGS:
+        print("  ! " + w)

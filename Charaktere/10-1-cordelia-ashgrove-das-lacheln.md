@@ -6,6 +6,13 @@
 
 > *Ihr Verlust tut ihr sehr leid, und sie würde gern die Leiche sehen.*
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d8, Strength d4, Vigor d4
+Skills: Fighting d6, Shooting d6, Occult d6, Persuasion d8, Performance d6, Notice d6, Stealth d6
+Hindrances: Ruthless (Major), Suspicious (Minor), Vow (Minor)
+Edges: Agent [free: Human] | Charismatic [Hindrance] | Strong Willed [Hindrance]
+```
+
 **Hintergrund.** Cordelia Ashgrove war eine Versicherungsangestellte in Chicago mit einer Gabe dafür, eine Lüge auf dem Papier zu erkennen — so fanden Pinkertons Leute sie: sie meldete elf betrügerische Brandschäden in einem Monat, und der zwölfte stellte sich als überhaupt nicht betrügerisch heraus. Die Agency schickte sie '81 durch den Lehrgang und gab ihr eine Gatling-Pistole, die sie genau zweimal abgefeuert hat, beide Male in Innenräumen, beide Male auf etwas, das nicht tot blieb. Sie war noch nie etwas anderes als freundlich zu jemandem, den sie ruiniert hat. Ihre Tarnung ist kein Kostüm — sie hält tatsächlich eine Regulierervollmacht, reicht echte Papiere ein und zahlt mit Agency-Geld echte Schäden aus, denn eine Frau, die einer Witwe vierhundert Dollar in die Hand drückt, ist eine Frau, mit der diese Stadt für immer redet. Sie reitet mit der Posse, weil Denver sie darauf angesetzt hat: die Leute tauchen ständig zuerst an den Orten auf, die sie begutachten soll, und Ashgroves stehende Empfehlung lautet, es sei billiger, eine Posse zu lenken, als sie zu begraben. Inzwischen mag sie sie, was sie nicht gemeldet hat, weil das die Art Sache ist, für die man versetzt wird.
 
 **Tarnung, Führungsoffizier, stehende Befehle.**

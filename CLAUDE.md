@@ -64,7 +64,7 @@ ohne Buchstaben ist immer die gültige Fassung.**
 
 ## Fallen im Werkzeug
 
-**`build_html.py` hat den Repo-Pfad fest verdrahtet** (`REPO = r"C:\Users\…"`).
+**`build_html.py` hat den Repo-Pfad fest verdrahtet** (`REPO = r"D:\DnD\…"`).
 Auf einem anderen Rechner oder nach einem Umzug des Ordners muss die Zeile
 angepasst werden, sonst schreibt das Skript ins Leere oder bricht ab. Der
 Glob deckt nur `*.md` im Wurzelverzeichnis, `Archetypen/` und `Charaktere/` ab
@@ -85,23 +85,59 @@ grep -c "&ndash;ar" Bildprompts.html                   # muss 0 sein
 Ebenfalls schon repariert und nicht wieder kaputtmachen: das `re.sub` auf
 `&lsquo;(?=\d)`, das aus Jahreszahlen wie ’84 wieder einen Apostroph macht.
 
+## Der Baukasten-Block (Charakterbogen)
+
+Jede Figurendatei trägt direkt vor `**Hintergrund.**` einen Fenced Block
+` ```build `, aus dem `build_html.py` eine Charakterbogen-Karte rendert
+(Attribut- und Fertigkeitstabelle mit **berechneten Punktkosten**, abgeleitete
+Werte, Handicap-/Talent-Kontobuch). Format:
+
+```
+Attributes: Agility d6, Smarts d4, Spirit d8, Strength d6, Vigor d6
+Skills: Faith d8, Fighting d8, Athletics d6, Notice d6, Shooting d4, Occult d4
+Hindrances: Vow (Major), Outsider (Minor), Talisman (Minor)
+Edges: Arcane Background (Blessed) [free: Human] | Champion [Hindrance] | Grit [Hindrance]
+```
+
+Die mechanischen Begriffe stehen **englisch** (SWADE-Terminologie, passend zum
+englischen Regelwerk in `Referenzen/`). Der Renderer normalisiert allerdings auch
+deutsche Eingaben — `Geschicklichkeit`, `Kämpfen`, `(schwer)` usw. werden erkannt
+und trotzdem englisch angezeigt; die Schlüssel gehen deutsch (`Attribute`,
+`Fertigkeiten`, `Handicaps`, `Talente`) wie englisch. Neue Blöcke bitte trotzdem
+gleich englisch schreiben.
+
+Wichtig — **der Block transkribiert nur Würfel, er rechnet nicht.** Die gesamte
+Kostenlogik (Attributskosten, die „2 Punkte je Stufe über dem Attribut"-Regel,
+Kernfertigkeiten gratis, Parry/Toughness) lebt zentral in `build_html.py`.
+Das ist Absicht: frühere Audits scheiterten reihenweise an Handrechnung. Regeln:
+
+- **Attribute** immer alle fünf, in fester Reihenfolge: Agility, Smarts, Spirit,
+  Strength, Vigor.
+- **Würfel effektiv vs. gekauft:** trage den *mit Punkten gekauften* Basiswürfel
+  ein, nicht den durch ein Talent erhöhten (z.B. Harrowed mit „Supernatural
+  Attribute": Basis `Strength d6`, nicht `d10`).
+- **Optionale Zeilen** im selben Block: `Bonus: N` (zusätzliche
+  Fertigkeitspunkte, z.B. +5 aus *Elderly* oder +1 aus einem Handicap-Punkt),
+  `Pace: N`, `Armor: N` (hebt Toughness), sowie `Parry:`/`Toughness:` als
+  Freitext-Override für Boni, die *keine* Punktkäufe sind (Undead +2, Size +1).
+- Der Renderer **warnt** beim Bauen über unbekannte Fertigkeitsnamen und
+  fehlende Attribute; das Punkte-Badge wird **rot**, wenn ein Budget
+  *überzogen* ist (Unterschreiten ist erlaubt und bleibt neutral). Neue
+  Fertigkeitsnamen gehören in die `SKILL_LINK`-Tabelle in `build_html.py`.
+
 ## Was als Nächstes ansteht
 
-1. **12 Bilder fehlen.** Vorhanden sind die Archetypen 01–07, offen sind
-   `08-1` bis `13-2` (Schamanen, Verrückte Wissenschaftler, Agenten,
-   Chi-Meister, Krieger, Entdecker). Die Prompts dafür stehen fertig in
-   `Bildprompts.md`, jeder mit seinem Zieldateinamen darunter.
-2. **Die Stilklammer ist noch nicht gesetzt.** Der Plan steht in
+Erledigt: alle 26 Bilder liegen in `Bilder/`, und `build_html.py` setzt beim
+Rendern von `Charaktere/X.md` ein vorhandenes `Bilder/X.png` als Porträt unter
+den Titel (`figure.portrait`).
+
+1. **Die Stilklammer ist noch nicht gesetzt.** Der Plan steht in
    `Bildprompts.md`: einen Prompt laufen lassen, vom schönsten Ergebnis den
    `--sref`-Code ziehen, ihn an *alle* 26 anhängen. Solange das nicht passiert
-   ist, sind die Bilder 26 Einzelstücke statt eines Kartensatzes. Ob die ersten
-   14 danach neu gezogen werden müssen, ist eine offene Entscheidung.
-3. **Bilder sind noch nirgends eingebunden.** Naheliegender nächster Schritt am
-   Code: `build_html.py` beim Rendern von `Charaktere/X.md` nachsehen lassen, ob
-   `Bilder/X.png` existiert, und es oben in die Seite setzen. Der flache Ordner
-   und die Namensgleichheit sind genau dafür angelegt. Erst sinnvoll zu bauen,
-   wenn Bilder zum Prüfen da sind.
-4. **Zwei Tischabsprachen sind offen**, beschrieben am Ende von `README.md`:
+   ist, sind die Bilder 26 Einzelstücke statt eines Kartensatzes. Ob die
+   vorhandenen Bilder danach neu gezogen werden müssen, ist eine offene
+   Entscheidung.
+2. **Zwei Tischabsprachen sind offen**, beschrieben am Ende von `README.md`:
    die Sitting-Bull-Umdeutung im Grundbuch und Kriegsherr Kang als einziger
    prominenter chinesischer NSC. Beide brauchen eine Entscheidung des
    Spielleiters, keine Datei.
@@ -112,7 +148,8 @@ Die Charakterdateien sind dicht und eigenwillig geschrieben — konkrete
 Gegenstände statt Adjektive (ein Wagenspeichen-Knüppel, sechs Löffelstiele zu
 einem Pelikanschnabel gelötet, Kerben im Rückenriemen). Wer etwas ergänzt,
 trifft diesen Ton, statt zu erklären. Der Aufbau je Figur ist immer gleich:
-Zitat, Hintergrund, **Build**, **Aufhänger**, **Warum es Spaß macht**.
+Zitat, ` ```build `-Block, Hintergrund, **Build**, **Aufhänger**,
+**Warum es Spaß macht**.
 
 Was regeltechnisch behauptet wird, muss aus dem Grundbuch oder den Core Rules
 belegbar sein; im Zweifel im PDF nachschlagen, nicht aus dem Gedächtnis

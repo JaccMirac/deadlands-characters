@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,14 +140,16 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Wewúkiye („Elk“), bei allen „Amos“</h1>
+<figure class="portrait"><img src="../Bilder/08-2-wewukiye-elk-bei-allen-amos.png" alt="Wewúkiye („Elk"), bei allen „Amos""></figure>
 <p><em>Archetyp: <a href="../Archetypen/08-shaman.html">SHAMAN (Schamanen)</a></em></p>
 <p><em>Nimíipuu (Nez Perce), zwanzig. An der Presbyterianer-Missionsschule in Lapwai schrieben sie ihn als </em><em>„Amos“</em><em> ein, in Carlisle schnitten sie ihm die Haare und behielten den Namen — und Amos ist, worauf er heute hört, auch bei seinen eigenen Leuten, was Teil des Problems ist.</em></p>
 <blockquote>
 <p><em>Er ist der einzige Mann in der Posse, der Blackstone gelesen hat, und der einzige, dem eine Elster folgt.</em></p>
 </blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Smarts</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Spirit</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Strength</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Faith</td><td class="lnk">Spi</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Survival</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">4</td></tr><tr><td>Fighting</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Shooting</td><td class="lnk">Agi</td><td class="die">d4</td><td class="num">1</td></tr><tr><td>Riding</td><td class="lnk">Agi</td><td class="die">d4</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>5</b><span>Toughness</span> <b>5</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Night Terrors (Major) <span class="tag">2</span></li><li>Outsider (Minor) <span class="tag">1</span></li><li>Doubting Thomas (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Shaman) <span class="tag">free: Human</span></li><li>Woodsman <span class="tag">Hindrance</span></li><li>Power Points <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Hintergrund.</strong> Er war dreizehn im Sommer 1877 und ging elfhundert Meilen — Whitebird, Big Hole, der Yellowstone, dann der Schnee an den Bear Paws, vierzig Meilen vor Kanada. Was übrig war, kam nach Fort Leavenworth und dann hinunter ins Indianer-Territorium, wo die Malaria seine Schwester holte und etwa ein Drittel aller anderen, und 1880 setzte der Agent ihn in einen Zug nach Carlisle, Pennsylvania, wo er lateinische Deklinationen lernte, Schmiedehandwerk und ein schnelles „yes, sir“. Im Frühjahr &rsquo;84 kam er im Wollanzug zur Ponca-Agentur zurück, fließend im Englischen — und stellte fest, dass er das Nimipuutímt-Wort für eine Pflanze verloren hatte, die er als Kind mit seiner Mutter ausgegraben hatte. Er arbeitet jetzt als Dolmetscher und Führer für eine Reporterin des <em>Tombstone Epitaph</em> und die harten Burschen, an die sie sich gehängt hat. Das Geld ist echt und die Richtung ist Norden, und Norden ist die einzige Richtung, die ihn interessiert. Er möchte, dass alle verstehen, dass er an nichts davon glaubt. Er möchte es selbst verstehen.</p>
 <p><strong>Build.</strong> Geschicklichkeit W6, Verstand W6, <strong>Willenskraft W8</strong>, Stärke W4, Konstitution W6 · Parade 5, Robustheit 5, <strong>20 MP</strong>
-<strong>Glaube W8</strong>, Schießen W6, Kämpfen W6, Reiten W6, Überleben W6, Bemerken W6
+<strong>Glaube W8</strong>, <strong>Überleben W8</strong>, Kämpfen W6, Bemerken W6, Schießen W4, Reiten W4
 Talente: <strong>Arcane Background (Shaman)</strong>, <strong>Woodsman</strong> (<em>Naturbursche</em>), <strong>Power Points</strong> (<em>Machtpunkte</em> — +5, gesamt 20: die Elster gibt ihm weit mehr, als er will, und er verbrennt es schnell, weil er darauf besteht, das letzte Mal sei Zufall gewesen)
 Handicaps: <strong>Nightmares</strong> (<em>Nachtängste</em>) — Major: −1 auf alle <strong>Willenskraft</strong>-Proben. Betrifft <strong>nicht</strong> seine Glaube-Fertigkeitsproben, sondern Angstproben und Widerstandsproben. Perfekt: das Ding, das ihn will, kommt nur nachts. · <strong>Outsider</strong> (<em>Außenseiter</em>) — Minor. <em>Hinweis: das Grundbuch koppelt Außenseiter an eine Fremdsprache und verlangt Punkte in Sprache (Englisch) — diese Klausel hier streichen, sein Englisch ist besser als das der Posse. Sein Außenseitertum ist sozial: zu schulgebildet für die Verbannten in Ponca, zu indianisch für jede Stadt von hier bis Idaho.</em> · <strong>Doubting Thomas</strong> (<em>Ungläubiger Thomas</em>) — Minor. <strong>Vorher mit dem Marshal klären</strong> — ein Schamane mit diesem Handicap ist ein bewusster Witz, der nur funktioniert, wenn man die Rationalisierung jedes einzelne Mal durchzieht.
 Mächte: <strong>Wildniswandler</strong> (<em>Wilderness Walk</em>, S. 77 — Deadlands-exklusiv: fünf Meilen zählen als eine, Spuren verblassen, und es ist ausdrücklich ein Weg durch die Jagdgründe), <strong>Eigenschaft erhöhen/senken</strong>

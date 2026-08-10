@@ -4,6 +4,14 @@
 
 > *Sie kann das Ding, das dich gerade frisst, auf Latein benennen, und sie wird es publizieren, ob du überlebst oder nicht.*
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d6, Strength d4, Vigor d6
+Skills: Survival d8, Academics d8, Science d6, Shooting d6, Riding d6, Notice d6
+Hindrances: Curious (Major), Ailin' (Minor), Big Mouth (Minor)
+Edges: Woodsman [free: Human] | Alertness [Hindrance]
+Bonus: 1
+```
+
 **Hintergrund.** 1855 in Bremen geboren, mit vier von Freidenker-Eltern nach Fredericksburg, Texas getragen, die vor den Trümmern von 1848 flohen. Ihr Vater führte ein Gemischtwarengeschäft und ließ ihr ein Hinterzimmer voller aufgespießter Käfer und eingelegter Schlangen. Keine Universität in zwei Ländern nahm sie, also korrespondierte sie sich in die **Akademie der Entdecker** hinein, auf die Kraft ihrer Tafeln — akribische, unsentimentale anatomische Zeichnungen, die drei Professoren jahrelang an „Herrn W. Kerner" schreiben ließen. Ihre Monographie über den *Salzrassler* der Salzwüsten Utahs machte gleichzeitig ihren Namen und ihr Problem. Sie reitet mit einer Posse aus dem krassesten aller Gründe: die Akademie zahlt 50 Dollar für eine verifizierte neue Art und 500 für ein lebensfähiges Exemplar, eine Posse ist viel billiger als eine Expedition, und anders als Träger schießt eine Posse zurück. Sie hat einen schwindsüchtigen Husten, den sie Fremden gegenüber „die Höhenluft" nennt.
 
 **Build.** Geschicklichkeit W6, **Verstand W8**, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5

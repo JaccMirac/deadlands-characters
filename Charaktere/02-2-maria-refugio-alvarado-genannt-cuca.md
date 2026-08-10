@@ -4,6 +4,13 @@
 
 > *Sie verfolgt dich nicht. Sie macht deine Stadt einfach zu einem unerträglichen Ort zum Verstecken.*
 
+```build
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d4, Vigor d6
+Skills: Shooting d8, Intimidation d8, Notice d6, Persuasion d6, Stealth d6, Fighting d4, Riding d4
+Hindrances: Wanted (Major), Ruthless (Minor), Vengeful (Minor)
+Edges: Menacing | Streetwise | Dead Shot
+```
+
 **Hintergrund.** Cuca wuchs im Cantina-Viertel von El Paso del Norte auf, als achtes Kind einer Wäscherin, und lernte früh, dass eine Frau mit lautem Mundwerk und einer Schrotflinte denselben Raum bekommt wie ein Mann mit Stern, nur schneller. Sie hat nie Spurenlesen gelernt und brauchte es nie: sie bearbeitet Telegrafisten, Hotelregister, Wäscherinnen, Faro-Geber und vor allem Freudenhäuser, denn ein Mann auf der Flucht wird einsam, lange bevor er vorsichtig wird. Ihre Methode ist Theater — sie betritt einen Saloon, legt die abgesägte Flinte auf den Tresen, sagt den Namen laut und lässt den Raum entscheiden. Irgendwer entscheidet immer. Sie ist zweiunddreißig, trägt Männerstiefel und den Stetson eines Toten, und sie ist bei Weitem nicht so ruhig, wie sie aussieht.
 
 **Aktuelles Kopfgeld.** **„Deacon" Thaddeus Cray Mulready** — 400 Dollar Kautionsflucht. Die Komplikation ist nicht, dass Mulready gefährlich wäre; er ist ein fetter, jammernder kleiner Mann, der noch nie getroffen hat, worauf er zielte. Die Komplikation ist, dass Cuca die Kaution **persönlich** mit ihrem letzten Geld gestellt hat — und dass Mulready der Aufpasser beim Postkutschenraub in Bexar County war, für den *sie* gesucht wird. Er ist der einzige lebende Mann, der gesehen hat, wer in ihrem Mantel vom Kutschbock stieg. Sie kann ihn nicht erschießen. Sie kann ihn nicht einmal ernsthaft verprügeln, denn einen Zeugen mit gebrochenem Kiefer lässt kein Richter aussagen. Alles, was sie gut kann, ist das falsche Werkzeug.

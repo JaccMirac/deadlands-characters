@@ -4,6 +4,15 @@
 
 > *„Ich brauche kein Geständnis. Ich brauche, dass Sie ungefähr vier Minuten lang über irgendwas reden."*
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d6, Strength d4, Vigor d6
+Skills: Fighting d6, Shooting d6, Riding d6, Intimidation d6, Notice d6, Persuasion d6, Research d6, Survival d4
+Hindrances: Secret (Major), Ruthless (Minor), Curious (Minor)
+Edges: Territorial Ranger [free: Human] | Menacing [Hindrance]
+Armor: 2
+Bonus: 1
+```
+
 **Hintergrund.** Im Winter '77 brannte die Kroll-Farm bei Socorro mit Mutter, Vater und zwei Brüdern darin ab, und die Untersuchung des Territoriums befand auf einen Unfall mit dem Ofen — einem Ofen, den Addie drei Stunden zuvor eigenhändig abgedeckt hatte. Sie war vierzehn, klein, und niemand hörte ihr zu, also verbrachte sie die nächsten sechs Jahre damit, jemand zu werden, dem man zuhört: zwei Saisons als Schreiberin bei einem Bezirksrichter, eine als Gefängnisaufseherin, und sehr viel Übung in der speziellen Kunst, einen Mann glauben zu machen, man wisse es ohnehin schon. Sie trat '83 bei den Rangers ein, aus genau einem Grund: das Hauptquartier der Kompanie B in Santa Fe verwahrt die versiegelten Untersuchungsakten, und ein Feldranger mit Stern und plausibler Besorgung kommt an einem Registraturbeamten vorbei. **Die Posse weiß, dass sie einen Stern trägt — sie haben sie ihn benutzen sehen. Sie wissen nicht, dass sie nie eine Versetzung aus New Mexico beantragt hat, und sie wissen nicht, was sie aus jedem Bezirksgericht mitnimmt, das sie besucht.**
 
 **Build.** Geschicklichkeit W6, Verstand W8, Geist W6, Stärke W4, Konstitution W6 · Parade 5, Robustheit 5 (7 mit gepanzertem Korsett)

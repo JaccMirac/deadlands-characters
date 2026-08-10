@@ -7,6 +7,13 @@
 **Die Waffe — MISTER SWEETMOUTH.** Eine **abgesägte doppelläufige 12er**, von einem Flussmaat auf fünfzig Zentimeter gekürzt, weil er etwas wollte, das unter einen Mantel passt. Der Nussbaumschaft ist gerissen und mit Messingdraht und einem Streifen rot gefärbten Spielerbands gebunden. Beide Läufe sind narbig von dreißig Jahren Schwarzpulver und Mississippi-Feuchte.
 Runen hat sie keine. Das ist das Erste, was jeder Taschenspieler bemerkt, und der Grund, warum keiner ihr glaubt. Was sie hat, sind **Zahnabdrücke** — klein, gleichmäßig, menschlich, in einem sauberen Halbmond auf der Unterseite des Vorderschafts, an einer Stelle, die keine Hand beim Schießen erreicht. Und sie hat eine **Stimme**: ein weiches, höfliches, leicht feuchtes Kreolisch, das nur Della hört und nur bei gespannten Hähnen. Es nennt sie *cher*. Es sagt ihr wahre Dinge über die Toten, darüber, was unter den Dielen liegt, darüber, wer in der Posse lügt. Es hat ihr noch nie etwas Falsches gesagt. Es hat ihr auch noch nie das gesagt, was sie am dringendsten wissen muss, und es lässt sie **fragen**, und das Fragen ist immer der Preis. Mister Sweetmouth ist ein Manitu. Kein gebundener, kein geschlagener — ein **Partner**, zu Bedingungen, die er geschrieben hat und die sie nie ganz gelesen hat.
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d6, Strength d4, Vigor d6
+Skills: Shooting d8, Spellcasting d8, Gambling d6, Notice d6, Persuasion d6, Fighting d4
+Hindrances: Cursed (Major), Loyal (Minor), Trouble Magnet (Minor)
+Edges: Arcane Background (Huckster) [free: Human] | Card Sharp [Hindrance] | Calculating [Hindrance]
+```
+
 **Hintergrund.** Della wurde im Faubourg Marigny geboren und auf dem Postdampfer *Ida Prentiss* großgezogen, wo ihre Mutter in einem grünen Zimmer neben dem Kesseldeck Faro gab und ihr beibrachte, einen Kartenschuh zu zählen, bevor sie lesen konnte. Im Frühjahr '78 verlor ein Baumwollfaktor aus Natchez vierhundert Dollar an ihre Mutter, ging in seine Kabine, kam mit der Kutschflinte des Maats zurück und beglich die Rechnung. Della war vierzehn und saß mit der Kassette im Schoß unter dem Tisch. Sie hörte beide Läufe. Dann, im Nachklingen, hörte sie eine sehr höfliche Stimme fragen, ob sie mitspielen wolle.
 
 **Build.** Geschicklichkeit W6, Verstand W8, Geist W6, Stärke W4, Konstitution W6 · Parade 4, Robustheit 5

@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,10 +140,12 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Elijah Prosper Teague</h1>
+<figure class="portrait"><img src="../Bilder/05-2-elijah-prosper-teague.png" alt="Elijah Prosper Teague"></figure>
 <p><em>Archetyp: <a href="../Archetypen/05-huckster.html">HUCKSTER (Taschenspieler)</a></em></p>
 <blockquote>
 <p><em>Er knackte die Chiffre in elf Monaten. Die vier Jahre seither versucht er, sie wieder zu ver-lernen.</em></p>
 </blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Smarts</td><td class="die">d10</td><td class="num">3</td></tr><tr><td>Spirit</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Strength</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Spellcasting</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Occult</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Research</td><td class="lnk">Sma</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Gambling</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>2</b><span>Toughness</span> <b>5</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Night Terrors (Major) <span class="tag">2</span></li><li>Talisman (Minor) <span class="tag">1</span></li><li>Habit (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Huckster) <span class="tag">free: Human</span></li><li>Power Points <span class="tag">Hindrance</span></li><li>Scholar <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Hintergrund.</strong> Teague ging auf Subskription seiner Kirchengemeinde nach Oberlin, unterrichtete Mathematik an einer Freedmen&rsquo;s-Bureau-Schule in Helena, Arkansas, und verbrachte die Kriegsjahre als Chiffrierschreiber, der erbeutete Depeschen für einen Unionsoberst übersetzte, dem gefiel, dass er still und gründlich war. &rsquo;80 kam eine Kiste „unknackbaren“ Materials von Rock Island, und ganz unten lag ein wasserfleckiger <em>Hoyle&rsquo;s Book of Games</em> von 1769, gekennzeichnet als vermuteter konföderierter Codeschlüssel. Das war er nicht. Teague knackte ihn trotzdem — zuerst die Bridge-Diagramme, dann die Zahlenfolge in den Musterblättern — und in der Nacht, in der er fertig wurde, sagte etwas auf der anderen Seite der Seite seinen Namen zurück. Korrekt. Einschließlich des zweiten Vornamens, den seine Mutter ihm gab und nie jemandem nannte. Er hat seither keine Nacht durchgeschlafen.</p>
 <p><strong>Build.</strong> Geschicklichkeit W4, Verstand W10, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5
 <strong>Zaubern W8</strong>, <strong>Okkultismus W8</strong> (mit Gelehrter W8+2), Nachforschen W8, Glücksspiel W6, Bemerken W6 — <strong>kein Schießen</strong>, absichtlich: er trägt eine Schrotflinte und trifft damit kein Scheunentor.

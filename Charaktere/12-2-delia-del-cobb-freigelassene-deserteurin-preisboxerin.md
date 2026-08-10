@@ -6,10 +6,17 @@
 
 > *Zwei Fäuste, ein Säbel, vierhundert Dollar auf ihren Kopf — und ein Bruder, den sie in einer Senke vor Fort Concho stehen ließ.*
 
+```build
+Attributes: Agility d8, Smarts d4, Spirit d6, Strength d6, Vigor d6
+Skills: Fighting d10, Athletics d6, Riding d6, Shooting d4, Intimidation d4, Persuasion d6, Survival d4
+Hindrances: Wanted (Major), Loyal (Minor), Illiterate (Minor)
+Edges: Two-Fisted [free: Human] | Ambidextrous [Hindrance] | Martial Artist [Hindrance]
+```
+
 **Hintergrund.** Als Eigentum bei Boonville geboren, mit elf freigelassen, mit vierzehn hungrig. Sie verpflichtete sich 1878 in den Jefferson Barracks als „Gefreiter Del Cobb", leistete den Eid der 10. neben ihrem älteren Bruder Isaiah und lernte das Boxen bei den Regimentsabenden in Fort Concho, wo sie sehr gut war und sehr leise das beste Geld der Kompanie. '82 verkaufte ein Quartiermeisterfeldwebel Munition im Wert von drei Troopern an einen „Prospektionstrupp" aus dem Pecos-Land; die Patrouille, die den Trupp suchen sollte, kam nicht zurück. Del fand sie. Sie standen noch. Sie meldete es, bekam gesagt, sie solle den Mund halten und das Hemd zugeknöpft lassen, und ritt in derselben Nacht davon, ohne abzuwarten, für welchen der beiden Befehle sie sie hängen würden.
 
 **Build.** Geschicklichkeit W8, Verstand W4, Geist W6, Stärke W6, Konstitution W6 · **Parade 7**, Robustheit 5
-**Kämpfen W10**, Athletik W8, Reiten W8, Schießen W6, Einschüchtern W6, Überreden W6, Überleben W4
+**Kämpfen W10**, Athletik W6, Reiten W6, Schießen W4, Einschüchtern W4, Überreden W6, Überleben W4
 Talente: **Two-Fisted** (*Beidhändiger Kampf*), **Ambidextrous**, **Martial Artist** (*Kampfkünstler*)
 > **Ambidextrous ist hier nicht optional:** Beidhändiger Kampf hebt den −2-Abzug der schwachen Hand ausdrücklich **nicht** auf (SWADE S. 44). Mit allen dreien wirft sie zwei St+W4-Schläge pro Runde bei Kämpfen W10+1 — ohne Mehrfachhandlung und ohne Abzug für die schwache Hand. Das ist eine wirklich gemeine Novizen-Maschine.
 

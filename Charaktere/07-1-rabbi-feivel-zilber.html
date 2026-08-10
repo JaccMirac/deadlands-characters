@@ -78,11 +78,56 @@ th{
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 }
 tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
 footer{
   margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
   color:var(--muted);font-size:.85rem;
 }
 footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -95,10 +140,12 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
 <h1>„Rabbi“ Feivel Zilber</h1>
+<figure class="portrait"><img src="../Bilder/07-1-rabbi-feivel-zilber.png" alt="„Rabbi" Feivel Zilber"></figure>
 <p><em>Archetyp: <a href="../Archetypen/07-blessed.html">BLESSED (Gesegnete)</a></em></p>
 <blockquote>
 <p><em>Ein Hausierer mit den Ordinationspapieren eines Toten, der jeden heilt, dem er begegnet, und jeden davon belügt.</em></p>
 </blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Smarts</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Spirit</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Strength</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Vigor</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Faith</td><td class="lnk">Spi</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Persuasion</td><td class="lnk">Spi</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Healing</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Occult</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Language (English)</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>2</b><span>Toughness</span> <b>5</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Pacifist (Major) <span class="tag">2</span></li><li>Lying Eyes (Minor) <span class="tag">1</span></li><li>Outsider (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Blessed) <span class="tag">free: Human</span></li><li>Healer <span class="tag">Hindrance</span></li><li>Charismatic <span class="tag">Hindrance</span></li></ul></div></div></section>
 <p><strong>Hintergrund.</strong> Faivel Kaminker verließ Berdytschiw &rsquo;78 mit einem zerrissenen Mantel und ohne Handwerk und strandete in Galveston, wo er einem Gelehrten namens Reb Schmuel Zilber die Überfahrt schuldete. Der fütterte ihn, unterrichtete ihn und starb in einer Pension in der Postoffice Street am Fieber. Faivel begrub ihn und nahm seine Tasche, seine Tefillin und seine <strong>Smicha</strong> — die Ordinationsurkunde, die er selbst nie erworben hatte — und ging landeinwärts mit einem Maultier und einem Bündel, denn ein Hausierer ist in hundert Häusern willkommen, aus denen man einen Juden sonst verjagt. Irgendwo auf der Straße zwischen Waco und dem Llano fing das Heilen an: Hände auf das zerquetschte Bein eines Fuhrmanns gelegt, ein halb erinnertes Gebet, und der Knochen wuchs unter seinen Fingern zusammen wie eine Schuld, die beglichen wird. Inzwischen hat er erfahren, dass Reb Schmuels Grab vor Galveston <strong>leer</strong> ist und dass etwas in Städten eine Woche hinter ihm nach „dem Rabbi“ fragt.</p>
 <p><strong>Build.</strong> Geschicklichkeit W4, Verstand W8, Willenskraft W8, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5
 <strong>Glaube W8</strong>, Überreden W8, Heilen W6, Okkultismus W6, Bemerken W6, Sprache (Englisch) W6

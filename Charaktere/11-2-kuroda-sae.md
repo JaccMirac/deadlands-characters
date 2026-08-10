@@ -6,6 +6,13 @@
 
 > *Sie hat elf Namen auf dem Papier eines Toten, und sieben davon sind durchgestrichen.*
 
+```build
+Attributes: Agility d8, Smarts d4, Spirit d6, Strength d6, Vigor d6
+Skills: Fighting d10, Focus d6, Intimidation d6, Athletics d6, Stealth d6, Language (English) d4
+Hindrances: Vengeful (Major), Outsider (Minor), Death Wish (Minor)
+Edges: Martial Artist [free: Human] | Arcane Background (Chi Master) [Hindrance] | First Strike [Hindrance]
+```
+
 **Hintergrund.** Sie war fünfzehn, als sie mit den Aizu-Leuten von der *China* in San Francisco von Bord ging — gut zwanzig Gefolgsleute einer Domäne, die einen Krieg verloren hatte, einem deutschen Abenteurer namens Schnell folgend, zu einer Tee- und Seidenfarm in den Vorbergen von Gold Hill. Die Kolonie war in zwei Jahren tot; die Maulbeerbäume gingen nicht an, das Wasser war stromaufwärts an den hydraulischen Bergbau verloren, und ein Mädchen namens Okei, das neben ihr schlief, liegt bis heute auf diesem Hügel begraben. Sae ging nicht zurück. Sie spülte sich nach San Francisco hinunter und in ein Kwoon hinter einem Kräuterladen an der Waverly Place, wo ein Hung-Ga-Mann aus Foshan namens **Chan Bok-lam** sie zum Kehren anstellte und, nachdem er ihr vier Jahre beim Nicht-Weggehen zugesehen hatte, zu unterrichten begann — gegen den Widerspruch jedes älteren Schülers im Raum, von denen keiner sie je *si-mui* nannte, und von denen einer, sein eigener Neffe **Chan Yau-sing**, sie elf Jahre lang „das japanische Mädchen" nannte und dann den alten Mann für die Kasse der Schule und den Lohn eines Bahnschergen der Iron-Dragon-Linie tötete.
 
 **Build.** Geschicklichkeit W8, Verstand W4, Willenskraft W6, Stärke W6, Konstitution W6 · **Parade 7**, Robustheit 5

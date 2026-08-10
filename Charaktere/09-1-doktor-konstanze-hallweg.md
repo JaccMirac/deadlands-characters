@@ -6,6 +6,14 @@
 
 > *Sie hat elf Aufsätze veröffentlicht, elf Studenten getötet und glaubt noch immer, die Schuld habe beim Kessel gelegen.*
 
+```build
+Attributes: Agility d4, Smarts d10, Spirit d6, Strength d4, Vigor d6
+Skills: Weird Science d10, Science d8, Repair d6, Notice d6, Research d4, Shooting d4
+Hindrances: Arrogant (Major), Wanted (Minor), Ailin' (Minor)
+Edges: Arcane Background (Mad Scientist) [free: Human] | True Genius [Hindrance] | Iron-Shod [Hindrance]
+Armor: 2
+```
+
 **Hintergrund.** Konstanze Hallweg hielt den zweiten Lehrstuhl für angewandte Thermodynamik in Dresden und war nach jedem Maßstab, der ihr wichtig war, die begabteste Person im Gebäude. Im März 1881 führte sie einer Ministerialdelegation eine Geisterstein-Verbrennungslanze vor — im Hörsaal, mit besetzten vorderen Reihen. Die Untersuchung nannte es Kesselversagen. Die Universität nannte es einen Rücktritt. Sie nennt es einen Datenpunkt. Achtzehn Monate Vertragsarbeit in einer Smith-&-Robards-Werkstatt in Salt Lake City lehrten sie, dass amerikanisches Geld amerikanischem Spektakel folgt, und sie verließ diese Werkstatt mit einer Frachtkiste, einem Groll und einer Menge Hardware, die nicht streng genommen ihr gehörte.
 
 **Build.** Geschicklichkeit W4, **Verstand W10**, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5 (7 an Rumpf, Schenkeln und Kopf mit Panzerung)

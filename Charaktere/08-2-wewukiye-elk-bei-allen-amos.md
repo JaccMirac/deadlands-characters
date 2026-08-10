@@ -6,10 +6,17 @@
 
 > *Er ist der einzige Mann in der Posse, der Blackstone gelesen hat, und der einzige, dem eine Elster folgt.*
 
+```build
+Attributes: Agility d6, Smarts d6, Spirit d8, Strength d4, Vigor d6
+Skills: Faith d8, Survival d8, Fighting d6, Notice d6, Shooting d4, Riding d4
+Hindrances: Night Terrors (Major), Outsider (Minor), Doubting Thomas (Minor)
+Edges: Arcane Background (Shaman) [free: Human] | Woodsman [Hindrance] | Power Points [Hindrance]
+```
+
 **Hintergrund.** Er war dreizehn im Sommer 1877 und ging elfhundert Meilen — Whitebird, Big Hole, der Yellowstone, dann der Schnee an den Bear Paws, vierzig Meilen vor Kanada. Was übrig war, kam nach Fort Leavenworth und dann hinunter ins Indianer-Territorium, wo die Malaria seine Schwester holte und etwa ein Drittel aller anderen, und 1880 setzte der Agent ihn in einen Zug nach Carlisle, Pennsylvania, wo er lateinische Deklinationen lernte, Schmiedehandwerk und ein schnelles „yes, sir". Im Frühjahr '84 kam er im Wollanzug zur Ponca-Agentur zurück, fließend im Englischen — und stellte fest, dass er das Nimipuutímt-Wort für eine Pflanze verloren hatte, die er als Kind mit seiner Mutter ausgegraben hatte. Er arbeitet jetzt als Dolmetscher und Führer für eine Reporterin des *Tombstone Epitaph* und die harten Burschen, an die sie sich gehängt hat. Das Geld ist echt und die Richtung ist Norden, und Norden ist die einzige Richtung, die ihn interessiert. Er möchte, dass alle verstehen, dass er an nichts davon glaubt. Er möchte es selbst verstehen.
 
 **Build.** Geschicklichkeit W6, Verstand W6, **Willenskraft W8**, Stärke W4, Konstitution W6 · Parade 5, Robustheit 5, **20 MP**
-**Glaube W8**, Schießen W6, Kämpfen W6, Reiten W6, Überleben W6, Bemerken W6
+**Glaube W8**, **Überleben W8**, Kämpfen W6, Bemerken W6, Schießen W4, Reiten W4
 Talente: **Arcane Background (Shaman)**, **Woodsman** (*Naturbursche*), **Power Points** (*Machtpunkte* — +5, gesamt 20: die Elster gibt ihm weit mehr, als er will, und er verbrennt es schnell, weil er darauf besteht, das letzte Mal sei Zufall gewesen)
 Handicaps: **Nightmares** (*Nachtängste*) — Major: −1 auf alle **Willenskraft**-Proben. Betrifft **nicht** seine Glaube-Fertigkeitsproben, sondern Angstproben und Widerstandsproben. Perfekt: das Ding, das ihn will, kommt nur nachts. · **Outsider** (*Außenseiter*) — Minor. *Hinweis: das Grundbuch koppelt Außenseiter an eine Fremdsprache und verlangt Punkte in Sprache (Englisch) — diese Klausel hier streichen, sein Englisch ist besser als das der Posse. Sein Außenseitertum ist sozial: zu schulgebildet für die Verbannten in Ponca, zu indianisch für jede Stadt von hier bis Idaho.* · **Doubting Thomas** (*Ungläubiger Thomas*) — Minor. **Vorher mit dem Marshal klären** — ein Schamane mit diesem Handicap ist ein bewusster Witz, der nur funktioniert, wenn man die Rationalisierung jedes einzelne Mal durchzieht.
 Mächte: **Wildniswandler** (*Wilderness Walk*, S. 77 — Deadlands-exklusiv: fünf Meilen zählen als eine, Spuren verblassen, und es ist ausdrücklich ein Weg durch die Jagdgründe), **Eigenschaft erhöhen/senken**

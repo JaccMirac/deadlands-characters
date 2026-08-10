@@ -13,6 +13,14 @@ Handicaps: **Vow** (*Schwur*) — Major: kein Ruf bleibt unbeantwortet, und er l
 Ausrüstung: gepanzerter Reitermantel, **Winchester-Vorderschaftrepetierflinte** als gewählte Schrotflinte, Colt Peacemaker, Bowiemesser, drei Stangen Dynamit am Sattel, der Stern, das Fahndungsbuch und das Feldbuch in Ölzeug. Rund 160 seiner 250 Dollar liegen noch als Bankanweisung da, weil er nichts ausgibt.
 *Erste Steigerung auf Erfahren:* **Double Tap**.
 
+```build
+Attributes: Agility d8, Smarts d4, Spirit d6, Strength d6, Vigor d6
+Skills: Shooting d8, Fighting d6, Riding d6, Intimidation d6, Notice d6, Survival d4
+Hindrances: Vow (Major), Stubborn (Minor), Loyal (Minor)
+Edges: Territorial Ranger [free: Human] | Guts [Hindrance] | Brave [Hindrance]
+Armor: 2
+```
+
 **Aufhänger.** Amos' Eid und seine Befehle sind nicht dasselbe Dokument, und Kompanie C ist im Begriff, das zu beweisen. Sein Leutnant stempelt neuerdings bestimmte Vorfälle als **„erledigt — keine weiteren Maßnahmen"** und sagt ihm leise, welche Witwen er nicht befragen soll. Amos hat für jeden dieser Fälle eine Seite im Feldbuch, datiert und abgezeichnet. Kapitel 13 darf er nicht lesen — er ist kein Leutnant —, also kann er schlicht nicht beurteilen, ob die Vertuschungen die Rangers sind, die die Öffentlichkeit vor einer zu großen Wahrheit schützen, oder die Rangers, die jemandes Mineninvestition schützen. Schlimmer: der Leutnant, der stempelt, ist der Mann, der ihn empfohlen hat.
 
 **Warum es Spaß macht.** Er ist das unbewegliche Objekt in der Tischmitte — der Mann, der mit einer Schrotflinte und einem Notizbuch auf das Heulen zugeht und an dessen Mumm+Mutig sich alle anderen Angstproben festhalten. Verstand W4 heißt, dass ihn alles, was einen Plan erfordert, herrlich überfordert: er streitet nicht, er bewegt sich nur nicht.

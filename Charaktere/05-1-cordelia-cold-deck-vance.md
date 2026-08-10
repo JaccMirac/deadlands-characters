@@ -4,6 +4,13 @@
 
 > *Sie spielt nicht mit dem Teufel. Sie hat ihn unter Vertrag, und sie hat noch nie eine Rate versäumt.*
 
+```build
+Attributes: Agility d6, Smarts d8, Spirit d8, Strength d4, Vigor d4
+Skills: Gambling d10, Persuasion d8, Spellcasting d6, Shooting d6, Notice d6
+Hindrances: Vow (Major), Greedy (Minor), Wanted (Minor)
+Edges: Arcane Background (Huckster) [free: Human] | Card Sharp [Hindrance] | Charismatic [Hindrance]
+```
+
 **Hintergrund.** Cordelia lernte das Familiengeschäft auf der *Belle of Cairo*, wo sie Baumwollhändlern zwischen Natchez und St. Louis Faro gab, während ihre Großmutter oben den hohen Tisch bediente. Großmutter Vance verwahrte außerdem einen Hoyle von 1769 unter dem doppelten Boden ihres Koffers, und als das Herz der Alten '81 aufgab, kam das Buch an Cordelia — zusammen mit einem **Hauptbuch**: jedes Geschäft, das Großmutter je mit einem Wesen namens Mr. Pettibone geschlossen hatte, liniert, datiert und von zwei Händen abgezeichnet. Cordelia las es von vorn bis hinten, verstand genau, was sie erbte, und trat die Stelle trotzdem an, denn ein Partner, der nie stirbt, ist mehr wert als einer, der stirbt. Dann erwischte ein Baumwollkönig aus Memphis namens Aubrey Slade sie dabei, wie sie Karten aus leerer Luft zog, nannte sie vor achtzig Leuten eine Hexe — und lag am nächsten Morgen mit dem Gesicht im Flachwasser, ein Full House in der Faust. Ein Blatt, das Cordelia nach eigener Aussage nie gespielt hat.
 
 **Build.** Geschicklichkeit W6, Verstand W8, Geist W8, Stärke W4, Konstitution W4 · Parade 2, Robustheit 4

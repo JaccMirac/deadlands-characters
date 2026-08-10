@@ -4,6 +4,13 @@
 
 > *Ein Hausierer mit den Ordinationspapieren eines Toten, der jeden heilt, dem er begegnet, und jeden davon belügt.*
 
+```build
+Attributes: Agility d4, Smarts d8, Spirit d8, Strength d4, Vigor d6
+Skills: Faith d8, Persuasion d8, Healing d6, Occult d6, Notice d6, Language (English) d6
+Hindrances: Pacifist (Major), Lying Eyes (Minor), Outsider (Minor)
+Edges: Arcane Background (Blessed) [free: Human] | Healer [Hindrance] | Charismatic [Hindrance]
+```
+
 **Hintergrund.** Faivel Kaminker verließ Berdytschiw '78 mit einem zerrissenen Mantel und ohne Handwerk und strandete in Galveston, wo er einem Gelehrten namens Reb Schmuel Zilber die Überfahrt schuldete. Der fütterte ihn, unterrichtete ihn und starb in einer Pension in der Postoffice Street am Fieber. Faivel begrub ihn und nahm seine Tasche, seine Tefillin und seine **Smicha** — die Ordinationsurkunde, die er selbst nie erworben hatte — und ging landeinwärts mit einem Maultier und einem Bündel, denn ein Hausierer ist in hundert Häusern willkommen, aus denen man einen Juden sonst verjagt. Irgendwo auf der Straße zwischen Waco und dem Llano fing das Heilen an: Hände auf das zerquetschte Bein eines Fuhrmanns gelegt, ein halb erinnertes Gebet, und der Knochen wuchs unter seinen Fingern zusammen wie eine Schuld, die beglichen wird. Inzwischen hat er erfahren, dass Reb Schmuels Grab vor Galveston **leer** ist und dass etwas in Städten eine Woche hinter ihm nach „dem Rabbi" fragt.
 
 **Build.** Geschicklichkeit W4, Verstand W8, Willenskraft W8, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5

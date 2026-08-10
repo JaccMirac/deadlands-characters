@@ -6,6 +6,15 @@
 
 > *Einundsechzig Jahre alt — und in jedem einzelnen der letzten zwanzig Jahre ist sie zum Fluss zurückgekehrt und hat etwas herausgetragen.*
 
+```build
+Attributes: Agility d4, Smarts d8, Spirit d8, Strength d4, Vigor d6
+Skills: Faith d8, Healing d8, Survival d8, Notice d8, Riding d6, Persuasion d6, Common Knowledge d6, Fighting d4
+Hindrances: Elderly (Major), Oath of the Old Ways (Minor), Vow (Minor)
+Edges: Arcane Background (Shaman) [free: Human] | Fetish [Hindrance] | Healer [Hindrance]
+Bonus: 5
+Pace: 5
+```
+
 **Hintergrund.** Sie war neunzehn, als die Soldaten die Pfirsichbäume im Canyon de Chelly verbrannten und ihr Volk dreihundert Meilen ostwärts nach Bosque Redondo trieben. Vier Jahre am Pecos: Alkaliwasser, Würmer in der Maisration und ein Bestattungsdienst, der nie aufhörte — und dort, nicht in den Chuskas, antwortete ihr zum ersten Mal etwas, und es war keines der ihren. Sie kam '68 mit dem Webstuhl ihrer Mutter und einer Schuld nach Hause und bedient diese Schuld seither jedes Jahr, still, während sie Schafe und drei Enkel im Schatten eines Vertrags großzieht, den in Washington niemand mehr liest. In diesem Frühjahr wurde der Enkel ihrer Schwester bei einem Überfall aus dem Chinle-Wash verschleppt und in einen neumexikanischen Haushalt verkauft — der Handel mit Diné-Gefangenen, den der Vertrag hätte beenden sollen und nicht beendet hat. Sie hat außerhalb der Reservation keinen Rechtsstand, kein nennenswertes Englisch und keine Zeit. Also ging sie zum Handelsposten und suchte den einen Mann im Territorium, der ihr noch sein Leben schuldet, und er brachte Freunde mit.
 
 **Build.** Geschicklichkeit W4, Verstand W8, **Willenskraft W8**, Stärke W4, Konstitution W6 · Bewegung 5, Parade 4, Robustheit 5, 15 MP

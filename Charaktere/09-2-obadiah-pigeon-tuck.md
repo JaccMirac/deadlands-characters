@@ -4,6 +4,13 @@
 
 > *Kann kein Wort lesen, kann seinen eigenen Namen nicht schreiben, und hat es noch nie nicht wieder zum Laufen gebracht.*
 
+```build
+Attributes: Agility d4, Smarts d8, Spirit d6, Strength d6, Vigor d6
+Skills: Weird Science d8, Repair d8, Healing d6, Science d6, Notice d6, Survival d4
+Hindrances: Curious (Major), Illiterate (Minor), Loyal (Minor)
+Edges: Arcane Background (Mad Scientist) [free: Human] | Ore Eater [Hindrance] | Mr. Fix It [Hindrance]
+```
+
 **Hintergrund.** Pigeon wuchs auf einem Bergungskahn in den Missouri-Niederungen auf und riss Kesselblech und Messingarmaturen von ersoffenen Dampfern, um sie nach Gewicht zu verkaufen. Er hat nie ein Buch, eine Zeitung oder ein Etikett gelesen; alles, was er weiß, hat er gelernt, indem er es an Deck auseinandernahm und falsch wieder zusammensetzte, bis es aufhörte, falsch zu sein. Seine Erfindungen sehen aus wie das, was sie sind — Kirchenglocken, Feuerlöscher und Sargbeschläge, mit Kupferdraht und Hoffnung zusammengebunden — und sie funktionieren, was jeden studierten Mann beleidigt, der je eine gesehen hat. Er schloss sich der Posse an, nachdem er einem Fremden die Rippen mit einem Gerät aus einem Feuerlöscher und einem Pelikanschnabel aus verlöteten Löffelstielen wieder zusammengezogen hatte, und der Fremde, ein anständiger Kerl, ihn nicht zurückließ.
 
 **Build.** Geschicklichkeit W4, **Verstand W8**, Geist W6, Stärke W6, Konstitution W6 · Parade 2, Robustheit 5

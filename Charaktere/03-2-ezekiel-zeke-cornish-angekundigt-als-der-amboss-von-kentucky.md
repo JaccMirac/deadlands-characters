@@ -4,6 +4,14 @@
 
 > *Treten Sie näher: fünf Cent, um die Delle anzufassen, ein Dollar für den Versuch, ihn umzulegen — kassiert hat noch keiner.*
 
+```build
+Attributes: Agility d6, Smarts d4, Spirit d6, Strength d6, Vigor d8
+Skills: Fighting d8, Intimidation d8, Notice d6, Athletics d6, Persuasion d6
+Hindrances: Grim Servant o' Death (Major), Big Mouth (Minor), Greedy (Minor)
+Edges: Harrowed [free: Human] | Brawny [Hindrance] | Menacing [Hindrance] | Supernatural Attribute [Harrowed: Strength d6→d10]
+Toughness: 9 (6 + 1 Size + 2 Undead)
+```
+
 **Hintergrund.** Zeke war Preisboxer ohne Handschuhe in den Minencamps von Leadville bis zu den Black Hills, einundvierzig Kämpfe, achtunddreißig Siege. In Cheyenne '83 boten ihm vier Männer sechshundert Dollar, in der elften Runde zu Boden zu gehen. Er ging nicht, und sie erwischten ihn hinter dem Stall und schlugen ihn mit einer Hickory-Wagenspeiche tot — sie ließen sich eine gute halbe Stunde Zeit. Er wachte in einer Armenkiste auf, mit eingeschlagenem Schädel und etwas darin, das applaudierte. Er kam zurück, weil er **elf Runden in einen Kampf hinein war, den er nicht beendet hatte** — das ist tatsächlich schon alles, und er sagt es dir auch so. Zeke versteckt nicht, was er ist; er **wirbt damit**, denn ein Toter, den man nicht töten kann, ist die beste Zugnummer im Territorium, und die Alternative wäre, gejagt zu werden.
 
 **Der Manitu — „Mr. Bright".** Mr. Bright ist eine Wonne, und genau das ist das Problem. Zu Lebzeiten war er Theateragent und Medizinschau-Ausrufer und vergiftete drei seiner eigenen Künstler wegen der Versicherung; von seinem Enthusiasmus hat er nichts eingebüßt. Er droht nie. Er **schmeichelt**. Er nennt Zeke „Champ" und „mein Junge", er legt die Ansagerlitanei unter Zekes Atem — *„und in der nahen Ecke, zweihundertvierzig Pfund geweihtes Rindfleisch—"* — und er spielt das Geräusch einer Menge ein, die nicht da ist: Applaus und stampfende Stiefel, anschwellend, wenn Zeke etwas Gewalttätiges tut, und zu einer furchtbaren Stille verebbend, wenn nicht. Er ist der Manitu, der **auf deiner Seite** ist. Er will, dass Zeke **verehrt** wird. Er bucht die Kämpfe, er liebt das Geld, er will den Amboss aufrichtig ungeschlagen — denn ein Gepeinigter, den eine Menge liebt, ist ein Gepeinigter, dem eine Menge folgt, und eine folgende Menge ist ein Mob, und ein Mob ist eine sehr effiziente Art, Furcht zu ernten. Er will nicht, dass Zeke sich davonstiehlt und einen Fremden in einer Gasse ermordet. Er will, dass er jemanden **vor zweihundert zahlenden Gästen** tötet, und er ist bereit, Jahre auf die richtige Nacht zu warten.
