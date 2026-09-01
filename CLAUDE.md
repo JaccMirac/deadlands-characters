@@ -203,6 +203,22 @@ Mächte:
 - Deflection | 3 | Self | 5 | attackers –2, –4 with a raise
 ```
 
+**Die drei Listenspalten brechen um.** Ausrüstung (18 Zeilen), Handicaps (4)
+und Talente (5) stehen auf fester Schriftgröße `LISTEN_FONT = 7.5` statt auf
+der Vorlagen-Einstellung 0 = automatisch; sonst staucht der Betrachter lange
+Einträge unlesbar zusammen oder schneidet sie ab. Gemessen wird mit
+**`fitz.Font("helv").text_length`** und *nicht* mit `fitz.get_text_length` —
+letzteres nimmt die Base-14-Metrik und liegt bei Anführungszeichen,
+Gedankenstrichen und Umlauten bis zu **16 % zu niedrig**, die Zeile passt dann
+rechnerisch und ragt gedruckt trotzdem aus dem Feld.
+
+Gefüllt wird in zwei Durchgängen (`spalte_fuellen`): erst alles mit seinen
+Anmerkungen, und nur wenn das nicht aufgeht, die **ganze** Spalte in der
+Kurzfassung — alle Gegenstände ohne Beiwerk ist besser als die Hälfte mit.
+Eine Zeile bleibt für `Bargeld` reserviert, das sonst als letzter Eintrag
+herunterfällt. Was dann immer noch nicht passt, wird **namentlich gemeldet**
+und landet im Dossier unter *Notizen*, statt still zu verschwinden.
+
 **Sprachen auf dem Bogen**, so gewollt: Attribute, Fertigkeiten und Mächte
 englisch, Talente und Handicaps englisch mit dem deutschen Begriff in Klammern
 (`Vow (Schwur) — Major`), Ausrüstung und Waffen deutsch. Die deutschen Begriffe
@@ -252,6 +268,22 @@ heißen wie der Eintrag in `ABSCHNITTE` — `**Am Tisch.**`, nicht
 `**Am Tisch — in fünf Schritten.**`, sonst greift der Abgleich nicht.
 Aufzählungszeilen (`- …`) in diesen Abschnitten setzt `md_zu_html` als
 echte Punkte.
+
+**Der Abschnitt `**Notizen.**` ist das Notizenblatt.** Dort steht als
+Aufzählung, wie sich **jedes** Talent und Handicap bei *dieser* Figur konkret
+zeigt — nicht die Regel (die zieht das Dossier ohnehin wörtlich aus dem Buch),
+sondern die Ausprägung am Tisch. `build_dossier.py` setzt ihn ans Ende der
+Regelseiten und hängt automatisch an, was auf dem Charakterbogen keinen Platz
+mehr hatte: gekürzte Einträge und ganz weggefallene Zeilen. Deshalb füllt das
+Dossier den Bogen inzwischen bei *jedem* Lauf neu — nur so kennt es die Reste
+(`bs.fuelle` gibt sie in `gekuerzt` und `weggefallen` zurück).
+
+**Reihenfolge beim Verkleinern.** `doc.subset_fonts()` läuft im Dossier
+**vor** dem Anhängen des Bogens. Es ist nur wegen der 3,5-MB-CJK-Schrift des
+Deckblatts da; der offizielle Bogen bringt fünf eingebettete Zierschriften
+mit, deren Glyphenbreiten das Verkleinern zerstört — aus `ATTRIBUTES` wird
+dann `AT`, aus `SKILLS` `KB`. Wer die Zeilen wieder umstellt, macht genau das
+kaputt.
 
 **`**Aufhänger**` steht bewusst nicht in `ABSCHNITTE`.** Dort stehen die
 Enthüllungen und ausdrückliche Marshal-Hinweise; das Dossier ist als

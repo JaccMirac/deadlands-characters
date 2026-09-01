@@ -50,6 +50,15 @@ Handicaps: **Vow** (*Schwur*) — Major: jede Leiche kommt zu ihren Leuten zurü
 
 **Aufhänger.** Im Juli musste er ein Grab in Sidney öffnen lassen, weil die Witwe den Sarg nach Ohio überführen wollte. Es war seine eigene Arbeit, seine eigenen Nägel, sein eigenes Zinkband. Der Deckel war von innen zerkratzt. Er hat es der Witwe nicht gesagt, er hat den Sarg neu verschlossen und verladen, und seither macht er den Nachtritt nicht mehr allein. Im Kontobuch steht auf der letzten Seite eine zweite Liste, die keine Preise hat.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Guts** (*Mumm*) — Vierhundertelf Tote gewaschen, angezogen und eingesargt. Was aus dem Dunkeln kommt, hatte er in irgendeiner Form schon auf dem Tisch. Freie Wiederholung bei Furchtproben.
+- **Quick Draw** (*Schnell Ziehen*) — Er zieht nicht schnell, er zieht früh: die Hand liegt ohnehin am Gürtel, weil er beim Verladen beide braucht. Benny für eine zusätzliche Aktion zieht zwei Karten.
+- **Danger Sense** (*Sechster Sinn*) — Er merkt, wenn ein Raum gleich einen Toten haben wird, und weiß nicht, woher. +2 auf die Wahrnehmungsprobe gegen Überraschung, bei einer Steigerung ein aufgesparter Zug.
+- **Vow** (*Schwur*) — Major: Jede Leiche kommt zu ihren Leuten zurück. Auch die, für die niemand zahlt. Auch die des Gesuchten, auch wenn der Umweg drei Tage kostet.
+- **Cautious** (*Vorsichtig*) — Er betritt keinen Raum, ohne den zweiten Ausgang zu kennen, und sagt das jedes Mal laut.
+- **Doubting Thomas** (*Zweifler*) — Für alles gibt es eine Erklärung: Sumpfgas, Nervenzucken, schlechtes Licht. Er trägt sie freundlich vor, während er rückwärts geht.
+
 **Warum es Spaß macht.** Du bringst der Gruppe drei Dinge mit, die Anfängerrunden immer fehlen: einen Wagen, einen Grund, warum die Posse überhaupt zusammen reist, und einen Mann, den Furcht nicht so leicht umwirft. Der Witz der Figur schreibt sich selbst — der Zweifler in einer Welt, in der alles wahr ist, und ein Berufsstand, der jedes Abenteuer mit „ich kenne den Friedhof" beginnen darf.
 
 ---

@@ -357,6 +357,20 @@ optional und steht sonst auf 250. Der <code>```powers</code>-Block sieht genauso
 Mächte:
 - Deflection | 3 | Self | 5 | attackers –2, –4 with a raise
 </code></pre>
+<p><strong>Die drei Listenspalten brechen um.</strong> Ausrüstung (18 Zeilen), Handicaps (4)
+und Talente (5) stehen auf fester Schriftgröße <code>LISTEN_FONT = 7.5</code> statt auf
+der Vorlagen-Einstellung 0 = automatisch; sonst staucht der Betrachter lange
+Einträge unlesbar zusammen oder schneidet sie ab. Gemessen wird mit
+<strong><code>fitz.Font("helv").text_length</code></strong> und <em>nicht</em> mit <code>fitz.get_text_length</code> —
+letzteres nimmt die Base-14-Metrik und liegt bei Anführungszeichen,
+Gedankenstrichen und Umlauten bis zu <strong>16 % zu niedrig</strong>, die Zeile passt dann
+rechnerisch und ragt gedruckt trotzdem aus dem Feld.</p>
+<p>Gefüllt wird in zwei Durchgängen (<code>spalte_fuellen</code>): erst alles mit seinen
+Anmerkungen, und nur wenn das nicht aufgeht, die <strong>ganze</strong> Spalte in der
+Kurzfassung — alle Gegenstände ohne Beiwerk ist besser als die Hälfte mit.
+Eine Zeile bleibt für <code>Bargeld</code> reserviert, das sonst als letzter Eintrag
+herunterfällt. Was dann immer noch nicht passt, wird <strong>namentlich gemeldet</strong>
+und landet im Dossier unter <em>Notizen</em>, statt still zu verschwinden.</p>
 <p><strong>Sprachen auf dem Bogen</strong>, so gewollt: Attribute, Fertigkeiten und Mächte
 englisch, Talente und Handicaps englisch mit dem deutschen Begriff in Klammern
 (<code>Vow (Schwur) — Major</code>), Ausrüstung und Waffen deutsch. Die deutschen Begriffe
@@ -398,6 +412,20 @@ heißen wie der Eintrag in <code>ABSCHNITTE</code> — <code>**Am Tisch.**</code
 <code>**Am Tisch — in fünf Schritten.**</code>, sonst greift der Abgleich nicht.
 Aufzählungszeilen (<code>- …</code>) in diesen Abschnitten setzt <code>md_zu_html</code> als
 echte Punkte.</p>
+<p><strong>Der Abschnitt <code>**Notizen.**</code> ist das Notizenblatt.</strong> Dort steht als
+Aufzählung, wie sich <strong>jedes</strong> Talent und Handicap bei <em>dieser</em> Figur konkret
+zeigt — nicht die Regel (die zieht das Dossier ohnehin wörtlich aus dem Buch),
+sondern die Ausprägung am Tisch. <code>build_dossier.py</code> setzt ihn ans Ende der
+Regelseiten und hängt automatisch an, was auf dem Charakterbogen keinen Platz
+mehr hatte: gekürzte Einträge und ganz weggefallene Zeilen. Deshalb füllt das
+Dossier den Bogen inzwischen bei <em>jedem</em> Lauf neu — nur so kennt es die Reste
+(<code>bs.fuelle</code> gibt sie in <code>gekuerzt</code> und <code>weggefallen</code> zurück).</p>
+<p><strong>Reihenfolge beim Verkleinern.</strong> <code>doc.subset_fonts()</code> läuft im Dossier
+<strong>vor</strong> dem Anhängen des Bogens. Es ist nur wegen der 3,5-MB-CJK-Schrift des
+Deckblatts da; der offizielle Bogen bringt fünf eingebettete Zierschriften
+mit, deren Glyphenbreiten das Verkleinern zerstört — aus <code>ATTRIBUTES</code> wird
+dann <code>AT</code>, aus <code>SKILLS</code> <code>KB</code>. Wer die Zeilen wieder umstellt, macht genau das
+kaputt.</p>
 <p><strong><code>**Aufhänger**</code> steht bewusst nicht in <code>ABSCHNITTE</code>.</strong> Dort stehen die
 Enthüllungen und ausdrückliche Marshal-Hinweise; das Dossier ist als
 Spielerhandout gedacht. Wer eine Marshal-Mappe will, trägt ihn dort ein.</p>

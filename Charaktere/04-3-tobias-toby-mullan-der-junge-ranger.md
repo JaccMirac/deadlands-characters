@@ -53,6 +53,15 @@ Handicaps: **Heroic** (*Heldenhaft*) — Major · **Loyal** — Minor · **Stubb
 
 **Aufhänger.** In keinem Register in Denver steht ein Tobias Mullan. Der Stern ist echt, der Mantel ist echt, das Pferd ist Dienstgut, und die Unterschrift unter der Ernennung ist die eines Mannes, der zu dem Zeitpunkt seit sechs Tagen tot war. Toby weiß das genau. Er hat sich vorgenommen, so lange die Arbeit zu machen, bis ihn jemand für echt hält — und die Kompanie hat inzwischen zweimal auf seine Berichte geantwortet, freundlich, mit Aktenzeichen, adressiert an *Ranger Mullan*. Er weiß nicht, ob das heißt, dass die Sache durchgegangen ist, oder dass jemand einen Grund hat, ihn nicht zu korrigieren.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Territorial Ranger** (*Territorialer Ranger*) — Er kündigt den Stern an, jedes Mal, im vollen Wortlaut. +1 Überreden bei Gesetzestreuen, +1 Einschüchtern bei Gesetzlosen, dazu ein Sold von 40 Dollar im Monat, den ihm noch nie jemand ausgezahlt hat.
+- **Brave** (*Mutig*) — Keine Furchtlosigkeit, sondern die feste Überzeugung, dass Hines an seiner Stelle auch geblieben wäre. +2 auf Furchtproben, Abzug auf der Angsttabelle –2.
+- **Fleet-Footed** (*Flink*) — Neunzehn, und er läuft auf das Geräusch zu statt von ihm weg. Bewegungsweite 8, Sprintwürfel W10.
+- **Heroic** (*Heldenhaft*) — Major: Er sagt niemandem ab, der um Hilfe bittet. Auch nicht dem, der erkennbar lügt.
+- **Loyal** — Minor: Wer einmal neben ihm gestanden hat, wird ihn nicht mehr los.
+- **Stubborn** (*Stur*) — Minor: Er hat einmal gesagt, was er tut. Danach ist die Sache besprochen, auch für ihn selbst.
+
 **Warum es Spaß macht.** Heldenhaft ist der beste Motor, den man einem Anfänger geben kann: Du musst nie fragen, ob dein Charakter mitkommt. Der Stern gibt dir in jeder Szene einen Satz, mit dem du anfangen kannst, und Mutig plus Flink heißen, dass du auf das Geräusch zuläufst, während der Rest des Tisches noch überlegt.
 
 ---

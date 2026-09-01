@@ -130,6 +130,15 @@ Daraus folgen drei Dinge, die ihn erst gefährlich machen. **Er kann es nur einm
 
 *Zwei Namen stehen im Grundbuch anders in der Auswahlliste (S. 66) als im Regelteil: „Blind" heißt dort, wo die Regel steht, **Blenden** (SWADE S. 156), und „Furchterregend" heißt **Furcht** (SWADE S. 158). Wer unter dem Listennamen nachschlägt, findet nichts.*
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Arcane Background (Huckster)** (*Arkaner Hintergrund (Taschenspieler)*) — Ein aufgefächertes Blatt, das nicht da ist, gegeben aus einem Stapel, den sie nicht hält. Deshalb hat sie immer echte Karten in der Hand.
+- **Card Sharp** (*Falsch Spielen*) — Der freie Neuwurf gilt ausdrücklich auch für den Glücksspiel-Wurf im Teufelspakt. Sie mischt beim Reden, immer, auch ohne Grund.
+- **Charismatic** (*Charismatisch*) — Sie hört Leuten zu, als hinge etwas davon ab. Es hängt auch etwas davon ab.
+- **Vow** (*Schwur*) — Major: der Buchstabe jedes Vertrags, den sie unterschreibt. Sie liest langsam und laut vor, sucht die Naht, handelt den Preis hoch — und hält dann, was dasteht.
+- **Greedy** — Minor: Sie rechnet Anteile auf den Cent ab. Bei Freunden besonders genau, weil sie findet, dass gerade da nichts schuldig bleiben darf.
+- **Wanted** (*Gesucht*) — Minor: Haftbefehl in Tennessee wegen Mordes an Aubrey Slade. Sie hat ihn nicht getötet. Sie weiß auch, wer.
+
 **Warum es Spaß macht.** Du spielst Gesicht und Artillerie der Gruppe aus demselben Kartenspiel, und jeder Kampf ist eine echte Pokerhand, bei der sich der ganze Tisch vorbeugt. Der Horror kommt seitlich herein: dein Teufel ist ausnehmend höflich, penibel fair und macht dich langsam zu seinem Werkzeug, indem er dich nie betrügt.
 
 ---

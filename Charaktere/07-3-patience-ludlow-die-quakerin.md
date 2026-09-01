@@ -56,6 +56,15 @@ Mächte (20 MP): **Heiliges Symbol** (Pflicht), **Heilung**, **Waffe verbessern*
 
 **Aufhänger.** Der Fuhrmann von Wichita hieß Amos Deel und lebte danach noch elf Tage. Am letzten sagte er ihr, sie solle seinen Bruder Calvin in Trinidad, Colorado, suchen und ihm ausrichten, dass die Sache mit dem Anteil in Ordnung sei. Sie hat sich auf den Weg gemacht. Calvin Deel ist im Winter '81 gestorben, drei Jahre bevor Amos ihr den Auftrag gab. Sie hat es beim Kreisgericht nachgeschlagen, zweimal. Trotzdem liegt alle paar Wochen in einer anderen Stadt ein Brief für sie bereit, dieselbe Handschrift, ohne Absender, freundlich, und im letzten steht, sie solle sich beeilen.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Arcane Background (Blessed)** (*Arkaner Hintergrund (Gesegneter)*) — Kein Leuchten, keine Geste, kein Wort. Der Raum wird still, und was zubeißen wollte, ist sich plötzlich nicht mehr sicher.
+- **Healer** (*Heiler*) — +2 auf jede Heilenprobe, mit Arzttasche wie ohne. Sie fragt vorher nach dem Namen und benutzt ihn dann.
+- **Power Points** (*Machtpunkte*) — 20 statt 15: sechsmal Heilung an einem Tag. Danach kann sie nicht mehr stehen, und sie sagt das niemandem.
+- **Pacifist** (*Pazifist*) — Major: Gegen einen lebenden Menschen hebt sie die Hand nicht, auch nicht für einen anderen. Was nachweislich tot ist, nimmt die Regel ausdrücklich aus.
+- **Outsider** (*Außenseiter*) — Minor: Sie duzt jeden, sie leistet keinen Eid, sie nimmt den Hut nicht ab. Vor Gericht hat ihr das schon zwei Nächte in einer Zelle eingebracht.
+- **Poverty** (*Arm*) — Minor: Für Heilung nimmt sie nichts. Was übrig bleibt, ist weitergegeben, bevor sie schlafen geht.
+
 **Warum es Spaß macht.** Du bist der Grund, warum die Posse einen zweiten Kampf übersteht — dreimal Heilung pro Tag ohne nachzudenken, plus +2 aus dem Heiler-Talent. Und du hast die eine Entscheidung, die jede Sitzung wieder auftaucht und nichts mit Regeln zu tun hat: Der Mann hebt die Waffe, dein Wagenbaum liegt griffbereit, und Pazifismus schweigt nur bei Dingen, die nachweislich tot sind.
 
 ---

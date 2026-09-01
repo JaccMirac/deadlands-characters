@@ -552,7 +552,11 @@ def fuelle(pfad_md, ziel):
     doc.save(ziel, garbage=3, deflate=True)
     doc.close()
     return {"name": name, "ausgegeben": ausgegeben, "rest": rest,
-            "waffen": len(waffen), "gear": len(ausruestung)}
+            "waffen": len(waffen), "gear": len(ausruestung),
+            # was der Bogen nicht mehr fassen konnte -- das Dossier haengt es
+            # als Notizenblatt hinten an, damit nichts still verschwindet
+            "gekuerzt": kurz_h + kurz_e + kurz_g,
+            "weggefallen": rest_h + rest_g}
 
 
 # ---------------------------------------------------------------------------

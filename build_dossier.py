@@ -402,7 +402,7 @@ def titelseite(name, archetyp, spruch, bild, cjk=u""):
     return seite
 
 
-def regelseiten(name, raw, d_build):
+def regelseiten(name, raw, d_build, reste=None):
     teile = [u'<h1>%s</h1>' % esc(name)]
     zeile = zitat(raw)
     if zeile:
@@ -443,6 +443,26 @@ def regelseiten(name, raw, d_build):
             else:
                 teile.append(u'<p class="miss">Kein Regeltext in den vorliegenden '
                              u'Büchern gefunden — bitte nachtragen.</p>')
+
+    # Notizenblatt: erst der Abschnitt **Notizen.** aus der Figurendatei --
+    # dort steht, wie sich Talente und Handicaps bei dieser Figur konkret
+    # zeigen --, danach alles, was auf dem Bogen keinen Platz mehr hatte.
+    # So verschwindet nichts stillschweigend zwischen Markdown und Formular.
+    notiz = abschnitte(raw).get(u"Notizen", u"")
+    nachtrag = []
+    if reste:
+        if reste.get("gekuerzt"):
+            nachtrag.append(u"**Auf dem Bogen ohne ihre Anmerkung:** "
+                            + u"; ".join(reste["gekuerzt"]))
+        if reste.get("weggefallen"):
+            nachtrag.append(u"**Hat nicht mehr auf den Bogen gepasst:**")
+            nachtrag += [u"- " + z for z in reste["weggefallen"]]
+    if notiz or nachtrag:
+        teile.append(u"<h2>Notizen</h2>")
+        if notiz:
+            teile.append(md_zu_html(notiz))
+        if nachtrag:
+            teile.append(md_zu_html(u"\n".join(nachtrag)))
     return _seiten(u"".join(teile), archiv())
 
 
@@ -460,10 +480,15 @@ def dossier(pfad_md, ziel):
     arche = bs.archetyp(raw)
     bild = os.path.join(BILDER, basis + ".png")
 
+    # Der Bogen wird zuerst gefuellt: erst dadurch ist bekannt, was auf ihm
+    # keinen Platz gefunden hat, und genau das kommt auf das Notizenblatt.
+    bogen = os.path.join(AUSGABE, basis + ".pdf")
+    info = bs.fuelle(pfad_md, bogen) or {}
+
     doc = fitz.open()
     t = titelseite(name, arche, zitat(raw), bild, cjk_teil(raw))
     doc.insert_pdf(t); t.close()
-    r = regelseiten(name, raw, d_build)
+    r = regelseiten(name, raw, d_build, info)
     doc.insert_pdf(r); r.close()
 
     # Verkleinern MUSS vor dem Bogen passieren. Die CJK-Schrift, derentwegen
@@ -478,9 +503,6 @@ def dossier(pfad_md, ziel):
     except Exception as e:
         warn(u"Schriften nicht verkleinert: %s" % e)
 
-    bogen = os.path.join(AUSGABE, basis + ".pdf")
-    if not os.path.exists(bogen):
-        bs.fuelle(pfad_md, bogen)
     s = fitz.open(bogen)
     doc.insert_pdf(s); s.close()
 

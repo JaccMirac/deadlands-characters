@@ -50,6 +50,15 @@ Handicaps: **Night Terrors** (*Nachtängste*) — Major · **Illiterate** (*Anal
 
 **Aufhänger.** In der neunten Nacht, kurz bevor sie durchkamen, sang etwas hinter dem Bruchgestein die zweite Stimme. Auf Walisisch, sauber, im Takt, und es kannte den vierten Vers, den Owen selbst nicht kann. Er hat nie jemandem davon erzählt, weil man ihn dann nicht mehr angestellt hätte. Er singt seither nicht mehr — außer wenn es sehr dunkel ist und er sich vergisst, und dann hört er jedes Mal hin, ob es wieder einsetzt.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Brawny** (*Kräftig*) — Dreißig Jahre Hangendbau. Größe +1, Robustheit +1, und er trägt, wofür sonst zwei gebraucht werden.
+- **Sweep** (*Rundumschlag*) — Der Fäustel geht nicht auf einen Gegner, er geht durch den Stollen. Ein Kämpfen-Angriff mit –2 gegen alles in Reichweite, Freund wie Feind, Schaden je Gegner einzeln.
+- **Guts** (*Mumm*) — Neun Tage unter Tage. Freie Wiederholung bei Furchtproben — und der Grund, warum die Nachtängste ihn tagsüber nicht bremsen.
+- **Night Terrors** (*Nachtängste*) — Major: –1 auf alle Willenskraftwürfe, und wer neben ihm lagert, schläft schlecht. Er entschuldigt sich morgens dafür.
+- **Illiterate** (*Analphabet*) — Minor: Zahlen kann er, weil man beim Gedinge betrogen wird, wenn man sie nicht kann. Buchstaben nicht, und er lässt sich nichts vorlesen, wenn Fremde dabei sind.
+- **Hard of Hearing** (*Schwerhörig*) — Minor: dreißig Jahre Sprengschüsse. –4 auf Wahrnehmung, wo es am Gehör hängt. Er redet zu laut und merkt es nicht.
+
 **Warum es Spaß macht.** Der einfachste Bogen im ganzen Ordner: kein Schießen, keine Reichweite, kein Nachladen, keine Machtliste. Man geht hin und würfelt W8. Rundumschlag ist der eine Trick, und er ist genau dann großartig, wenn drei Dinge gleichzeitig an dir hängen — was im Unheimlichen Westen ungefähr jede zweite Begegnung ist. Dazu Robustheit 6 auf Novize, was heißt, dass du der Figur beim Lernen ein paar Fehler verzeihen darfst.
 
 ---

@@ -52,6 +52,15 @@ Handicaps: **Overconfident** (*Übermütig*) — Major · **Big Mouth** (*Große
 
 **Aufhänger.** Der Requisitenwagen stand die letzten zwei Jahre nie im Lager, sondern immer dreißig Schritt außerhalb, und Piggot schlief daneben. Als die Schau zerfiel, nahm Hazel die Peacemaker, das Plakat und den Schlüssel, den Piggot fallen ließ, als sie ihn fanden. Der Wagen ist inzwischen weiter, und der Schlüssel passt nicht auf ein Vorhängeschloss — er ist zu klein und zu fein, mehr Uhrmacher als Stallmeister.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Quick** (*Schnell*) — Bühnenreflexe: sie steht selten da, wo sie eben noch stand. Aktionskarte 5 oder niedriger abwerfen und neu ziehen.
+- **Steady Hands** (*Ruhige Hände*) — Wagenbock, Sattel, schwankende Bretterbühne, für sie derselbe Boden. Keine Abzüge von instabiler Unterlage, im Laufen nur –1.
+- **Luck** (*Glück*) — Piggots Aberglaube, den sie übernommen hat: die erste Patrone des Tages geht in die Luft, bevor sie auf irgendetwas zielt. Ein Benny mehr je Sitzung.
+- **Overconfident** (*Übermütig*) — Sie hat noch nie ein Wettschießen ausgeschlagen. Auch keins, bei dem der andere die Waffe stellt.
+- **Big Mouth** (*Große Klappe*) — Sie kann ein Geheimnis genau so lange halten, bis jemand im Raum interessiert aussieht.
+- **Quirk** (*Tick*) — Jeder Schuss wird vorher angesagt, im Wortlaut der Schau: *„Die Dame bittet um Ruhe — und um Ihre Aufmerksamkeit auf …"* Auch im Hinterhalt. Auch wenn es der Marshal ausdrücklich schlecht findet.
+
 **Warum es Spaß macht.** Du bist die Figur, die man einem Menschen in die Hand drückt, der noch nie Savage Worlds gespielt hat: Karte ziehen, W8 auf Schießen, fertig. Und der Charakter macht die Arbeit von allein — Übermütig und Große Klappe bringen dich in jede Szene hinein, und der Tick sorgt dafür, dass der ganze Tisch mitbekommt, was du gleich vorhast, ob du willst oder nicht.
 
 ---

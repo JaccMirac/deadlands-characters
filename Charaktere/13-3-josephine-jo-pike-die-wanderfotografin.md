@@ -49,6 +49,15 @@ Handicaps: **Driven** (*Angetrieben*) — Major: sie sucht Wesley, und sie fähr
 
 **Aufhänger.** Auf drei Platten aus drei verschiedenen Countys — Ogallala im Mai, Trinidad im Juli, Raton im August — steht dieselbe Gestalt am linken Bildrand, halb aus dem Rahmen, in derselben Haltung, mit demselben zu langen Mantel. Jo hat bei allen dreien selbst ausgelöst und weiß mit Sicherheit, dass dort niemand stand. Auf der Platte aus Raton ist der Kopf schärfer als der Rest des Bildes, was nach den Regeln des Verfahrens bedeutet, dass er sich während der ganzen Belichtung nicht einen Millimeter bewegt hat. Sie ist Naturwissenschaftlerin genug, um zu wissen, dass es dafür eine Erklärung geben muss, und Fotografin genug, um zu wissen, dass es keine gibt.
 
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Woodsman** (*Naturbursche*) — Neunhundert Platten heißt neunhundertmal einen Lagerplatz gefunden, an dem das Wasser sauber genug für Kollodium war. +2 auf Überleben und Heimlichkeit draußen, +2 aufs Spurenlesen.
+- **Alertness** (*Aufmerksamkeit*) — Sie sieht das Bild, bevor sie es macht: Randfiguren, Schatten, wer wohin schaut. +2 auf jede Bemerkenprobe.
+- **Rich** (*Reich*) — Der Erlös des väterlichen Ateliers in Springfield. Dreifaches Startgeld und ein laufendes Einkommen, das restlos in Platten und Chemikalien geht.
+- **Driven** (*Angetrieben*) — Major: Wesley. Jeder Hinweis ist einen Umweg wert, und sie fährt ihn, auch wenn die Posse woanders hin will.
+- **Cautious** (*Vorsichtig*) — Minor: Sie rechnet mit zwölf Minuten Belichtung und plant jeden Weg so, dass sie diese zwölf Minuten auch hat.
+- **Loyal** — Minor: Wer ihr bei der Suche hilft, bekommt alles, was sie besitzt, und sie führt darüber keine Rechnung.
+
 **Warum es Spaß macht.** Du bist die Ausrüstung der Gruppe: ein Wagen, ein gutes Pferd, Geld und eine Kamera, mit der man Beweise mitnehmen kann — und in Deadlands ist eine Fotoplatte ein Gegenstand, der Dinge zeigt, die niemand gesehen hat. Regeltechnisch ist es der harmloseste Bogen überhaupt: zwei Talente, die immer gelten, ein Handicap, das dir sagt, wohin du reist, und eine Fertigkeit, mit der du in jeder Szene etwas tun darfst.
 
 ---
