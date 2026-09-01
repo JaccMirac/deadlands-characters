@@ -466,16 +466,24 @@ def dossier(pfad_md, ziel):
     r = regelseiten(name, raw, d_build)
     doc.insert_pdf(r); r.close()
 
+    # Verkleinern MUSS vor dem Bogen passieren. Die CJK-Schrift, derentwegen
+    # ueberhaupt verkleinert wird, steckt nur im Deckblatt; der offizielle
+    # Charakterbogen bringt dagegen fuenf eingebettete Zierschriften mit
+    # (TheDeadSaloon, WildCards ...), und subset_fonts zerlegt deren
+    # Glyphenbreiten -- aus ATTRIBUTES wird dann "AT", aus SKILLS "KB".
+    # Deshalb: erst Deckblatt und Regelseiten verkleinern, dann den Bogen
+    # unangetastet anhaengen.
+    try:
+        doc.subset_fonts()
+    except Exception as e:
+        warn(u"Schriften nicht verkleinert: %s" % e)
+
     bogen = os.path.join(AUSGABE, basis + ".pdf")
     if not os.path.exists(bogen):
         bs.fuelle(pfad_md, bogen)
     s = fitz.open(bogen)
     doc.insert_pdf(s); s.close()
 
-    try:            # die CJK-Schrift bringt 3,5 MB mit, gebraucht werden 3 Zeichen
-        doc.subset_fonts()
-    except Exception as e:
-        warn(u"Schriften nicht verkleinert: %s" % e)
     doc.save(ziel, garbage=4, deflate=True)
     seiten = doc.page_count
     doc.close()

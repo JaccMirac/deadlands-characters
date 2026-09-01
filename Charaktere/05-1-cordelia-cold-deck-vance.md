@@ -39,8 +39,8 @@ Ausrüstung:
 Waffen:
 - Derringer (.41) | 3/6/12 | 2W4 | – | 1 | 0,5 | $5 | 2 Schuss, –2 auf Wahrnehmung, wenn versteckt
 Notizen:
-- Pakt: Benny · Glücksspiel (Neuwurf aus Falsch Spielen) · 5 Karten, +1 bei Erfolg, +2 bei Steigerung · bestes Blatt
-- Sie darf keine Bennies in Machtpunkte tauschen und keine Kosten senken — der Pakt ist der Ersatz für beides
+- Pakt: Benny · Glücksspiel (Neuwurf aus Falsch Spielen) · 5 Karten, +1/+2 · bestes Blatt
+- Keine Bennies für Machtpunkte, keine Kostensenkung — dafür der Pakt
 ```
 
 **Hintergrund.** Cordelia lernte das Familiengeschäft auf der *Belle of Cairo*, wo sie Baumwollhändlern zwischen Natchez und St. Louis Faro gab, während ihre Großmutter oben den hohen Tisch bediente. Großmutter Vance verwahrte außerdem einen Hoyle von 1769 unter dem doppelten Boden ihres Koffers, und als das Herz der Alten '81 aufgab, kam das Buch an Cordelia — zusammen mit einem **Hauptbuch**: jedes Geschäft, das Großmutter je mit einem Wesen namens Mr. Pettibone geschlossen hatte, liniert, datiert und von zwei Händen abgezeichnet. Cordelia las es von vorn bis hinten, verstand genau, was sie erbte, und trat die Stelle trotzdem an, denn ein Partner, der nie stirbt, ist mehr wert als einer, der stirbt. Dann erwischte ein Baumwollkönig aus Memphis namens Aubrey Slade sie dabei, wie sie Karten aus leerer Luft zog, nannte sie vor achtzig Leuten eine Hexe — und lag am nächsten Morgen mit dem Gesicht im Flachwasser, ein Full House in der Faust. Ein Blatt, das Cordelia nach eigener Aussage nie gespielt hat.

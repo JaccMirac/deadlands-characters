@@ -35,8 +35,8 @@ Waffen:
 - Colt Rainmaker (.32) | 12/24/48 | 2W6 | 1 | 1 | 1 | $8 | 6 Schuss, doppelt wirkend · Mindeststärke W4 genau erfüllt
 - Messer | 3/6/12 | Stä+W4 | – | 1 | 0,5 | $2 | zum Zuschneiden von Platten
 Notizen:
-- Woodsman: +2 auf Überleben und Heimlichkeit in der Wildnis, +2 auf Bemerken zum Spurenlesen
-- Alertness: +2 auf alle Bemerkenproben · Rich: dreifaches Startgeld ($750) und laufendes Einkommen
+- Woodsman: +2 auf Überleben und Heimlichkeit draußen, +2 aufs Spurenlesen
+- Alertness: +2 auf Bemerken · Rich: $750 Startgeld und laufendes Einkommen
 ```
 
 **Hintergrund.** Jo Pike lernte das Nassplattenverfahren im Atelier ihres Vaters in Springfield, Illinois, wo sie sechs Jahre lang Hochzeiten und Leichenporträts entwickelte. Ihr Bruder Wesley ging '82 mit einem Vermessungstrupp der Bahn ins Uinta-Becken und kam nicht zurück; von den elf Männern kamen vier zurück, und keiner von ihnen erinnerte sich an denselben Tag. Jo verkaufte das Atelier, kaufte einen Wagen und fährt seither von Ort zu Ort und fotografiert Straßenzüge, Kirchweihen, Viehmärkte und ganze Belegschaften — offiziell, weil man dafür bezahlt wird, tatsächlich, weil auf einer Gruppenaufnahme von hundert Leuten irgendwann ein Gesicht am Rand stehen könnte, das sie kennt. Sie hat inzwischen über neunhundert Platten belichtet und geht jede einzelne mit einer Lupe durch.

@@ -36,8 +36,8 @@ Waffen:
 - Colt Peacemaker (.45) | 12/24/48 | 2W6+1 | 1 | 1 | 4 | $15 | 6 Schuss
 - Messer, Bowie | – | Stä+W4+1 | 1 | – | 1 | $4 | PB 1 · Werkzeug zuerst
 Notizen:
-- Guts: freie Wiederholung bei Furchtproben · Quick Draw: Benny für eine zusätzliche Aktion zieht zwei Karten
-- Danger Sense: +2 auf die Wahrnehmungsprobe gegen Überraschung, bei Steigerung ein aufgesparter Zug
+- Guts: Furchtprobe neu würfeln · Quick Draw: Benny für eine Extra-Aktion gibt zwei Karten
+- Danger Sense: +2 gegen Überraschung, bei Steigerung ein Zug voraus
 ```
 
 **Hintergrund.** Doak übernahm mit dreiundzwanzig das Bestattungsgeschäft seines Onkels in Cheyenne und stellte innerhalb eines Jahres fest, dass die Hälfte seiner Kundschaft mit einem Steckbrief in der Innentasche ankam. Er stellte auch fest, dass die Prämie in der Regel höher war als das, was die Angehörigen für die Kiste zahlen konnten. Seither fährt er den Wagen selbst hinaus: er weiß, wohin sie reiten, weil er weiß, wo die Leute begraben liegen, zu denen sie zurückwollen. Er hat vierhundertelf Tote gewaschen, angezogen und eingesargt und führt darüber Buch. Er sagt jedem, der davon anfängt, sehr freundlich, dass keiner davon sich je bewegt hat.

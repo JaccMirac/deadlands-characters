@@ -42,7 +42,7 @@ Waffen:
 - Der Wagenbaum | – | Stä+W6 | – | – | 1,5 | $3 | als Kriegskeule gekauft (Grundbuch S. 29), Mindeststärke W6 · Hickory, an einem Ende mit Draht umwickelt
 Notizen:
 - Healer: +2 auf alle Heilenproben · Power Points: 20 statt 15, also sechsmal Heilung
-- Pazifist (schwer) nimmt „unbestreitbar böse Kreaturen, Untote, Dämonen und dergleichen" ausdrücklich aus
+- Pazifismus gilt nicht gegen Untote, Dämonen und offenbar Böses
 ```
 
 **Hintergrund.** Patience Ludlow war zweiundzwanzig, als die Freundinnen ihrer Versammlung im Juli 1863 mit Leinen und Essigwasser nach Gettysburg fuhren, weil die Verwundeten schneller kamen, als die Armee sie zählen konnte. Sie blieb neun Wochen in einer Scheune bei Rock Creek und lernte in dieser Zeit zwei Dinge: wie man einen Oberschenkel abbindet, und dass sie nicht schreien kann. Zwanzig Jahre später ist sie eine hagere Frau von dreiundvierzig in ungefärbtem Grau, die *du* zu Bankiers sagt und *Freund* zu Fremden, keinen Eid leistet — auch nicht vor Gericht, was ihr schon zwei Nächte in Zellen eingebracht hat — und für Heilung grundsätzlich kein Geld nimmt. Die Gabe kam in einer Nacht bei Wichita, als sie einem Fuhrmann mit zerquetschtem Brustkorb die Hände auflegte, um ihm die letzte Stunde leichter zu machen, und er stattdessen aufstand.

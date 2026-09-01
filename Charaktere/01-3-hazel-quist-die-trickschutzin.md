@@ -38,8 +38,8 @@ Waffen:
 - Colt Peacemaker (.45), rechts | 12/24/48 | 2W6+1 | 1 | 1 | 4 | $15 | 6 Schuss · das Gegenstück, gleiche Seriennummernreihe
 - Winchester '73 (.44-40) | 24/48/96 | 2W8–1 | 2 | 1 | 5 | $25 | 15 Schuss · Messingnägel im Schaft, ein Muster aus der Schau
 Notizen:
-- Quick: Aktionskarte 5 oder niedriger abwerfen und neu ziehen · Luck: ein zusätzlicher Benny je Sitzung
-- Steady Hands: keine Abzüge von instabiler Plattform, Abzug fürs Laufen auf –1
+- Quick: Aktionskarte 5 oder niedriger neu ziehen · Luck: ein zusätzlicher Benny je Sitzung
+- Steady Hands: kein Abzug von wackliger Unterlage, Laufen nur –1
 ```
 
 **Hintergrund.** Geboren als Hedvig Kvist in Decorah, Iowa, dritte von sechs, Tochter eines norwegischen Küfers, der drei Sprachen fluchte und keine schrieb. Mit vierzehn ging sie mit *Colonel Ramsbottoms Grand Congress of Rough Riders and Marksmen* fort, weil die Truppe im Bezirk lagerte und eine Frau brauchte, die klein genug für das Plakat und ruhig genug für die Nummer war. Sieben Jahre lang zerschoss sie Glaskugeln, die ihr ein Mann namens Piggot in die Luft warf, immer dieselbe Ansage, immer dieselben elf Schritte: *„Die Dame bittet um Ruhe — und um Ihre Aufmerksamkeit auf den Himmel über dem zweiten Mast."* Im Mai '84 löste sich die Schau in Ogallala auf, weil der Colonel mit der Kasse verschwand. Zurück blieben achtzehn Leute ohne Lohn, ein Pferd, das bei Applaus losgeht, und ein verschlossener Requisitenwagen, den niemand öffnen durfte.

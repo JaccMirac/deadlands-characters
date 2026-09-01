@@ -39,8 +39,8 @@ Waffen:
 - Colt Peacemaker (.45) | 12/24/48 | 2W6+1 | 1 | 1 | 4 | $15 | 6 Schuss
 - Messer | 3/6/12 | Stä+W4 | – | 1 | 0,5 | $2 | auch als Wurfwaffe
 Notizen:
-- Brave: +2 auf Furchtproben, Abzug auf der Angsttabelle –2 · Fleet-Footed: Bewegungsweite 8, Sprint W10
-- Ranger-Sold 40 Dollar im Monat — den Toby noch nie jemand ausgezahlt hat
+- Brave: +2 auf Furcht, Angsttabelle –2 · Fleet-Footed: Bewegungsweite 8, Sprint W10
+- Ranger-Sold 40 Dollar im Monat — den Toby nie jemand ausgezahlt hat
 ```
 
 **Hintergrund.** Tobias Mullan hütete Rinder bei Fort Sumner, bis im Februar '84 ein Ranger namens Casper Hines an ihrem Feuer abstieg und um Wasser bat. Hines war die einzige Person, die den Jungen je nach seiner Meinung gefragt hatte. Drei Wochen später ritt Toby als bezahlter Führer für ihn, und am neunten Tag lag Hines in einem Wash bei Bosque Redondo mit einem Loch unter dem Schlüsselbein und einer Woche zu weit vom nächsten Arzt entfernt. Toby trug ihn elf Stunden. Es half nichts. Er begrub ihn, nahm den Stern, den Mantel, die Flinte und das Fahndungsbuch, ritt nach Norden und fand in Hines' Satteltasche einen Stapel Vordrucke der Territorialen Ranger, unausgefüllt, mit dem Dienstsiegel schon aufgedruckt. Er brauchte zwei Nächte, um sich für einen Namen zu entscheiden. Er nahm seinen eigenen.

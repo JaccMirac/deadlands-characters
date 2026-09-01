@@ -36,8 +36,8 @@ Ausrüstung:
 Waffen:
 - Der Fäustel | – | Stä+W6 | – | – | 1,5 | $3 | als Kriegskeule gekauft (Grundbuch S. 29), Mindeststärke W6 erfüllt · Eschenstiel, dreimal ersetzt, Kopf nie
 Notizen:
-- Sweep: ein Kämpfen-Angriff mit –2 gegen alle in Reichweite, Freund wie Feind, Schaden je Gegner einzeln
-- Brawny: Größe +1, Robustheit +1 · Guts: freie Wiederholung bei Furcht · Nachtängste: –1 auf Willenskraft
+- Sweep: ein Angriff mit –2 gegen alle in Reichweite, Freund wie Feind
+- Brawny: Größe und Robustheit +1 · Guts: Furcht neu · Nachtängste: –1 Willenskraft
 ```
 
 **Hintergrund.** Merthyr Tydfil, dann die Anthrazitgruben bei Scranton, dann Colorado, weil ein Anwerber behauptete, dort sei die Luft besser. Owen ist Häuer in der dritten Generation und kann weder lesen noch schreiben; die Zahlen kann er, weil man beim Gedinge betrogen wird, wenn man sie nicht kann. Im November '83 brach in der Grube Little Bess bei Crested Butte die vierte Sohle zusammen und schnitt ihn mit zwei anderen ab. Die zwei anderen starben in den ersten beiden Tagen. Owen schlug sich sechzig Meter durch Bruchgestein und sang dabei ununterbrochen *Aberystwyth*, weil Singen Luft spart, wenn man langsam singt, und weil die Rettungsmannschaft ein Geräusch braucht, auf das sie zugraben kann. Am neunten Tag holten sie ihn heraus. Er hat den Fäustel behalten und ist nie wieder eingefahren.

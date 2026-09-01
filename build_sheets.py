@@ -151,6 +151,80 @@ def lat1(s):
     return re.sub(r"\s{2,}", " ", u"".join(out)).strip()
 
 
+# Feste Schriftgroesse fuer die Listenspalten. Die Formularfelder stehen in
+# der Vorlage auf 0 = automatisch, und damit staucht der Betrachter lange
+# Eintraege bis zur Unlesbarkeit zusammen (oder schneidet sie ab). Mit fester
+# Groesse wird stattdessen umgebrochen.
+LISTEN_FONT = 7.5
+LISTEN_EINZUG = u"   "
+FELD_RAND = 6.0          # Innenabstand des Feldes, links plus rechts
+
+# Gemessen wird mit fitz.Font, NICHT mit fitz.get_text_length: letzteres nimmt
+# die Base-14-Metrik und liegt bei Sonderzeichen (Anfuehrungszeichen, Gedanken-
+# strich, Umlaute) bis zu 16 % zu niedrig -- die Zeile passt dann rechnerisch
+# und ragt gedruckt trotzdem aus dem Feld.
+_HELV = fitz.Font("helv")
+
+
+def _breit(text, fontsize=None):
+    return _HELV.text_length(text, fontsize=fontsize or LISTEN_FONT)
+
+
+def umbrechen(text, breite, fontsize=LISTEN_FONT, einzug=LISTEN_EINZUG):
+    """Bricht einen Eintrag an Wortgrenzen auf so viele Zeilen um, wie er
+    braucht. Fortsetzungszeilen werden eingerueckt, damit am Tisch erkennbar
+    bleibt, dass sie zum Eintrag darueber gehoeren."""
+    grenze = breite - FELD_RAND
+    if _breit(text, fontsize) <= grenze:
+        return [text]
+    rest, zeilen, praefix = text.split(), [], u""
+    while rest:
+        zeile = praefix
+        while rest:
+            kandidat = (zeile + u" " + rest[0]) if zeile.strip() else praefix + rest[0]
+            # ein einzelnes ueberlanges Wort muss trotzdem gesetzt werden,
+            # sonst dreht die Schleife durch
+            if zeile.strip() and _breit(kandidat, fontsize) > grenze:
+                break
+            zeile = kandidat
+            rest.pop(0)
+        zeilen.append(zeile)
+        praefix = einzug
+    return zeilen
+
+
+def spalte_fuellen(eintraege, breite, zeilen_max):
+    """Verteilt Eintraege auf die Zeilen einer Spalte.
+
+    Ein Eintrag darf als Paar (vollstaendig, kurz) kommen -- bei der
+    Ausruestung ist das der Gegenstand mit und ohne seine Anmerkung. Gesetzt
+    wird in zwei Durchgaengen: erst alles vollstaendig, und nur wenn das nicht
+    aufgeht, die *ganze* Spalte in der Kurzfassung. Lieber alle Gegenstaende
+    ohne Beiwerk als die Haelfte mit. Was dann immer noch nicht passt, wandert
+    ungeteilt in den Ueberlauf, statt abgeschnitten zu werden.
+    """
+    def versuch(kurzfassung):
+        zeilen, rest = [], []
+        for e in eintraege:
+            voll, kurz = e if isinstance(e, tuple) else (e, e)
+            teil = umbrechen(kurz if kurzfassung else voll, breite)
+            if rest or len(zeilen) + len(teil) > zeilen_max:
+                rest.append(voll)
+            else:
+                zeilen.extend(teil)
+        return zeilen, rest
+
+    zeilen, rest = versuch(False)
+    if not rest:
+        return zeilen, rest, []
+    zeilen_k, rest_k = versuch(True)
+    if len(rest_k) < len(rest):
+        gekuerzt = [e[1] for e in eintraege
+                    if isinstance(e, tuple) and e[0] != e[1]]
+        return zeilen_k, rest_k, gekuerzt
+    return zeilen, rest, []
+
+
 def entmarkup(s):
     s = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", s)   # [Text](link)
     s = re.sub(r"[*_`]+", "", s)
@@ -180,6 +254,14 @@ def titel_und_beiname(raw):
     if q:
         beiname = q.group(1).strip()
         voll = re.sub(u"[„“\"][^“”\"]+[“”\"]", "", voll)
+        # Der Beiname stand mitten im Titel; ohne ihn bleibt die Interpunktion
+        # verwaist stehen -- aus 'Hazel Quist — „Glass Hazel", die Trickschuetzin'
+        # wurde sonst 'Hazel Quist — , die Trickschuetzin'.
+        voll = re.sub(r"\s*[—–-]\s*,", u",", voll)
+        voll = re.sub(r"\s{2,}", u" ", voll)
+        voll = re.sub(r"\s+([,;])", r"\1", voll)
+        voll = re.sub(r"([—–-]|,)\s*$", u"", voll).strip()
+        voll = re.sub(r"^\s*([—–-]|,)\s*", u"", voll).strip()
     return lat1(voll), lat1(beiname)
 
 
@@ -351,25 +433,16 @@ def fuelle(pfad_md, ziel):
             break
         text["Skills %d" % i] = nm
 
-    for i, (nm, schwere) in enumerate(handicaps(d), 1):
-        if i > 4:
-            warn(u"%s: mehr als 4 Handicaps, %s faellt weg" % (basis, nm))
-            break
-        text["Hindrances %d" % i] = mit_deutsch(nm) + (
-            u" — %s" % schwere if schwere else u"")
+    # Die drei Listenspalten werden hier nur gesammelt. Gesetzt werden sie
+    # weiter unten, sobald die Vorlage offen ist -- fuer den Zeilenumbruch
+    # wird die Feldbreite gebraucht. lat1 laeuft schon jetzt, damit gemessen
+    # wird, was spaeter auch wirklich gedruckt wird.
+    hindernisse = [lat1(mit_deutsch(nm) + (u" — %s" % schwere if schwere else u""))
+                   for nm, schwere in handicaps(d)]
 
-    zeilen = [mit_deutsch(t) for t in talente(d)]
+    talentzeilen = [lat1(mit_deutsch(t)) for t in talente(d)]
     for notiz in g_abschnitt.get("notizen", []):
-        zeilen.append(u" | ".join(notiz))
-    # Nur die ersten fuenf Zeilen dieser Spalte sind frei. Ab der sechsten
-    # beginnt die vorgedruckte Aufstiegsspur (N N N S S S S V V V V H H H H
-    # L L L L), die dem Spieler gehoert und nicht bedruckt werden darf.
-    ueberlauf = zeilen[EDGE_ZEILEN:]
-    for i, z in enumerate(zeilen[:EDGE_ZEILEN], 1):
-        text["Edges & Advancements %d" % i] = z
-    if ueberlauf:
-        warn(u"%s: %d Talent-/Notizzeile(n) passen nicht in die Talentspalte "
-             u"und stehen jetzt bei der Ausruestung" % (basis, len(ueberlauf)))
+        talentzeilen.append(lat1(u" | ".join(notiz)))
 
     # Ausruestung: Name, Kosten und die Anmerkung; das Gewicht traegt der
     # Bogen nicht, es dient nur der Kontrolle in der Markdown-Datei.
@@ -378,16 +451,10 @@ def fuelle(pfad_md, ziel):
         nm = r[0]
         anm = r[3] if len(r) > 3 and r[3] else u""
         p = r[1] if len(r) > 1 else u""
-        gear.append(u"%s%s%s" % (nm,
-                                 u" (%s)" % p if p and preis(p) else u"",
-                                 u" — %s" % anm if anm else u""))
-    gear.append(u"Bargeld: %s" % geld(rest))
-    gear.extend(ueberlauf)
-    for i, z in enumerate(gear, 1):
-        if i > 18:
-            warn(u"%s: mehr als 18 Ausruestungszeilen" % basis)
-            break
-        text["Gear %d" % i] = z
+        kopf = lat1(u"%s%s" % (nm, u" (%s)" % p if p and preis(p) else u""))
+        voll = lat1(u"%s%s" % (kopf, u" — %s" % anm if anm else u""))
+        gear.append((voll, kopf))
+    bargeld = lat1(u"Bargeld: %s" % geld(rest))
 
     SPALTEN = ["Weapons %d", "Weapons Range %d", "Weapons Damage %d",
                "Weapons AP %d", "Weapons ROF %d", "Weapons WT %d",
@@ -419,10 +486,64 @@ def fuelle(pfad_md, ziel):
 
     doc = fitz.open(VORLAGE)
     seite = doc[0]
+
+    # Jetzt erst die Listenspalten: die Feldbreite steht in der Vorlage, und
+    # ohne sie laesst sich nicht an Wortgrenzen umbrechen.
+    breite, LISTENFELD = {}, re.compile(
+        r"^(Gear|Hindrances|Edges & Advancements) \d+$")
+    for w in seite.widgets():
+        m = LISTENFELD.match(w.field_name or u"")
+        if m:
+            breite.setdefault(m.group(1), w.rect.width)
+
+    zeilen, rest_h, kurz_h = spalte_fuellen(hindernisse,
+                                            breite.get("Hindrances", 166.5), 4)
+    for i, z in enumerate(zeilen, 1):
+        text["Hindrances %d" % i] = z
+    if rest_h:
+        warn(u"%s: %d Handicap(s) passen nicht in die Spalte: %s"
+             % (basis, len(rest_h), u", ".join(rest_h)))
+
+    # Nur die ersten fuenf Zeilen der Talentspalte sind frei. Ab der sechsten
+    # beginnt die vorgedruckte Aufstiegsspur (N N N S S S S V V V V H H H H
+    # L L L L), die dem Spieler gehoert und nicht bedruckt werden darf.
+    zeilen, ueberlauf, kurz_e = spalte_fuellen(
+        talentzeilen, breite.get("Edges & Advancements", 166.6), EDGE_ZEILEN)
+    for i, z in enumerate(zeilen, 1):
+        text["Edges & Advancements %d" % i] = z
+    if ueberlauf:
+        warn(u"%s: %d Talent-/Notizzeile(n) passen nicht in die Talentspalte "
+             u"und stehen jetzt bei der Ausruestung" % (basis, len(ueberlauf)))
+
+    # Eine Zeile bleibt fuer das Bargeld reserviert. Als letzter Eintrag faellt
+    # es sonst herunter, und das ist die eine Zahl, die am Tisch wirklich
+    # gebraucht wird.
+    zeilen, rest_g, kurz_g = spalte_fuellen(gear + ueberlauf,
+                                            breite.get("Gear", 167.5), 17)
+    zeilen.append(bargeld)
+    for i, z in enumerate(zeilen, 1):
+        text["Gear %d" % i] = z
+    if kurz_h + kurz_e + kurz_g:
+        warn(u"%s: %d Eintrag/Eintraege ohne ihre Anmerkung gesetzt, weil die "
+             u"Spalte sonst nicht gereicht haette: %s"
+             % (basis, len(kurz_h + kurz_e + kurz_g),
+                u"; ".join(kurz_h + kurz_e + kurz_g)))
+    if rest_g:
+        warn(u"%s: %d Zeile(n) passen nicht mehr auf den Bogen: %s"
+             % (basis, len(rest_g), u" / ".join(rest_g)))
+
     for w in seite.widgets():
         fn = w.field_name
         if fn in text:
-            w.field_value = lat1(text[fn])
+            if LISTENFELD.match(fn or u""):
+                # feste Groesse statt 0: sonst staucht der Betrachter lange
+                # Eintraege zusammen, statt den Umbruch zu zeigen. Der Wert
+                # ist bereits durch lat1 gelaufen und darf nicht noch einmal,
+                # sonst faellt die Einrueckung der Fortsetzungszeilen weg.
+                w.text_fontsize = LISTEN_FONT
+                w.field_value = text[fn]
+            else:
+                w.field_value = lat1(text[fn])
             w.update()
         elif fn in haken:
             an = w.button_states()["normal"][0]
