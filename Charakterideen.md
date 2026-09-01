@@ -12,14 +12,14 @@ Ein Midjourney-Prompt pro Figur: **[Bildprompts.md](Bildprompts.md)**
 
 ---
 
-## Das Einsteiger-Set — acht Figuren für einen One-Shot
+## Das Einsteiger-Set — neun Figuren für einen One-Shot
 
 Sechs neue Figuren, eine je Archetyp, gebaut nach dem Muster der
 **offiziellen PEG-Pregens** (`Pregens_Deadlands01.pdf`): schlanker Bogen,
 drei Talente, die immer gelten, keine Sonderregel, die man nachschlagen muss.
 Gedacht für Leute, die weder Savage Worlds noch Deadlands kennen. Dazu kommen
-**Cordelia Vance** und **Lam Ah-Yuen**, die schon im Ordner standen und mit
-hereingenommen wurden. Zusammen ergeben sie eine vollständige Posse — Schütze,
+**Cordelia Vance**, **Lam Ah-Yuen** und **Walking Thunder**, die schon im Ordner
+standen und mit hereingenommen wurden. Zusammen ergeben sie eine vollständige Posse — Schütze,
 Nahkämpfer, Späher, Heiler, Autorität, Hexerei, eine Tür und ein Wagen.
 
 | Figur | Archetyp | Der ganze Charakter in einem Satz |
@@ -32,6 +32,7 @@ Nahkämpfer, Späher, Heiler, Autorität, Hexerei, eine Tür und ein Wagen.
 | [Josephine Pike](Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.md) | Explorer | Wanderfotografin, Bemerken W8+2, Kamera als Beweismittel |
 | [Cordelia Vance](Charaktere/05-1-cordelia-cold-deck-vance.md) | Huckster | ein Ablauf für alles: Benny, Glücksspiel W10, fünf Karten, bestes Blatt |
 | [Lam Ah-Yuen](Charaktere/11-1-lam-ah-yuen.md) | Chi Master | Parade 7, Angreifer –2, kein Nachladen — er steht in der ersten Reihe |
+| [Walking Thunder](Charaktere/12-1-wakhiya-mani-walking-thunder-oglala-lakota.md) | Warrior | Klingenkeule, Kämpfen W8 — und er trifft härter, je mehr Wunden er hat |
 
 **Warum diese Archetypen.** Der Komplexitätstreiber in Deadlands ist
 immer derselbe: der arkane Hintergrund. Taschenspieler und Runenschütze
@@ -43,6 +44,16 @@ und **Gesegnete** kommen dazu, weil sie der mit Abstand einfachste arkane
 Hintergrund sind: ein Glaube-Wurf, feste Machtpunkte, kein Kartenziehen, kein
 Pakt. Dieselbe Auswahl trifft PEG in seinen eigenen Pregens, deren zwei
 schlankeste Bögen (die Revolverheldin und der Krieger) gar keine Mächte haben.
+
+**Der Sonderfall Walking Thunder.** Er ist der zweite reine Nahkämpfer neben
+Owain, spielt sich aber genau andersherum: *Mach ihn nicht wütend!* addiert die
+Anzahl seiner **Wunden** auf jeden Nahkampfschaden. Er wird also stärker, je
+schlechter es um ihn steht — für einen Erstspieler die angenehmste Art,
+angeschlagen zu sein. Sein *Eid auf die Alten Bräuche* (Grundbuch S. 15) ist
+die einzige Zeile, die Aufmerksamkeit verlangt: freie Wiederholung auf **jede**
+Willenskraftprobe, solange er keine moderne Technik anfasst, und weg für 24
+Stunden, wenn doch. Ein Handicap, das sich wie ein Talent anfühlt — und das am
+Tisch von selbst die Frage beantwortet, ob er in die Dampfkutsche steigt.
 
 **Der Sonderfall Lam Ah-Yuen.** Chi-Meister klingen kompliziert und sind es
 nicht. Seine drei Mächte wirken **ausschließlich auf ihn selbst**, es gibt
@@ -132,7 +143,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 
 ### [WARRIOR (Krieger)](Archetypen/12-warrior.md)
 
-- [Wakȟíŋyaŋ Máni („Walking Thunder") — Oglala Lakota](Charaktere/12-1-wakhiya-mani-walking-thunder-oglala-lakota.md)
+- [Wakȟíŋyaŋ Máni („Walking Thunder") — Oglala Lakota](Charaktere/12-1-wakhiya-mani-walking-thunder-oglala-lakota.md) — **Einsteigerfigur**
 - [Delia „Del" Cobb — Freigelassene, Deserteurin, Preisboxerin](Charaktere/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.md)
 
 - [Owain „Owen" Tregarth — neun Tage unter Tage](Charaktere/12-3-owain-owen-tregarth-der-bergmann.md) — **Einsteigerfigur**

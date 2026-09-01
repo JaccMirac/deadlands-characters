@@ -57,12 +57,12 @@ Handicaps: **Heroic** (*Heldenhaft*) — Major · **Loyal** — Minor · **Stubb
 
 - **Territorial Ranger** (*Territorialer Ranger*) — Er kündigt den Stern an, jedes Mal, im vollen Wortlaut. +1 Überreden bei Gesetzestreuen, +1 Einschüchtern bei Gesetzlosen, dazu ein Sold von 40 Dollar im Monat, den ihm noch nie jemand ausgezahlt hat.
 - **Brave** (*Mutig*) — Keine Furchtlosigkeit, sondern die feste Überzeugung, dass Hines an seiner Stelle auch geblieben wäre. +2 auf Furchtproben, Abzug auf der Angsttabelle –2.
-- **Fleet-Footed** (*Flink*) — Neunzehn, und er läuft auf das Geräusch zu statt von ihm weg. Bewegungsweite 8, Sprintwürfel W10.
+- **Fleet-Footed** (*Flink*) — Neunzehn und schneller als sein eigenes Urteilsvermögen. Wo etwas passiert, ist er als Erster dort. Bewegungsweite 8, Sprintwürfel W10.
 - **Heroic** (*Heldenhaft*) — Major: Er sagt niemandem ab, der um Hilfe bittet. Auch nicht dem, der erkennbar lügt.
 - **Loyal** — Minor: Wer einmal neben ihm gestanden hat, wird ihn nicht mehr los.
 - **Stubborn** (*Stur*) — Minor: Er hat einmal gesagt, was er tut. Danach ist die Sache besprochen, auch für ihn selbst.
 
-**Warum es Spaß macht.** Heldenhaft ist der beste Motor, den man einem Anfänger geben kann: Du musst nie fragen, ob dein Charakter mitkommt. Der Stern gibt dir in jeder Szene einen Satz, mit dem du anfangen kannst, und Mutig plus Flink heißen, dass du auf das Geräusch zuläufst, während der Rest des Tisches noch überlegt.
+**Warum es Spaß macht.** Heldenhaft ist der beste Motor, den man einem Anfänger geben kann: Du musst nie fragen, ob dein Charakter mitkommt. Der Stern gibt dir in jeder Szene einen Satz, mit dem du anfangen kannst, und Mutig plus Flink heißen, dass du schon unterwegs bist, während der Rest des Tisches noch berät.
 
 ---
 

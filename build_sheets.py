@@ -34,7 +34,7 @@ AUSGABE = os.path.join(REPO, "CharacterSheetsPdf")
 # Welche Figuren auf den Tisch kommen. Praefixe genuegen ("11-1"), der Rest
 # des Dateinamens wird gesucht. Reihenfolge = Reihenfolge in Auswahl.pdf.
 # Die sieben Einsteigerfiguren (siehe Charakterideen.md). Reihenfolge = Auswahl.pdf.
-AUSWAHL = ["01-3", "02-3", "04-3", "05-1", "07-3", "11-1", "12-3", "13-3"]
+AUSWAHL = ["01-3", "02-3", "04-3", "05-1", "07-3", "11-1", "12-1", "12-3", "13-3"]
 
 STARTGELD = 250.0        # Deadlands weicht hier von SWADE ab, Grundbuch S. 25
 BENNIES = "3"
@@ -76,6 +76,8 @@ DE = {
     u"Grim Servant o' Death":            (u"Grimmiger Diener des Todes", True),                  # GB S. 15
     u"Night Terrors":                    (u"Nachtängste", True),                                 # GB S. 16
     u"Talisman":                         (u"Talisman", True),                                    # GB S. 16
+    u"Oath of the Old Ways":              (u"Eid auf die Alten Bräuche", True),                   # GB S. 15
+    u"Ailin'":                            (u"Kränkelnd", True),                                   # GB S. 16
     # -- Talente aus SWADE ------------------------------------------------
     u"Alertness":                        (u"Aufmerksamkeit", True),                              # SW S. 38
     u"Ambidextrous":                     (u"Beidhändig", True),                                  # SW S. 38
@@ -116,6 +118,7 @@ DE = {
     u"Vengeful":                         (u"Rachsüchtig", True),                                 # SW S. 26
     u"Vow":                              (u"Schwur", True),                                      # SW S. 27, nicht „Gelübde“
     u"Cautious":                         (u"Vorsichtig", True),                                  # SW S. 28
+    u"Obligation":                       (u"Verpflichtung", True),                               # SW S. 28
     u"Doubting Thomas":                  (u"Zweifler", True),                                    # SW S. 28
     u"Driven":                           (u"Angetrieben", True),                                 # SW S. 22
     u"Overconfident":                    (u"Übermütig", True),                                   # SW S. 28, nur schwer
@@ -253,10 +256,14 @@ def titel_und_beiname(raw):
     q = re.search(u"[„“\"]([^“”\"]+)[“”\"]", voll)
     if q:
         beiname = q.group(1).strip()
-        voll = re.sub(u"[„“\"][^“”\"]+[“”\"]", "", voll)
+        voll = re.sub(u"[„“\"][^“”\"]+[“”\"]", "", voll, count=1)
         # Der Beiname stand mitten im Titel; ohne ihn bleibt die Interpunktion
         # verwaist stehen -- aus 'Hazel Quist — „Glass Hazel", die Trickschuetzin'
         # wurde sonst 'Hazel Quist — , die Trickschuetzin'.
+        voll = re.sub(r"\s*[(\[]\s*[)\]]", u"", voll)   # „…" stand in Klammern
+        # "X, genannt „Y“ — Z" laesst sonst ein nacktes "genannt" zurueck
+        voll = re.sub(r",?\s*(?:genannt|bekannt als|angekündigt als)\s*(?=[—–-]|$)", u"", voll)
+        voll = re.sub(r"\s*([—–])\s*", u" \\1 ", voll)
         voll = re.sub(r"\s*[—–-]\s*,", u",", voll)
         voll = re.sub(r"\s{2,}", u" ", voll)
         voll = re.sub(r"\s+([,;])", r"\1", voll)
