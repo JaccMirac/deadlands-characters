@@ -27,7 +27,7 @@
 
 ## Charaktere
 
-- [Lam Ah-Yuen 林亞元](../Charaktere/11-1-lam-ah-yuen.md)
+- [Lam Ah-Yuen 林亞元](../Charaktere/11-1-lam-ah-yuen.md) — **Einsteigerfigur**
 - [Kuroda Sae 黒田 冴](../Charaktere/11-2-kuroda-sae.md)
 
 ---

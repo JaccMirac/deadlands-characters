@@ -12,15 +12,15 @@ Ein Midjourney-Prompt pro Figur: **[Bildprompts.md](Bildprompts.md)**
 
 ---
 
-## Das Einsteiger-Set — sieben Figuren für einen One-Shot
+## Das Einsteiger-Set — acht Figuren für einen One-Shot
 
 Sechs neue Figuren, eine je Archetyp, gebaut nach dem Muster der
 **offiziellen PEG-Pregens** (`Pregens_Deadlands01.pdf`): schlanker Bogen,
 drei Talente, die immer gelten, keine Sonderregel, die man nachschlagen muss.
-Gedacht für Leute, die weder Savage Worlds noch Deadlands kennen. Dazu kommt
-**Cordelia Vance**, die schon im Ordner stand und mit hereingenommen wurde.
-Zusammen ergeben sie eine vollständige Posse — Schütze, Nahkämpfer, Späher,
-Heiler, Autorität, Hexerei und ein Wagen.
+Gedacht für Leute, die weder Savage Worlds noch Deadlands kennen. Dazu kommen
+**Cordelia Vance** und **Lam Ah-Yuen**, die schon im Ordner standen und mit
+hereingenommen wurden. Zusammen ergeben sie eine vollständige Posse — Schütze,
+Nahkämpfer, Späher, Heiler, Autorität, Hexerei, eine Tür und ein Wagen.
 
 | Figur | Archetyp | Der ganze Charakter in einem Satz |
 | --- | --- | --- |
@@ -31,8 +31,9 @@ Heiler, Autorität, Hexerei und ein Wagen.
 | [Owain Tregarth](Charaktere/12-3-owain-owen-tregarth-der-bergmann.md) | Warrior | walisischer Häuer, Kämpfen W8, keine Schusswaffe, keine Wahl |
 | [Josephine Pike](Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.md) | Explorer | Wanderfotografin, Bemerken W8+2, Kamera als Beweismittel |
 | [Cordelia Vance](Charaktere/05-1-cordelia-cold-deck-vance.md) | Huckster | ein Ablauf für alles: Benny, Glücksspiel W10, fünf Karten, bestes Blatt |
+| [Lam Ah-Yuen](Charaktere/11-1-lam-ah-yuen.md) | Chi Master | Parade 7, Angreifer –2, kein Nachladen — er steht in der ersten Reihe |
 
-**Warum diese sechs Archetypen.** Der Komplexitätstreiber in Deadlands ist
+**Warum diese Archetypen.** Der Komplexitätstreiber in Deadlands ist
 immer derselbe: der arkane Hintergrund. Taschenspieler und Runenschütze
 ziehen Karten und riskieren Rückschlag, Verrückte Wissenschaftler haben
 Fehlfunktionstabellen und Gizmos, Gepeinigte führen einen Beherrschungspool.
@@ -42,6 +43,15 @@ und **Gesegnete** kommen dazu, weil sie der mit Abstand einfachste arkane
 Hintergrund sind: ein Glaube-Wurf, feste Machtpunkte, kein Kartenziehen, kein
 Pakt. Dieselbe Auswahl trifft PEG in seinen eigenen Pregens, deren zwei
 schlankeste Bögen (die Revolverheldin und der Krieger) gar keine Mächte haben.
+
+**Der Sonderfall Lam Ah-Yuen.** Chi-Meister klingen kompliziert und sind es
+nicht. Seine drei Mächte wirken **ausschließlich auf ihn selbst**, es gibt
+also nie eine Zielwahl; die Wing-Tsun-Haltung wird einmal angesagt und gilt,
+bis er wechselt; und eine Waffe, die nachgeladen werden müsste, hat er gar
+nicht. Am Tisch bleibt: hingehen, Kämpfen W8 würfeln, stehen bleiben. Was man
+wissen muss, ist die Asymmetrie: **Parade 7 und –2 auf jeden Nahkampfschaden,
+aber nur Robustheit 4** — gegen Fäuste und Messer fast unverwundbar, gegen
+einen Revolver auf zwölf Meter ein sechzig Kilo schwerer Mann ohne Panzerung.
 
 **Der Sonderfall Cordelia.** Der Taschenspieler ist eigentlich der schwerste
 Archetyp — 10 Machtpunkte, keine Bennies für Machtpunkte, keine Kostensenkung,
@@ -54,8 +64,7 @@ Treffer aus und gehört hinter die anderen. Und ein Patzer auf den Glücksspiel-
 Wurf schickt den Marshal auf die W20-Rückschlagstabelle (GB S. 88); *Falsch
 Spielen* gibt ihr dagegen einen freien Neuwurf.
 
-**Nicht dabei**: Chi-Meister (steht mit Lam Ah-Yuen schon bereit),
-Runenschütze, Verrückter Wissenschaftler, Gepeinigter, Agent, Schamane — alle
+**Nicht dabei**: Runenschütze, Verrückter Wissenschaftler, Gepeinigter, Agent, Schamane — alle
 sinnvoll, aber keiner davon ist die Figur, die man jemandem in die Hand drückt,
 der zum ersten Mal einen Wildwürfel sieht.
 
@@ -118,7 +127,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 
 ### [CHI MASTER (Chi-Meister)](Archetypen/11-chi-master.md)
 
-- [Lam Ah-Yuen 林亞元](Charaktere/11-1-lam-ah-yuen.md)
+- [Lam Ah-Yuen 林亞元](Charaktere/11-1-lam-ah-yuen.md) — **Einsteigerfigur**
 - [Kuroda Sae 黒田 冴](Charaktere/11-2-kuroda-sae.md)
 
 ### [WARRIOR (Krieger)](Archetypen/12-warrior.md)

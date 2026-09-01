@@ -34,7 +34,7 @@ AUSGABE = os.path.join(REPO, "CharacterSheetsPdf")
 # Welche Figuren auf den Tisch kommen. Praefixe genuegen ("11-1"), der Rest
 # des Dateinamens wird gesucht. Reihenfolge = Reihenfolge in Auswahl.pdf.
 # Die sieben Einsteigerfiguren (siehe Charakterideen.md). Reihenfolge = Auswahl.pdf.
-AUSWAHL = ["01-3", "02-3", "04-3", "05-1", "07-3", "12-3", "13-3"]
+AUSWAHL = ["01-3", "02-3", "04-3", "05-1", "07-3", "11-1", "12-3", "13-3"]
 
 STARTGELD = 250.0        # Deadlands weicht hier von SWADE ab, Grundbuch S. 25
 BENNIES = "3"

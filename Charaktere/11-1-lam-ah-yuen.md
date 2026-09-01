@@ -2,6 +2,8 @@
 
 *Archetyp: [CHI MASTER (Chi-Meister)](../Archetypen/11-chi-master.md)*
 
+*Einsteigerfigur: eine Haltung, ein Wurf, kein Nachladen — er geht nach vorn und bleibt stehen.*
+
 *Unterschreibt englische Briefe als „A. Yuen Lam". Die Deadwood-Bergleute nennen ihn „Uncle Lam", was er nicht mehr korrigiert.*
 
 > *Er hat nie den ersten Schlag geführt und nie den letzten verloren.*
@@ -60,6 +62,15 @@ Ausrüstung: Arzttasche, Reitermantel, Messer, Maultier mit Sattel, Feldflasche 
 
 **Aufhänger.** Die Briefe des Verbands schicken ihn neuerdings an Orte, wo die Vermissten nicht vermisst sind. Sie arbeiten — nachts in einem Schacht, still, mit toten Augen, drei Schichten ohne Wasser, für ein Syndikat, dessen Lohnbuchhalter im Hauptbuch des Verbands selbst steht. Sein Gelübde sagt: gehorche den Briefen. Was er zu ahnen beginnt, ist, dass **die Briefe das Falsche sind.**
 *Dunkler, wenn der Marshal ein Messer will:* im Juli '77, als sich die Sandlots nach Chinatown ergossen und die Wäschereien brannten, hatte Lam Befehl, ein Lagerhaus zu bewachen. Er gehorchte. Ng Tai-hoi starb drei Straßen weiter. Er hat das in sieben Jahren niemandem erzählt, und es ist der Grund, warum Pazifismus bei ihm ein Handicap ist und keine Tugend — er weiß nicht, ob er die Regel hält, weil sie richtig ist, oder weil er Angst davor hat, was er täte, wenn er sie fallen ließe.
+
+**Notizen.** So sehen die sechs Zeilen des Bogens am Tisch aus.
+
+- **Martial Artist** (*Kampfkünstler*) — Seine Fäuste zählen als natürliche Waffen, +1 auf unbewaffnetes Kämpfen, Schaden Stä+W4. Er trägt kein Eisen, weil ein Chinese mit Waffe in Deadwood ein anderes Gespräch führt als einer ohne.
+- **Arcane Background (Chi Master)** (*Arkaner Hintergrund (Chi-Meister)*) — Nichts daran sieht nach Magie aus: er tapt die Handgelenke, atmet durch die Zähne aus und setzt sein Gewicht. Arkane Fertigkeit ist Fokus, 15 Machtpunkte, und alles Nützliche wirkt nur auf ihn selbst.
+- **Superior Kung Fu: Wing Tsun** (*Überlegenes Kung Fu*) — Die Haltung wird als freie Aktion zu Beginn seines Zuges eingenommen und hält, bis er wechselt: **+1 Parade und –2 auf jeden erlittenen Nahkampfschaden**. Am Tisch heißt das, er sagt sie einmal an und braucht sie danach nicht mehr zu erwähnen.
+- **Vow** (*Schwur*) — Major: dem Deadwooder Bezirksverband verpflichtet. Er geht, wohin ihre Briefe ihn schicken, und bringt die Leute atmend zurück — auch die, die es nicht verdient haben.
+- **Pacifist** (*Pazifist*) — Minor: Er führt nie den ersten Schlag. Das ist Doktrin, nicht Zimperlichkeit: *„Tote lernen nicht."*
+- **Cautious** (*Vorsichtig*) — Minor: Er geht in keinen Schacht, ohne das Seil vorher selbst geprüft zu haben, und rechnet den Rückweg mit, bevor er den Hinweg antritt.
 
 **Warum es Spaß macht.** Du bist die Tür. Irgendwer muss in der ersten Reihe stehen und vier Schläge einstecken, ohne einen auszuteilen, und du bist gebaut, um das mathematisch unbedenklich und dramatisch quälend zu machen. Jeder Kampf hat dieselbe Form: du absorbierst, du absorbierst, du fängst einen Arm — und dann ist der Raum still vorbei.
 

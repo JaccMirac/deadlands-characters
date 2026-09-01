@@ -6,8 +6,10 @@ Handreichung für eine Sitzung, die dieses Repo zum ersten Mal sieht.
 
 Spielleiter-Vorbereitung für eine Runde **Deadlands: The Weird West** auf
 **SWADE**. Kein Code-Projekt — der Inhalt sind Charaktere, der einzige Code ist
-ein kleiner Renderer. 13 Archetypen, je 2 Figuren, dazu ein Einsteiger-Set aus
-sechs weiteren Figuren, macht 32 Charaktere. Alles
+ein kleiner Renderer. 13 Archetypen, je 2 Figuren, dazu sechs weitere für den
+Einstieg, macht 32 Charaktere. Das **Einsteiger-Set** in `Charakterideen.md`
+umfasst acht davon: die sechs neuen plus Cordelia Vance und Lam Ah-Yuen, die
+schon da waren. Genau diese acht stehen in `AUSWAHL`. Alles
 auf Deutsch, weil am Tisch Deutsch gesprochen wird.
 
 Einstieg zum Lesen: [`Charakterideen.md`](Charakterideen.md) — die Übersicht,
