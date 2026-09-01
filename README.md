@@ -6,13 +6,16 @@ Charaktere fuer Deadlands: The Weird West (Savage Worlds Adventure Edition).
 
 | Pfad | Inhalt |
 | --- | --- |
-| [`Charakterideen.md`](Charakterideen.md) | Übersicht: alle 13 Archetypen mit je 2 Figuren, verlinkt |
+| [`Charakterideen.md`](Charakterideen.md) | Übersicht: alle 13 Archetypen mit je 2 Figuren, dazu das Einsteiger-Set aus 6 weiteren |
 | [`Regelnotizen.md`](Regelnotizen.md) | Regelkorrekturen und Novize-Fallen, die für alle Builds gelten |
 | [`Bildprompts.md`](Bildprompts.md) | Ein Midjourney-8.2-Prompt pro Figur, plus Stilklammer für den ganzen Satz |
-| `Charaktere/` | Eine Datei pro Figur (26) — Hintergrund, Build, Aufhänger |
+| `Charaktere/` | Eine Datei pro Figur (32) — Hintergrund, Build, Aufhänger |
 | `Archetypen/` | Eine Datei pro Archetyp (13) — Voraussetzungen, archetyp-spezifische Regelnotizen |
 | `Bilder/` | Die fertigen Midjourney-Bilder, flach, benannt wie die Charakterdateien |
 | `build_html.py` | Rendert jede `.md` als `.html` daneben |
+| `build_sheets.py` | Füllt den offiziellen Deadlands-Charakterbogen aus |
+| `build_dossier.py` | Deckblatt, Hintergrund, Regeltexte und Bogen als ein PDF |
+| `CharacterSheetsPdf/` | Die fertigen Bögen, je Figur einer plus `Auswahl.pdf` |
 | [`CLAUDE.md`](CLAUDE.md) | Konventionen, Werkzeugfallen und offene Punkte — für Claude Code |
 
 Jede Markdown-Datei liegt zusätzlich als HTML daneben — gleicher Name, Endung
@@ -29,13 +32,51 @@ python build_html.py
 
 Einzige Abhängigkeit: `pip install markdown`.
 
+## Charakterbögen zum Ausdrucken
+
+Wer am Tisch Papier braucht, lässt die Figuren in den offiziellen Bogen
+schreiben:
+
+```
+python build_sheets.py              # die Auswahl, die oben im Skript steht
+python build_sheets.py 11-1 01-2    # einzelne Figuren
+```
+
+Das Skript liest dieselben Markdown-Dateien — Attribute, Fertigkeiten,
+Handicaps und Talente aus dem ` ```build `-Block, Ausrüstung und Waffen aus
+` ```gear `, Mächte aus ` ```powers ` — und legt je Figur einen ausfüllbaren
+Bogen in `CharacterSheetsPdf/` ab, dazu ein `Auswahl.pdf` mit allen Seiten zum
+Ausdrucken. Das Startgeld rechnet es selbst nach und meldet, wenn eine Figur
+über 250 Dollar liegt. Zusätzliche Abhängigkeit: `pip install pymupdf`.
+
+Auf dem Bogen stehen Attribute, Fertigkeiten und Mächte englisch, Talente und
+Handicaps englisch mit dem deutschen Begriff in Klammern, Ausrüstung und Waffen
+deutsch.
+
+## Dossiers
+
+Für den Spieltisch gibt es je Figur eine komplette Mappe in einem PDF —
+Deckblatt mit Porträt und Namen in Western-Schrift, danach die
+Hintergrundgeschichte mit dem wörtlichen Regeltext zu jedem Talent und
+Handicap (samt Buch und Seitenzahl), zuletzt der ausgefüllte Charakterbogen:
+
+```
+python build_dossier.py
+```
+
+Die Regeltexte werden bei jedem Lauf aus den lokalen Regelwerk-PDFs gelesen und
+liegen nicht im Repo.
+
 Alle Builds sind **Novize** nach Standard-Erschaffung: 5 Attributspunkte,
 12 Fertigkeitspunkte, bis zu 4 Handicap-Punkte, 250 Dollar Startgeld.
-Talente und Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem
-Grundbuch in Klammern, wo das Grundbuch einen führt.
+Talente und Handicaps sind englisch benannt, mit dem **gedruckten** deutschen
+Begriff in Klammern — aus dem Grundbuch für die Deadlands-eigenen, aus dem
+deutschen SWADE-Grundregelwerk für den Rest. Jeder dieser Begriffe ist mit
+Seitenzahl belegt (`Regelnotizen.md`); selbst übersetzt wird nichts.
 
-Regelbasis: `Deadlands_Grundbuch.pdf` (Ulisses, deutsch) und
-`SWADE_Savage_Worlds_Adv_Ed_Core_Rules.pdf` (englisch) — beide liegen lokal im
+Regelbasis: `Deadlands_Grundbuch.pdf` (Ulisses, deutsch), das deutsche
+`Savage Worlds Abenteuer Edition` Grundregelwerk (Ulisses) und
+`SWADE_Savage_Worlds_Adv_Ed_Core_Rules.pdf` (englisch) — alle liegen lokal im
 Repo, sind aber per `.gitignore` ausgeschlossen.
 
 ## Vor Sitzung eins besprechen
@@ -54,3 +95,4 @@ Zwei Punkte im Grundbuch, die eine Tischabsprache verdienen:
 Details dazu stehen in den jeweiligen Archetyp-Dateien
 ([Schamanen](Archetypen/08-shaman.md), [Chi-Meister](Archetypen/11-chi-master.md),
 [Krieger](Archetypen/12-warrior.md)).
+

@@ -12,6 +12,7 @@
 
 - [„Rabbi" Feivel Zilber](../Charaktere/07-1-rabbi-feivel-zilber.md)
 - [Hermano Sixto Trujillo y Vigil](../Charaktere/07-2-hermano-sixto-trujillo-y-vigil.md)
+- [Patience Ludlow — die Quäkerin mit dem Wagenbaum](../Charaktere/07-3-patience-ludlow-die-quakerin.md) — **Einsteigerfigur**
 
 ---
 

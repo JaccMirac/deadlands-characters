@@ -3,7 +3,7 @@
 import os, re, io, glob
 import markdown
 
-REPO = r"D:\DnD\SWADE\Deadlands\deadlands-characters"
+REPO = os.path.dirname(os.path.abspath(__file__))
 
 CSS = u"""
 :root{
@@ -129,6 +129,20 @@ footer a{color:var(--muted)}
 .cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
 .cs-ledger li{margin-bottom:.3rem}
 .cs-ledger .tag{color:var(--muted);font-size:.82em}
+.cs-kit{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule)}
+.cs-kit h4{
+  margin:0 0 .5rem;font:700 .68rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+}
+.cs-kit + .cs-kit{margin-top:1.1rem}
+.cs-kit ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-kit li{margin-bottom:.25rem}
+.cs-kit .note{color:var(--muted);font-size:.88em}
+.cs-kit .cost{color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-purse{margin-top:.55rem;font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;
+  color:var(--muted);letter-spacing:.03em}
+.cs-purse b{color:var(--ink)}
+.cs-purse.bad b{color:var(--accent)}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -239,6 +253,63 @@ SEVERITY = {u"schwer": (2, u"Major"), u"Major": (2, u"Major"),
             u"leicht": (1, u"Minor"), u"Minor": (1, u"Minor")}
 
 WARNINGS = []
+
+
+def parse_sections(text):
+    """Ein Fenced Block aus Skalarzeilen (``Start: 250``) und Abschnitten
+    (``Waffen:`` gefolgt von ``- a | b | c``-Zeilen). Rueckgabe:
+    (skalare, abschnitte) -- beide Schluessel kleingeschrieben."""
+    skalar, abschnitte, aktuell = {}, {}, None
+    for line in (text or "").splitlines():
+        if not line.strip():
+            continue
+        m = re.match(r"^\s*-\s*(.+)$", line)
+        if m and aktuell is not None:
+            abschnitte[aktuell].append([c.strip() for c in m.group(1).split("|")])
+            continue
+        m = re.match(r"^\s*([^:]+):\s*(.*)$", line)
+        if m:
+            key, val = m.group(1).strip().lower(), m.group(2).strip()
+            if val:
+                skalar[key] = val
+                aktuell = None
+            else:
+                aktuell = key
+                abschnitte[aktuell] = []
+    return skalar, abschnitte
+
+
+def preis(tok):
+    """``$12,50`` / ``$1.50`` / ``50¢`` / ``-`` -> float."""
+    tok = (tok or "").strip()
+    if not tok or tok in (u"-", u"—", u"–"):
+        return 0.0
+    m = re.match(r"^(\d+(?:[.,]\d+)?)\s*¢$", tok)
+    if m:
+        return float(m.group(1).replace(",", ".")) / 100.0
+    m = re.match(r"^\$?\s*(\d+(?:[.,]\d+)?)$", tok)
+    if m:
+        return float(m.group(1).replace(",", "."))
+    WARNINGS.append(u"Preis nicht lesbar: %r" % tok)
+    return 0.0
+
+
+def geld(betrag):
+    """0.5 -> ``50¢``, 12.5 -> ``$12,50``, 50.0 -> ``$50``."""
+    if abs(betrag - round(betrag)) < 0.005:
+        return u"$%d" % int(round(betrag))
+    return (u"$%.2f" % betrag).replace(".", ",")
+
+
+ABSCHNITT = {u"ausrüstung": "gear", u"ausruestung": "gear", u"gear": "gear",
+             u"waffen": "weapons", u"weapons": "weapons",
+             u"notizen": "notes", u"notes": "notes",
+             u"mächte": "powers", u"maechte": "powers", u"powers": "powers"}
+
+
+def _sections(text):
+    skalar, roh = parse_sections(text)
+    return skalar, dict((ABSCHNITT.get(k, k), v) for k, v in roh.items())
 
 
 def _die_step(tok):  # akzeptiert d8 (engl.) wie W8 (dt.)
@@ -391,75 +462,162 @@ def render_build(text, base):
             '</section>' % (attr_html, skill_html, derived, ledger))
 
 
-targets = (glob.glob(os.path.join(REPO, "*.md"))
-           + glob.glob(os.path.join(REPO, "Archetypen", "*.md"))
-           + glob.glob(os.path.join(REPO, "Charaktere", "*.md")))
+def render_kit(gear_text, powers_text, base):
+    """Rendert ```gear``` und ```powers``` als Anhang der Charakterbogen-Karte.
+    Die Dollarrechnung passiert hier -- der Block listet nur Preise."""
+    esc = lambda s: (s.replace("&", "&amp;").replace("<", "&lt;")
+                     .replace(">", "&gt;"))
+    g_sk, g_ab = _sections(gear_text)
+    p_sk, p_ab = _sections(powers_text)
+    teile = []
 
-md = markdown.Markdown(extensions=["extra", "sane_lists", "smarty"],
-                       extension_configs={"smarty": {"substitutions": {
-                           "left-double-quote": "\u201e",
-                           "right-double-quote": "\u201c"}}})
+    ausr, waffen = g_ab.get("gear", []), g_ab.get("weapons", [])
+    if ausr or waffen:
+        items = []
+        for r in ausr:
+            kosten = r[1] if len(r) > 1 else u""
+            note = r[3] if len(r) > 3 and r[3] else u""
+            items.append(
+                '<li>%s%s%s</li>'
+                % (esc(r[0]),
+                   ' <span class="cost">%s</span>' % esc(kosten)
+                   if kosten and preis(kosten) else "",
+                   ' <span class="note">&mdash; %s</span>' % esc(note)
+                   if note else ""))
+        start = float(g_sk.get("start", 250))
+        weg = (sum(preis(r[1]) for r in ausr if len(r) > 1)
+               + sum(preis(r[6]) for r in waffen if len(r) > 6))
+        purse = ('<div class="cs-purse%s">%s ausgegeben von %s &middot; '
+                 '<b>%s</b> Bargeld</div>'
+                 % (" bad" if weg > start else "", geld(weg), geld(start),
+                    geld(start - weg)))
+        if weg > start:
+            WARNINGS.append("%s: Startgeld ueberzogen (%s von %s)"
+                            % (base, geld(weg), geld(start)))
+        teile.append('<div class="cs-kit"><h4>Gear</h4><ul>%s</ul>%s</div>'
+                     % ("".join(items), purse))
 
-count = 0
-for src in sorted(targets):
-    raw = io.open(src, encoding="utf-8").read()
+    if waffen:
+        kopf = ["Weapon", "Range", "Damage", "AP", "RoF", "Wt.", "Cost"]
+        rows = []
+        for r in waffen:
+            zellen = (r + [""] * 8)[:7]
+            note = r[7] if len(r) > 7 and r[7] else ""
+            rows.append("<tr>%s</tr>" % "".join(
+                "<td>%s</td>" % esc(c) for c in zellen)
+                + ('<tr><td colspan="7" class="note">%s</td></tr>' % esc(note)
+                   if note else ""))
+        teile.append(
+            '<div class="cs-kit"><h4>Weapons</h4><table><thead><tr>%s</tr>'
+            '</thead><tbody>%s</tbody></table></div>'
+            % ("".join("<th>%s</th>" % h for h in kopf), "".join(rows)))
 
-    # Baukasten-Block herausloesen und durch Platzhalter ersetzen
-    base = os.path.splitext(os.path.basename(src))[0]
-    card_html = ""
-    bm = re.search(r"(?ms)^```build[ \t]*\n(.*?)\n```[ \t]*$", raw)
-    if bm:
-        card_html = render_build(bm.group(1), base)
-        raw = raw[:bm.start()] + "\nBUILDCARDPLACEHOLDER\n" + raw[bm.end():]
+    maechte = p_ab.get("powers", [])
+    if maechte:
+        kopf = ["Power", "PP", "Range", "Dur.", "Effect"]
+        rows = ["<tr>%s</tr>" % "".join("<td>%s</td>" % esc(c)
+                                        for c in (r + [""] * 5)[:5])
+                for r in maechte]
+        pp = p_sk.get("machtpunkte") or p_sk.get("power points")
+        teile.append(
+            '<div class="cs-kit"><h4>Powers%s</h4><table><thead><tr>%s</tr>'
+            '</thead><tbody>%s</tbody></table></div>'
+            % (" (%s PP)" % esc(pp) if pp else "",
+               "".join("<th>%s</th>" % h for h in kopf), "".join(rows)))
 
-    md.reset()
-    html = md.convert(raw)
-    if card_html:
-        html = html.replace("<p>BUILDCARDPLACEHOLDER</p>", card_html)
+    for note in g_ab.get("notes", []):
+        teile.append('<div class="cs-kit"><p class="note">%s</p></div>'
+                     % esc(u" · ".join(note)))
+    return "".join(teile)
 
-    # interne .md-Links auf .html umbiegen
-    html = re.sub(r'(href="[^"]*?)\.md(?=("|#))', r"\1.html", html)
-    # smartypants macht aus Jahreszahlen wie '84 ein oeffnendes Anfuehrungs-
-    # zeichen; es ist ein Apostroph (Auslassung des Jahrhunderts)
-    html = re.sub(r"&lsquo;(?=\d)", "&rsquo;", html)
-    # breite Tabellen horizontal scrollbar machen
-    html = html.replace("<table>", '<div class="tablewrap"><table>')
-    html = html.replace("</table>", "</table></div>")
 
-    # Charakterseiten: gleichnamiges Portraet aus Bilder/ unter den Titel setzen
-    base = os.path.splitext(os.path.basename(src))[0]
-    if (os.path.basename(os.path.dirname(src)) == "Charaktere"
-            and os.path.exists(os.path.join(REPO, "Bilder", base + ".png"))):
-        fig = ('<figure class="portrait"><img src="../Bilder/%s.png" '
-               'alt="%s"></figure>' % (base, first_h1(raw)))
-        html = html.replace("</h1>", "</h1>\n" + fig, 1)
+def main():
+    targets = (glob.glob(os.path.join(REPO, "*.md"))
+               + glob.glob(os.path.join(REPO, "Archetypen", "*.md"))
+               + glob.glob(os.path.join(REPO, "Charaktere", "*.md")))
 
-    rel = os.path.relpath(src, REPO)
-    depth = rel.count(os.sep)
-    out = os.path.splitext(src)[0] + ".html"
-    io.open(out, "w", encoding="utf-8", newline="\n").write(PAGE % {
-        "title": first_h1(raw), "css": CSS, "nav": nav_for(depth),
-        "body": html, "src": os.path.basename(src)})
-    count += 1
+    md = markdown.Markdown(extensions=["extra", "sane_lists", "smarty"],
+                           extension_configs={"smarty": {"substitutions": {
+                               "left-double-quote": "\u201e",
+                               "right-double-quote": "\u201c"}}})
 
-# GitHub-Pages-Einstieg: index.html leitet auf die Charakteruebersicht,
-# .nojekyll verhindert Jekyll-Verarbeitung (Dateien werden 1:1 ausgeliefert).
-io.open(os.path.join(REPO, ".nojekyll"), "w", encoding="utf-8").write(u"")
-io.open(os.path.join(REPO, "index.html"), "w", encoding="utf-8",
-        newline="\n").write(
-    u'<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n'
-    u'<meta name="viewport" content="width=device-width,initial-scale=1">\n'
-    u'<meta http-equiv="refresh" content="0; url=Charakterideen.html">\n'
-    u'<title>Deadlands: The Weird West — Charaktere</title>\n'
-    u'<style>body{margin:0;min-height:100vh;display:flex;align-items:center;'
-    u'justify-content:center;background:#17140f;color:#ece4d6;'
-    u'font:16px/1.6 "Iowan Old Style",Palatino,Georgia,serif}'
-    u'a{color:#e2a06f}</style>\n</head>\n<body>\n'
-    u'<p><a href="Charakterideen.html">Deadlands-Charaktere &rarr;</a></p>\n'
-    u'</body>\n</html>\n')
+    count = 0
+    for src in sorted(targets):
+        raw = io.open(src, encoding="utf-8").read()
 
-print("HTML-Dateien geschrieben: %d" % count)
-if WARNINGS:
-    print("\nBaukasten-Warnungen (%d):" % len(WARNINGS))
-    for w in WARNINGS:
-        print("  ! " + w)
+        # Baukasten-Block herausloesen und durch Platzhalter ersetzen
+        base = os.path.splitext(os.path.basename(src))[0]
+        card_html = ""
+        gear_txt = powers_txt = None
+        for nm in ("gear", "powers"):
+            m = re.search(r"(?ms)^```%s[ \t]*\n(.*?)\n```[ \t]*$" % nm, raw)
+            if m:
+                if nm == "gear":
+                    gear_txt = m.group(1)
+                else:
+                    powers_txt = m.group(1)
+                raw = raw[:m.start()] + raw[m.end():]
+        bm = re.search(r"(?ms)^```build[ \t]*\n(.*?)\n```[ \t]*$", raw)
+        if bm:
+            card_html = render_build(bm.group(1), base)
+            if gear_txt or powers_txt:
+                card_html = card_html.replace(
+                    "</section>", render_kit(gear_txt, powers_txt, base)
+                    + "</section>")
+            raw = raw[:bm.start()] + "\nBUILDCARDPLACEHOLDER\n" + raw[bm.end():]
+
+        md.reset()
+        html = md.convert(raw)
+        if card_html:
+            html = html.replace("<p>BUILDCARDPLACEHOLDER</p>", card_html)
+
+        # interne .md-Links auf .html umbiegen
+        html = re.sub(r'(href="[^"]*?)\.md(?=("|#))', r"\1.html", html)
+        # smartypants macht aus Jahreszahlen wie '84 ein oeffnendes Anfuehrungs-
+        # zeichen; es ist ein Apostroph (Auslassung des Jahrhunderts)
+        html = re.sub(r"&lsquo;(?=\d)", "&rsquo;", html)
+        # breite Tabellen horizontal scrollbar machen
+        html = html.replace("<table>", '<div class="tablewrap"><table>')
+        html = html.replace("</table>", "</table></div>")
+
+        # Charakterseiten: gleichnamiges Portraet aus Bilder/ unter den Titel setzen
+        base = os.path.splitext(os.path.basename(src))[0]
+        if (os.path.basename(os.path.dirname(src)) == "Charaktere"
+                and os.path.exists(os.path.join(REPO, "Bilder", base + ".png"))):
+            fig = ('<figure class="portrait"><img src="../Bilder/%s.png" '
+                   'alt="%s"></figure>' % (base, first_h1(raw)))
+            html = html.replace("</h1>", "</h1>\n" + fig, 1)
+
+        rel = os.path.relpath(src, REPO)
+        depth = rel.count(os.sep)
+        out = os.path.splitext(src)[0] + ".html"
+        io.open(out, "w", encoding="utf-8", newline="\n").write(PAGE % {
+            "title": first_h1(raw), "css": CSS, "nav": nav_for(depth),
+            "body": html, "src": os.path.basename(src)})
+        count += 1
+
+    # GitHub-Pages-Einstieg: index.html leitet auf die Charakteruebersicht,
+    # .nojekyll verhindert Jekyll-Verarbeitung (Dateien werden 1:1 ausgeliefert).
+    io.open(os.path.join(REPO, ".nojekyll"), "w", encoding="utf-8").write(u"")
+    io.open(os.path.join(REPO, "index.html"), "w", encoding="utf-8",
+            newline="\n").write(
+        u'<!doctype html>\n<html lang="de">\n<head>\n<meta charset="utf-8">\n'
+        u'<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+        u'<meta http-equiv="refresh" content="0; url=Charakterideen.html">\n'
+        u'<title>Deadlands: The Weird West — Charaktere</title>\n'
+        u'<style>body{margin:0;min-height:100vh;display:flex;align-items:center;'
+        u'justify-content:center;background:#17140f;color:#ece4d6;'
+        u'font:16px/1.6 "Iowan Old Style",Palatino,Georgia,serif}'
+        u'a{color:#e2a06f}</style>\n</head>\n<body>\n'
+        u'<p><a href="Charakterideen.html">Deadlands-Charaktere &rarr;</a></p>\n'
+        u'</body>\n</html>\n')
+
+    print("HTML-Dateien geschrieben: %d" % count)
+    if WARNINGS:
+        print("\nBaukasten-Warnungen (%d):" % len(WARNINGS))
+        for w in WARNINGS:
+            print("  ! " + w)
+
+
+if __name__ == "__main__":
+    main()

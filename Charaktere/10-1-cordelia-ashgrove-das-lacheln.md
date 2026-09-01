@@ -30,7 +30,7 @@ Edges: Agent [free: Human] | Charismatic [Hindrance] | Strong Willed [Hindrance]
 **Build.** Geschicklichkeit W6, **Verstand W8**, **Geist W8**, Stärke W4, Konstitution W4 · Parade 5, Robustheit 4
 Kämpfen W6, Schießen W6, Okkultismus W6, **Überreden W8**, Auftreten W6, Bemerken W6, Heimlichkeit W6
 Talente: **Agent**, **Charismatic** (*Charismatisch*), **Strong Willed** (*Starker Wille*)
-Handicaps: **Ruthless** (*Skrupellos*) — Major: sie tut, was die Akte verlangt. Die Freundlichkeit ist keine Lüge, sondern eine Technik. · **Suspicious** — Minor · **Vow** (*Gelübde*) — Minor: auf die Vereinigten Staaten; das Buch nennt das ausdrücklich als die *einzige* echte Anforderung an einen Agenten
+Handicaps: **Ruthless** (*Skrupellos*) — Major: sie tut, was die Akte verlangt. Die Freundlichkeit ist keine Lüge, sondern eine Technik. · **Suspicious** — Minor · **Vow** (*Schwur*) — Minor: auf die Vereinigten Staaten; das Buch nennt das ausdrücklich als die *einzige* echte Anforderung an einen Agenten
 Ausrüstung: Gatling-Pistole .36 in einer Ledermappe, nie vor Zivilisten gezogen · Agency-Ausweis und Marke · Derringer .41 in der Kleidertasche · **Verkleidungszubehör** · Dietriche · Golduhr mit Chiffreschlüssel im Deckel · Handschellen · ein gutes Reisekleid · Pferd
 *Schlimmster Albtraum (Erschaffungsschritt 9): dass die Agency in allem recht hat und die richtige Antwort tatsächlich lautet, die Stadt niederzubrennen.*
 

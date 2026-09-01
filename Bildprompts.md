@@ -1,6 +1,6 @@
 # Bildprompts (Midjourney 8.2)
 
-Ein Prompt pro Figur, 26 Stück, in derselben Reihenfolge wie
+Ein Prompt pro Figur, 32 Stück plus ein NSC, in derselben Reihenfolge wie
 [`Charakterideen.md`](Charakterideen.md). Die Prompts sind englisch, weil
 Midjourney englische Bildbegriffe deutlich zuverlässiger auflöst; die
 Bildidee darüber steht auf Deutsch.
@@ -13,7 +13,7 @@ Versions-Flag. Das `--preview`-Flag aus der Testphase wird nicht mehr
 gebraucht. Wer *zurück* will, hängt `--v 8.1` an. Die Prompts unten sind
 deshalb ohne Versionsangabe geschrieben — sie sind 8.2, weil alles 8.2 ist.
 
-**Ein Deck, ein Look.** 26 Bilder sehen nur dann nach einem Satz
+**Ein Deck, ein Look.** 33 Bilder sehen nur dann nach einem Satz
 Charakterkarten aus, wenn sie eine gemeinsame Stilklammer haben. Der
 Werkzeugkasten dafür in 8.2:
 
@@ -26,7 +26,7 @@ Werkzeugkasten dafür in 8.2:
 | `--hd` | größere Ausgabe, wenn gedruckt werden soll |
 
 Praktisch: **einen** Prompt laufen lassen, das schönste Bild auswählen,
-dessen `--sref`-Code ziehen und ihn an alle 26 anhängen. Der Stilblock
+dessen `--sref`-Code ziehen und ihn an alle 33 anhängen. Der Stilblock
 steht trotzdem in jedem Prompt ausgeschrieben, damit jeder einzeln
 funktioniert.
 
@@ -102,6 +102,16 @@ half-length portrait of a wind-burned white woman in her early twenties, blonde 
 
 Ablage: `Bilder/01-2-wilhelmina-billie-kessler.png`
 
+### [Hazel Quist — „Glass Hazel"](Charaktere/01-3-hazel-quist-die-trickschutzin.md)
+
+*Mitten in der Nummer, nur gibt es die Schau nicht mehr: sie wirft selbst, und niemand sieht zu.*
+
+```
+full length figure, environmental shot of a lean fair-haired woman of twenty-one, Scandinavian features, wind-chapped cheeks, a fringed show costume with tarnished spangles worn over ordinary work clothes, one sleeve mended twice, caught mid-act: a single action revolver extended at arm's length and angled steeply upward, a thin plume of white powder smoke, high above her a glass ball bursting into a slow cloud of feathers and glass, her eyes already on the second ball still rising, the empty rutted lot behind a shuttered depot, no crowd, only a horse tied to the rail and a torn circus playbill nailed to the weathered boards, smoke and feathers smeared by the long exposure while she stands sharp, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/01-3-hazel-quist-die-trickschutzin.png`
+
 ---
 
 ## 02 · [BOUNTY HUNTER (Kopfgeldjäger)](Archetypen/02-bounty-hunter.md)
@@ -125,6 +135,16 @@ half-length portrait of a Mexican woman of thirty-two, dark hair pulled back, a 
 ```
 
 Ablage: `Bilder/02-2-maria-refugio-alvarado-genannt-cuca.png`
+
+### [Ephraim Doak](Charaktere/02-3-ephraim-doak-der-leichenbestatter.md)
+
+*Leichenbestatter, der Kopfgelder eintreibt, weil er die Fracht ohnehin fährt. Der Wagen ist die halbe Figur.*
+
+```
+half-length portrait of a narrow-shouldered white man of about forty in a black undertaker's suit and bowler hat, pale careful eyes, ink-stained fingers, a folded oilcloth ledger under one arm, standing beside a two-wheeled buckboard whose zinc-lined bed holds two plain pine coffins packed in sawdust, a block and tackle hanging from the cart frame, a revolver worn without display, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/02-3-ephraim-doak-der-leichenbestatter.png`
 
 ---
 
@@ -174,6 +194,16 @@ half-length portrait of a small neat white woman of twenty-one, dark hair pinned
 
 Ablage: `Bilder/04-2-adelaide-addie-kroll-die-wegen-der-akten-kam.png`
 
+### [Tobias „Toby" Mullan](Charaktere/04-3-tobias-toby-mullan-der-junge-ranger.md)
+
+*Neunzehn, in der Ausrüstung eines Toten. Alles an ihm ist zwei Nummern zu groß außer der Entschlossenheit.*
+
+```
+half-length portrait of a nineteen year old white ranch hand with a thin unshaven jaw and an unlined face, an oversized armored riding duster with the cuffs turned back twice, a lawman's five point star pinned slightly crooked to the chest, a single barrel shotgun held across the body, a battered stetson too large for him, morning light on an empty road behind him, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/04-3-tobias-toby-mullan-der-junge-ranger.png`
+
 ---
 
 ## 05 · [HUCKSTER (Taschenspieler)](Archetypen/05-huckster.md)
@@ -187,6 +217,16 @@ half-length portrait of a composed white woman of thirty in an immaculately tail
 ```
 
 Ablage: `Bilder/05-1-cordelia-cold-deck-vance.png`
+
+### NSC · Mr. Pettibone
+
+*Cordelias Manitou. Kein Monster — ein kahler Buchhalter mit Bleistift hinterm Ohr. Das Bild hat zwei Hälften: links sitzt er, rechts zeigt der Spiegel denselben Raum ohne ihn.*
+
+```
+half-length portrait of a bald courteous clerk of about fifty-five, a close fringe of grey hair above the ears, a carpenter's pencil tucked behind one ear, a plain dark suit twenty years out of fashion, celluloid cuffs, seated at a plain deal desk in a small rented office, a bowler hat and a closed green cloth ledger on the desk beside a kerosene lamp, a patient half-smile, looking straight into the camera; a tall mirror fills the right half of the frame, angled so that the man and the mirror stand side by side in the same photograph; the mirror shows the same desk, the same lamp, the same ledger, the same hat and an empty chair — the room exactly as it is, only without him; the mirror rendered in the same sharp focus and the same detail as the man, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/05-1-mr-pettibone.png`
 
 ### [Elijah Prosper Teague](Charaktere/05-2-elijah-prosper-teague.md)
 
@@ -245,6 +285,16 @@ half-length portrait of a heavyset Nuevomexicano carpenter of forty with sawdust
 ```
 
 Ablage: `Bilder/07-2-hermano-sixto-trujillo-y-vigil.png`
+
+### [Patience Ludlow](Charaktere/07-3-patience-ludlow-die-quakerin.md)
+
+*Quäkerin in ungefärbtem Grau. Kein Leuchten, kein Symbol — die Kraft ist an ihrer Ruhe zu erkennen.*
+
+```
+half-length portrait of a spare grey-haired woman of forty-three in undyed grey plain dress with a plain collar and hooks instead of buttons, no jewelry, no ornament, calm level eyes, hands folded over a heavy hickory wagon-tongue staff wound with wire at one end, a worn medical satchel at her feet, standing in the doorway of a plank building, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/07-3-patience-ludlow-die-quakerin.png`
 
 ---
 
@@ -366,6 +416,16 @@ half-length portrait of a strong shouldered Black woman of twenty-six in cut dow
 
 Ablage: `Bilder/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.png`
 
+### [Owain „Owen" Tregarth](Charaktere/12-3-owain-owen-tregarth-der-bergmann.md)
+
+*Walisischer Häuer, neun Tage verschüttet. Der Fäustel ist Werkzeug, Waffe und Andenken in einem.*
+
+```
+half-length portrait of a thickset dark-haired Welsh coal miner of thirty-five, heavy shoulders, coal dust ground permanently into the creases of his hands and eyelids, a broken nose, a short-hafted mining sledge resting on one shoulder, a pickaxe and coiled rope slung behind, standing at the mouth of a timbered adit in low evening light, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/12-3-owain-owen-tregarth-der-bergmann.png`
+
 ---
 
 ## 13 · [EXPLORER (Entdecker)](Archetypen/13-explorer.md)
@@ -389,6 +449,16 @@ half-length portrait of a Métis guide of thirty-six with a drooping moustache a
 ```
 
 Ablage: `Bilder/13-2-ambroise-ducharme-metis-fuhrer-vom-red-river.png`
+
+### [Josephine „Jo" Pike](Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.md)
+
+*Wanderfotografin mit Atelierwagen. Sie sieht durch die Kamera mehr, als vor ihr gestanden hat.*
+
+```
+half-length portrait of a dark-haired woman of thirty in a plain traveling skirt and coat with chemical stains on the cuffs and fingertips, a box camera on a wooden tripod beside her, a glass plate held up against the light and examined closely, a two-wheeled buckboard with a light-tight box body behind her, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/13-3-josephine-jo-pike-die-wanderfotografin.png`
 
 ---
 

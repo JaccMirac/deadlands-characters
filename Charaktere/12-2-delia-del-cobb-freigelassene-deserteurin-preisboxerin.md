@@ -13,6 +13,34 @@ Hindrances: Wanted (Major), Loyal (Minor), Illiterate (Minor)
 Edges: Two-Fisted [free: Human] | Ambidextrous [Hindrance] | Martial Artist [Hindrance]
 ```
 
+```gear
+Start: 250
+Nickname: Del
+Ausrüstung:
+- Billig-Pferd „Sergeant" | $75 | – | halber Preis, dafür zwei leichte Handicaps: es bleibt bei Trommelwirbeln stehen
+- McClellan-Sattel | – | 15 | aus dem Fort mitgenommen, Regimentsstempel ausgeschnitten
+- Satteltaschen | $5 | 2,5
+- Holster und Pistolengürtel | $5 | 1
+- Reitermantel | $10 | 2
+- Reithosen | $4 | 3 | Panzerung +1 (Beine)
+- Kleidung (Hemd, Hose, Stiefel) | $11 | 3,5
+- Filzhut | $3 | –
+- Feldflasche | $1 | 2,5
+- Schlafsack | $4 | 5
+- Reise-Rationen, 10 Tage | $5 | 15
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Patronen .45, 50 Schuss | $2 | 1,5
+- Rosshaar-Handwickel | – | – | wickelt sie vor jedem Kampf neu, ob es einen geben wird oder nicht
+Waffen:
+- Kavalleriesäbel | – | Stä+W6 | – | – | 2 | $15 | Regimentsnummer am Korb abgefeilt
+- Messer, Bowie | – | Stä+W4+1 | 1 | – | 1 | $4
+- Colt Peacemaker (.45) | 12/24/48 | 2W6+1 | 1 | 1 | 4 | $15 | 6 Schuss · Gewicht laut Grundbuch S. 30
+Notizen:
+- Two-Fisted: Säbel und Bowie in derselben Runde ohne Mehrfachaktions-Abzug
+- Ambidextrous: kein Abzug für die schwache Hand
+```
+
+
 **Hintergrund.** Als Eigentum bei Boonville geboren, mit elf freigelassen, mit vierzehn hungrig. Sie verpflichtete sich 1878 in den Jefferson Barracks als „Gefreiter Del Cobb", leistete den Eid der 10. neben ihrem älteren Bruder Isaiah und lernte das Boxen bei den Regimentsabenden in Fort Concho, wo sie sehr gut war und sehr leise das beste Geld der Kompanie. '82 verkaufte ein Quartiermeisterfeldwebel Munition im Wert von drei Troopern an einen „Prospektionstrupp" aus dem Pecos-Land; die Patrouille, die den Trupp suchen sollte, kam nicht zurück. Del fand sie. Sie standen noch. Sie meldete es, bekam gesagt, sie solle den Mund halten und das Hemd zugeknöpft lassen, und ritt in derselben Nacht davon, ohne abzuwarten, für welchen der beiden Befehle sie sie hängen würden.
 
 **Build.** Geschicklichkeit W8, Verstand W4, Geist W6, Stärke W6, Konstitution W6 · **Parade 7**, Robustheit 5

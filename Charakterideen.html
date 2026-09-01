@@ -128,6 +128,20 @@ footer a{color:var(--muted)}
 .cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
 .cs-ledger li{margin-bottom:.3rem}
 .cs-ledger .tag{color:var(--muted);font-size:.82em}
+.cs-kit{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule)}
+.cs-kit h4{
+  margin:0 0 .5rem;font:700 .68rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+}
+.cs-kit + .cs-kit{margin-top:1.1rem}
+.cs-kit ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-kit li{margin-bottom:.25rem}
+.cs-kit .note{color:var(--muted);font-size:.88em}
+.cs-kit .cost{color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-purse{margin-top:.55rem;font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;
+  color:var(--muted);letter-spacing:.03em}
+.cs-purse b{color:var(--ink)}
+.cs-purse.bad b{color:var(--accent)}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -140,22 +154,111 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="README.html">Repo</a><a href="Charakterideen.html">Charaktere</a><a href="Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Deadlands: The Weird West — Charakterideen</h1>
-<p>Zwei Konzepte pro Archetyp. Regelbasis: <em>Deadlands Grundbuch</em> (Ulisses, SWADE-Ausgabe) + <em>SWADE Core Rules</em>.
+<p>Zwei Konzepte pro Archetyp, dazu ein <strong>Einsteiger-Set</strong> aus sechs weiteren Figuren (siehe unten) — 32 Charaktere insgesamt. Regelbasis: <em>Deadlands Grundbuch</em> (Ulisses, SWADE-Ausgabe) + <em>SWADE Core Rules</em>.
 Alle Builds sind Novize, nach Standard-Erschaffung (5 Attributspunkte, 12 Fertigkeitspunkte, max. 4 Handicap-Punkte).
 Talente/Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem Grundbuch in Klammern.</p>
 <p>Regelgrundlage: <strong><a href="Regelnotizen.html">Regelnotizen.md</a></strong></p>
 <p>Jede Figur liegt als eigene Datei unter <code>Charaktere/</code>, die Regelnotizen je Archetyp unter <code>Archetypen/</code>.</p>
 <p>Ein Midjourney-Prompt pro Figur: <strong><a href="Bildprompts.html">Bildprompts.md</a></strong></p>
 <hr />
+<h2>Das Einsteiger-Set — sieben Figuren für einen One-Shot</h2>
+<p>Sechs neue Figuren, eine je Archetyp, gebaut nach dem Muster der
+<strong>offiziellen PEG-Pregens</strong> (<code>Pregens_Deadlands01.pdf</code>): schlanker Bogen,
+drei Talente, die immer gelten, keine Sonderregel, die man nachschlagen muss.
+Gedacht für Leute, die weder Savage Worlds noch Deadlands kennen. Dazu kommt
+<strong>Cordelia Vance</strong>, die schon im Ordner stand und mit hereingenommen wurde.
+Zusammen ergeben sie eine vollständige Posse — Schütze, Nahkämpfer, Späher,
+Heiler, Autorität, Hexerei und ein Wagen.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Figur</th>
+<th>Archetyp</th>
+<th>Der ganze Charakter in einem Satz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Charaktere/01-3-hazel-quist-die-trickschutzin.html">Hazel Quist</a></td>
+<td>Gunslinger</td>
+<td>Schießen W8, zwei Peacemaker, kündigt jeden Schuss an</td>
+</tr>
+<tr>
+<td><a href="Charaktere/02-3-ephraim-doak-der-leichenbestatter.html">Ephraim Doak</a></td>
+<td>Bounty Hunter</td>
+<td>Leichenbestatter mit Eiswagen; bringt der Gruppe ein Fahrzeug mit</td>
+</tr>
+<tr>
+<td><a href="Charaktere/04-3-tobias-toby-mullan-der-junge-ranger.html">Tobias Mullan</a></td>
+<td>Territorial Ranger</td>
+<td>neunzehn, Stern eines Toten, Heldenhaft — läuft immer los</td>
+</tr>
+<tr>
+<td><a href="Charaktere/07-3-patience-ludlow-die-quakerin.html">Patience Ludlow</a></td>
+<td>Blessed</td>
+<td>Quäkerin, 20 Machtpunkte, dreimal Heilung ohne nachzudenken</td>
+</tr>
+<tr>
+<td><a href="Charaktere/12-3-owain-owen-tregarth-der-bergmann.html">Owain Tregarth</a></td>
+<td>Warrior</td>
+<td>walisischer Häuer, Kämpfen W8, keine Schusswaffe, keine Wahl</td>
+</tr>
+<tr>
+<td><a href="Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.html">Josephine Pike</a></td>
+<td>Explorer</td>
+<td>Wanderfotografin, Bemerken W8+2, Kamera als Beweismittel</td>
+</tr>
+<tr>
+<td><a href="Charaktere/05-1-cordelia-cold-deck-vance.html">Cordelia Vance</a></td>
+<td>Huckster</td>
+<td>ein Ablauf für alles: Benny, Glücksspiel W10, fünf Karten, bestes Blatt</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Warum diese sechs Archetypen.</strong> Der Komplexitätstreiber in Deadlands ist
+immer derselbe: der arkane Hintergrund. Taschenspieler und Runenschütze
+ziehen Karten und riskieren Rückschlag, Verrückte Wissenschaftler haben
+Fehlfunktionstabellen und Gizmos, Gepeinigte führen einen Beherrschungspool.
+Die fünf Archetypen ohne jede arkane Mechanik — Revolverheld, Kopfgeldjäger,
+Territorialer Ranger, Krieger, Entdecker — sind deshalb die Einstiegsplätze,
+und <strong>Gesegnete</strong> kommen dazu, weil sie der mit Abstand einfachste arkane
+Hintergrund sind: ein Glaube-Wurf, feste Machtpunkte, kein Kartenziehen, kein
+Pakt. Dieselbe Auswahl trifft PEG in seinen eigenen Pregens, deren zwei
+schlankeste Bögen (die Revolverheldin und der Krieger) gar keine Mächte haben.</p>
+<p><strong>Der Sonderfall Cordelia.</strong> Der Taschenspieler ist eigentlich der schwerste
+Archetyp — 10 Machtpunkte, keine Bennies für Machtpunkte, keine Kostensenkung,
+dafür der Teufelspakt mit Kartenziehen und Rückschlagstabelle. Cordelia dreht
+das um: weil sie <strong>überhaupt keine Angriffsmacht besitzt</strong>, ist der Pakt nicht
+die Ausnahme, sondern ihr einziger Ablauf, und ein Ablauf, den man jedes Mal
+gleich abspult, lernt sich in fünf Minuten (die fünf Schritte stehen in ihrer
+Datei). Was man wissen muss: <strong>Robustheit 4, Parade 2</strong> — sie hält keinen
+Treffer aus und gehört hinter die anderen. Und ein Patzer auf den Glücksspiel-
+Wurf schickt den Marshal auf die W20-Rückschlagstabelle (GB S. 88); <em>Falsch
+Spielen</em> gibt ihr dagegen einen freien Neuwurf.</p>
+<p><strong>Nicht dabei</strong>: Chi-Meister (steht mit Lam Ah-Yuen schon bereit),
+Runenschütze, Verrückter Wissenschaftler, Gepeinigter, Agent, Schamane — alle
+sinnvoll, aber keiner davon ist die Figur, die man jemandem in die Hand drückt,
+der zum ersten Mal einen Wildwürfel sieht.</p>
+<hr />
 <h3><a href="Archetypen/01-gunslinger.html">GUNSLINGER (Revolverheld)</a></h3>
 <ul>
 <li><a href="Charaktere/01-1-silas-deacon-crowe.html">Silas „Deacon“ Crowe</a></li>
-<li><a href="Charaktere/01-2-wilhelmina-billie-kessler.html">Wilhelmina „Billie“ Kessler</a></li>
+<li>
+<p><a href="Charaktere/01-2-wilhelmina-billie-kessler.html">Wilhelmina „Billie“ Kessler</a></p>
+</li>
+<li>
+<p><a href="Charaktere/01-3-hazel-quist-die-trickschutzin.html">Hazel Quist — „Glass Hazel“, die Trickschützin</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <h3><a href="Archetypen/02-bounty-hunter.html">BOUNTY HUNTER (Kopfgeldjäger)</a></h3>
 <ul>
 <li><a href="Charaktere/02-1-absalom-freed-genannt-the-long-sunday.html">Absalom Freed, genannt „the Long Sunday“</a></li>
-<li><a href="Charaktere/02-2-maria-refugio-alvarado-genannt-cuca.html">María Refugio Alvarado, genannt „Cuca“</a></li>
+<li>
+<p><a href="Charaktere/02-2-maria-refugio-alvarado-genannt-cuca.html">María Refugio Alvarado, genannt „Cuca“</a></p>
+</li>
+<li>
+<p><a href="Charaktere/02-3-ephraim-doak-der-leichenbestatter.html">Ephraim Doak — der Leichenbestatter mit dem Eiswagen</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <h3><a href="Archetypen/03-harrowed.html">HARROWED (Gepeinigte)</a></h3>
 <ul>
@@ -165,11 +268,16 @@ Talente/Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem Grund
 <h3><a href="Archetypen/04-territorial-ranger.html">TERRITORIAL RANGER (Territorialer Ranger)</a></h3>
 <ul>
 <li><a href="Charaktere/04-1-amos-dell-ledbetter-genannt-ledger-der-institutionalist.html">Amos Dell Ledbetter, genannt „Ledger“ — der Institutionalist</a></li>
-<li><a href="Charaktere/04-2-adelaide-addie-kroll-die-wegen-der-akten-kam.html">Adelaide „Addie“ Kroll — die wegen der Akten kam</a></li>
+<li>
+<p><a href="Charaktere/04-2-adelaide-addie-kroll-die-wegen-der-akten-kam.html">Adelaide „Addie“ Kroll — die wegen der Akten kam</a></p>
+</li>
+<li>
+<p><a href="Charaktere/04-3-tobias-toby-mullan-der-junge-ranger.html">Tobias „Toby“ Mullan — der Ranger, den niemand ernannt hat</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <h3><a href="Archetypen/05-huckster.html">HUCKSTER (Taschenspieler)</a></h3>
 <ul>
-<li><a href="Charaktere/05-1-cordelia-cold-deck-vance.html">Cordelia „Cold Deck“ Vance</a></li>
+<li><a href="Charaktere/05-1-cordelia-cold-deck-vance.html">Cordelia „Cold Deck“ Vance</a> — <strong>Einsteigerfigur</strong></li>
 <li><a href="Charaktere/05-2-elijah-prosper-teague.html">Elijah Prosper Teague</a></li>
 </ul>
 <h3><a href="Archetypen/06-hexslinger.html">HEXSLINGER (Runenschütze)</a></h3>
@@ -180,7 +288,12 @@ Talente/Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem Grund
 <h3><a href="Archetypen/07-blessed.html">BLESSED (Gesegnete)</a></h3>
 <ul>
 <li><a href="Charaktere/07-1-rabbi-feivel-zilber.html">„Rabbi“ Feivel Zilber</a></li>
-<li><a href="Charaktere/07-2-hermano-sixto-trujillo-y-vigil.html">Hermano Sixto Trujillo y Vigil</a></li>
+<li>
+<p><a href="Charaktere/07-2-hermano-sixto-trujillo-y-vigil.html">Hermano Sixto Trujillo y Vigil</a></p>
+</li>
+<li>
+<p><a href="Charaktere/07-3-patience-ludlow-die-quakerin.html">Patience Ludlow — die Quäkerin mit dem Wagenbaum</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <h3><a href="Archetypen/08-shaman.html">SHAMAN (Schamanen)</a></h3>
 <ul>
@@ -205,12 +318,22 @@ Talente/Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem Grund
 <h3><a href="Archetypen/12-warrior.html">WARRIOR (Krieger)</a></h3>
 <ul>
 <li><a href="Charaktere/12-1-wakhiya-mani-walking-thunder-oglala-lakota.html">Wakȟíŋyaŋ Máni („Walking Thunder“) — Oglala Lakota</a></li>
-<li><a href="Charaktere/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.html">Delia „Del“ Cobb — Freigelassene, Deserteurin, Preisboxerin</a></li>
+<li>
+<p><a href="Charaktere/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.html">Delia „Del“ Cobb — Freigelassene, Deserteurin, Preisboxerin</a></p>
+</li>
+<li>
+<p><a href="Charaktere/12-3-owain-owen-tregarth-der-bergmann.html">Owain „Owen“ Tregarth — neun Tage unter Tage</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <h3><a href="Archetypen/13-explorer.html">EXPLORER (Entdecker)</a></h3>
 <ul>
 <li><a href="Charaktere/13-1-wilhelmina-willa-kerner-naturforscherin-der-akademie-der-entdecker.html">Wilhelmina „Willa“ Kerner — Naturforscherin der Akademie der Entdecker</a></li>
-<li><a href="Charaktere/13-2-ambroise-ducharme-metis-fuhrer-vom-red-river.html">Ambroise Ducharme — Métis-Führer vom Red River</a></li>
+<li>
+<p><a href="Charaktere/13-2-ambroise-ducharme-metis-fuhrer-vom-red-river.html">Ambroise Ducharme — Métis-Führer vom Red River</a></p>
+</li>
+<li>
+<p><a href="Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.html">Josephine „Jo“ Pike — die Wanderfotografin</a> — <strong>Einsteigerfigur</strong></p>
+</li>
 </ul>
 <footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus Charakterideen.md</footer>
 </div>

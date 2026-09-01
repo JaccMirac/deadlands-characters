@@ -8,7 +8,7 @@
 Attributes: Agility d6, Smarts d8, Spirit d6, Strength d4, Vigor d6
 Skills: Shooting d8, Survival d8, Riding d6, Notice d6, Fighting d4, Intimidation d4
 Hindrances: Code of Honor (Major), Loyal (Minor), Cautious (Minor)
-Edges: Woodsman | Alertness | Grit
+Edges: Woodsman | Alertness | Guts
 ```
 
 **Hintergrund.** Absalom wurde als Eigentum auf einer Hanffarm in Missouri geboren und lernte Spuren lesen, bevor er Buchstaben lesen lernte. Als der lange Krieg sich '71 endlich selbst erwürgte, ging er westwärts ins Indianer-Territorium und heuerte als Posseman bei einem Bundesdeputy aus Fort Smith an — die weißen Deputies konnten der Fährte durch die Kiamichi-Niederungen nicht folgen, er schon, also zahlten sie ihm ein Drittel Anteil und ließen ihn bei den Pferden schlafen. Elf Jahre ritt er das, dann machte er sich selbständig, denn wer für sich selbst arbeitet, muss nicht erklären, warum er die Beute atmend zurückbringt. Er ist einundfünfzig, langsam im Reden und beunruhigend geduldig. Er reitet mit der Posse, weil eine Posse Zeugen bedeutet — und Zeugen sind das Einzige, was verhindert, dass der Gefangene eines Schwarzen „auf der Flucht erschossen" wird, kaum dass sie die Stadt erreichen.
@@ -17,7 +17,7 @@ Edges: Woodsman | Alertness | Grit
 
 **Build.** Geschicklichkeit W6, Verstand W8, Geist W6, Stärke W4, Konstitution W6 · Parade 4, Robustheit 5
 Schießen W8, Überleben W8, Reiten W6, Bemerken W6, Kämpfen W4, Einschüchtern W4
-Talente: **Woodsman** (*Naturbursche*), **Alertness** (*Aufmerksamkeit*), **Grit** (*Mumm*)
+Talente: **Woodsman** (*Naturbursche*), **Alertness** (*Aufmerksamkeit*), **Guts** (*Mumm*)
 Handicaps: **Code of Honor** (*Ehrenkodex*) — Major: lebendig oder gar nicht · **Loyal** — Minor · **Cautious** — Minor
 Ausrüstung: Winchester '73 in .44-40, Colt Peacemaker, **Lasso** (so nimmt er sie tatsächlich fest — Kämpfen-Probe, Verstrickt bzw. Gefesselt bei Steigerung), Handschellen, gutes Pferd mit durchgesessenem Sattel. In der linken Brusttasche, in Ölzeug gewickelt: die Messinggürtelschnalle eines Jungen.
 

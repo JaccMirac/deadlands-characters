@@ -13,12 +13,44 @@ Hindrances: Night Terrors (Major), Outsider (Minor), Doubting Thomas (Minor)
 Edges: Arcane Background (Shaman) [free: Human] | Woodsman [Hindrance] | Power Points [Hindrance]
 ```
 
+```gear
+Start: 250
+Nickname: Amos
+Ausrüstung:
+- Appaloosa-Stute | $150 | – | aus dem Gatter eines Siedlers zurückgekauft; die Blutlinie, die die Armee '77 zerstreute
+- Sattel | $25 | 15
+- Satteltaschen | $5 | 2,5
+- Carlisle-Uniformmantel | $15 | 1,5 | Wintermantel; die Messingknöpfe hat er abgeschnitten
+- Kleidung (Hemd, Hose, Stiefel) | $11 | 3,5
+- Schlafsack | $4 | 5
+- Kaffeekanne und Reisegeschirr | $2 | 1,5
+- Kaffee, halbes Kilo | 25¢ | 0,5
+- Feldflasche | $1 | 2,5
+- Reise-Rationen, 5 Tage | $2,50 | 7,5 | mehr braucht er nicht, Überleben W8
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Patronen .44-40, 100 Schuss | $4 | 3
+Waffen:
+- Winchester '73 (.44-40) | 24/48/96 | 2W8–1 | 2 | 1 | 5 | $25 | 15 Schuss · Mindeststärke W6, er hat W4: –1 auf Schießen
+- Messer, Bowie | – | Stä+W4+1 | 1 | – | 1 | $4
+Notizen:
+- Nachtängste: –1 auf alle Willenskraft-Proben, nicht auf Glaube-Proben
+- Er ist pleite. Die Stute hat alles gefressen.
+```
+
+```powers
+Machtpunkte: 20
+Mächte:
+- Wilderness Walk | 2 | Self | 1 Stunde | fünf Meilen zählen als eine, Spuren verblassen (Grundbuch S. 77)
+- Boost/Lower Trait | 2 | Smarts | 5 / Instant | Trait ±1 die type, ±2 with a raise
+```
+
+
 **Hintergrund.** Er war dreizehn im Sommer 1877 und ging elfhundert Meilen — Whitebird, Big Hole, der Yellowstone, dann der Schnee an den Bear Paws, vierzig Meilen vor Kanada. Was übrig war, kam nach Fort Leavenworth und dann hinunter ins Indianer-Territorium, wo die Malaria seine Schwester holte und etwa ein Drittel aller anderen, und 1880 setzte der Agent ihn in einen Zug nach Carlisle, Pennsylvania, wo er lateinische Deklinationen lernte, Schmiedehandwerk und ein schnelles „yes, sir". Im Frühjahr '84 kam er im Wollanzug zur Ponca-Agentur zurück, fließend im Englischen — und stellte fest, dass er das Nimipuutímt-Wort für eine Pflanze verloren hatte, die er als Kind mit seiner Mutter ausgegraben hatte. Er arbeitet jetzt als Dolmetscher und Führer für eine Reporterin des *Tombstone Epitaph* und die harten Burschen, an die sie sich gehängt hat. Das Geld ist echt und die Richtung ist Norden, und Norden ist die einzige Richtung, die ihn interessiert. Er möchte, dass alle verstehen, dass er an nichts davon glaubt. Er möchte es selbst verstehen.
 
 **Build.** Geschicklichkeit W6, Verstand W6, **Willenskraft W8**, Stärke W4, Konstitution W6 · Parade 5, Robustheit 5, **20 MP**
 **Glaube W8**, **Überleben W8**, Kämpfen W6, Bemerken W6, Schießen W4, Reiten W4
 Talente: **Arcane Background (Shaman)**, **Woodsman** (*Naturbursche*), **Power Points** (*Machtpunkte* — +5, gesamt 20: die Elster gibt ihm weit mehr, als er will, und er verbrennt es schnell, weil er darauf besteht, das letzte Mal sei Zufall gewesen)
-Handicaps: **Nightmares** (*Nachtängste*) — Major: −1 auf alle **Willenskraft**-Proben. Betrifft **nicht** seine Glaube-Fertigkeitsproben, sondern Angstproben und Widerstandsproben. Perfekt: das Ding, das ihn will, kommt nur nachts. · **Outsider** (*Außenseiter*) — Minor. *Hinweis: das Grundbuch koppelt Außenseiter an eine Fremdsprache und verlangt Punkte in Sprache (Englisch) — diese Klausel hier streichen, sein Englisch ist besser als das der Posse. Sein Außenseitertum ist sozial: zu schulgebildet für die Verbannten in Ponca, zu indianisch für jede Stadt von hier bis Idaho.* · **Doubting Thomas** (*Ungläubiger Thomas*) — Minor. **Vorher mit dem Marshal klären** — ein Schamane mit diesem Handicap ist ein bewusster Witz, der nur funktioniert, wenn man die Rationalisierung jedes einzelne Mal durchzieht.
+Handicaps: **Nightmares** (*Nachtängste*) — Major: −1 auf alle **Willenskraft**-Proben. Betrifft **nicht** seine Glaube-Fertigkeitsproben, sondern Angstproben und Widerstandsproben. Perfekt: das Ding, das ihn will, kommt nur nachts. · **Outsider** (*Außenseiter*) — Minor. *Hinweis: das Grundbuch koppelt Außenseiter an eine Fremdsprache und verlangt Punkte in Sprache (Englisch) — diese Klausel hier streichen, sein Englisch ist besser als das der Posse. Sein Außenseitertum ist sozial: zu schulgebildet für die Verbannten in Ponca, zu indianisch für jede Stadt von hier bis Idaho.* · **Doubting Thomas** (*Zweifler*) — Minor. **Vorher mit dem Marshal klären** — ein Schamane mit diesem Handicap ist ein bewusster Witz, der nur funktioniert, wenn man die Rationalisierung jedes einzelne Mal durchzieht.
 Mächte: **Wildniswandler** (*Wilderness Walk*, S. 77 — Deadlands-exklusiv: fünf Meilen zählen als eine, Spuren verblassen, und es ist ausdrücklich ein Weg durch die Jagdgründe), **Eigenschaft erhöhen/senken**
 Ausrüstung: Winchester '73 in .44-40, hundert Patronen, eine Appaloosa-Stute — mit zwei Jahren Schulwerkstatt-Lohn aus dem Gatter eines Siedlers in Oregon zurückgekauft, aus einer Blutlinie, die die Armee '77 beschlagnahmte und zerstreute —, Sattel, Bowiemesser, Schlafrolle, Kaffeekanne. **Ein Carlisle-Uniformmantel mit abgeschnittenen Messingknöpfen**, den er trägt, weil es das Wärmste ist, was er besitzt. **Eine schwarz-weiße Schwanzfeder, die er mindestens neunmal weggeworfen hat.**
 

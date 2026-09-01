@@ -11,6 +11,35 @@ Hindrances: Curious (Major), Illiterate (Minor), Loyal (Minor)
 Edges: Arcane Background (Mad Scientist) [free: Human] | Ore Eater [Hindrance] | Mr. Fix It [Hindrance]
 ```
 
+```gear
+Start: 250
+Nickname: Pigeon
+Ausrüstung:
+- Maultier | $50 | –
+- Sattel und Satteltaschen | $30 | 17,5
+- Werkzeugsatz (Verrückte Wissenschaft) | $50 | 2,5 | ignoriert bis zu 4 Punkte Abzug beim Reparieren
+- Erfinderschürze | $2 | 1 | er hat sich dreimal selbst in Brand gesetzt
+- Segeltuchrolle unpassender Werkzeuge | – | 2,5 | drei Griffe im selben roten Lappen
+- Kaffeedose unraffinierter Geistersteinsplitter | $25 | 0,25 | 4 Unzen · unraffiniert: halbiert Reichweite oder Laufzeit
+- Reitermantel | $10 | 2
+- Kleidung (Hemd, Hose, Stiefel) | $11 | 3,5
+- Mütze | $2 | –
+- Feldflasche | $1 | 2,5
+- Schlafsack | $4 | 5
+- Reise-Rationen, 10 Tage | $5 | 15
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Laterne mit Lampenöl | $2,60 | 5 | 4" Radius, 3 Std. je halbem Liter
+- Seil, 20 Meter | $5 | 4 | trägt 150 kg
+Waffen:
+- Beil | – | Stä+W4 | – | – | 1,5 | $1 | mittlere improvisierte Waffe, aber er meint es als Werkzeug
+- Einläufige Flinte (12) | 12/24/48 | 1–3W6 | – | 1 | 3 | $25 | 1 Schuss, +2 Schießen
+- Schrot, 25 Schuss | $2,50 | 1,5
+Notizen:
+- The Pelican (Heilen, 3 MP, Berührung) · Fehlfunktion: das Rückschlagventil kehrt sich um
+- Erzfresser: 20 MP · bei einer 13 auf der Fehlfunktionstabelle dauerhaft Geistersteinfieber
+```
+
+
 **Hintergrund.** Pigeon wuchs auf einem Bergungskahn in den Missouri-Niederungen auf und riss Kesselblech und Messingarmaturen von ersoffenen Dampfern, um sie nach Gewicht zu verkaufen. Er hat nie ein Buch, eine Zeitung oder ein Etikett gelesen; alles, was er weiß, hat er gelernt, indem er es an Deck auseinandernahm und falsch wieder zusammensetzte, bis es aufhörte, falsch zu sein. Seine Erfindungen sehen aus wie das, was sie sind — Kirchenglocken, Feuerlöscher und Sargbeschläge, mit Kupferdraht und Hoffnung zusammengebunden — und sie funktionieren, was jeden studierten Mann beleidigt, der je eine gesehen hat. Er schloss sich der Posse an, nachdem er einem Fremden die Rippen mit einem Gerät aus einem Feuerlöscher und einem Pelikanschnabel aus verlöteten Löffelstielen wieder zusammengezogen hatte, und der Fremde, ein anständiger Kerl, ihn nicht zurückließ.
 
 **Build.** Geschicklichkeit W4, **Verstand W8**, Geist W6, Stärke W6, Konstitution W6 · Parade 2, Robustheit 5

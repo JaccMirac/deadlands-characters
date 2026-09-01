@@ -8,6 +8,7 @@
 
 - [Amos Dell Ledbetter, genannt „Ledger" — der Institutionalist](../Charaktere/04-1-amos-dell-ledbetter-genannt-ledger-der-institutionalist.md)
 - [Adelaide „Addie" Kroll — die wegen der Akten kam](../Charaktere/04-2-adelaide-addie-kroll-die-wegen-der-akten-kam.md)
+- [Tobias „Toby" Mullan — der Ranger, den niemand ernannt hat](../Charaktere/04-3-tobias-toby-mullan-der-junge-ranger.md) — **Einsteigerfigur**
 
 ---
 

@@ -12,13 +12,40 @@ Edges: Harrowed [free: Human] | Brawny [Hindrance] | Menacing [Hindrance] | Supe
 Toughness: 9 (6 + 1 Size + 2 Undead)
 ```
 
+```gear
+Start: 250
+Nickname: Der Amboss
+Ausrüstung:
+- Pferd | $150 | – | er reitet es nicht gern; es mag ihn nicht
+- Sattel und Satteltaschen | $30 | 17,5
+- Die Wagenspeiche | – | 2 | genau die Hickory-Speiche, mit der sie ihn erschlugen, an einem Ende dunkel
+- Schlagringe | $1 | 0,5 | zählen für unbewaffnete Verteidiger nicht als Waffe
+- Rolle Handzettel mit seinem eigenen Gesicht | – | 0,5 | DER MANN, DEN SIE NICHT TÖTEN KONNTEN
+- Metzgerpapier-Paket rohes Rindfleisch | 15¢ | 0,5 | täglich erneuert
+- Reitermantel | $10 | 2
+- Kleidung (Hemd, Hose, Stiefel) | $11 | 3,5
+- Filzhut | $3 | –
+- Feldflasche | $1 | 2,5
+- Schlafsack | $4 | 5
+- Reise-Rationen, 10 Tage | $5 | 15
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Patronen .44-40, 50 Schuss | $2 | 1,5
+Waffen:
+- Die Wagenspeiche | – | Stä+W6 | – | – | 2 | – | mit Grimmigem Diener W10+W6+1
+- Messer, Bowie | – | Stä+W4+1 | 1 | – | 1 | $4
+- Winchester '73 (.44-40) | 24/48/96 | 2W8–1 | 2 | 1 | 5 | $25 | 15 Schuss
+Notizen:
+- Robustheit 9 (6 + 1 Größe + 2 Untot) · Beherrschung = Geistes-Würfeltyp beim Tod
+```
+
+
 **Hintergrund.** Zeke war Preisboxer ohne Handschuhe in den Minencamps von Leadville bis zu den Black Hills, einundvierzig Kämpfe, achtunddreißig Siege. In Cheyenne '83 boten ihm vier Männer sechshundert Dollar, in der elften Runde zu Boden zu gehen. Er ging nicht, und sie erwischten ihn hinter dem Stall und schlugen ihn mit einer Hickory-Wagenspeiche tot — sie ließen sich eine gute halbe Stunde Zeit. Er wachte in einer Armenkiste auf, mit eingeschlagenem Schädel und etwas darin, das applaudierte. Er kam zurück, weil er **elf Runden in einen Kampf hinein war, den er nicht beendet hatte** — das ist tatsächlich schon alles, und er sagt es dir auch so. Zeke versteckt nicht, was er ist; er **wirbt damit**, denn ein Toter, den man nicht töten kann, ist die beste Zugnummer im Territorium, und die Alternative wäre, gejagt zu werden.
 
 **Der Manitu — „Mr. Bright".** Mr. Bright ist eine Wonne, und genau das ist das Problem. Zu Lebzeiten war er Theateragent und Medizinschau-Ausrufer und vergiftete drei seiner eigenen Künstler wegen der Versicherung; von seinem Enthusiasmus hat er nichts eingebüßt. Er droht nie. Er **schmeichelt**. Er nennt Zeke „Champ" und „mein Junge", er legt die Ansagerlitanei unter Zekes Atem — *„und in der nahen Ecke, zweihundertvierzig Pfund geweihtes Rindfleisch—"* — und er spielt das Geräusch einer Menge ein, die nicht da ist: Applaus und stampfende Stiefel, anschwellend, wenn Zeke etwas Gewalttätiges tut, und zu einer furchtbaren Stille verebbend, wenn nicht. Er ist der Manitu, der **auf deiner Seite** ist. Er will, dass Zeke **verehrt** wird. Er bucht die Kämpfe, er liebt das Geld, er will den Amboss aufrichtig ungeschlagen — denn ein Gepeinigter, den eine Menge liebt, ist ein Gepeinigter, dem eine Menge folgt, und eine folgende Menge ist ein Mob, und ein Mob ist eine sehr effiziente Art, Furcht zu ernten. Er will nicht, dass Zeke sich davonstiehlt und einen Fremden in einer Gasse ermordet. Er will, dass er jemanden **vor zweihundert zahlenden Gästen** tötet, und er ist bereit, Jahre auf die richtige Nacht zu warten.
 
 **Build.** Geschicklichkeit W6, Verstand W4, Geist W6, Stärke W6 → **W10**, Konstitution W8 · Parade 6, **Robustheit 9**, Größe +1, **Beherrschung 6**
 Kämpfen W8, Einschüchtern W8, Bemerken W6, Athletik W6, Überreden W6
-Talente: **Harrowed** (*Gepeinigter*), **Supernatural Attribute** (*Übernatürliches Attribut* — Stärke, gratis beim Zurückkehren: **zwei Würfeltypen**, W6→W10), **Brawny**, **Menacing** (*Bedrohlich* — laut Grundbuch S. 60 erfüllt Gepeinigtsein die Voraussetzung von selbst)
+Talente: **Harrowed** (*Gepeinigt*), **Supernatural Attribute** (*Übernatürliches Attribut* — Stärke, gratis beim Zurückkehren: **zwei Würfeltypen**, W6→W10), **Brawny**, **Menacing** (*Bedrohlich* — laut Grundbuch S. 60 erfüllt Gepeinigtsein die Voraussetzung von selbst)
 Handicaps: **Grim Servant o' Death** (*Grimmiger Diener des Todes*) — Major, nur Wild Cards: +1 auf **jeden** Schadenswurf, aber bei einem kritischen Fehlschlag trifft er den nächststehenden Verbündeten **mit einer Steigerung**, ob in der Schusslinie oder nicht. Das ist die mechanische Form von Mr. Brights Absicht: die Menge bekommt immer ihr Blut, und nicht immer das des Gegners. · **Big Mouth** — Minor · **Greedy** — Minor
 Ausrüstung: **die Wagenspeiche** — genau die Hickory-Speiche, mit der sie ihn erschlugen, die er zurückholte und nun an der Hüfte trägt, an einem Ende dunkel (St+W6; mit Grimmigem Diener also W10+W6+1); Schlagringe; eine Rolle Handzettel mit seinem eigenen Gesicht und der Zeile DER MANN, DEN SIE NICHT TÖTEN KONNTEN; ein täglich erneuertes Metzgerpapier-Paket rohes Rindfleisch, das er absichtlich in aller Öffentlichkeit isst.
 **Das Aussehen:** bei der Arbeit trägt er keinen Hut. Die linke Schädelseite ist über der Schläfe eingeschlagen, ein handgroßer Krater, in den der Haaransatz hineinläuft, und das linke Auge folgt dem rechten nicht. Sein Kiefer ist auf dieser Seite mit Messingdraht zugedrahtet, den er selbst verdrillt hat, also spricht er ein wenig schief und grinst wie ein Tor, das aus den Angeln geht. Fünf Cent, um mit dem Daumen in die Delle zu drücken — er hat damit echtes Geld verdient.

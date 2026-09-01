@@ -128,6 +128,20 @@ footer a{color:var(--muted)}
 .cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
 .cs-ledger li{margin-bottom:.3rem}
 .cs-ledger .tag{color:var(--muted);font-size:.82em}
+.cs-kit{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule)}
+.cs-kit h4{
+  margin:0 0 .5rem;font:700 .68rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+}
+.cs-kit + .cs-kit{margin-top:1.1rem}
+.cs-kit ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-kit li{margin-bottom:.25rem}
+.cs-kit .note{color:var(--muted);font-size:.88em}
+.cs-kit .cost{color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-purse{margin-top:.55rem;font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;
+  color:var(--muted);letter-spacing:.03em}
+.cs-purse b{color:var(--ink)}
+.cs-purse.bad b{color:var(--accent)}
 @media print{
   body{background:#fff;color:#000;font-size:11pt}
   nav.top{display:none}
@@ -140,7 +154,7 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <nav class="top"><a href="README.html">Repo</a><a href="Charakterideen.html">Charaktere</a><a href="Regelnotizen.html">Regelnotizen</a></nav>
 <h1>Bildprompts (Midjourney 8.2)</h1>
-<p>Ein Prompt pro Figur, 26 Stück, in derselben Reihenfolge wie
+<p>Ein Prompt pro Figur, 32 Stück plus ein NSC, in derselben Reihenfolge wie
 <a href="Charakterideen.html"><code>Charakterideen.md</code></a>. Die Prompts sind englisch, weil
 Midjourney englische Bildbegriffe deutlich zuverlässiger auflöst; die
 Bildidee darüber steht auf Deutsch.</p>
@@ -150,7 +164,7 @@ Standardmodell — jeder neue Prompt läuft ohnehin darauf, ganz ohne
 Versions-Flag. Das <code>--preview</code>-Flag aus der Testphase wird nicht mehr
 gebraucht. Wer <em>zurück</em> will, hängt <code>--v 8.1</code> an. Die Prompts unten sind
 deshalb ohne Versionsangabe geschrieben — sie sind 8.2, weil alles 8.2 ist.</p>
-<p><strong>Ein Deck, ein Look.</strong> 26 Bilder sehen nur dann nach einem Satz
+<p><strong>Ein Deck, ein Look.</strong> 33 Bilder sehen nur dann nach einem Satz
 Charakterkarten aus, wenn sie eine gemeinsame Stilklammer haben. Der
 Werkzeugkasten dafür in 8.2:</p>
 <div class="tablewrap"><table>
@@ -184,7 +198,7 @@ Werkzeugkasten dafür in 8.2:</p>
 </tbody>
 </table></div>
 <p>Praktisch: <strong>einen</strong> Prompt laufen lassen, das schönste Bild auswählen,
-dessen <code>--sref</code>-Code ziehen und ihn an alle 26 anhängen. Der Stilblock
+dessen <code>--sref</code>-Code ziehen und ihn an alle 33 anhängen. Der Stilblock
 steht trotzdem in jedem Prompt ausgeschrieben, damit jeder einzeln
 funktioniert.</p>
 <p><strong><code>--oref</code> funktioniert in der V8-Reihe nicht.</strong> Omni Reference — das
@@ -238,6 +252,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a wind-burned white woman in her early twenties, blonde hair pinned flat under a low crowned hat, oversized canvas duck coat, cartridge belt, kneeling behind a rock ridge with an enormous single shot buffalo rifle braced across the stone, long brass telescopic sight, a cool contemptuous set to her mouth, prairie haze below her, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/01-2-wilhelmina-billie-kessler.png</code></p>
+<h3><a href="Charaktere/01-3-hazel-quist-die-trickschutzin.html">Hazel Quist — „Glass Hazel“</a></h3>
+<p><em>Mitten in der Nummer, nur gibt es die Schau nicht mehr: sie wirft selbst, und niemand sieht zu.</em></p>
+<pre><code>full length figure, environmental shot of a lean fair-haired woman of twenty-one, Scandinavian features, wind-chapped cheeks, a fringed show costume with tarnished spangles worn over ordinary work clothes, one sleeve mended twice, caught mid-act: a single action revolver extended at arm's length and angled steeply upward, a thin plume of white powder smoke, high above her a glass ball bursting into a slow cloud of feathers and glass, her eyes already on the second ball still rising, the empty rutted lot behind a shuttered depot, no crowd, only a horse tied to the rail and a torn circus playbill nailed to the weathered boards, smoke and feathers smeared by the long exposure while she stands sharp, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/01-3-hazel-quist-die-trickschutzin.png</code></p>
 <hr />
 <h2>02 · <a href="Archetypen/02-bounty-hunter.html">BOUNTY HUNTER (Kopfgeldjäger)</a></h2>
 <h3><a href="Charaktere/02-1-absalom-freed-genannt-the-long-sunday.html">Absalom Freed</a></h3>
@@ -250,6 +269,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a Mexican woman of thirty-two, dark hair pulled back, a dead man's oversized stetson pushed back on her head with a small courtroom photograph tucked in the hat band, men's boots and a short riding jacket, a sawed off double barrel shotgun laid flat on a saloon bar in front of her, one hand resting on it, chin lifted, half the room behind her already turning to look, lamplit interior, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/02-2-maria-refugio-alvarado-genannt-cuca.png</code></p>
+<h3><a href="Charaktere/02-3-ephraim-doak-der-leichenbestatter.html">Ephraim Doak</a></h3>
+<p><em>Leichenbestatter, der Kopfgelder eintreibt, weil er die Fracht ohnehin fährt. Der Wagen ist die halbe Figur.</em></p>
+<pre><code>half-length portrait of a narrow-shouldered white man of about forty in a black undertaker's suit and bowler hat, pale careful eyes, ink-stained fingers, a folded oilcloth ledger under one arm, standing beside a two-wheeled buckboard whose zinc-lined bed holds two plain pine coffins packed in sawdust, a block and tackle hanging from the cart frame, a revolver worn without display, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/02-3-ephraim-doak-der-leichenbestatter.png</code></p>
 <hr />
 <h2>03 · <a href="Archetypen/03-harrowed.html">HARROWED (Gepeinigte)</a></h2>
 <h3><a href="Charaktere/03-1-prudence-pru-mabry.html">Prudence „Pru“ Mabry</a></h3>
@@ -274,6 +298,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a small neat white woman of twenty-one, dark hair pinned severely, a well tailored grey travelling coat over a stiffened corset, a ranger's star worn openly at the lapel, a gold pocket watch on a chain, leaning slightly across a table toward someone unseen with an expression of patient friendly certainty, a stack of official papers under her hand, a jail office at night, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/04-2-adelaide-addie-kroll-die-wegen-der-akten-kam.png</code></p>
+<h3><a href="Charaktere/04-3-tobias-toby-mullan-der-junge-ranger.html">Tobias „Toby“ Mullan</a></h3>
+<p><em>Neunzehn, in der Ausrüstung eines Toten. Alles an ihm ist zwei Nummern zu groß außer der Entschlossenheit.</em></p>
+<pre><code>half-length portrait of a nineteen year old white ranch hand with a thin unshaven jaw and an unlined face, an oversized armored riding duster with the cuffs turned back twice, a lawman's five point star pinned slightly crooked to the chest, a single barrel shotgun held across the body, a battered stetson too large for him, morning light on an empty road behind him, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/04-3-tobias-toby-mullan-der-junge-ranger.png</code></p>
 <hr />
 <h2>05 · <a href="Archetypen/05-huckster.html">HUCKSTER (Taschenspieler)</a></h2>
 <h3><a href="Charaktere/05-1-cordelia-cold-deck-vance.html">Cordelia „Cold Deck“ Vance</a></h3>
@@ -281,6 +310,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a composed white woman of thirty in an immaculately tailored gambler's suit and standing collar, seated at a green baize faro table, a fan of playing cards hanging in the air in front of her dealt from a deck no one is holding, a battered leather bound book of games and a green ledger at her elbow, a derringer in a sleeve rig just visible, faint amused half smile, riverboat saloon lamplight, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/05-1-cordelia-cold-deck-vance.png</code></p>
+<h3>NSC · Mr. Pettibone</h3>
+<p><em>Cordelias Manitou. Kein Monster — ein kahler Buchhalter mit Bleistift hinterm Ohr. Das Bild hat zwei Hälften: links sitzt er, rechts zeigt der Spiegel denselben Raum ohne ihn.</em></p>
+<pre><code>half-length portrait of a bald courteous clerk of about fifty-five, a close fringe of grey hair above the ears, a carpenter's pencil tucked behind one ear, a plain dark suit twenty years out of fashion, celluloid cuffs, seated at a plain deal desk in a small rented office, a bowler hat and a closed green cloth ledger on the desk beside a kerosene lamp, a patient half-smile, looking straight into the camera; a tall mirror fills the right half of the frame, angled so that the man and the mirror stand side by side in the same photograph; the mirror shows the same desk, the same lamp, the same ledger, the same hat and an empty chair — the room exactly as it is, only without him; the mirror rendered in the same sharp focus and the same detail as the man, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/05-1-mr-pettibone.png</code></p>
 <h3><a href="Charaktere/05-2-elijah-prosper-teague.html">Elijah Prosper Teague</a></h3>
 <p><em>Der Chiffrierschreiber, der es geknackt hat und seither nicht mehr schläft.</em></p>
 <pre><code>half-length portrait of a thin Black schoolteacher in his forties, wire rimmed spectacles, a threadbare dark suit and waistcoat, exhausted sleepless eyes, seated at a plank table by lamplight covered in stiff hand ruled index cards laid out in a grid, one card held upright between two fingers, an annotated leather book of games open beside three bound notebooks and a small brown bottle, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
@@ -310,6 +344,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a heavyset Nuevomexicano carpenter of forty with sawdust in his forearms and a closed exhausted face, coarse homespun shirt, a black cloth hood pushed back off his head, a broad coffin maker's broadaxe resting head down at his feet, a braided yucca fiber cord coiled at his belt, a thirty centimetre hand carved wooden saint in a real cloth robe held carefully in the crook of his arm, a piñon nut rosary around his wrist, adobe chapel wall behind, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/07-2-hermano-sixto-trujillo-y-vigil.png</code></p>
+<h3><a href="Charaktere/07-3-patience-ludlow-die-quakerin.html">Patience Ludlow</a></h3>
+<p><em>Quäkerin in ungefärbtem Grau. Kein Leuchten, kein Symbol — die Kraft ist an ihrer Ruhe zu erkennen.</em></p>
+<pre><code>half-length portrait of a spare grey-haired woman of forty-three in undyed grey plain dress with a plain collar and hooks instead of buttons, no jewelry, no ornament, calm level eyes, hands folded over a heavy hickory wagon-tongue staff wound with wire at one end, a worn medical satchel at her feet, standing in the doorway of a plank building, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/07-3-patience-ludlow-die-quakerin.png</code></p>
 <hr />
 <h2>08 · <a href="Archetypen/08-shaman.html">SHAMAN (Schamanen)</a></h2>
 <h3><a href="Charaktere/08-1-asdzaa-libahi-grey-woman.html">Asdzą́ą́ Łibáhí — „Grey Woman“</a></h3>
@@ -370,6 +409,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a strong shouldered Black woman of twenty-six in cut down cavalry trousers and braces over a man's shirt, horsehair wraps being wound around her knuckles, a cavalry sabre with the regimental number filed off the guard hanging from a peg behind her, a revolver and belt beside it, a broad unbothered grin, standing in a lamplit stable, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.png</code></p>
+<h3><a href="Charaktere/12-3-owain-owen-tregarth-der-bergmann.html">Owain „Owen“ Tregarth</a></h3>
+<p><em>Walisischer Häuer, neun Tage verschüttet. Der Fäustel ist Werkzeug, Waffe und Andenken in einem.</em></p>
+<pre><code>half-length portrait of a thickset dark-haired Welsh coal miner of thirty-five, heavy shoulders, coal dust ground permanently into the creases of his hands and eyelids, a broken nose, a short-hafted mining sledge resting on one shoulder, a pickaxe and coiled rope slung behind, standing at the mouth of a timbered adit in low evening light, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/12-3-owain-owen-tregarth-der-bergmann.png</code></p>
 <hr />
 <h2>13 · <a href="Archetypen/13-explorer.html">EXPLORER (Entdecker)</a></h2>
 <h3><a href="Charaktere/13-1-wilhelmina-willa-kerner-naturforscherin-der-akademie-der-entdecker.html">Wilhelmina „Willa“ Kerner</a></h3>
@@ -382,6 +426,11 @@ welcher Silas welcher ist.</p>
 <pre><code>half-length portrait of a Métis guide of thirty-six with a drooping moustache and long hair under a soft hat, a blue hooded wool capote coat, a finger woven red sash tied at the waist, a beaded fire bag hanging from it, a worn rosary looped around his hand, a heavy single shot rifle with a cut down forestock held loosely, reading the ground at the edge of an abandoned camp circle of two wheeled carts, montana river bottom in winter light, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
 </code></pre>
 <p>Ablage: <code>Bilder/13-2-ambroise-ducharme-metis-fuhrer-vom-red-river.png</code></p>
+<h3><a href="Charaktere/13-3-josephine-jo-pike-die-wanderfotografin.html">Josephine „Jo“ Pike</a></h3>
+<p><em>Wanderfotografin mit Atelierwagen. Sie sieht durch die Kamera mehr, als vor ihr gestanden hat.</em></p>
+<pre><code>half-length portrait of a dark-haired woman of thirty in a plain traveling skirt and coat with chemical stains on the cuffs and fingertips, a box camera on a wooden tripod beside her, a glass plate held up against the light and examined closely, a two-wheeled buckboard with a light-tight box body behind her, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+</code></pre>
+<p>Ablage: <code>Bilder/13-3-josephine-jo-pike-die-wanderfotografin.png</code></p>
 <hr />
 <p><a href="Charakterideen.html">Zur Übersicht</a> · <a href="Regelnotizen.html">Regelnotizen</a></p>
 <footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus Bildprompts.md</footer>

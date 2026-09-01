@@ -11,6 +11,35 @@ Hindrances: Night Terrors (Major), Talisman (Minor), Habit (Minor)
 Edges: Arcane Background (Huckster) [free: Human] | Power Points [Hindrance] | Scholar [Hindrance]
 ```
 
+```gear
+Start: 250
+Nickname: Teague
+Ausrüstung:
+- Maultier „Fermat" | $50 | –
+- Sattel und Satteltaschen | $30 | 17,5
+- Der annotierte Hoyle | – | 1 | Talisman: ohne ihn in der Hand –1 auf alle Zaubern-Proben
+- Spielkarten, drei Päckchen | 75¢ | – | die Ausprägung seines Geschosses
+- Brille | $10 | – | Verkleidungszubehör-Preis; er hat nur die eine
+- Schreibzeug und drei gebundene Notizbücher | $6 | 2
+- Laterne mit Lampenöl | $2,60 | 5 | 4" Radius, 3 Std. je halbem Liter
+- Reitermantel | $10 | 2
+- Kleidung (Hemd, Hose, Stiefel) | $11 | 3,5
+- Melone | $1,50 | –
+- Feldflasche | $1 | 2,5
+- Schlafsack | $4 | 5
+- Reise-Rationen, 10 Tage | $5 | 15
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Schrot, 20 Schuss | $2 | 1 | ungeöffnet
+- Ein kleines braunes Fläschchen | $1 | 0,25 | er sagt nicht, was drin ist
+Waffen:
+- Abgesägte Doppelläufige (12) | 5/10/20 | 1–3W6 | – | 1 | 3 | $35 | 2 Schuss, +2 Schießen, nie auf ein Lebewesen abgefeuert · Mindeststärke W4 genau erfüllt
+- Geschoss (Bolt) | 12/24/48 | 2W6 | – | 1 | – | – | 1 MP je Schuss, Zaubern W8, 15 MP = fünfzehn Karten
+Notizen:
+- Machtpunkte: 15 statt 10 · Geschoss für 1 MP macht ihn zur nachhaltigen Feuerkraft
+- Night Terrors: –1 auf alle Geist-Proben, und er hält jeden in Hörweite wach
+```
+
+
 **Hintergrund.** Teague ging auf Subskription seiner Kirchengemeinde nach Oberlin, unterrichtete Mathematik an einer Freedmen's-Bureau-Schule in Helena, Arkansas, und verbrachte die Kriegsjahre als Chiffrierschreiber, der erbeutete Depeschen für einen Unionsoberst übersetzte, dem gefiel, dass er still und gründlich war. '80 kam eine Kiste „unknackbaren" Materials von Rock Island, und ganz unten lag ein wasserfleckiger *Hoyle's Book of Games* von 1769, gekennzeichnet als vermuteter konföderierter Codeschlüssel. Das war er nicht. Teague knackte ihn trotzdem — zuerst die Bridge-Diagramme, dann die Zahlenfolge in den Musterblättern — und in der Nacht, in der er fertig wurde, sagte etwas auf der anderen Seite der Seite seinen Namen zurück. Korrekt. Einschließlich des zweiten Vornamens, den seine Mutter ihm gab und nie jemandem nannte. Er hat seither keine Nacht durchgeschlafen.
 
 **Build.** Geschicklichkeit W4, Verstand W10, Geist W6, Stärke W4, Konstitution W6 · Parade 2, Robustheit 5

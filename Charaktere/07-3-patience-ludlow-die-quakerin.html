@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Patience Ludlow — die Quäkerin mit dem Wagenbaum</title>
+<style>
+:root{
+  --bg:#f4efe4; --panel:#fbf8f1; --ink:#241d16; --muted:#6b5d4c;
+  --rule:#d8cdb8; --accent:#8c2f1d; --accent-soft:#b5563f;
+  --quote-bg:#efe7d6; --code-bg:#e9e0cd; --link:#7a3b12;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+    --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+    --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+  --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+  --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+nav.top{
+  font:600 .72rem/1 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+}
+nav.top a{color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--accent)}
+h1{
+  font-size:2rem;line-height:1.15;margin:0 0 1.5rem;
+  font-weight:700;letter-spacing:-.01em;
+}
+h2{
+  font-size:1.05rem;margin:2.75rem 0 .9rem;color:var(--accent);
+  font:700 .82rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+h3{font-size:1.12rem;margin:2rem 0 .6rem;font-weight:700}
+p,ul,ol{margin:0 0 1.05rem}
+ul,ol{padding-left:1.35rem}
+li{margin-bottom:.4rem}
+li>ul,li>ol{margin-top:.4rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent-soft)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
+blockquote{
+  margin:1.5rem 0;padding:.9rem 1.25rem;background:var(--quote-bg);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+  font-size:1.05rem;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote h3{margin-top:0;font-size:1rem;color:var(--accent)}
+code{
+  background:var(--code-bg);padding:.12em .38em;border-radius:3px;
+  font:.86em/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+pre{background:var(--code-bg);padding:1rem;border-radius:5px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tablewrap{overflow-x:auto;margin:0 0 1.25rem}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--rule);
+      vertical-align:top}
+th{
+  font:700 .72rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
+footer{
+  margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:.85rem;
+}
+footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
+.cs-kit{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule)}
+.cs-kit h4{
+  margin:0 0 .5rem;font:700 .68rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+}
+.cs-kit + .cs-kit{margin-top:1.1rem}
+.cs-kit ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-kit li{margin-bottom:.25rem}
+.cs-kit .note{color:var(--muted);font-size:.88em}
+.cs-kit .cost{color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-purse{margin-top:.55rem;font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;
+  color:var(--muted);letter-spacing:.03em}
+.cs-purse b{color:var(--ink)}
+.cs-purse.bad b{color:var(--accent)}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.top{display:none}
+  .wrap{max-width:none;padding:0}
+  a{color:#000;border:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
+<h1>Patience Ludlow — die Quäkerin mit dem Wagenbaum</h1>
+<p><em>Archetyp: <a href="../Archetypen/07-blessed.html">BLESSED (Gesegnete)</a></em></p>
+<p><em>Einsteigerfigur: drei Mächte, zwanzig Machtpunkte, kein Rückschlag außer dem eigenen Gewissen.</em></p>
+<blockquote>
+<p><em>Sie duzt jeden, sie schwört keinen Eid, und sie hat noch nie auf einen Menschen eingeschlagen. Was danach kommt, ist ausdrücklich kein Mensch.</em></p>
+</blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Smarts</td><td class="die">d4</td><td class="num">0</td></tr><tr><td>Spirit</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Strength</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Vigor</td><td class="die">d8</td><td class="num">2</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Faith</td><td class="lnk">Spi</td><td class="die">d8</td><td class="num">3</td></tr><tr><td>Healing</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">3</td></tr><tr><td>Fighting</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">3</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Persuasion</td><td class="lnk">Spi</td><td class="die">d6</td><td class="num">1</td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>6</b><span>Parry</span> <b>5</b><span>Toughness</span> <b>6</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Pacifist (Major) <span class="tag">2</span></li><li>Outsider (Minor) <span class="tag">1</span></li><li>Poverty (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Blessed) <span class="tag">free: Human</span></li><li>Healer <span class="tag">Hindrance</span></li><li>Power Points <span class="tag">Hindrance</span></li></ul></div></div><div class="cs-kit"><h4>Gear</h4><ul><li>Arzttasche <span class="cost">$10</span> <span class="note">&mdash; freie Wiederholung auf Heilen, 5 Anwendungen · Nachfüllung $8</span></li><li>Maultier „Bartimäus" <span class="cost">$50</span></li><li>Satteltaschen <span class="cost">$5</span></li><li>Wintermantel, grau, ungefärbt <span class="cost">$15</span> <span class="note">&mdash; ohne Knöpfe — Haken und Ösen, weil Knöpfe Zierrat sind</span></li><li>Kleidung (Bluse, Rock, Schuhe) <span class="cost">$5</span></li><li>Reise-Rationen, 10 Tage <span class="cost">$5</span></li><li>Feldflasche <span class="cost">$1</span></li><li>Schlafsack <span class="cost">$4</span></li><li>Laterne <span class="cost">$2,50</span></li><li>Lampenöl, 3,5 l <span class="cost">10¢</span></li><li>Streichhölzer, Schachtel <span class="cost">50¢</span></li><li>Das travelling minute <span class="note">&mdash; ein Blatt der Versammlung zu Richmond, Indiana, das sie zum Reisen im Dienst bevollmächtigt; sechs Unterschriften, die unterste zittrig</span></li><li>Ein Bündel Briefe <span class="note">&mdash; dreiundzwanzig Stück, alle in derselben Handschrift, der letzte vom vergangenen Monat</span></li></ul><div class="cs-purse">$101,10 ausgegeben von $125 &middot; <b>$23,90</b> Bargeld</div></div><div class="cs-kit"><h4>Weapons</h4><div class="tablewrap"><table><thead><tr><th>Weapon</th><th>Range</th><th>Damage</th><th>AP</th><th>RoF</th><th>Wt.</th><th>Cost</th></tr></thead><tbody><tr><td>Der Wagenbaum</td><td>–</td><td>Stä+W6</td><td>–</td><td>–</td><td>1,5</td><td>$3</td></tr><tr><td colspan="7" class="note">als Kriegskeule gekauft (Grundbuch S. 29), Mindeststärke W6 · Hickory, an einem Ende mit Draht umwickelt</td></tr></tbody></table></div></div><div class="cs-kit"><h4>Powers (20 PP)</h4><div class="tablewrap"><table><thead><tr><th>Power</th><th>PP</th><th>Range</th><th>Dur.</th><th>Effect</th></tr></thead><tbody><tr><td>Heiliges Symbol</td><td>3</td><td>Selbst</td><td>5</td><td>übernatürlich Böse müssen eine Willenskraftprobe bestehen, um sie direkt anzugreifen; –2 für die Kreatur bei einer Steigerung</td></tr><tr><td>Heilung</td><td>3</td><td>Berührung</td><td>Sofort</td><td>entfernt eine Wunde, die jünger als eine Stunde ist; zwei bei einer Steigerung</td></tr><tr><td>Waffe verbessern</td><td>2</td><td>Verstand</td><td>5</td><td>Schaden der Waffe +2, +4 bei einer Steigerung</td></tr></tbody></table></div></div><div class="cs-kit"><p class="note">Healer: +2 auf alle Heilenproben · Power Points: 20 statt 15, also sechsmal Heilung</p></div><div class="cs-kit"><p class="note">Pazifist (schwer) nimmt „unbestreitbar böse Kreaturen, Untote, Dämonen und dergleichen" ausdrücklich aus</p></div></section>
+<p><strong>Hintergrund.</strong> Patience Ludlow war zweiundzwanzig, als die Freundinnen ihrer Versammlung im Juli 1863 mit Leinen und Essigwasser nach Gettysburg fuhren, weil die Verwundeten schneller kamen, als die Armee sie zählen konnte. Sie blieb neun Wochen in einer Scheune bei Rock Creek und lernte in dieser Zeit zwei Dinge: wie man einen Oberschenkel abbindet, und dass sie nicht schreien kann. Zwanzig Jahre später ist sie eine hagere Frau von dreiundvierzig in ungefärbtem Grau, die <em>du</em> zu Bankiers sagt und <em>Freund</em> zu Fremden, keinen Eid leistet — auch nicht vor Gericht, was ihr schon zwei Nächte in Zellen eingebracht hat — und für Heilung grundsätzlich kein Geld nimmt. Die Gabe kam in einer Nacht bei Wichita, als sie einem Fuhrmann mit zerquetschtem Brustkorb die Hände auflegte, um ihm die letzte Stunde leichter zu machen, und er stattdessen aufstand.</p>
+<p><strong>Build.</strong> Geschicklichkeit W4, Verstand W4, Willenskraft W8, Stärke W6, Konstitution W8 · Parade 5, Robustheit 6
+<strong>Glaube W8</strong>, Heilen W6, Kämpfen W6, Bemerken W6, Überreden W6
+Talente: <strong>Arcane Background (Blessed)</strong> (<em>Arkaner Hintergrund (Gesegneter)</em>), <strong>Healer</strong> (<em>Heiler</em>), <strong>Power Points</strong> (<em>Machtpunkte</em>)
+Handicaps: <strong>Pacifist</strong> (<em>Pazifist</em>) — Major: sie erhebt keine Hand gegen einen lebenden Menschen, auch nicht zur Verteidigung Dritter · <strong>Outsider</strong> (<em>Außenseiter</em>) — Minor: einfache Rede, kein Hut ab, kein Eid · <strong>Poverty</strong> (<em>Arm</em>) — Minor: sie nimmt kein Geld für Heilung und gibt weiter, was übrig bleibt
+Mächte (20 MP): <strong>Heiliges Symbol</strong> (Pflicht), <strong>Heilung</strong>, <strong>Waffe verbessern</strong> — Ausprägungen ohne jedes Leuchten. Das heilige Symbol ist keins: es ist die Stille, die um sie herum entsteht, und Wesen, die es angehen wollen, hören auf, sich sicher zu sein. Waffe verbessern ist der Wagenbaum, der schwer wird wie nasses Holz.
+<em>Warum das die einfachste arkane Figur im Ordner ist: Glaube W8 ist ein Wurf, den man immer gleich macht. Kein Kartenziehen wie beim Taschenspieler, keine Fehlfunktionstabelle wie beim Verrückten Wissenschaftler, kein Beherrschungspool wie beim Gepeinigten. Ein kritischer Fehlschlag kostet eine Stufe Erschöpfung, sonst nichts.</em></p>
+<p><strong>Aufhänger.</strong> Der Fuhrmann von Wichita hieß Amos Deel und lebte danach noch elf Tage. Am letzten sagte er ihr, sie solle seinen Bruder Calvin in Trinidad, Colorado, suchen und ihm ausrichten, dass die Sache mit dem Anteil in Ordnung sei. Sie hat sich auf den Weg gemacht. Calvin Deel ist im Winter &rsquo;81 gestorben, drei Jahre bevor Amos ihr den Auftrag gab. Sie hat es beim Kreisgericht nachgeschlagen, zweimal. Trotzdem liegt alle paar Wochen in einer anderen Stadt ein Brief für sie bereit, dieselbe Handschrift, ohne Absender, freundlich, und im letzten steht, sie solle sich beeilen.</p>
+<p><strong>Warum es Spaß macht.</strong> Du bist der Grund, warum die Posse einen zweiten Kampf übersteht — dreimal Heilung pro Tag ohne nachzudenken, plus +2 aus dem Heiler-Talent. Und du hast die eine Entscheidung, die jede Sitzung wieder auftaucht und nichts mit Regeln zu tun hat: Der Mann hebt die Waffe, dein Wagenbaum liegt griffbereit, und Pazifismus schweigt nur bei Dingen, die nachweislich tot sind.</p>
+<hr />
+<p>Regelgrundlage: <a href="../Regelnotizen.html">Regelnotizen</a> · <a href="../Archetypen/07-blessed.html">Archetyp-Notizen</a></p>
+<footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus 07-3-patience-ludlow-die-quakerin.md</footer>
+</div>
+</body>
+</html>

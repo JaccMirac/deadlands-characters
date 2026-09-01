@@ -11,6 +11,31 @@ Hindrances: Arrogant (Major), Thin Skinned (Minor), Vengeful (Minor)
 Edges: Trademark Weapon | Gallows Humor | Steady Hands
 ```
 
+```gear
+Start: 250
+Ausrüstung:
+- Zielfernrohr | $30 | 1 | annulliert 2 zusätzliche Abzüge beim Zielen
+- Billig-Pferd „Zwiebel" | $75 | – | halber Preis, dafür zwei leichte Handicaps: es beißt
+- Sattel und Satteltaschen | $30 | 17,5
+- Reitermantel | $10 | 2
+- Reithosen | $4 | 3 | Panzerung +1 (Beine), +1 auf Reiten gegen Erschöpfung
+- Stetson | $5 | –
+- Kleidung (Hemd, Stiefel) | $9 | 2,5
+- Holster und Pistolengürtel | $5 | 1
+- Feldflasche | $1 | 2,5
+- Schlafsack | $4 | 5
+- Reise-Rationen, 5 Tage | $2,50 | 7,5
+- Streichhölzer, Schachtel | 50¢ | 0,1
+- Kugeln und Zündkapseln .50 | $2,50 | 2,5 | Schwarzpulver, für den Alten
+- Patronen .32, 50 Schuss | $2 | 1,5 | für den Rainmaker
+Waffen:
+- Sharp's Big 50 „Der Alte" | 30/60/120 | 2W10 | 2 | 1 | 5,5 | $50 | 1 Schuss, Nachladen 3, Schnellschuss-Malus · Mindeststärke W8: –1, von Lieblingswaffe ausgeglichen
+- Colt Rainmaker (.32) | 12/24/48 | 2W6 | 1 | 1 | 1 | $8 | 6 Schuss, doppelt wirkend
+Notizen:
+- Trademark Weapon (Der Alte): +1 Schießen — hebt den –1 aus Mindeststärke W8 auf; +1 Parade, wenn angelegt
+- Gallows Humor: Furchtproben mit Taunt W8 statt Spirit W4, bei Steigerung +1 für alle
+```
+
 **Hintergrund.** Ihr Vater Anselm war ein preußischer Jäger, der nach '48 floh und in Salina, Kansas, eine Büchsenmacherbank aufstellte; er brachte seiner Tochter Windabweichung und Erhöhung bei, bevor er ihr Englisch beibrachte. Mit elf schoss sie Antilopen für Eisenbahn-Trupps, mit neunzehn traf sie einen Hasen auf dreihundert Meter mit der riesigen Vorderlader-Sharps, die ihr Vater gebaut und nie abbezahlt hatte. Im Frühjahr '83 kamen drei Männer der Bell-Ridge-Bande wegen eines bestimmten Gewehrs — und erschossen Anselm über seiner eigenen Werkbank. Billie folgte ihnen und tötete alle drei über zwei Tage von einer Anhöhe, die sie nie fanden.
 
 **Build.** Geschicklichkeit W8, Verstand W6, Geist W4, Stärke W6, Konstitution W6 · Parade 2 (3 mit angelegter Sharps), Robustheit 5
