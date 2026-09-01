@@ -101,6 +101,26 @@ eine wörtliche Zeilensuche ins Leere laufen und den Eintrag still auf die
 englische Quelle zurückfallen. `suche_eintrag` erlaubt deshalb ein optionales
 Leerzeichen hinter ß und einen Zeilenumbruch an jeder Lücke im Namen.
 
+**Ein Eintrag hört nicht am Seitenende auf zu wachsen.** Zwei Wege führten
+dazu, dass `suche_eintrag` über das Ende eines Eintrags hinaus weiterlas und
+ganze Kapitel ins Dossier zog — beides ist repariert und darf nicht zurück:
+
+- **Versalien plus Klammer.** Das Grundbuch setzt Handicap-Überschriften als
+  `TALISMAN (LEICHT ODER SCHWER)`. Das Schweregrad-Muster kannte nur
+  Kleinschreibung, und die Versalien-Regel erlaubt keine Klammern — die Zeile
+  galt also als keine Überschrift. *Nachtängste* schleppte so die drei
+  folgenden Handicaps mit, 2906 Zeichen statt 390. Der Schweregrad steht
+  deshalb jetzt als `(?i:leicht|schwer)` bzw. `(?i:Major|Minor)`.
+- **Die Fortsetzung auf der Folgeseite** greift nur noch, wenn der Eintrag
+  **nicht** mit einem vollständigen Satz endet. *Zweifler* ist der letzte
+  Eintrag auf SWADE S. 28; S. 29 beginnt das Kapitel *Eigenschaften*, dessen
+  Überschriften auf kein Muster passen — der Eintrag lief über sechs Absätze
+  Attributs- und Fertigkeitsregeln weiter.
+
+Als Netz darunter meldet `suche_eintrag` jeden Fund über **3500 Zeichen**.
+Der längste legitime Eintrag ist `ÜBERLEGENES KUNG FU` mit rund 3100, weil er
+alle sechs Stile auflistet.
+
 **Der Name über einem Werteblock ist kein Regeleintrag.** Im Grundbuch steht
 auf S. 148 der NSC-Archetyp `KAMPFKÜNSTLER` — die Suche nach dem Talent
 *Kampfkünstler* landete dort und zog Attribute und Ausrüstung eines

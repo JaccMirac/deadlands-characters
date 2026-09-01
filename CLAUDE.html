@@ -274,6 +274,25 @@ um: <code>ARKANER HINTERGRUND (VERRÜCKTER</code> / <code>WISSENSCHAFTLER)</code
 eine wörtliche Zeilensuche ins Leere laufen und den Eintrag still auf die
 englische Quelle zurückfallen. <code>suche_eintrag</code> erlaubt deshalb ein optionales
 Leerzeichen hinter ß und einen Zeilenumbruch an jeder Lücke im Namen.</p>
+<p><strong>Ein Eintrag hört nicht am Seitenende auf zu wachsen.</strong> Zwei Wege führten
+dazu, dass <code>suche_eintrag</code> über das Ende eines Eintrags hinaus weiterlas und
+ganze Kapitel ins Dossier zog — beides ist repariert und darf nicht zurück:</p>
+<ul>
+<li><strong>Versalien plus Klammer.</strong> Das Grundbuch setzt Handicap-Überschriften als
+  <code>TALISMAN (LEICHT ODER SCHWER)</code>. Das Schweregrad-Muster kannte nur
+  Kleinschreibung, und die Versalien-Regel erlaubt keine Klammern — die Zeile
+  galt also als keine Überschrift. <em>Nachtängste</em> schleppte so die drei
+  folgenden Handicaps mit, 2906 Zeichen statt 390. Der Schweregrad steht
+  deshalb jetzt als <code>(?i:leicht|schwer)</code> bzw. <code>(?i:Major|Minor)</code>.</li>
+<li><strong>Die Fortsetzung auf der Folgeseite</strong> greift nur noch, wenn der Eintrag
+  <strong>nicht</strong> mit einem vollständigen Satz endet. <em>Zweifler</em> ist der letzte
+  Eintrag auf SWADE S. 28; S. 29 beginnt das Kapitel <em>Eigenschaften</em>, dessen
+  Überschriften auf kein Muster passen — der Eintrag lief über sechs Absätze
+  Attributs- und Fertigkeitsregeln weiter.</li>
+</ul>
+<p>Als Netz darunter meldet <code>suche_eintrag</code> jeden Fund über <strong>3500 Zeichen</strong>.
+Der längste legitime Eintrag ist <code>ÜBERLEGENES KUNG FU</code> mit rund 3100, weil er
+alle sechs Stile auflistet.</p>
 <p><strong>Der Name über einem Werteblock ist kein Regeleintrag.</strong> Im Grundbuch steht
 auf S. 148 der NSC-Archetyp <code>KAMPFKÜNSTLER</code> — die Suche nach dem Talent
 <em>Kampfkünstler</em> landete dort und zog Attribute und Ausrüstung eines

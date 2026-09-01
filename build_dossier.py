@@ -78,13 +78,19 @@ def warn(m):
 # Deadlands-Baende ihre Eintraege), eine Zeile direkt vor VORAUSSETZUNGEN/
 # REQUIREMENTS, oder eine Handicap-Zeile mit Schweregrad -- englisch
 # "Name (Major or Minor)", deutsch "Name (leicht oder schwer)".
+#
+# Der Schweregrad steht als (?i:), weil das Grundbuch ihn mitversalisiert:
+# "TALISMAN (LEICHT ODER SCHWER)". Ohne das passt keines der Muster auf so
+# eine Zeile -- die Versalien-Regel unten erlaubt keine Klammern --, und der
+# Eintrag davor liest ueber sein Ende hinaus weiter. So zog "Nachtaengste"
+# die drei folgenden Handicaps mit: 2906 Zeichen statt 390.
 _HEAD = [
     re.compile(r"^[^\n]{2,60}\n(?=REQUIREMENTS|VORAUSSETZUNGEN)", re.M),
     re.compile(r"^[A-Z][A-Za-z'\u2019 \-]{2,40}"
-               r"\((?:Major|Minor)[^)]*\)[ \t]*$", re.M),
+               r"\((?i:Major|Minor)[^)]*\)[ \t]*$", re.M),
     re.compile(r"^[A-Z\u00c4\u00d6\u00dc][A-Za-z\u00c4\u00d6\u00dc"
                r"\u00e4\u00f6\u00fc\u00df'\u2019 \-]{2,40}"
-               r"\((?:leicht|schwer)[^)]*\)[ \t]*$", re.M),
+               r"\((?i:leicht|schwer)[^)]*\)[ \t]*$", re.M),
     re.compile(r"^[A-Z\u00c4\u00d6\u00dc][A-Z\u00c4\u00d6\u00dc0-9'\u2019 .\-!?]{3,50}[ \t]*$", re.M),
 ]
 
@@ -142,9 +148,14 @@ def _kandidat(t, m, doc, i, kuerzel, offset):
     rest = t[m.end():]
     ende = _naechste_ueberschrift(rest, 0)
     koerper = rest[:ende]
-    # laeuft der Eintrag bis ans Seitenende, auf der naechsten Seite
-    # weiterlesen, bis dort die erste Ueberschrift kommt
-    if ende >= len(rest) - 2 and i + 1 < doc.page_count:
+    # Laeuft der Eintrag bis ans Seitenende, wird auf der naechsten Seite
+    # weitergelesen -- aber NUR, wenn er dort ueberhaupt weitergehen kann.
+    # Endet er mit einem vollstaendigen Satz, ist er fertig. Ohne diese
+    # Pruefung zog "Zweifler" (SWADE S. 28, letzter Eintrag der Seite) das
+    # halbe Kapitel "Eigenschaften" von S. 29 hinterher: 5302 Zeichen statt
+    # 400, weil dessen Ueberschriften auf keines der Muster passen.
+    if (ende >= len(rest) - 2 and i + 1 < doc.page_count
+            and koerper.rstrip()[-1:] not in u".!?“”\")"):
         f = _seiten_text(doc, i + 1)
         koerper += "\n" + f[:_naechste_ueberschrift(f, 0)]
     vor, koerper = _voraussetzungen(koerper.strip("\n"))
@@ -200,6 +211,14 @@ def suche_eintrag(begriff, sprachen):
     if treffer and len(treffer[1]) < 40:
         warn(u"%s: Regeltext verdaechtig kurz (%d Zeichen)"
              % (begriff, len(treffer[1])))
+    # Gegenprobe nach oben. Der laengste legitime Eintrag in den vorliegenden
+    # Buechern ist UEBERLEGENES KUNG FU mit rund 3100 Zeichen, weil er alle
+    # sechs Stile auflistet. Wird es deutlich mehr, hat die Suche ueber das
+    # Ende des Eintrags hinaus weitergelesen.
+    if treffer and len(treffer[1]) > 3500:
+        warn(u"%s: Regeltext verdaechtig lang (%d Zeichen, %s S. %d) -- "
+             u"vermutlich ist ein Kapitel mitgelesen worden"
+             % (begriff, len(treffer[1]), treffer[2], treffer[3]))
     return treffer
 
 
