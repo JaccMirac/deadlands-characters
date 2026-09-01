@@ -272,14 +272,16 @@ sonst den englischen aus SWADE. `--en` schaltet auf durchgehend englisch.
 
 ## Was als Nächstes ansteht
 
-Erledigt: alle 26 Bilder liegen in `Bilder/`, und `build_html.py` setzt beim
-Rendern von `Charaktere/X.md` ein vorhandenes `Bilder/X.png` als Porträt unter
-den Titel (`figure.portrait`).
+Erledigt: 31 der 32 Figurenbilder liegen in `Bilder/` (dazu das NSC-Porträt
+`05-1-mr-pettibone.png`), und `build_html.py` setzt beim Rendern von
+`Charaktere/X.md` ein vorhandenes `Bilder/X.png` als Porträt unter den Titel
+(`figure.portrait`). **Es fehlen noch zwei:** `07-3-patience-ludlow-die-quakerin`
+und `13-3-josephine-jo-pike-die-wanderfotografin`; die Prompts stehen bereit.
 
 1. **Die Stilklammer ist noch nicht gesetzt.** Der Plan steht in
    `Bildprompts.md`: einen Prompt laufen lassen, vom schönsten Ergebnis den
-   `--sref`-Code ziehen, ihn an *alle* 26 anhängen. Solange das nicht passiert
-   ist, sind die Bilder 26 Einzelstücke statt eines Kartensatzes. Ob die
+   `--sref`-Code ziehen, ihn an *alle* 33 anhängen. Solange das nicht passiert
+   ist, sind die Bilder Einzelstücke statt eines Kartensatzes. Ob die
    vorhandenen Bilder danach neu gezogen werden müssen, ist eine offene
    Entscheidung.
 2. **Zwei Tischabsprachen sind offen**, beschrieben am Ende von `README.md`:
