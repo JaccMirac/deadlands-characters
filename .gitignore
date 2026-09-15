@@ -1,2 +1,4 @@
 *.pdf
+# Fertige Bögen und Dossiers dürfen ins Repo – Regelwerke, Grundbücher und Abenteuer im Wurzelordner nicht.
+!CharacterSheetsPdf/*.pdf
 __pycache__/
