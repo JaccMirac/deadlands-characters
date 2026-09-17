@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dead Men Walkin' — Spielleiter-Ablauf</title>
+<style>
+  :root{
+    --paper:#e9ddc2;
+    --paper-dark:#dccba3;
+    --ink:#2b1c11;
+    --ink-soft:#4a3521;
+    --blood:#8b1a12;
+    --blood-dark:#5e0f0a;
+    --rust:#a8471c;
+    --gold:#8a6a2f;
+    --shadow:rgba(40,20,8,.35);
+    --panel:#f3ead2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    color:var(--ink);
+    background:#1a120b;
+    line-height:1.55;
+  }
+  /* aged parchment page */
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.25), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(120,70,20,.18), transparent 45%),
+      var(--paper);
+    background-blend-mode:overlay;
+    box-shadow:0 0 60px #000;
+    padding:0 0 80px;
+  }
+  /* --- Header --- */
+  header.hero{
+    background:
+      linear-gradient(rgba(20,10,4,.72),rgba(20,10,4,.82)),
+      repeating-linear-gradient(45deg,#3a2412 0 12px,#301d0e 12px 24px);
+    color:var(--paper);
+    text-align:center;
+    padding:46px 24px 38px;
+    border-bottom:6px double var(--gold);
+  }
+  header.hero .kicker{
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--rust);
+    margin:0 0 10px;
+  }
+  header.hero h1{
+    font-size:3rem;
+    margin:0;
+    letter-spacing:.04em;
+    text-shadow:0 2px 0 #000, 0 0 18px var(--blood);
+    color:#f0e2c0;
+  }
+  header.hero h1 .apos{color:var(--blood)}
+  header.hero .sub{
+    font-style:italic;
+    color:#d8c298;
+    margin:12px 0 4px;
+    font-size:1.1rem;
+  }
+  header.hero .byline{font-size:.85rem;color:#b39a6e;margin:0}
+  header.hero .tagline{
+    max-width:560px;margin:22px auto 0;
+    font-style:italic;color:#e7cf9c;
+    border-top:1px solid #5a3d1e;padding-top:16px;font-size:.98rem;
+  }
+
+  /* --- Warning banner --- */
+  .tpk-warn{
+    background:var(--blood-dark);
+    color:#ffe9c9;
+    border-top:3px solid var(--blood);
+    border-bottom:3px solid var(--blood);
+    padding:16px 28px;
+    text-align:center;
+    font-size:1rem;
+  }
+  .tpk-warn strong{color:#ffd27a;letter-spacing:.05em}
+
+  /* --- Layout blocks --- */
+  main{padding:0 34px}
+  section{margin:40px 0;scroll-margin-top:20px}
+  h2.scene{
+    font-size:1.7rem;
+    color:var(--blood);
+    border-bottom:3px solid var(--blood);
+    padding-bottom:6px;
+    margin:0 0 6px;
+    display:flex;align-items:baseline;gap:14px;
+  }
+  h2.scene .num{
+    background:var(--blood);color:var(--paper);
+    font-size:1rem;
+    padding:3px 12px;border-radius:3px;
+    box-shadow:2px 2px 0 var(--shadow);
+    flex:none;
+  }
+  h2.scene .en{
+    font-size:.8rem;color:var(--gold);font-style:italic;
+    font-weight:normal;margin-left:auto;letter-spacing:.04em;
+  }
+  h3{color:var(--rust);font-size:1.22rem;margin:26px 0 8px;border-left:5px solid var(--rust);padding-left:10px}
+  p{margin:.6em 0}
+
+  /* --- Read-aloud box --- */
+  .readaloud{
+    background:var(--panel);
+    border:1px solid var(--gold);
+    border-left:8px solid var(--gold);
+    padding:16px 22px 16px 46px;
+    margin:18px 0;
+    font-style:italic;
+    color:var(--ink-soft);
+    position:relative;
+    box-shadow:3px 3px 0 var(--shadow);
+    border-radius:2px;
+  }
+  .readaloud::before{
+    content:"\201C";
+    position:absolute;left:12px;top:2px;
+    font-size:2.6rem;color:var(--gold);font-family:Georgia,serif;
+  }
+  .readaloud .lbl{
+    display:block;font-style:normal;font-weight:bold;
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:8px;
+  }
+
+  /* --- GM tip --- */
+  .tip{
+    background:#efe6cd;
+    border:1px dashed var(--ink-soft);
+    padding:12px 16px 12px 44px;
+    margin:16px 0;
+    position:relative;
+    border-radius:3px;
+    font-size:.96rem;
+  }
+  .tip::before{content:"\1F3B4";position:absolute;left:12px;top:11px;font-size:1.2rem}
+  .tip .lbl{font-weight:bold;color:var(--blood);letter-spacing:.05em}
+
+  /* --- Prop cue --- */
+  .prop{
+    background:#3a2412;color:#f0dcae;
+    padding:12px 16px 12px 46px;
+    margin:16px 0;border-radius:3px;position:relative;
+    font-size:.95rem;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .prop::before{content:"\1F4C4";position:absolute;left:14px;top:11px;font-size:1.3rem}
+  .prop .lbl{display:block;font-weight:bold;color:#e8a24a;letter-spacing:.2em;font-size:.66rem;text-transform:uppercase;margin-bottom:3px}
+
+  /* --- Info / clue list --- */
+  ul.clues{list-style:none;padding-left:0;margin:12px 0}
+  ul.clues li{
+    padding:8px 12px 8px 38px;position:relative;
+    border-bottom:1px dotted #b89a63;
+  }
+  ul.clues li::before{content:"\2620";position:absolute;left:10px;top:8px;color:var(--blood)}
+
+  /* --- Location cards --- */
+  .locgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:16px 0}
+  .loc{
+    background:var(--panel);border:1px solid var(--gold);
+    border-top:5px solid var(--rust);
+    padding:12px 16px;border-radius:3px;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .loc h4{margin:0 0 6px;color:var(--blood);font-size:1.05rem}
+  .loc p{font-size:.9rem;margin:.4em 0}
+
+  /* --- Stat block --- */
+  .statblock{
+    background:#f5eed6;
+    border:2px solid var(--ink);
+    border-radius:4px;
+    padding:0 0 14px;
+    margin:20px 0;
+    box-shadow:4px 4px 0 var(--shadow);
+    overflow:hidden;
+  }
+  .statblock .sbhead{
+    background:var(--ink);color:var(--paper);
+    padding:10px 16px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .statblock .sbhead h4{margin:0;font-size:1.25rem;letter-spacing:.03em;color:#f0dcae}
+  .statblock .sbhead .role{font-size:.75rem;font-style:italic;color:#c8a878}
+  .statblock .sbbody{padding:12px 18px 0}
+  .statblock .traits{font-size:.95rem}
+  .statblock .traits b{color:var(--rust)}
+  .statblock .derived{
+    display:flex;gap:22px;flex-wrap:wrap;
+    margin:10px 0;padding:8px 0;border-top:1px solid #c3a870;border-bottom:1px solid #c3a870;
+    font-weight:bold;
+  }
+  .statblock .derived span b{color:var(--blood)}
+  .statblock .special{font-size:.9rem}
+  .statblock .special li{margin:5px 0}
+  .statblock .special b{color:var(--rust)}
+
+  /* --- Relic box --- */
+  .relic{
+    background:linear-gradient(135deg,#efe0b8,#e3cf98);
+    border:2px solid var(--gold);border-radius:6px;
+    padding:16px 20px;margin:20px 0;
+    box-shadow:0 0 0 3px #f5eed6,4px 4px 0 var(--shadow);
+  }
+  .relic h4{margin:0 0 4px;color:var(--blood-dark);font-size:1.2rem}
+  .relic .sub{font-style:italic;color:var(--gold);font-size:.82rem;margin:0 0 10px;text-transform:uppercase;letter-spacing:.15em}
+
+  /* --- Flow overview --- */
+  .flow{counter-reset:step;margin:10px 0 0}
+  .flow .step{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:10px 0;border-bottom:1px solid #c9ad78;
+  }
+  .flow .step:last-child{border-bottom:none}
+  .flow .step .n{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:var(--blood);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .flow .step .txt b{color:var(--blood)}
+  .flow .step .txt{font-size:.98rem}
+  .flow .step a{color:var(--rust);text-decoration:none;border-bottom:1px dotted var(--rust)}
+
+  /* --- TOC nav --- */
+  nav.toc{
+    background:#2b1c11;padding:14px 20px;
+    position:sticky;top:0;z-index:10;
+    border-bottom:3px solid var(--gold);
+    display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;
+    font-size:.8rem;
+  }
+  nav.toc a{color:#e8cf9c;text-decoration:none;letter-spacing:.03em}
+  nav.toc a:hover{color:#fff;text-shadow:0 0 8px var(--blood)}
+
+  .callbox{
+    background:#efe6cd;border-left:6px solid var(--blood);
+    padding:12px 18px;margin:16px 0;border-radius:2px;
+  }
+  .callbox b{color:var(--blood)}
+
+  footer{
+    text-align:center;color:#8a7350;font-size:.8rem;
+    padding:30px 20px 0;font-style:italic;
+  }
+  .divider{
+    text-align:center;color:var(--gold);margin:30px 0;font-size:1.3rem;letter-spacing:.6em;
+  }
+
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;max-width:100%}
+    nav.toc{position:static}
+    section{break-inside:avoid}
+    .statblock,.readaloud,.relic,.prop{break-inside:avoid}
+    header.hero{border-bottom:3px solid #000}
+  }
+  @media(max-width:600px){
+    header.hero h1{font-size:2rem}
+    main{padding:0 16px}
+    h2.scene .en{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="kicker">Deadlands · The Weird West · One-Sheet</p>
+    <h1>Dead Men Walkin<span class="apos">'</span></h1>
+    <p class="sub">Ein tödliches Horror-Abenteuer für die High Plains</p>
+    <p class="byline">von Shane Lacy Hensley &nbsp;·&nbsp; Savage Worlds / Deadlands &nbsp;·&nbsp; Spielleiter-Ablauf (DE)</p>
+    <p class="tagline">„Manche Geschichten sollten nie erzählt werden. Dies ist eine davon.
+    Jede arme Seele, die diese Geschichte erlebt, wird sterben. Und zwar in den ersten 20 Minuten, Amigo.
+    Sei vorsichtig. Hier gehen die Toten um."</p>
+  </header>
+
+  <div class="tpk-warn">
+    <strong>ACHTUNG — GEPLANTER TPK.</strong> &nbsp; Dieses Abenteuer beginnt mit dem sicheren Tod der gesamten Gruppe.
+    Kündige den Spielern vorher an, dass es „tödlich" wird — lass sie dir in die Augen sehen und bestätigen, dass sie damit klarkommen.
+  </div>
+
+  <nav class="toc">
+    <a href="#uebersicht">Ablauf</a>
+    <a href="#vorbereitung">Vorbereitung</a>
+    <a href="#szene1">1 · Lagerfeuer</a>
+    <a href="#szene2">2 · Das Erwachen</a>
+    <a href="#szene3">3 · Perdition</a>
+    <a href="#szene4">4 · Erkundung</a>
+    <a href="#szene5">5 · Lindsay &amp; Devil</a>
+    <a href="#szene6">6 · Das Finale</a>
+    <a href="#szene7">7 · Das Ende</a>
+    <a href="#statblocks">Statblocks</a>
+    <a href="#tipps">SL-Tipps</a>
+  </nav>
+
+  <main>
+
+    <!-- ============ ÜBERSICHT ============ -->
+    <section id="uebersicht">
+      <h2 class="scene"><span class="num">▷</span> Der Ablauf auf einen Blick</h2>
+      <p>Ein geschlossener Alptraum-Kreislauf: Die Gruppe stirbt, „erwacht" in einer eingefrorenen Geisterstadt,
+      löst das Rätsel um ein verängstigtes kleines Mädchen und muss den <em>Devil</em> mit der einzigen Waffe
+      bezwingen, die ihm schaden kann — bevor sie am Lagerfeuer aufwacht.</p>
+      <div class="flow">
+        <div class="step"><span class="n">1</span><span class="txt"><b>Lagerfeuer</b> — Vorstellung der Charaktere, dann greift <em>Devil</em> an. <b>Alle sterben.</b> Buch zuklappen, danken. <a href="#szene1">↓</a></span></div>
+        <div class="step"><span class="n">2</span><span class="txt"><b>„Eigentlich hast du überlebt"</b> — Wunden nur oberflächlich, Mond steht still, Zeit ist eingefroren. <a href="#szene2">↓</a></span></div>
+        <div class="step"><span class="n">3</span><span class="txt"><b>Perdition</b> — die einzige erreichbare Stadt. Saloon „Dirty Dog", Gus &amp; Hank, erste Hinweise auf die Toten. <a href="#szene3">↓</a></span></div>
+        <div class="step"><span class="n">4</span><span class="txt"><b>Erkundung</b> — Leiche unter dem Saloon, Zombie-Opfer beim Bestatter, schlafende, nicht weckbare Stadt. <a href="#szene4">↓</a></span></div>
+        <div class="step"><span class="n">5</span><span class="txt"><b>Lindsay &amp; das weiße Haus</b> — das Mädchen erzählt ihre Geschichte und übergibt den <em>Whackin' Stick</em>. <a href="#szene5">↓</a></span></div>
+        <div class="step"><span class="n">6</span><span class="txt"><b>Das Heulen der Hunde</b> — endlose Hundewelle + <em>Devil</em>. Nur der Stock kann ihn töten. <a href="#szene6">↓</a></span></div>
+        <div class="step"><span class="n">7</span><span class="txt"><b>Erwachen am Lagerfeuer</b> — alles ist wie zuvor … dann raschelt es erneut im Gras. Schluss. <a href="#szene7">↓</a></span></div>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ VORBEREITUNG ============ -->
+    <section id="vorbereitung">
+      <h2 class="scene"><span class="num">☰</span> Vorbereitung des Marshals</h2>
+      <ul class="clues">
+        <li><b>Der Prop:</b> Halte ein Stück <b>Schmierpapier</b> unter dem Tisch bereit. Zerknüllen = raschelndes Gras. Dieser Ton kehrt dreimal wieder (Eröffnung, nach dem Stock, ganz am Schluss).</li>
+        <li><b>Der Ton:</b> Ansage vorab, dass es ein tödliches Abenteuer ist (ruhig mit einem TPK „prahlen"). Das hilft den Spielern, sich innerlich auf den aussichtslosen Kampf einzustellen.</li>
+        <li><b>Das Setting:</b> High Plains, Hochgrasebenen von Kansas. Alle sind einzeln zu Pferd Richtung Westen unterwegs — <b>keine Wagen, keine motorisierten Fahrzeuge.</b></li>
+        <li><b>Bereithalten:</b> Aktionskarten, Schicksalschips (Bennies), die Statblocks für <em>Devil</em> und die <em>Hunde</em> (siehe unten) sowie das Profil „Stadtbewohner" aus dem Marshal's Handbook für Gus &amp; Hank.</li>
+      </ul>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 1 ============ -->
+    <section id="szene1">
+      <h2 class="scene"><span class="num">1</span> Horror auf den High Plains <span class="en">The Story So Far / High Plains Horror</span></h2>
+
+      <p>Die Helden sitzen in einer klaren Vollmondnacht um ein Lagerfeuer, die Pferde an einem umgestürzten Baum in der Nähe angebunden. Lass zuerst jeden Charakter sich vorstellen und erzählen, warum er in den Westen reist. Es ist friedlich — <em>das wird nicht lange so bleiben.</em></p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Die stille Nacht</span>
+        Du befindest dich auf den High Plains, irgendwo in den Hochgrasebenen von Kansas. Aus Sicherheitsgründen reist ihr als Gruppe — manche Freunde, manche Fremde, aber gemeinsam ist man stärker.
+        Es ist eine ruhige Nacht mit strahlendem Vollmond und nur wenigen Wolken, die gelegentlich sein Licht verdecken.
+        Ihr habt euch unterhalten, doch nun wird es für einen Moment still. Jemand schlürft Kaffee. Das Feuer knistert und knackt. Ein Pferd schnaubt und wiehert. Man hört ein Rascheln im Gras …
+      </div>
+
+      <div class="prop">
+        <span class="lbl">Prop-Einsatz</span>
+        Bei „Rascheln im Gras" das Schmierpapier unter dem Tisch zusammenknüllen — je lauter, desto besser. In dieser Eröffnung ein paar Mal wiederholen, um die Spieler unruhig zu machen.
+      </div>
+
+      <h3>Der Angriff — schnell, blutig, gnadenlos</h3>
+      <p>Ein pechschwarzes, zweibeiniges Ungeheuer zerreißt die Pferde. <b>Zwei sterben, bevor die Aktion überhaupt beginnt;</b> der Rest verstreut sich in alle Winde. Würfelt auf Überraschung, teilt Aktionskarten an alle aus, die ihren Wahrnehmungswurf bestehen.</p>
+      <ul class="clues">
+        <li><b>Teleportation durchs Gras:</b> Das Biest bewegt sich nach Belieben durchs Gras und verschwindet darin — behandle es wie sofortige Teleportation, ohne Wurf, ohne Scheitern-Chance. Nutze das anfangs für „Schlagen-und-Fliehen"-Angriffe auf jeden, der sich absetzt.</li>
+        <li><b>Angst-Proben:</b> Sobald <em>Devil</em> im Vollmond aus dem Gras auftaucht, legen die Spieler Angst-Proben ab (einzeln oder als Gruppe, je nach Szene).</li>
+        <li><b>Tempo aufbauen:</b> Braucht jemand länger als ein paar Sekunden, zähle laut von fünf herunter. Entscheidet sie sich nicht, nimm ihre Karte — die Heldin gerät in Panik und verliert den Zug.</li>
+      </ul>
+
+      <div class="callbox">
+        <b>Der Kern der Szene:</b> <em>Devil</em> ist unbesiegbar und sein Angriff ist absolut tödlich — das ist beabsichtigt. Waffen prallen ab, Zauber und Flammenwerfer machen ihn nur wütend. Dein Ziel ist es, die <b>gesamte Gruppe zu töten.</b> Beschreibe jeden Tod grausam und blutig.
+      </div>
+
+      <div class="tip">
+        <span class="lbl">Marshal-Tipp:</span> Die Ersten geben oft Schicksalschips aus, um zu überleben — wirf ihnen mitleidige Blicke zu, verrate deinen Plan aber nicht. Sobald die Gruppe merkt, dass sie nichts ausrichten kann, wechsle vom taktischen Kampf zur erzählerischen Ebene: Bleiben und kämpfen oder fliehen? <b>Fliehen nützt nichts</b> — <em>Devil</em> spürt jeden einzeln auf (Schnüffelgeräusche!) und zerreißt ihn. Dann klapp das Buch zu und bedanke dich fürs Spiel.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 2 ============ -->
+    <section id="szene2">
+      <h2 class="scene"><span class="num">2</span> „Eigentlich hast du überlebt" <span class="en">But Wait / Signs and Portents</span></h2>
+      <p>Lass die Spieler mit verwirrtem oder verschmitztem Blick reagieren. Dann setze den „Ah, Moment mal"-Blick auf, blättere zurück, als hättest du etwas übersehen — und wähle eine beliebige Figur:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Das Erwachen</span>
+        „Eigentlich hast du es geschafft, zu überleben." Die Augen deiner Figur öffnen sich, hoch am Himmel steht der Vollmond. Du hast unbeschreibliche Schmerzen, aber du lebst. Eine heiße Brise, wie direkt aus der Hölle, weht über die Prärie — ansonsten ist es still wie auf einem Friedhof.
+      </div>
+
+      <p>Der Charakter findet nach und nach die anderen — alle haben irgendwie überlebt. Sie sehen grauenhaft zugerichtet aus, doch es sind <b>größtenteils nur Fleischwunden.</b> Die „aufgerissene" Kehle hat Luftröhre und Halsschlagader knapp verfehlt; die „herausgerissenen" Rippen sind übel geprellt, aber nichts Lebenswichtiges wurde getroffen.</p>
+
+      <ul class="clues">
+        <li><b>Nicht Harrowed:</b> Manche vermuten, sie seien „Harrowed" geworden. <b>Falsch.</b> Sie haben noch einen Puls, bluten und tragen keine Dämonen in ihrer Seele.</li>
+        <li><b>Die Pferde:</b> Alle sind mausetot oder spurlos verschwunden.</li>
+        <li><b>Der stillstehende Mond:</b> Wer sich mit dem Leben in der Wildnis auskennt (Trapper, Pfadfinder, Indianer …) merkt: Der große Vollmond hat sich <b>keinen Deut bewegt</b> — auch nach längerem Warten nicht.</li>
+      </ul>
+
+      <div class="callbox">
+        <b>Der geheime Rahmen:</b> Sie befinden sich in einer kleinen alptraumhaften Ecke der Jagdgründe. <b>Die Zeit steht hier still, bis die Geschichte zu Ende ist.</b> (Das wissen die Spieler noch nicht.)
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 3 ============ -->
+    <section id="szene3">
+      <h2 class="scene"><span class="num">3</span> Die Stadt Perdition <span class="en">Perdition / The Killings</span></h2>
+      <p>Schließlich entdeckt jemand Lichtpunkte auf einem entfernten Bergrücken. Es gibt <b>keinen anderen Ort</b> — wer wegzugehen versucht, irrt durch die Nacht und landet wieder am Lagerplatz. Der einzige Weg führt nach <b>Perdition</b>. Nur im Saloon „Dirty Dog" brennt Licht.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Atmosphäre — Vor dem Saloon</span>
+        Der Saloon steht erhöht über der Prärie, mit Veranda und zwei Schwingtüren. Von unten dringt Dunkelheit herauf. Wer einen Wahrnehmungswurf mit −2 schafft, riecht Verwesung und Verfall — und einen Hauch von Parfüm. Irgendwo unter dem Gebäude liegt offensichtlich etwas Totes.
+      </div>
+
+      <h3>Gus &amp; Hank im „Dirty Dog"</h3>
+      <p>Drinnen: Barkeeper <b>Gus Hawkins</b> und Vize-Stadtmarschall <b>Hank Dolittle</b>. Beide nicken zur Begrüßung, wenden sich dann wieder ihren Gläsern zu. Keiner zeigt Überraschung über den grauenhaften Zustand oder das Blut der Ankömmlinge. Gus spendiert einen Drink: <em>„Auf Kosten des Hauses. Sieht so aus, als könntet ihr das gebrauchen."</em></p>
+
+      <p>Fragen die Helden nach der Kreatur, erzählt Hank:</p>
+      <div class="readaloud">
+        <span class="lbl">Hank Dolittle</span>
+        „Hmm. So was hab ich noch nie gesehen. Wir hatten allerdings schon Probleme mit Wildhunden. Das hast du wahrscheinlich gesehen. […] Vor nicht allzu langer Zeit hat irgendwas Frank Watkins und Denise Mullins erwischt. Hat beide umgebracht. Ihnen die Kehlen aufgerissen. Sie liegen immer noch beim Bestatter aufgebahrt."
+      </div>
+      <div class="readaloud">
+        <span class="lbl">Gus Hawkins</span>
+        „Die Hunde haben vielleicht auch meine Sally May erwischt. Sie hat hier gearbeitet. Ein süßes Mädchen, aber ein bisschen kokett. Wird seit ein paar Tagen vermisst. Ich hab aber das Gefühl, dass sie hier in der Gegend ist — ich rieche ab und zu ihr Parfüm."
+      </div>
+
+      <h3>Was Hank über die Opfer verrät</h3>
+      <ul class="clues">
+        <li><b>Sally May McBride</b> — hübsches, rothaariges Mädchen aus dem Osten, ganz allein, ein kleiner Flirt. Alle Gäste liebten sie.</li>
+        <li><b>Frank Watkins &amp; Denise Mullins</b> — junges, frisch verlobtes Paar. Frank war Fuhrmann (Waren nach Dodge etc.); Denise war die Tochter der Familie, der der Gemischtwarenladen gehört.</li>
+        <li><b>Auf den stillen Mond / die schlafende Stadt angesprochen:</b> Gus &amp; Hank zucken nur mit den Schultern — „Das ist seltsam." Mehr kommt nicht.</li>
+      </ul>
+      <p style="font-size:.9rem"><em>Profil für Gus &amp; Hank: „Stadtbewohner" aus dem Deadlands Marshal's Handbook.</em></p>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 4 ============ -->
+    <section id="szene4">
+      <h2 class="scene"><span class="num">4</span> Perdition erkunden <span class="en">Exploring Perdition</span></h2>
+      <p>Es gibt viele Gebäude, aber nur wenige sind von Interesse. Überall schlafen Menschen, die sich <b>durch nichts wecken lassen.</b> Bei einigen deuten Futter-/Wassernäpfe und abgenagte Knochen auf Hunde hin — <b>doch nie ist ein echter Hund zu sehen.</b></p>
+
+      <div class="locgrid">
+        <div class="loc">
+          <h4>🍺 Dirty Dog Saloon</h4>
+          <p>Unter der Veranda, genau in der Mitte (~20 Fuß von allen Seiten), liegt die Leiche von <b>Sally May McBride</b>. Man muss auf dem Bauch hinkriechen — das Licht reicht kaum hinein.</p>
+          <p>Kehle aufgerissen, Brust voller Blut — wie von einem großen Hund, aber nichts so Großes wie <em>Devil</em>. Nicht gefressen, nur getötet und hierher geschleppt. Höchstens ein paar Tage tot.</p>
+        </div>
+        <div class="loc">
+          <h4>⭐ Büro des Sheriffs</h4>
+          <p>Kleines Gebäude gegenüber. Zwei Zellen, Holzofen, Gewehrständer mit einer <b>Winchester ’73</b> und einem Dutzend Patronen. Niemand im Dienst, keine Gefangenen — sonst nichts.</p>
+        </div>
+        <div class="loc">
+          <h4>🩺 Haus von Doc Coates</h4>
+          <p>Großes graues Haus die Straße hinunter. Doc will — wie alle — nicht aufwachen. Die Gruppe kann sich an seinen Vorräten bedienen: <b>verbessern Heilungswürfe wie gewohnt.</b></p>
+        </div>
+        <div class="loc">
+          <h4>⚰️ Der Bestatter</h4>
+          <p>Ausstellungsraum vorn, Wohnräume hinten. Tür leicht zu öffnen. Der Bestatter schläft tief in langer Unterhose, unaufweckbar, kaum Besitz. Das Seltsame liegt im Ausstellungsraum → siehe unten.</p>
+        </div>
+      </div>
+
+      <div class="prop">
+        <span class="lbl">Prop-Einsatz</span>
+        Für das Kratzen unter dem Saloon-Boden: kratz mit deinen eigenen Fingernägeln unter dem Tisch. Spiel den langsamen Bauch-Krabbelgang zur armen Sally so richtig aus.
+      </div>
+
+      <h3>Die zwei Särge beim Bestatter</h3>
+      <p>Zwei Särge stehen senkrecht an der Wand. Ein Buch auf einem Tisch verrät:</p>
+      <div class="readaloud" style="text-align:center;font-size:1.15rem">
+        Frank Watkins und Denise Mullins<br><b>Vom Teufel getötet</b>
+      </div>
+      <p>Nach dem Blick ins Buch: Wahrnehmungswurf. Aus Denises Sarg hört man ein <b>Kratzen!</b> Öffnen die Helden die (leicht zu öffnenden) Särge, stehen Frank und Denise regungslos in ihren Todesposen — <b>aber ihre Augen sind weit aufgerissen und huschen panisch zu den Gesichtern der Fremden.</b> Sie greifen nicht an, bewegen sich nicht, sprechen nicht. In jedem Sarg gibt es Kratzspuren, doch keine Leiche rührt sich und kein Fingernagel ist abgebrochen.</p>
+      <div class="tip">
+        <span class="lbl">Marshal-Tipp:</span> Es ist wohl eine Gnade, ihnen eine Kugel in den Kopf zu jagen — das beendet die verzweifelten Blicke. Danach heult irgendwo weiter unten an der Straße ein Hund den Mond an. Gus &amp; Hank reagieren auf keine dieser Neuigkeiten — „Das ist seltsam."
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 5 ============ -->
+    <section id="szene5">
+      <h2 class="scene"><span class="num">5</span> Lindsay &amp; das weiße Haus <span class="en">The Devil Wears a Spiked Collar / Lindsay's Tale</span></h2>
+      <p>Am Ende der Straße — seltsamerweise genau in der Mitte — steht ein kleines weißes Haus, das die Helden vorher nie gesehen haben; jetzt erstrahlt es gespenstisch im Mondlicht. Abblätternde Farbe, riesige Hundespuren, eine Hundehütte links neben der Fliegengittertür. Über dem Eingang steht in roter Farbe: <b>„DEVIL"</b>. Eine schwere Eisenkette windet sich von einem Pfahl in die Hütte. Dahinter atmet etwas schwer — als würde es schlafen.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Auftritt — Lindsay Todd</span>
+        Bevor sich jemand an die Hütte heranmachen kann, erscheint ein kleines Mädchen in weißem Nachthemd an der Tür — sechs oder sieben Jahre alt, schulterlanges dunkelbraunes Haar, das die Augen verdeckt, zerzaust wie eben aus dem Bett. Sie reibt sich die Augen und starrt die Fremden durchs Gitter an: „Was machst du denn hier?"
+      </div>
+
+      <div class="callbox">
+        <b>Die Wahrheit (nur für den Marshal):</b> <b>Lindsay Todd</b> ist der Grund für alles. Ihre Mutter starb vor Monaten; ihr Vater <b>Harvey</b> begann zu trinken. Um lästige Nachbarn und den Pfarrer fernzuhalten, kaufte er einen großen, bösartigen Hund und nannte ihn <em>Devil</em> — den er mit einem Stock schlug, um ihn bösartig zu machen. Der Hund biss Frank, Denise, später Sally May (Harveys kurze Romanze) — und schließlich <b>Lindsay selbst.</b> Ihre Angst war so groß, dass sie ein <b>Portal zu den Jagdgründen</b> öffnete und die auf der Prärie schlafende Gruppe in ihren Alptraum zog.</p>
+      </div>
+
+      <ul class="clues">
+        <li><b>Die Hundehütte:</b> Wer die Klappe öffnet, sieht nur Dunkelheit — <em>Devil</em> ist nicht da, doch man hört tiefes, langsames Atmen aus dem Inneren.</li>
+        <li><b>Kein Zutritt:</b> „Papa sagt, man darf Fremden niemals die Tür öffnen." Drängt man sich vorbei, findet man <b>Harvey</b> auf einem Bett, umringt von leeren Flaschen, tief schlafend und unaufweckbar.</li>
+        <li><b>Lindsays Zustand:</b> Bei Untersuchung — eingefallene schwarze Augen und eine große <b>Hundebisswunde am Arm</b> knapp oberhalb des Ellbogens.</li>
+      </ul>
+
+      <div class="tip">
+        <span class="lbl">Marshal-Tipp:</span> Sprich Lindsay mit langsamer, verschlafener, gruseliger Kleines-Mädchen-Stimme — distanziert und unheimlich.
+      </div>
+
+      <h3>Lindsays Antworten (F &amp; A)</h3>
+      <ul class="clues">
+        <li><b>Was ist mit Sally May / Frank / Denise passiert?</b> — „Der Teufel hat sie geschnappt. Er mochte sie nicht."</li>
+        <li><b>Kennst du eine größere Monster-Version von Devil?</b> — „Nein."</li>
+        <li><b>Wo ist deine Mama?</b> — „Sie ist gestorben. An irgendeiner Art von Fieber."</li>
+        <li><b>Waren Sally May und dein Vater ein Paar?</b> — „Ich glaube schon. Sie haben sich geküsst und so. Aber Devil mochte sie nicht. Er hat sie gebissen."</li>
+      </ul>
+
+      <h3>Die Übergabe des Stocks</h3>
+      <p>Wenn die Gruppe nicht mehr weiterweiß, blickt Lindsay zur Hundehütte: <b>„Der Teufel kommt."</b> Einen Herzschlag später hört man das Gebell Dutzender Hunde auf der fernen Prärie. Lindsay, mit großen Augen: <em>„Sie kommen alle her! Ich mag keine Hunde!"</em> Sie hebt einen Hickory-Stock auf und reicht ihn dem, der am nettesten zu ihr war:</p>
+      <div class="readaloud">
+        <span class="lbl">Lindsay</span>
+        „Damit schlägt Papa den Teufel. Das ist das Einzige, wovor er Angst hat. Papa nennt es den <b>Whackin' Stick</b>. Du solltest jetzt besser aus der Stadt verschwinden. Der Teufel kommt."
+      </div>
+
+      <div class="relic">
+        <h4>🪵 Relikt: Der Whackin' Stick</h4>
+        <p class="sub">Der einzige Gegenstand, der Devil schaden kann</p>
+        <ul class="clues" style="margin-top:0">
+          <li><b>Schaden:</b> gegen <em>Devil</em> oder einen der Hunde <b>STR + 2W6</b>; gegen alle anderen Wesen/Personen <b>STR + W4</b>.</li>
+          <li><b>Devils Fixierung:</b> <em>Devil</em> ignoriert jeden außer der Person, die den Stock hält. Der Höllenhund fürchtet den Stock und hasst ihn zugleich.</li>
+          <li><b>Ein Geschenk für Sterbende:</b> Wird der Träger getötet, darf er den Stock an einen Charakter seiner Wahl weiterwerfen. Ein einfacher <b>Geschicklichkeitswurf</b> lässt diesen ihn fangen und normal weiter handeln. Bei Misserfolg fällt der Stock zu Boden und muss aufgehoben werden (<b>−2</b> in dieser Runde).</li>
+          <li><b>Unberührbar:</b> Weder <em>Devil</em> noch die Hunde fassen den Stock jemals an — selbst wenn er ihnen zu Füßen liegt.</li>
+        </ul>
+        <p style="font-size:.9rem;margin-bottom:0"><b>Achtung:</b> Wer die Waffe nimmt, wird <em>Devils</em> nächstes Ziel — und möglicherweise sein Spielzeug …</p>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 6 ============ -->
+    <section id="szene6">
+      <h2 class="scene"><span class="num">6</span> Das Heulen der Hunde <span class="en">The Baying of Hounds / Howling at the Moon</span></h2>
+      <p>Lindsay lässt die Gruppe weiterhin nicht ins Haus — sie sollten die Straße zurück zum Saloon (oder einem anderen Unterschlupf) laufen. Etwa auf halbem Weg:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Die Meute</span>
+        Das Bellen kommt immer näher. Eine Welle von Hunden aller Größen — von Schäferhunden über Wölfe bis zu Terriern — stürmt die Straße herunter. Irgendwo hinter der heulenden Horde hörst du etwas Größeres, etwas, das den Mond anheult wie der Teufel höchstpersönlich.
+      </div>
+
+      <h3>Ablauf des Kampfes</h3>
+      <ul class="clues">
+        <li><b>Runde 1:</b> Die Hunde greifen in Gruppen von etwa <b>acht</b> an.</li>
+        <li><b>Jede weitere Runde:</b> zusätzlich <b>W4+1</b> neue Hunde. Die Welle ist <b>endlos</b> und hört erst auf, wenn <em>Devil</em> erledigt ist.</li>
+        <li><b>Runde 3:</b> <em>Devil</em> tritt ein — und greift gezielt die Person mit dem <b>Whackin' Stick</b> an.</li>
+        <li><b>Devils Fixierung:</b> Sobald er im Kampf ist, greifen die Hunde <b>alle anderen</b> an — nur nicht den Stock-Träger (der ist <em>Devils</em> Kauspielzeug).</li>
+        <li><b>Der einzige Sieg:</b> Nur wer <em>Devil</em> mit dem Whackin' Stick tötet, gibt der Gruppe eine Überlebenschance. Danach fliehen alle Hunde sofort mit eingezogenem Schwanz.</li>
+      </ul>
+
+      <div class="tip">
+        <span class="lbl">Marshal-Tipp:</span> Halb Taktik, halb rasende Action. Wer sich in einem Gebäude verschanzt, hält vielleicht trotzdem nicht: Hunde springen durch Fenster oder tauchen unter den Dielen auf — und notfalls schlägt <em>Devil</em> die Wand ein. Ignoriert die Gruppe die Hunde, sorgen „Gang Up"-Bonus und ein „Lucky Strike" mit „Go for the Throat" fast sicher für Opfer. Am schönsten wird es, wenn die ersten zwei bis drei Stock-Träger fallen — dann weiß die letzte Person, dass hier keine Weichei-Spielchen laufen.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 7 ============ -->
+    <section id="szene7">
+      <h2 class="scene"><span class="num">7</span> Das Ende am Lagerfeuer <span class="en">You Knew This Was Comin', Right?</span></h2>
+      <p>Ist <em>Devil</em> besiegt, lies vor:</p>
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Der Sieg</span>
+        Du verziehst das Gesicht, als der Whackin' Stick die Knochen unter dem schwarzen Fell zerschmettert. Ein letzter vergeblicher Krallenhieb, dann wimmert das Ungeheuer und sackt zu Boden. Alle Hunde ziehen den Schwanz ein und fliehen. Du blickst zu deinen mitgenommenen Gefährten und holst tief Luft. Du hast überlebt.
+        Dann beginnt die Straße sich aufzulösen. Der Mond färbt sich rot, ein höllischer Wind fegt über die Prärie, alles leuchtet orange und rot — dann wird alles schwarz.
+      </div>
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Zurück am Feuer</span>
+        Ein winziger Lichtpunkt in der Dunkelheit wird größer, flackert, wärmt. Es ist ein Lagerfeuer — direkt vor dir. Du bist zurück, wo der Alptraum begann. Deine Freunde sind ebenso verwirrt. Die Pferde grasen still hinter dem Feuer. Der Vollmond starrt herab. Alles ist wie zuvor — keine Spuren an dir oder deinen Freunden. Es war nur ein schrecklicher Alptraum.
+        Dann hörst du es. Ein Schauer läuft dir den Rücken hinunter. Irgendwo hinter den Pferden regt sich etwas. Du hörst ein Rascheln im Gras …
+      </div>
+      <div class="prop">
+        <span class="lbl">Prop-Einsatz — Finale</span>
+        Zerknülle das Papier ein letztes Mal — und mach dann Schluss für heute.
+      </div>
+      <div class="callbox">
+        <b>Wichtig:</b> Selbst wenn du am Ende erneut die ganze Gruppe „umbringst", wachen sie danach trotzdem auf der Prärie auf, als hätten sie gewonnen — aber verrate ihnen das erst, wenn es soweit ist.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ STATBLOCKS ============ -->
+    <section id="statblocks">
+      <h2 class="scene"><span class="num">⚔</span> Statblocks</h2>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Hunde (die Meute)</h4>
+          <span class="role">endlose Welle · wolfsgroß</span>
+        </div>
+        <div class="sbbody">
+          <p class="traits"><b>Eigenschaften:</b> Beweglichkeit W8, Intelligenz W6 (A), Willenskraft W6, Stärke W6, Ausdauer W6</p>
+          <p class="traits"><b>Fähigkeiten:</b> Kämpfen W6, Einschüchtern W6, Mut W6, Wahrnehmen W10, Verstecken W8, Spurenlesen W12</p>
+          <div class="derived">
+            <span><b>Tempo</b> 8</span><span><b>Parieren</b> 5</span><span><b>Widerstand</b> 4</span>
+          </div>
+          <ul class="special">
+            <li><b>Biss:</b> Stärke +4.</li>
+            <li><b>Leichtfüßig:</b> würfeln beim Laufen W10 statt W6.</li>
+            <li><b>Auf die Kehle zielen:</b> bei einem erhöhten Angriffswurf trifft der Hund die am schwächsten gepanzerte Stelle.</li>
+            <li><b>Größe −1:</b> die meisten reichen an der Schulter etwa bis zur Leistenhöhe.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Devil</h4>
+          <span class="role">Höllenhund-Humanoid · 9 Fuß · Wildcard</span>
+        </div>
+        <div class="sbbody">
+          <p style="font-size:.9rem;font-style:italic;margin-top:0">Neun Fuß großer, menschenähnlicher Hundemensch mit kurzem, samtschwarzem Fell und einem Mastiff-Gesicht voller scharfer Zähne. Menschliche Intelligenz, gekrümmte Hundebeine, längere menschenähnliche Arme mit messerscharfen Klauen — und ein Stachelhalsband um den dicken Hals.</p>
+          <p class="traits"><b>Eigenschaften:</b> Beweglichkeit W10, Intelligenz W8 (A), Willenskraft W10, Stärke W12+4, Ausdauer W8</p>
+          <p class="traits"><b>Fähigkeiten:</b> Kämpfen W12, Einschüchtern W6, Mut W6, Wahrnehmen W10, Verstecken W8, Spurenlesen W12</p>
+          <div class="derived">
+            <span><b>Tempo</b> 8</span><span><b>Parieren</b> 8</span><span><b>Widerstand</b> 7</span>
+          </div>
+          <ul class="special">
+            <li><b>Biss / Klaue:</b> Stärke + W12.</li>
+            <li><b>Angst (−2):</b> ein Schrecken direkt aus der Hölle.</li>
+            <li><b>Leichtfüßig:</b> würfelt beim Laufen W10 statt W6.</li>
+            <li><b>Immunität:</b> völlig immun gegen jede Art von Angriff — mit <b>einer</b> Ausnahme: dem <b>Whackin' Stick</b> (Stärke + 2W6 gegen Devil/Hunde; Stärke + W4 gegen alles andere).</li>
+            <li><b>Verbesserte Raserei:</b> zwei Angriffe pro Runde ohne Malus.</li>
+            <li><b>Improved Level Headed:</b> zieht drei Karten und nutzt die beste.</li>
+            <li><b>Auf die Kehle zielen:</b> trifft bei einem Bonus die am schwächsten gepanzerte Stelle.</li>
+            <li><b>Größe +1:</b> etwa 9 Fuß groß.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ TIPPS ============ -->
+    <section id="tipps">
+      <h2 class="scene"><span class="num">★</span> Shanes Nachwort — Marshal-Tipps</h2>
+      <ul class="clues">
+        <li><b>Der Papier-Trick</b> ist Gold wert: klingt wie Gras und bringt die Spieler dazu, für einen Herzschlag still zu lauschen. Er ist der Auslöser für Devils zwei Wiederkehr-Momente (nach dem Stock &amp; ganz am Ende).</li>
+        <li><b>Angst-Proben in Szene 1</b> nicht vergessen — schon mancher Revolverheld ist hier am „Herzinfarkt" gestorben. Tu, als würdest du für sie schummeln, dann zuck mit den Schultern.</li>
+        <li><b>Erster Angriff blutig &amp; grausam:</b> Pferde zerfetzen (nur Sattelzeug bleibt), Angriff aus der Dunkelheit hinter den Tieren. Beschreib Klauen, Zähne und wie die samtige Haut Blei, Pfeile, Flammen und Hoodoo zu verschlucken scheint. Setz den Countdown ein — keine langen taktischen Überlegungen.</li>
+        <li><b>Nach dem Blutbad gruselig bleiben:</b> Sie halten sich evtl. für Harrowed (sind sie nicht). Das Desinteresse von Gus &amp; Hank trägt zur Atmosphäre bei. Fragt jemand nach Mond/Sternen: „Für dich sieht es nicht so aus, als hätten sie sich verändert."</li>
+        <li><b>Zombie-Opfer beim Bestatter</b> greifen nie an — sie starren nur mit nervös aufgerissenen Augen. Immer ein Volltreffer.</li>
+        <li><b>Lindsay ausspielen:</b> Haar über den dunklen Augen, blasse Haut, gespenstisch weißes Kleid. Eigentlich alles normal — aber es ist ein Alptraum, nutze das aus.</li>
+        <li><b>Die RIESIGE Kette</b> zur Hundehütte betonen. Zieht jemand daran, spiel es langsam aus — heraus kommt ein fieses Stachelhalsband, ganz <b>ohne Hund</b>. Beunruhigend.</li>
+        <li><b>Stock-Weitergabe:</b> Stirbt der Träger, beschreibe, wie der Stock in Zeitlupe durch die Luft fliegt. Wer ihn fängt, will ihn wahrscheinlich gar nicht — denn er ist <em>Devils</em> nächstes Ziel.</li>
+      </ul>
+      <p style="text-align:right;font-style:italic;color:var(--gold)">— Shane Hensley, September 2015</p>
+    </section>
+
+    <footer>
+      Spielleiter-Ablauf zu <b>„Dead Men Walkin'"</b> von Shane Lacy Hensley · Deadlands: The Weird West / Savage Worlds ·
+      © Pinnacle Entertainment Group. Deutsche Arbeitsübersetzung für den privaten Spieltisch.
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
