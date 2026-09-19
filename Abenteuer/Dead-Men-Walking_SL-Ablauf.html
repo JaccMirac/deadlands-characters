@@ -252,6 +252,25 @@
   }
   .callbox b{color:var(--blood)}
 
+  /* --- Klappbarer Abschnitt --- */
+  details.fold{margin:0}
+  details.fold > summary{
+    display:block;cursor:pointer;list-style:none;
+    padding-bottom:4px;
+  }
+  details.fold > summary::-webkit-details-marker{display:none}
+  details.fold > summary::marker{content:""}
+  details.fold > summary h2.scene{margin-bottom:0}
+  details.fold > summary:hover h2.scene{color:var(--blood-dark)}
+  details.fold > summary h2.scene .num::after{content:"\00a0\25b8"}
+  details.fold[open] > summary h2.scene .num::after{content:"\00a0\25be"}
+  .foldhint{
+    display:block;font-size:.78rem;font-style:italic;color:var(--gold);
+    letter-spacing:.06em;margin:5px 0 0;
+  }
+  details.fold:not([open]) .foldhint::after{content:" \2014 klicken zum Aufklappen"}
+  details.fold[open] .foldhint::after{content:" \2014 klicken zum Zuklappen"}
+
   footer{
     text-align:center;color:#8a7350;font-size:.8rem;
     padding:30px 20px 0;font-style:italic;
@@ -266,6 +285,8 @@
     nav.toc{position:static}
     section{break-inside:avoid}
     .statblock,.readaloud,.relic,.prop{break-inside:avoid}
+    details.fold > summary{cursor:auto}
+    .foldhint{display:none}
     header.hero{border-bottom:3px solid #000}
   }
   @media(max-width:600px){
@@ -297,6 +318,7 @@
     <a href="#uebersicht">Ablauf</a>
     <a href="#vorbereitung">Vorbereitung</a>
     <a href="#szene1">1 · Lagerfeuer</a>
+    <a href="#beispielkampf">▸ Beispielkampf</a>
     <a href="#szene2">2 · Das Erwachen</a>
     <a href="#szene3">3 · Perdition</a>
     <a href="#szene4">4 · Erkundung</a>
@@ -316,7 +338,7 @@
       löst das Rätsel um ein verängstigtes kleines Mädchen und muss den <em>Devil</em> mit der einzigen Waffe
       bezwingen, die ihm schaden kann — bevor sie am Lagerfeuer aufwacht.</p>
       <div class="flow">
-        <div class="step"><span class="n">1</span><span class="txt"><b>Lagerfeuer</b> — Vorstellung der Charaktere, dann greift <em>Devil</em> an. <b>Alle sterben.</b> Buch zuklappen, danken. <a href="#szene1">↓</a></span></div>
+        <div class="step"><span class="n">1</span><span class="txt"><b>Lagerfeuer</b> — Vorstellung der Charaktere, dann greift <em>Devil</em> an. <b>Alle sterben.</b> Buch zuklappen, danken. <a href="#szene1">↓</a> &nbsp;·&nbsp; <a href="#beispielkampf">Beispielkampf Runde für Runde ↓</a></span></div>
         <div class="step"><span class="n">2</span><span class="txt"><b>„Eigentlich hast du überlebt"</b> — Wunden nur oberflächlich, Mond steht still, Zeit ist eingefroren. <a href="#szene2">↓</a></span></div>
         <div class="step"><span class="n">3</span><span class="txt"><b>Perdition</b> — die einzige erreichbare Stadt. Saloon „Dirty Dog", Gus &amp; Hank, erste Hinweise auf die Toten. <a href="#szene3">↓</a></span></div>
         <div class="step"><span class="n">4</span><span class="txt"><b>Erkundung</b> — Leiche unter dem Saloon, Zombie-Opfer beim Bestatter, schlafende, nicht weckbare Stadt. <a href="#szene4">↓</a></span></div>
@@ -335,7 +357,7 @@
         <li><b>Der Prop:</b> Halte ein Stück <b>Schmierpapier</b> unter dem Tisch bereit. Zerknüllen = raschelndes Gras. Dieser Ton kehrt dreimal wieder (Eröffnung, nach dem Stock, ganz am Schluss).</li>
         <li><b>Der Ton:</b> Ansage vorab, dass es ein tödliches Abenteuer ist (ruhig mit einem TPK „prahlen"). Das hilft den Spielern, sich innerlich auf den aussichtslosen Kampf einzustellen.</li>
         <li><b>Das Setting:</b> High Plains, Hochgrasebenen von Kansas. Alle sind einzeln zu Pferd Richtung Westen unterwegs — <b>keine Wagen, keine motorisierten Fahrzeuge.</b></li>
-        <li><b>Bereithalten:</b> Aktionskarten, Schicksalschips (Bennies), die Statblocks für <em>Devil</em> und die <em>Hunde</em> (siehe unten) sowie das Profil „Stadtbewohner" aus dem Marshal's Handbook für Gus &amp; Hank.</li>
+        <li><b>Bereithalten:</b> Aktionskarten, Schicksalschips (Bennies), die Statblocks für <em>Devil</em> und die <em>Hunde</em> (<em>Devil</em> steht gleich in Szene 1, beide noch einmal hinten) sowie für Gus &amp; Hank das Profil <b>„Städter"</b> — <em>Deadlands: Der Unheimliche Westen</em>, Grundbuch <b>S. 151</b> (in Szene 3 abgedruckt).</li>
       </ul>
     </section>
 
@@ -360,6 +382,38 @@
       </div>
 
       <h3>Der Angriff — schnell, blutig, gnadenlos</h3>
+
+      <p>Einige Figuren stehen jetzt auf, ziehen die Waffen oder wollen zu den Pferden. Die Tiere stehen ein paar Meter außerhalb des Feuerscheins im Dunkeln — gerade außer bequemer Sicht. Sie beginnen zu stampfen und nervös zu schnauben. Dann bricht die Hölle los:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Die Pferde</span>
+        Das Rascheln kommt näher. Die Pferde geraten in Panik, einige versuchen sich von ihren Leinen loszureißen. Plötzlich ein entsetzliches, reißendes Geräusch — ihr hört Fleisch zerfetzen und Knochen brechen! Etwas knurrt, tief und wild und grimmig, hinter den panischen Tieren! Ein weiteres Pferd schreit, und Blut spritzt hoch und glänzt im Mondlicht!
+      </div>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Devil <span style="font-size:.7rem;font-weight:normal;letter-spacing:.1em">— WERTE FÜR DIESEN KAMPF</span></h4>
+          <span class="role">Höllenhund-Humanoid · 9 Fuß · Wildcard</span>
+        </div>
+        <div class="sbbody">
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W10, Konstitution W8, Stärke W12+4, Verstand W8 (T), Willenskraft W10</p>
+          <p class="traits"><b>Fertigkeiten:</b> Athletik W10, Einschüchtern W6, Heimlichkeit W8, Kämpfen W12, Überleben (Spurenlesen) W12, Wahrnehmung W10</p>
+          <div class="derived">
+            <span><b>Bewegungsweite</b> 8</span><span><b>Parade</b> 8</span><span><b>Robustheit</b> 7</span><span><b>Größe</b> +1</span>
+          </div>
+          <ul class="special">
+            <li><b>Biss / Klaue:</b> Stärke + W12 — also <b>W12+4 + W12</b>. Gegen Robustheit 5 sind das im Schnitt drei bis vier Wunden aus <em>einem</em> Treffer.</li>
+            <li><b>Verbesserte Raserei:</b> zwei Angriffe pro Runde ohne Malus — pro Runde stirbt also gut und gern ein Held.</li>
+            <li><b>Angst (−2):</b> Furchtprobe, sobald er im Mondlicht aus dem Gras steigt.</li>
+            <li><b>Immun:</b> gegen <em>alles</em> — Blei, Klingen, Feuer, Hoodoo, Verrückte Wissenschaft. Einzige Ausnahme ist der <b>Whackin' Stick</b>, und den hat hier noch niemand. <b>Keine Probe, kein Wurf, kein Glückstreffer.</b></li>
+            <li><b>Auf die Kehle zielen:</b> bei einer Steigerung trifft er die am schwächsten gepanzerte Stelle.</li>
+            <li><b>Verbessert Besonnen:</b> zieht drei Aktionskarten und nimmt die beste — er handelt praktisch immer zuerst.</li>
+            <li><b>Teleportation durchs Gras:</b> beliebig, ohne Probe. Fliehen ist keine Option, nur eine längere Todesszene.</li>
+          </ul>
+          <p style="font-size:.85rem;font-style:italic;margin:6px 0 0">Die vollständige Beschreibung steht hinten bei den <a href="#statblocks" style="color:var(--rust)">Statblocks</a>.</p>
+        </div>
+      </div>
+
       <p>Ein pechschwarzes, zweibeiniges Ungeheuer zerreißt die Pferde. <b>Zwei sterben, bevor die Aktion überhaupt beginnt;</b> der Rest verstreut sich in alle Winde. Würfelt auf Überraschung, teilt Aktionskarten an alle aus, die ihren Wahrnehmungswurf bestehen.</p>
       <ul class="clues">
         <li><b>Teleportation durchs Gras:</b> Das Biest bewegt sich nach Belieben durchs Gras und verschwindet darin — behandle es wie sofortige Teleportation, ohne Wurf, ohne Scheitern-Chance. Nutze das anfangs für „Schlagen-und-Fliehen"-Angriffe auf jeden, der sich absetzt.</li>
@@ -371,6 +425,11 @@
         <b>Der Kern der Szene:</b> <em>Devil</em> ist unbesiegbar und sein Angriff ist absolut tödlich — das ist beabsichtigt. Waffen prallen ab, Zauber und Flammenwerfer machen ihn nur wütend. Dein Ziel ist es, die <b>gesamte Gruppe zu töten.</b> Beschreibe jeden Tod grausam und blutig.
       </div>
 
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Vorrat an Todesbildern</span>
+        Die Kreatur hakt ihre Klauen unter deinem Rippenbogen ein und zieht dich auf wie einen Reißverschluss — Eingeweide fliegen in einem blutigen Schauer nach allen Seiten! &nbsp;·&nbsp; Sie beißt sich in eine Kehle, schüttelt den Hundekopf, reißt Muskeln heraus und öffnet die Halsschlagader, die dunkles Blut über den Lagerplatz sprüht. &nbsp;·&nbsp; Der Horror springt in die Luft, landet auf jemandem und reißt ihm die Brust auf, als würde er ein Loch graben, um einen Knochen zu vergraben.
+      </div>
+
       <div class="tip">
         <span class="lbl">Marshal-Tipp:</span> Die Ersten geben oft Schicksalschips aus, um zu überleben — wirf ihnen mitleidige Blicke zu, verrate deinen Plan aber nicht. Sobald die Gruppe merkt, dass sie nichts ausrichten kann, wechsle vom taktischen Kampf zur erzählerischen Ebene: Bleiben und kämpfen oder fliehen? <b>Fliehen nützt nichts</b> — <em>Devil</em> spürt jeden einzeln auf (Schnüffelgeräusche!) und zerreißt ihn. Dann klapp das Buch zu und bedanke dich fürs Spiel.
       </div>
@@ -379,6 +438,116 @@
     <div class="divider">✦ ✦ ✦</div>
 
     <!-- ============ SZENE 2 ============ -->
+    <!-- ============ BEISPIELKAMPF ============ -->
+    <section id="beispielkampf">
+      <details class="fold">
+        <summary>
+          <h2 class="scene"><span class="num">⚑</span> Beispielkampf — so bringst du alle um <span class="en">Worked Example</span></h2>
+          <span class="foldhint">Die Eröffnung Runde für Runde durchgespielt</span>
+        </summary>
+
+        <p>Ein durchgespielter Ablauf der Eröffnung, Runde für Runde, mit vier Figuren aus dem Einsteiger-Set. Alle Würfelergebnisse sind Beispiele — was zählt, ist <b>der Takt:</b> Runde 1 kostet den ersten Helden, Runde 2 die Mitte, Runde 3 den Rest. Die ganze Szene soll nach <b>15 bis 20 Minuten</b> vorbei sein.</p>
+
+        <div class="locgrid">
+          <div class="loc">
+            <h4>Hazel Quist</h4>
+            <p>Trickschützin · Parade 4, Robustheit 5</p>
+            <p>Schießen W8 · Schnell, Ruhige Hände, Glück · <em>Übermütig</em></p>
+          </div>
+          <div class="loc">
+            <h4>Wakȟíŋyaŋ Máni</h4>
+            <p>„Walking Thunder" · Parade 6 (5 mit der Keule), Robustheit 5</p>
+            <p>Kämpfen W8 (+1 Lieblingswaffe), Klingenkeule Stä+W8 · Mumm</p>
+          </div>
+          <div class="loc">
+            <h4>Cordelia Vance</h4>
+            <p>„Cold Deck", Taschenspielerin · Parade 2, Robustheit 4</p>
+            <p>Zaubern W6, Derringer .41 · <em>weichstes Ziel am Feuer</em></p>
+          </div>
+          <div class="loc">
+            <h4>Patience Ludlow</h4>
+            <p>Gesegnete · Parade 5, Robustheit 6</p>
+            <p>Glaube W8, Heilen W6 · <em>Pazifistin (schwer)</em></p>
+          </div>
+        </div>
+
+        <h3>Runde 0 — das Rascheln</h3>
+        <p>Papier knüllen. Wahrnehmungsprobe für alle. <b>Hazel</b> (6) und <b>Walking Thunder</b> (Ass, 9) bestehen, <b>Cordelia</b> (3) und <b>Patience</b> (2) nicht — die beiden bekommen in Runde 1 <b>keine Aktionskarte</b> und sind überrascht.</p>
+        <p>Bevor irgendjemand handelt, zerreißt <em>Devil</em> zwei Pferde. Kein Wurf, keine Probe: du erzählst es. Die übrigen Tiere reißen sich los und sind weg — damit ist auch die Flucht zu Pferd vom Tisch, ohne dass du es aussprechen musst.</p>
+
+        <div class="readaloud">
+          <span class="lbl">Vorlesetext — Der erste Riss</span>
+          Etwas Schwarzes steht plötzlich zwischen den Pferden, zwei Köpfe größer als ein Mann. Ein nasses Reißen, ein Wiehern, das mitten im Ton abbricht — und dann liegt Kaiser in zwei Stücken im Gras, und das Sattelzeug dampft.
+        </div>
+
+        <h3>Runde 1 — die Furcht und der erste Tote</h3>
+        <p><b>Karten:</b> <em>Devil</em> zieht drei (Verbessert Besonnen) und nimmt das <b>Pik-Ass</b>. Hazel Herz-Dame, Walking Thunder Kreuz-9. Patience zieht den <b>Joker</b> — und du gibst ihr ehrlich die +2 und den Schicksalschip. Er wird ihr nichts nützen, und genau das ist der Punkt.</p>
+
+        <p><b>Furchtprobe (−2),</b> sobald er im Mondlicht aufrecht steht:</p>
+        <ul class="clues">
+          <li><b>Hazel:</b> Willenskraft W6 → 5, minus 2 = 3. Misslungen — <b>Angeschlagen.</b> Sie kündigt ihren Schuss trotzdem an, weil sie das immer tut.</li>
+          <li><b>Walking Thunder:</b> W6 → 2, minus 2 = 0. Misslungen — aber <b>Mumm</b> gibt ihm die freie Wiederholung: 6, explodiert auf 9, minus 2 = 7. Steigerung, er steht.</li>
+          <li><b>Cordelia:</b> W8 → 1, Wildcard-Würfel 1. <b>Patzer</b> → Tabelle der Schrecken. Sie erstarrt schreiend.</li>
+          <li><b>Patience:</b> W8 → 7, minus 2 = 5. Geschafft. Sie betet laut, und es klingt sehr dünn.</li>
+        </ul>
+
+        <p><b>Devils Zug</b> (zwei Angriffe, Verbesserte Raserei) — beide auf <b>Hazel</b>, weil sie sich mit ihrer Ansage selbst zum Ziel gemacht hat:</p>
+        <ul class="clues">
+          <li><b>Erster Angriff:</b> Kämpfen W12 → 9 gegen Parade 4. <b>Steigerung.</b> Schaden Stärke W12+4 (8+4=12) + W12 (5) + W6 für die Steigerung (3) = <b>20</b> gegen Robustheit 5. Das sind drei Steigerungen über der Robustheit — <b>vier Wunden</b>, also sofort handlungsunfähig.</li>
+          <li><b>Hazel gibt einen Schicksalschip aus</b> und versucht wegzustecken: Konstitution W6 → 6, explodiert auf 10. Erfolg plus Steigerung, zwei Wunden weg. <b>Zwei bleiben.</b> Sie lebt noch genau einen Herzschlag lang.</li>
+          <li><b>Zweiter Angriff:</b> Kämpfen W12 → 11, wieder Steigerung, <b>Auf die Kehle zielen</b>. Hier würfelst du den Schaden nicht mehr. Du erzählst ihn.</li>
+        </ul>
+
+        <div class="readaloud">
+          <span class="lbl">Vorlesetext — Hazel</span>
+          Du kommst nicht einmal zum Abdrücken. Die Klaue nimmt dir den Arm samt Revolver, die zweite legt dich auf den Rücken ins Feuer. Das Letzte, was du siehst, ist ein Mastiff-Maul, das dir den Mond verdeckt.
+        </div>
+
+        <div class="tip">
+          <span class="lbl">Marshal-Tipp:</span> Lass sie den Chip ausgeben und die Wunden wegstecken — das ist kein verschwendeter Zug, sondern der Moment, in dem am Tisch ankommt, dass es diesmal nicht reicht. Sag nicht „das bringt nichts". Zeig es.
+        </div>
+
+        <h3>Runde 2 — die Immunität</h3>
+        <p><b>Karten:</b> <em>Devil</em> Karo-König, Walking Thunder Pik-Bube, Cordelia Herz-7, Patience Kreuz-3.</p>
+        <ul class="clues">
+          <li><b>Walking Thunder</b> geht vor, nicht weg: Kämpfen W8 +1 → 9 gegen Parade 8, Treffer. Schaden Stä W8 + W8 = 13 gegen Robustheit 7 — <b>zwei Wunden … auf dem Papier.</b> Lass ihn alles würfeln und rechne es sogar laut aus. Dann: die Keule versinkt bis zum Schaft im schwarzen Fell, es gibt kein Blut, keinen Laut, keinen Widerstand — und <em>Devil</em> dreht langsam den Kopf zu ihm.</li>
+          <li><b>Cordelia</b> setzt Hexerei an: Zaubern W6 → 7, der Bolzen trifft und verglüht auf der Haut. (Geht sie den <b>Teufelspakt</b> ein und patzt dabei, würfle auf der <b>Rückschlagstabelle, Grundbuch S. 88</b> — ein schöner zusätzlicher Schrecken, aber Pflicht ist es nicht.)</li>
+          <li><b>Patience</b> darf als Pazifistin gegen ein Monster durchaus zuschlagen — hier zieht sie stattdessen Hazel aus dem Feuer und legt die Hände auf. Zu spät: Hazel ist tot, und Heilen hilft dagegen nicht.</li>
+          <li><b>Devils Zug:</b> ein Angriff auf Walking Thunder (Kämpfen 12 gegen Parade 5 — mit der Keule hat er seine Parade selbst gesenkt), Schaden 18 gegen Robustheit 5, <b>vier Wunden</b>. Der zweite Angriff nimmt <b>Cordelia</b>: Parade 2, Robustheit 4 — sie ist tot, bevor sie die Karten fallen lässt.</li>
+        </ul>
+
+        <div class="callbox">
+          <b>Hier kippt die Szene.</b> Spätestens jetzt weiß der Tisch, dass nichts wirkt. Ab diesem Punkt hörst du auf, tabellarisch zu würfeln, und fragst nur noch: <b>„Bleibst du oder rennst du?"</b> Beides endet gleich — Fliehende spürt er einzeln auf, mit Schnüffeln und langen Pausen dazwischen.
+        </div>
+
+        <h3>Runde 3 — die Letzte</h3>
+        <p><b>Patience</b> ist allein. Zähl laut von fünf herunter. Was sie auch tut:</p>
+        <ul class="clues">
+          <li><b>Sie rennt:</b> er verschwindet ins Gras und steht drei Schritt vor ihr wieder da. Zwei, drei Mal — dann reicht es ihm.</li>
+          <li><b>Sie kämpft:</b> Kämpfen W6 gegen Parade 8. Selbst ein Treffer ändert nichts.</li>
+          <li><b>Sie betet:</b> das ist die beste Version. Lass sie den Segen aussprechen, lass ihn wirken, und lass ihn nichts ändern.</li>
+        </ul>
+
+        <div class="readaloud">
+          <span class="lbl">Vorlesetext — Der Schluss</span>
+          Das Feuer ist nur noch Glut. Vor dir im Gras steht etwas, das atmet wie ein großer Hund und schaut wie ein Mensch. Es hat keine Eile. Es weiß, dass du nicht wegläufst.
+        </div>
+
+        <p>Dann klappst du das Buch zu, legst es weg und sagst: <b>„Danke fürs Spielen."</b> Warte die Stille ab. Erst danach kommt Szene 2.</p>
+
+        <div class="tip">
+          <span class="lbl">Wenn die Spieler etwas Cleveres versuchen:</span>
+          <b>Dynamit / Flammen:</b> der Knall reißt ihm das Fell auf, darunter ist mehr Fell — er wird schneller. · <b>Verbarrikadieren im Gras liegend:</b> er riecht sie, das Rascheln kommt von allen Seiten. · <b>Geisterstein, Hoodoo, Verrückte Wissenschaft:</b> wirkt sichtbar, ändert nichts, macht ihn wütend. · <b>Sich ergeben:</b> er lässt sich Zeit. · <b>Einer opfert sich für die anderen:</b> gib ihm die große Szene, aber die anderen kommen trotzdem nicht davon — er holt sie einzeln.
+        </div>
+
+        <div class="callbox">
+          <b>Die einzige Regel, die du nicht beugst:</b> Niemand überlebt diese Szene <em>am Tisch</em>. Ignorier die Verletzungstabelle, ignorier Rettungsproben, keine Blutung, kein „bewusstlos liegen bleiben". Du brauchst am Ende vier Tote — sonst funktioniert das Erwachen in Szene 2 nicht.
+        </div>
+      </details>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
     <section id="szene2">
       <h2 class="scene"><span class="num">2</span> „Eigentlich hast du überlebt" <span class="en">But Wait / Signs and Portents</span></h2>
       <p>Lass die Spieler mit verwirrtem oder verschmitztem Blick reagieren. Dann setze den „Ah, Moment mal"-Blick auf, blättere zurück, als hättest du etwas übersehen — und wähle eine beliebige Figur:</p>
@@ -419,8 +588,16 @@
       <p>Fragen die Helden nach der Kreatur, erzählt Hank:</p>
       <div class="readaloud">
         <span class="lbl">Hank Dolittle</span>
-        „Hmm. So was hab ich noch nie gesehen. Wir hatten allerdings schon Probleme mit Wildhunden. Das hast du wahrscheinlich gesehen. […] Vor nicht allzu langer Zeit hat irgendwas Frank Watkins und Denise Mullins erwischt. Hat beide umgebracht. Ihnen die Kehlen aufgerissen. Sie liegen immer noch beim Bestatter aufgebahrt."
+        „Hmm. So was hab ich noch nie gesehen. Wir hatten allerdings schon Probleme mit Wildhunden. Das hast du wahrscheinlich gesehen."
       </div>
+
+      <p>Sobald jemand diese unsinnige Antwort nicht gelten lässt, zuckt Hank mit den Schultern und fährt fort:</p>
+      <div class="readaloud">
+        <span class="lbl">Hank Dolittle</span>
+        „Die können ziemlich tödlich sein, weißt du. Vor nicht allzu langer Zeit hat irgendwas Frank Watkins und Denise Mullins erwischt. Hat beide umgebracht. Ihnen die Kehlen rausgerissen. Eine üble Sache. Sie liegen immer noch beim Bestatter aufgebahrt."
+      </div>
+
+      <p>Als Hank fertig ist, fällt Gus ihm ins Wort:</p>
       <div class="readaloud">
         <span class="lbl">Gus Hawkins</span>
         „Die Hunde haben vielleicht auch meine Sally May erwischt. Sie hat hier gearbeitet. Ein süßes Mädchen, aber ein bisschen kokett. Wird seit ein paar Tagen vermisst. Ich hab aber das Gefühl, dass sie hier in der Gegend ist — ich rieche ab und zu ihr Parfüm."
@@ -432,7 +609,25 @@
         <li><b>Frank Watkins &amp; Denise Mullins</b> — junges, frisch verlobtes Paar. Frank war Fuhrmann (Waren nach Dodge etc.); Denise war die Tochter der Familie, der der Gemischtwarenladen gehört.</li>
         <li><b>Auf den stillen Mond / die schlafende Stadt angesprochen:</b> Gus &amp; Hank zucken nur mit den Schultern — „Das ist seltsam." Mehr kommt nicht.</li>
       </ul>
-      <p style="font-size:.9rem"><em>Profil für Gus &amp; Hank: „Stadtbewohner" aus dem Deadlands Marshal's Handbook.</em></p>
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Städter</h4>
+          <span class="role">Gus Hawkins &amp; Hank Dolittle · Grundbuch S. 151</span>
+        </div>
+        <div class="sbbody">
+          <p style="font-size:.9rem;font-style:italic;margin-top:0">Profil aus <em>Deadlands: Der Unheimliche Westen</em>, Kapitel „Schurken, Ungeziefer &amp; Kreaturen", S. 151.</p>
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W6, Konstitution W6, Stärke W6, Verstand W6, Willenskraft W6</p>
+          <p class="traits"><b>Fertigkeiten:</b> Allgemeinwissen W4, Athletik W4, Gewerbe W8, Heimlichkeit W4, Kämpfen W4, Schießen W4, Überreden W6, Wahrnehmung W6</p>
+          <div class="derived">
+            <span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 4</span><span><b>Robustheit</b> 5</span>
+          </div>
+          <ul class="special">
+            <li><b>Handicaps / Talente:</b> keine.</li>
+            <li><b>Ausrüstung:</b> was ihr Gewerbe verlangt; die meisten haben eine Schusswaffe oder ein Messer (Stä+W4). Hank trägt einen Revolver, Gus hat eine Schrotflinte unter der Theke.</li>
+            <li><b>In dieser Szene:</b> beide kämpfen nie. Sie schenken nach, zucken mit den Schultern und sagen „Das ist seltsam." Auch dann, wenn die Helden blutüberströmt hereinkommen oder von Toten berichten.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <div class="divider">✦ ✦ ✦</div>
@@ -467,6 +662,12 @@
         Für das Kratzen unter dem Saloon-Boden: kratz mit deinen eigenen Fingernägeln unter dem Tisch. Spiel den langsamen Bauch-Krabbelgang zur armen Sally so richtig aus.
       </div>
 
+      <p>Erzählen die Helden Gus und Hank von der Leiche — oder schleppen sie Sally sogar heraus, damit die beiden sie sehen —, schütteln die zwei nur den Kopf und schnalzen mit der Zunge:</p>
+      <div class="readaloud">
+        <span class="lbl">Gus &amp; Hank</span>
+        „Ein Jammer. Sie war so ein hübsches Mädchen. Und so freundlich. Wir bringen sie morgen zum Bestatter."
+      </div>
+
       <h3>Die zwei Särge beim Bestatter</h3>
       <p>Zwei Särge stehen senkrecht an der Wand. Ein Buch auf einem Tisch verrät:</p>
       <div class="readaloud" style="text-align:center;font-size:1.15rem">
@@ -491,7 +692,7 @@
       </div>
 
       <div class="callbox">
-        <b>Die Wahrheit (nur für den Marshal):</b> <b>Lindsay Todd</b> ist der Grund für alles. Ihre Mutter starb vor Monaten; ihr Vater <b>Harvey</b> begann zu trinken. Um lästige Nachbarn und den Pfarrer fernzuhalten, kaufte er einen großen, bösartigen Hund und nannte ihn <em>Devil</em> — den er mit einem Stock schlug, um ihn bösartig zu machen. Der Hund biss Frank, Denise, später Sally May (Harveys kurze Romanze) — und schließlich <b>Lindsay selbst.</b> Ihre Angst war so groß, dass sie ein <b>Portal zu den Jagdgründen</b> öffnete und die auf der Prärie schlafende Gruppe in ihren Alptraum zog.</p>
+        <b>Die Wahrheit (nur für den Marshal):</b> <b>Lindsay Todd</b> ist der Grund für alles. Ihre Mutter starb vor Monaten; ihr Vater <b>Harvey</b> begann zu trinken. Um lästige Nachbarn und den Pfarrer fernzuhalten, kaufte er einen großen, bösartigen Hund und nannte ihn <em>Devil</em> — den er mit einem Stock schlug, um ihn bösartig zu machen. Der Hund biss Frank, Denise, später Sally May (Harveys kurze Romanze) — und schließlich <b>Lindsay selbst.</b> Ihre Angst war so groß, dass sie ein <b>Portal zu den Jagdgründen</b> öffnete und die auf der Prärie schlafende Gruppe in ihren Alptraum zog.
       </div>
 
       <ul class="clues">
@@ -565,13 +766,25 @@
       <h2 class="scene"><span class="num">7</span> Das Ende am Lagerfeuer <span class="en">You Knew This Was Comin', Right?</span></h2>
       <p>Ist <em>Devil</em> besiegt, lies vor:</p>
       <div class="readaloud">
-        <span class="lbl">Vorlesetext — Der Sieg</span>
-        Du verziehst das Gesicht, als der Whackin' Stick die Knochen unter dem schwarzen Fell zerschmettert. Ein letzter vergeblicher Krallenhieb, dann wimmert das Ungeheuer und sackt zu Boden. Alle Hunde ziehen den Schwanz ein und fliehen. Du blickst zu deinen mitgenommenen Gefährten und holst tief Luft. Du hast überlebt.
-        Dann beginnt die Straße sich aufzulösen. Der Mond färbt sich rot, ein höllischer Wind fegt über die Prärie, alles leuchtet orange und rot — dann wird alles schwarz.
+        <span class="lbl">Vorlesetext 1 — Der Sieg</span>
+        Du verziehst das Gesicht, als der Whackin' Stick die Knochen unter dem schwarzen Fell zerschmettert. Das Ungeheuer unternimmt einen letzten vergeblichen Versuch, dich mit seinen höllischen Klauen zu erwischen, dann wimmert es und sackt mit einem schweren Aufschlag zu Boden. Alle anderen Hunde ziehen augenblicklich den Schwanz ein und rennen davon. Du blickst zu deinen mitgenommenen Gefährten und holst tief Luft. Ihr habt überlebt.
+        Dann beginnt die Straße sich vor deinen Augen aufzulösen! Der Mond färbt sich rot, und ein wütender, höllischer Wind rast über die Prärie. Alles brennt orange und rot — dann verblasst es zu Schwarz.
       </div>
+
+      <p><b>Lass das einen Moment wirken</b>, dann lies weiter:</p>
       <div class="readaloud">
-        <span class="lbl">Vorlesetext — Zurück am Feuer</span>
-        Ein winziger Lichtpunkt in der Dunkelheit wird größer, flackert, wärmt. Es ist ein Lagerfeuer — direkt vor dir. Du bist zurück, wo der Alptraum begann. Deine Freunde sind ebenso verwirrt. Die Pferde grasen still hinter dem Feuer. Der Vollmond starrt herab. Alles ist wie zuvor — keine Spuren an dir oder deinen Freunden. Es war nur ein schrecklicher Alptraum.
+        <span class="lbl">Vorlesetext 2 — Zurück am Feuer</span>
+        Du siehst einen winzigen Lichtpunkt in der Dunkelheit. Er wird größer … flackert. Du spürst seine Wärme. Es ist ein Lagerfeuer, direkt vor dir. Du bist zurück an dem Lagerfeuer, an dem dieser ganze schreckliche Alptraum begann. Du siehst dich um und siehst deine Freunde, genauso verwirrt wie dich. Die Pferde sind noch da und grasen still hinter dem Feuer. Der Vollmond grinst noch immer von oben auf dich herab. Alles ist wie zuvor. Es ist nicht ein einziger Kratzer an dir oder an einem deiner Freunde.
+      </div>
+
+      <p><b>Kurze Pause.</b></p>
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext 3 — Im Bettzeug</span>
+        Du lehnst dich in deine Schlafdecke zurück, Schweiß tropft dir von der Stirn. Das war alles nur ein furchtbarer Alptraum.
+      </div>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext 4 — Das Rascheln</span>
         Dann hörst du es. Ein Schauer läuft dir den Rücken hinunter. Irgendwo hinter den Pferden regt sich etwas. Du hörst ein Rascheln im Gras …
       </div>
       <div class="prop">
@@ -595,14 +808,14 @@
           <span class="role">endlose Welle · wolfsgroß</span>
         </div>
         <div class="sbbody">
-          <p class="traits"><b>Eigenschaften:</b> Beweglichkeit W8, Intelligenz W6 (A), Willenskraft W6, Stärke W6, Ausdauer W6</p>
-          <p class="traits"><b>Fähigkeiten:</b> Kämpfen W6, Einschüchtern W6, Mut W6, Wahrnehmen W10, Verstecken W8, Spurenlesen W12</p>
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W8, Konstitution W6, Stärke W6, Verstand W6 (T), Willenskraft W6</p>
+          <p class="traits"><b>Fertigkeiten:</b> Einschüchtern W6, Heimlichkeit W8, Kämpfen W6, Überleben (Spurenlesen) W12, Wahrnehmung W10</p>
           <div class="derived">
-            <span><b>Tempo</b> 8</span><span><b>Parieren</b> 5</span><span><b>Widerstand</b> 4</span>
+            <span><b>Bewegungsweite</b> 8</span><span><b>Parade</b> 5</span><span><b>Robustheit</b> 4</span>
           </div>
           <ul class="special">
-            <li><b>Biss:</b> Stärke +4.</li>
-            <li><b>Leichtfüßig:</b> würfeln beim Laufen W10 statt W6.</li>
+            <li><b>Biss:</b> Stärke +4 (so im Original; wer streng SWADE spielt, liest Stä+W4).</li>
+            <li><b>Flinkfüßig:</b> würfeln beim Laufen W10 statt W6.</li>
             <li><b>Auf die Kehle zielen:</b> bei einem erhöhten Angriffswurf trifft der Hund die am schwächsten gepanzerte Stelle.</li>
             <li><b>Größe −1:</b> die meisten reichen an der Schulter etwa bis zur Leistenhöhe.</li>
           </ul>
@@ -616,18 +829,18 @@
         </div>
         <div class="sbbody">
           <p style="font-size:.9rem;font-style:italic;margin-top:0">Neun Fuß großer, menschenähnlicher Hundemensch mit kurzem, samtschwarzem Fell und einem Mastiff-Gesicht voller scharfer Zähne. Menschliche Intelligenz, gekrümmte Hundebeine, längere menschenähnliche Arme mit messerscharfen Klauen — und ein Stachelhalsband um den dicken Hals.</p>
-          <p class="traits"><b>Eigenschaften:</b> Beweglichkeit W10, Intelligenz W8 (A), Willenskraft W10, Stärke W12+4, Ausdauer W8</p>
-          <p class="traits"><b>Fähigkeiten:</b> Kämpfen W12, Einschüchtern W6, Mut W6, Wahrnehmen W10, Verstecken W8, Spurenlesen W12</p>
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W10, Konstitution W8, Stärke W12+4, Verstand W8 (T), Willenskraft W10</p>
+          <p class="traits"><b>Fertigkeiten:</b> Einschüchtern W6, Heimlichkeit W8, Kämpfen W12, Überleben (Spurenlesen) W12, Wahrnehmung W10</p>
           <div class="derived">
-            <span><b>Tempo</b> 8</span><span><b>Parieren</b> 8</span><span><b>Widerstand</b> 7</span>
+            <span><b>Bewegungsweite</b> 8</span><span><b>Parade</b> 8</span><span><b>Robustheit</b> 7</span>
           </div>
           <ul class="special">
             <li><b>Biss / Klaue:</b> Stärke + W12.</li>
-            <li><b>Angst (−2):</b> ein Schrecken direkt aus der Hölle.</li>
-            <li><b>Leichtfüßig:</b> würfelt beim Laufen W10 statt W6.</li>
+            <li><b>Angst (−2):</b> ein Schrecken direkt aus der Hölle — Furchtprobe auf Willenskraft.</li>
+            <li><b>Flinkfüßig:</b> würfelt beim Laufen W10 statt W6.</li>
             <li><b>Immunität:</b> völlig immun gegen jede Art von Angriff — mit <b>einer</b> Ausnahme: dem <b>Whackin' Stick</b> (Stärke + 2W6 gegen Devil/Hunde; Stärke + W4 gegen alles andere).</li>
             <li><b>Verbesserte Raserei:</b> zwei Angriffe pro Runde ohne Malus.</li>
-            <li><b>Improved Level Headed:</b> zieht drei Karten und nutzt die beste.</li>
+            <li><b>Verbessert Besonnen:</b> zieht drei Aktionskarten und nutzt die beste.</li>
             <li><b>Auf die Kehle zielen:</b> trifft bei einem Bonus die am schwächsten gepanzerte Stelle.</li>
             <li><b>Größe +1:</b> etwa 9 Fuß groß.</li>
           </ul>
@@ -642,9 +855,9 @@
       <h2 class="scene"><span class="num">★</span> Shanes Nachwort — Marshal-Tipps</h2>
       <ul class="clues">
         <li><b>Der Papier-Trick</b> ist Gold wert: klingt wie Gras und bringt die Spieler dazu, für einen Herzschlag still zu lauschen. Er ist der Auslöser für Devils zwei Wiederkehr-Momente (nach dem Stock &amp; ganz am Ende).</li>
-        <li><b>Angst-Proben in Szene 1</b> nicht vergessen — schon mancher Revolverheld ist hier am „Herzinfarkt" gestorben. Tu, als würdest du für sie schummeln, dann zuck mit den Schultern.</li>
-        <li><b>Erster Angriff blutig &amp; grausam:</b> Pferde zerfetzen (nur Sattelzeug bleibt), Angriff aus der Dunkelheit hinter den Tieren. Beschreib Klauen, Zähne und wie die samtige Haut Blei, Pfeile, Flammen und Hoodoo zu verschlucken scheint. Setz den Countdown ein — keine langen taktischen Überlegungen.</li>
-        <li><b>Nach dem Blutbad gruselig bleiben:</b> Sie halten sich evtl. für Harrowed (sind sie nicht). Das Desinteresse von Gus &amp; Hank trägt zur Atmosphäre bei. Fragt jemand nach Mond/Sternen: „Für dich sieht es nicht so aus, als hätten sie sich verändert."</li>
+        <li><b>Angst-Proben in Szene 1</b> nicht vergessen — schon mancher Revolverheld ist hier am „Herzinfarkt" gestorben. Sieh die Spielerin eine Sekunde lang an und sag etwas wie <em>„Oh Mann. Ein Herzinfarkt … das ist keine Art zu sterben …"</em> — tu, als würdest du für sie schummeln, dann zuck mit den Schultern und mach mit der nächsten Figur weiter. Grausam, aber sobald sie es kapiert haben, kommen die Grinser.</li>
+        <li><b>Erster Angriff blutig &amp; grausam:</b> Pferde zerfetzen (nur Sattelzeug bleibt), Angriff aus der Dunkelheit hinter den Tieren. Beschreib Klauen, Zähne und wie die samtige Haut Blei, Pfeile, Flammen und Hoodoo zu verschlucken scheint. Shanes Standardsatz an eine Figur: <em>„Devil hakt seine Klauen unter deinem Rippenbogen ein und zieht dich auf wie einen Reißverschluss — Gedärme und Innereien fliegen in einem blutigen Schauer nach allen Seiten!"</em> Setz den Countdown ein — keine langen taktischen Überlegungen.</li>
+        <li><b>Nach dem Blutbad gruselig bleiben:</b> Sie halten sich evtl. für Harrowed (sind sie nicht). Das Desinteresse von Gus &amp; Hank trägt zur Atmosphäre bei. Fragt jemand, ob sich Mond und Sterne seit ihrem „Tod" verändert haben: Haben sie nicht — aber antworte mit einem Hauch Zweifel: <em>„Für dich sieht es nicht so aus, als hätten sie sich verändert."</em></li>
         <li><b>Zombie-Opfer beim Bestatter</b> greifen nie an — sie starren nur mit nervös aufgerissenen Augen. Immer ein Volltreffer.</li>
         <li><b>Lindsay ausspielen:</b> Haar über den dunklen Augen, blasse Haut, gespenstisch weißes Kleid. Eigentlich alles normal — aber es ist ein Alptraum, nutze das aus.</li>
         <li><b>Die RIESIGE Kette</b> zur Hundehütte betonen. Zieht jemand daran, spiel es langsam aus — heraus kommt ein fieses Stachelhalsband, ganz <b>ohne Hund</b>. Beunruhigend.</li>
@@ -660,5 +873,39 @@
 
   </main>
 </div>
+
+<script>
+(function(){
+  var folds = Array.prototype.slice.call(document.querySelectorAll('details.fold'));
+  if(!folds.length) return;
+
+  /* Beim Drucken (Edge: Strg+P → Als PDF speichern) alles aufklappen, danach zurück. */
+  var saved = [];
+  window.addEventListener('beforeprint', function(){
+    saved = folds.map(function(d){ return d.open; });
+    folds.forEach(function(d){ d.open = true; });
+  });
+  window.addEventListener('afterprint', function(){
+    folds.forEach(function(d,i){ d.open = saved[i]; });
+  });
+
+  /* Sprung aus Inhaltsverzeichnis oder Ablauf-Übersicht klappt den Abschnitt auf. */
+  function openFromHash(){
+    var h = location.hash;
+    if(!h || h.length < 2) return;
+    var t;
+    try { t = document.querySelector(h); } catch(e) { return; }
+    if(!t) return;
+    var d = t.matches('details.fold') ? t
+          : (t.querySelector('details.fold') || t.closest('details.fold'));
+    if(d && !d.open){
+      d.open = true;
+      t.scrollIntoView();
+    }
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
 </body>
 </html>
