@@ -252,6 +252,12 @@
   }
   .callbox b{color:var(--blood)}
 
+  /* --- Wirkungszeile unter einem Vorlesetext --- */
+  .fletchhint{
+    font-size:.88rem;color:var(--ink-soft);font-style:italic;
+    margin:-10px 0 18px 10px;padding-left:12px;border-left:3px solid #c9ad78;
+  }
+
   footer{
     text-align:center;color:#8a7350;font-size:.8rem;
     padding:30px 20px 0;font-style:italic;
@@ -462,6 +468,48 @@
         Spiel „Fletch" genüsslich: Er sieht beim Erzählen jedem Einzelnen in die Augen und wartet, wer als Erster wegschaut.
       </div>
 
+      <h3>Fletchs Vorrat an Geschichten</h3>
+
+      <p>Eine reicht nicht für einen ganzen Abend. Streu die folgenden über die Szene: etwa alle zwanzig Minuten eine,
+      immer dann, wenn die Gruppe gerade anfängt, sich zu entspannen. Die letzte kommt kurz vor dem Klopfen an der Tür.
+      Alle handeln von ihm selbst — <em>und keine einzige ist gelogen.</em></p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Der Mann, der zweimal heimkam</span>
+        „Unten am Pecos, da war ein Viehtreiber, der kam im Herbst heim zu Frau und Kind. Zwei Wochen später klopft's wieder, und wer steht vor der Tür? Derselbe Mann. Gleicher Hut, gleiche Stimme, gleiches Muttermal am Hals. Beide schwören, sie wären echt. Die Frau hat den zweiten reingelassen, weil er freundlicher war. Man hat sie nie gefunden. Den Ersten aber schon — draußen im Gras, fein säuberlich, bloß eben leer."
+      </div>
+      <p class="fletchhint">Setzt den Grundton: Es gibt hier einen Echten und einen, der besser ist als der Echte.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Das Wasser schmeckt nach Kupfer</span>
+        „Wollt ihr wissen, woran man's merkt? Am Wasser. Wo so ein Ding gewesen ist, da schmeckt der Brunnen hinterher nach Kupfer. Wie ein Cent unter der Zunge. Die Leute trinken's trotzdem, jeden Tag, und wundern sich, warum ihnen der Kaffee nicht mehr schmeckt." <em>Er hebt den Becher, riecht daran, stellt ihn zurück, ohne zu trinken.</em>
+      </div>
+      <p class="fletchhint">Der Brunnen ist der Tatort. Wer hier zuhört, geht vielleicht nachsehen — und wer genau hinsieht, merkt, dass Fletch selbst nichts trinkt.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Der Test der Alten</span>
+        „Mein Großvater hat gesagt, es gibt einen sicheren Test. So ein Ding kann alles nachmachen, bloß nicht beten. Setz den Verdächtigen ans Feuer und lass ihn das Vaterunser aufsagen, von hinten nach vorn. Wer stockt, ist keiner mehr." <em>Er sagt es selbst auf, fehlerfrei, und grinst dabei.</em>
+      </div>
+      <p class="fletchhint">Ein <b>falscher</b> Test, von der Kreatur erfunden. Er kostet die Gruppe Zeit, liefert einen unschuldigen Verdächtigen (einer der Knechte stottert vor Angst) — und Fletch besteht ihn mit Bravour.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Was sie im Fort gefunden haben</span>
+        „Ihr wisst doch von Fort Roswell, drei Meilen nordwestlich. Als sie's '76 geplündert haben, standen in einem Keller Kisten mit Häuten drin. Sauber abgezogen, gefaltet wie Wäsche, mit Namen dran. Die Grauen haben behauptet, das wäre eine Waffe. Ich glaub ja, die Waffe hat sich bloß umgezogen und ist rausspaziert, als die Tore aufgingen."
+      </div>
+      <p class="fletchhint">Verankert die Geschichte in Roswell (Grundbuch S. 136) und gibt der Kreatur eine Vorgeschichte, die länger ist als eine Woche.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Das Jahr, in dem der Fluss kam</span>
+        „Und passt auf bei so einem Regen. Vor ein paar Jahren, da ist der Regen drei Tage lang runter, und dann stand mit einem Mal ein Fluss da, wo vorher die Straße war. Hat eine ganze Familie mitgenommen. Die Mutter haben sie noch gefunden, mit einem Arm um den Pfosten. Das Kind nie." <em>Draußen rauscht es. Er hört kurz hin und lächelt.</em>
+      </div>
+      <p class="fletchhint">Die Vorausdeutung auf <a href="#szene5">Szene 5</a>. Er weiß, was kommt — sein Element riecht er, lange bevor die anderen es hören.</p>
+
+      <div class="tip">
+        <span class="lbl">Ein Satz, der immer geht.</span>
+        Wenn jemand sagt, das seien doch nur Geschichten, antwortet Fletch: „Sicher. Wenn's wahr wär, würd ich's ja wohl kaum
+        erzählen, oder?" — und schaut dabei jemand anderen an als den, der gefragt hat.
+      </div>
+
       <p>Wer eine <b>Wahrnehmungsprobe</b> besteht, bemerkt, wie Spotswood, seine Familie und die übrigen Knechte der Gruppe
       <b>verstohlene, misstrauische Blicke</b> zuwerfen. Aus deren Sicht sind schließlich <em>die Fremden</em> neu im Haus.</p>
 
@@ -642,17 +690,21 @@
           <p>Jack Swift durchstreift den Westen auf der Suche nach Herausforderungen und sehnt sich zurück zu seiner Liebsten in Shan Fan.
           Deren Vater ist allerdings <b>Cheu Meng</b>, brutaler Kriegsherr — und Jacks früherer Lehrmeister.</p>
           <p class="traits"><b>Attribute:</b> Geschicklichkeit W12, Konstitution W8, Stärke W4, Verstand W6, Willenskraft W12</p>
-          <p class="traits"><b>Fertigkeiten:</b> Allgemeinwissen W6 (Okkultes), Athletik W8, Bootfahren W6, Fokus W12, Kämpfen W12, Reparieren W6, Schießen W8, Überleben W4, Wahrnehmung W6</p>
+          <p class="traits"><b>Fertigkeiten:</b> Allgemeinwissen W6, Athletik W8, Bootfahren W6, Fokus W12, Kämpfen W12, Okkultismus W4, Reparieren W6, Schießen W8, Überleben W4, Wahrnehmung W6</p>
           <div class="derived">
-            <span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 8</span><span><b>Robustheit</b> 6</span><span><b>Machtpunkte</b> 20</span>
+            <span><b>Rang</b> Legendär</span><span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 8</span><span><b>Robustheit</b> 6</span><span><b>Machtpunkte</b> 20</span>
           </div>
           <ul class="special">
             <li><b>Handicaps:</b> Arrogant (schwer), Feind (leicht — Cheu Meng), Tick (macht Wortspiele mit seinem Namen).</li>
-            <li><b>Talente:</b> Arkaner Hintergrund (Chi-Meister), Chi, Kampfkünstler, Mumm, Überlegenes Kung Fu (<em>Der Betrunkene</em>, <em>Tan Tui</em>), Himmlisches Kung Fu, Verbesserter Erstschlag, Verbesserte Raserei, Neue Macht.</li>
+            <li><b>Talente:</b> Arkaner Hintergrund (Chi-Meister), Kampfkünstler, Kampfkunstmeister, Chi, Mumm, Überlegenes Kung Fu (<em>Der Betrunkene</em>), Himmlisches Kung Fu (<em>Tan Tui</em>), Schneller Erstschlag, Blitzschneller Angriff, Neue Mächte.</li>
             <li><b>Mächte:</b> <em>Abwehren</em>, <em>Waffe verbessern</em>.</li>
+            <li><b>Waffenlos:</b> Kampfkünstler und Kampfkunstmeister machen seine Hände und Füße zu Waffen: <b>+2 auf Kämpfen</b>, Schaden <b>Stä+W6</b> — mit Tan Tui einmal pro Runde Stä+W8.</li>
             <li><b>Der Betrunkene:</b> Gegner ziehen <b>−2</b> von Angriffsproben gegen ihn ab, seine Bewegungsweite sinkt um 2.</li>
             <li><b>Tan Tui:</b> einmal pro Runde <b>+1 Würfeltyp</b> Schaden im waffenlosen Kampf; bei Angeschlagen oder Wunde fliegt das Ziel 1W4" zurück (1W4+2" mit Steigerung).</li>
             <li><b>Himmlisches Kung Fu:</b> Er führt <b>beide Stile gleichzeitig</b> und wechselt sie als freie Aktion — im Wasser genau die Kombination, die ihn am Leben hält.</li>
+            <li><b>Chi:</b> ein Chi-Punkt pro Kampfbegegnung — einen misslungenen Angriff wiederholen, einen Angriff gegen sich wiederholen lassen oder <b>+W6 Schaden</b> auf einen waffenlosen Treffer.</li>
+            <li><b>Blitzschneller Angriff:</b> ein zusätzlicher Kämpfen-Würfel bei bis zu zwei seiner Angriffe im Zug. Der Abzug für die Mehrfachaktion bleibt — bei Kämpfen W12+2 stört ihn das wenig.</li>
+            <li><b>Schneller Erstschlag:</b> ein freier Kämpfen-Angriff gegen bis zu drei Feinde, die sich in seine Reichweite bewegen. Im gefluteten Raum, in dem sich alle mühsam heranarbeiten, ist das seine gefährlichste Fähigkeit.</li>
             <li><b>Ausrüstung:</b> zwei Sai (Stä+W4, Parade +1, +1 auf Entwaffnen), LeMat-Pistole (12/24/48, 2W6, FR 1, PB 1) mit Schrotlauf (5/10/20, 1–3W6, FR 1), rot getönte Brille, Sandalen.</li>
           </ul>
           <p style="font-size:.85rem;font-style:italic;margin:6px 0 0">„Jack Swift" erfunden von Louis Head.</p>
@@ -660,12 +712,20 @@
       </div>
 
       <div class="callbox">
-        <b>Umrechnung.</b> Swifts Profil im One-Sheet stammt noch aus <em>Deadlands Reloaded</em> — mit <em>Cha</em>, <em>Grit</em>,
-        der Fertigkeit <em>Mumm</em> und Talenten, die es in der Abenteuer-Edition nicht mehr gibt. Oben steht die SWADE-Fassung:
-        <em>Mumm</em> wurde zum Talent, <em>Schwimmen</em> und <em>Klettern</em> gingen in <em>Athletik</em> auf, die Chi-Mächte laufen über
-        <em>Fokus</em>. Parade 8 (2 + Kämpfen W12 ÷ 2) und Robustheit 6 (2 + Konstitution W8 ÷ 2) stimmen mit dem Original überein.
-        Für <em>Movement of the Serpent</em> gibt es in SWADE keine Entsprechung — dafür steht jetzt <b>Himmlisches Kung Fu</b>,
-        das die beiden Stile des Originals gleichzeitig erlaubt.
+        <b>Umrechnung.</b> Swifts Profil im One-Sheet stammt noch aus <em>Deadlands Reloaded</em>. Oben steht die SWADE-Fassung;
+        Parade 8 (2 + Kämpfen W12 ÷ 2) und Robustheit 6 (2 + Konstitution W8 ÷ 2) stimmen mit dem Original überein.
+        Im Einzelnen:
+        <ul class="special" style="margin:10px 0 0">
+          <li><em>Cha 0</em> entfällt — Charisma gibt es in SWADE nicht mehr, soziale Boni hängen an Talenten und Handicaps.</li>
+          <li><em>Grit 5</em> ist in Reloaded an den Rang gekoppelt (ein Punkt je Rangstufe), also ist Swift ein <b>legendärer</b> Wildcard — das deckt seine Talentliste bis hinauf zu <em>Schneller Erstschlag</em> (Heroisch).</li>
+          <li><em>Guts d6</em> fällt weg: Furchtproben laufen über Willenskraft, die Fertigkeit wurde zum Talent <b>Mumm</b>.</li>
+          <li><em>Knowledge (Occult) d4</em> → <b>Okkultismus W4</b> (eigene Fertigkeit in SWADE), <em>Swimming</em> und <em>Climbing</em> gingen in <b>Athletik</b> auf, die Chi-Mächte laufen über <b>Fokus</b>.</li>
+          <li><em>Chi Mastery</em> → <b>Arkaner Hintergrund (Chi-Meister)</b>, <em>Chi Focus</em> → das Talent <b>Chi</b> (das <b>Kampfkunstmeister</b> voraussetzt, weshalb der eine Stufe dazwischen steht), <em>Martial Arts</em> → <b>Kampfkünstler</b>.</li>
+          <li><em>Improved First Strike</em> → <b>Schneller Erstschlag</b>, <em>Improved Frenzy</em> → <b>Blitzschneller Angriff</b>, <em>New Power</em> → <b>Neue Mächte</b>, <em>Deflection</em> → <b>Abwehren</b>, <em>smite</em> → <b>Waffe verbessern</b>.</li>
+          <li><em>Improved Frenzy</em> wirkt in SWADE anders als in Reloaded: nicht mehr zwei Angriffe ohne Abzug, sondern ein <b>zusätzlicher Würfel</b> auf bis zu zwei Angriffe — der Mehrfachaktionsabzug bleibt.</li>
+          <li>Für <em>Movement of the Serpent</em> (aus <em>The Flood</em>) gibt es keine Entsprechung. An seiner Stelle steht <b>Himmlisches Kung Fu</b>, das die beiden Stile des Originals gleichzeitig erlaubt.</li>
+          <li>Die <b>20 Machtpunkte</b> sind aus dem Original übernommen; ein gebauter SWADE-Chi-Meister käme auf 10 bis 15. Als NSC darf er sie behalten.</li>
+        </ul>
       </div>
 
       <div class="statblock">
