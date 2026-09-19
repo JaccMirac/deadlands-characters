@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>… bist du das? — Spielleiter-Ablauf</title>
+<style>
+  :root{
+    --paper:#e9ddc2;
+    --paper-dark:#dccba3;
+    --ink:#2b1c11;
+    --ink-soft:#4a3521;
+    --blood:#8b1a12;
+    --blood-dark:#5e0f0a;
+    --rust:#a8471c;
+    --gold:#8a6a2f;
+    --shadow:rgba(40,20,8,.35);
+    --panel:#f3ead2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    color:var(--ink);
+    background:#1a120b;
+    line-height:1.55;
+  }
+  /* aged parchment page */
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.25), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(120,70,20,.18), transparent 45%),
+      var(--paper);
+    background-blend-mode:overlay;
+    box-shadow:0 0 60px #000;
+    padding:0 0 80px;
+  }
+  /* --- Header --- */
+  header.hero{
+    background:
+      linear-gradient(rgba(20,10,4,.72),rgba(20,10,4,.82)),
+      repeating-linear-gradient(45deg,#3a2412 0 12px,#301d0e 12px 24px);
+    color:var(--paper);
+    text-align:center;
+    padding:46px 24px 38px;
+    border-bottom:6px double var(--gold);
+  }
+  header.hero .kicker{
+    letter-spacing:.5em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--rust);
+    margin:0 0 10px;
+  }
+  header.hero h1{
+    font-size:3rem;
+    margin:0;
+    letter-spacing:.04em;
+    text-shadow:0 2px 0 #000, 0 0 18px var(--blood);
+    color:#f0e2c0;
+  }
+  header.hero h1 .apos{color:var(--blood)}
+  header.hero .sub{
+    font-style:italic;
+    color:#d8c298;
+    margin:12px 0 4px;
+    font-size:1.1rem;
+  }
+  header.hero .byline{font-size:.85rem;color:#b39a6e;margin:0}
+  header.hero .tagline{
+    max-width:560px;margin:22px auto 0;
+    font-style:italic;color:#e7cf9c;
+    border-top:1px solid #5a3d1e;padding-top:16px;font-size:.98rem;
+  }
+
+  /* --- Warning banner --- */
+  .tpk-warn{
+    background:var(--blood-dark);
+    color:#ffe9c9;
+    border-top:3px solid var(--blood);
+    border-bottom:3px solid var(--blood);
+    padding:16px 28px;
+    text-align:center;
+    font-size:1rem;
+  }
+  .tpk-warn strong{color:#ffd27a;letter-spacing:.05em}
+
+  /* --- Layout blocks --- */
+  main{padding:0 34px}
+  section{margin:40px 0;scroll-margin-top:20px}
+  h2.scene{
+    font-size:1.7rem;
+    color:var(--blood);
+    border-bottom:3px solid var(--blood);
+    padding-bottom:6px;
+    margin:0 0 6px;
+    display:flex;align-items:baseline;gap:14px;
+  }
+  h2.scene .num{
+    background:var(--blood);color:var(--paper);
+    font-size:1rem;
+    padding:3px 12px;border-radius:3px;
+    box-shadow:2px 2px 0 var(--shadow);
+    flex:none;
+  }
+  h2.scene .en{
+    font-size:.8rem;color:var(--gold);font-style:italic;
+    font-weight:normal;margin-left:auto;letter-spacing:.04em;
+  }
+  h3{color:var(--rust);font-size:1.22rem;margin:26px 0 8px;border-left:5px solid var(--rust);padding-left:10px}
+  p{margin:.6em 0}
+
+  /* --- Read-aloud box --- */
+  .readaloud{
+    background:var(--panel);
+    border:1px solid var(--gold);
+    border-left:8px solid var(--gold);
+    padding:16px 22px 16px 46px;
+    margin:18px 0;
+    font-style:italic;
+    color:var(--ink-soft);
+    position:relative;
+    box-shadow:3px 3px 0 var(--shadow);
+    border-radius:2px;
+  }
+  .readaloud::before{
+    content:"\201C";
+    position:absolute;left:12px;top:2px;
+    font-size:2.6rem;color:var(--gold);font-family:Georgia,serif;
+  }
+  .readaloud .lbl{
+    display:block;font-style:normal;font-weight:bold;
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:8px;
+  }
+
+  /* --- GM tip --- */
+  .tip{
+    background:#efe6cd;
+    border:1px dashed var(--ink-soft);
+    padding:12px 16px 12px 44px;
+    margin:16px 0;
+    position:relative;
+    border-radius:3px;
+    font-size:.96rem;
+  }
+  .tip::before{content:"\1F3B4";position:absolute;left:12px;top:11px;font-size:1.2rem}
+  .tip .lbl{font-weight:bold;color:var(--blood);letter-spacing:.05em}
+
+  /* --- Prop cue --- */
+  .prop{
+    background:#3a2412;color:#f0dcae;
+    padding:12px 16px 12px 46px;
+    margin:16px 0;border-radius:3px;position:relative;
+    font-size:.95rem;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .prop::before{content:"\1F4C4";position:absolute;left:14px;top:11px;font-size:1.3rem}
+  .prop .lbl{display:block;font-weight:bold;color:#e8a24a;letter-spacing:.2em;font-size:.66rem;text-transform:uppercase;margin-bottom:3px}
+
+  /* --- Info / clue list --- */
+  ul.clues{list-style:none;padding-left:0;margin:12px 0}
+  ul.clues li{
+    padding:8px 12px 8px 38px;position:relative;
+    border-bottom:1px dotted #b89a63;
+  }
+  ul.clues li::before{content:"\2620";position:absolute;left:10px;top:8px;color:var(--blood)}
+
+  /* --- Location cards --- */
+  .locgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:16px 0}
+  .loc{
+    background:var(--panel);border:1px solid var(--gold);
+    border-top:5px solid var(--rust);
+    padding:12px 16px;border-radius:3px;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .loc h4{margin:0 0 6px;color:var(--blood);font-size:1.05rem}
+  .loc p{font-size:.9rem;margin:.4em 0}
+
+  /* --- Stat block --- */
+  .statblock{
+    background:#f5eed6;
+    border:2px solid var(--ink);
+    border-radius:4px;
+    padding:0 0 14px;
+    margin:20px 0;
+    box-shadow:4px 4px 0 var(--shadow);
+    overflow:hidden;
+  }
+  .statblock .sbhead{
+    background:var(--ink);color:var(--paper);
+    padding:10px 16px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .statblock .sbhead h4{margin:0;font-size:1.25rem;letter-spacing:.03em;color:#f0dcae}
+  .statblock .sbhead .role{font-size:.75rem;font-style:italic;color:#c8a878}
+  .statblock .sbbody{padding:12px 18px 0}
+  .statblock .traits{font-size:.95rem}
+  .statblock .traits b{color:var(--rust)}
+  .statblock .derived{
+    display:flex;gap:22px;flex-wrap:wrap;
+    margin:10px 0;padding:8px 0;border-top:1px solid #c3a870;border-bottom:1px solid #c3a870;
+    font-weight:bold;
+  }
+  .statblock .derived span b{color:var(--blood)}
+  .statblock .special{font-size:.9rem}
+  .statblock .special li{margin:5px 0}
+  .statblock .special b{color:var(--rust)}
+
+  /* --- Relic box --- */
+  .relic{
+    background:linear-gradient(135deg,#efe0b8,#e3cf98);
+    border:2px solid var(--gold);border-radius:6px;
+    padding:16px 20px;margin:20px 0;
+    box-shadow:0 0 0 3px #f5eed6,4px 4px 0 var(--shadow);
+  }
+  .relic h4{margin:0 0 4px;color:var(--blood-dark);font-size:1.2rem}
+  .relic .sub{font-style:italic;color:var(--gold);font-size:.82rem;margin:0 0 10px;text-transform:uppercase;letter-spacing:.15em}
+
+  /* --- Flow overview --- */
+  .flow{counter-reset:step;margin:10px 0 0}
+  .flow .step{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:10px 0;border-bottom:1px solid #c9ad78;
+  }
+  .flow .step:last-child{border-bottom:none}
+  .flow .step .n{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    background:var(--blood);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;box-shadow:2px 2px 0 var(--shadow);
+  }
+  .flow .step .txt b{color:var(--blood)}
+  .flow .step .txt{font-size:.98rem}
+  .flow .step a{color:var(--rust);text-decoration:none;border-bottom:1px dotted var(--rust)}
+
+  /* --- TOC nav --- */
+  nav.toc{
+    background:#2b1c11;padding:14px 20px;
+    position:sticky;top:0;z-index:10;
+    border-bottom:3px solid var(--gold);
+    display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;
+    font-size:.8rem;
+  }
+  nav.toc a{color:#e8cf9c;text-decoration:none;letter-spacing:.03em}
+  nav.toc a:hover{color:#fff;text-shadow:0 0 8px var(--blood)}
+
+  .callbox{
+    background:#efe6cd;border-left:6px solid var(--blood);
+    padding:12px 18px;margin:16px 0;border-radius:2px;
+  }
+  .callbox b{color:var(--blood)}
+
+  footer{
+    text-align:center;color:#8a7350;font-size:.8rem;
+    padding:30px 20px 0;font-style:italic;
+  }
+  .divider{
+    text-align:center;color:var(--gold);margin:30px 0;font-size:1.3rem;letter-spacing:.6em;
+  }
+
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;max-width:100%}
+    nav.toc{position:static}
+    section{break-inside:avoid}
+    .statblock,.readaloud,.relic,.prop{break-inside:avoid}
+    header.hero{border-bottom:3px solid #000}
+  }
+  @media(max-width:600px){
+    header.hero h1{font-size:2rem}
+    main{padding:0 16px}
+    h2.scene .en{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="kicker">Deadlands · The Weird West · One-Sheet</p>
+    <h1>… bist das du<span class="apos">?</span></h1>
+    <p class="sub">Eine Sturmnacht voller Misstrauen im Handelsposten von Roswell</p>
+    <p class="byline">von Matthew Cutter &nbsp;·&nbsp; Savage Worlds / Deadlands &nbsp;·&nbsp; Spielleiter-Ablauf (DE)</p>
+    <p class="tagline">„Wobei ein Zwischenstopp über Nacht in Roswell, New Mexico, in Paranoia ausartet … und im Tod."</p>
+  </header>
+
+  <div class="tpk-warn">
+    <strong>KEIN KAMPF — BIS ZUM SCHLUSS.</strong> &nbsp; Dieses One-Sheet lebt vom Verdacht, nicht vom Würfeln.
+    Das Monster sitzt von der ersten Minute an mit am Ofen und <em>erzählt Gruselgeschichten über sich selbst</em>.
+    Wer zu früh die Aktionskarten austeilt, verschenkt den halben Abend. Rechne mit 2–3 Stunden.
+  </div>
+
+  <nav class="toc">
+    <a href="#uebersicht">Ablauf</a>
+    <a href="#vorbereitung">Vorbereitung</a>
+    <a href="#szene1">1 · Ankunft</a>
+    <a href="#szene2">2 · Der Handelsposten</a>
+    <a href="#szene3">3 · Fuchs im Hühnerstall</a>
+    <a href="#szene4">4 · Der Fremde im Regen</a>
+    <a href="#szene5">5 · Die Sturzflut</a>
+    <a href="#szene6">6 · Danach</a>
+    <a href="#entlarven">Entlarven</a>
+    <a href="#statblocks">Statblocks</a>
+    <a href="#tipps">SL-Tipps</a>
+  </nav>
+
+  <main>
+
+    <!-- ============ ÜBERSICHT ============ -->
+    <section id="uebersicht">
+      <h2 class="scene"><span class="num">▷</span> Der Ablauf auf einen Blick</h2>
+      <p>Eine gehörnte Schlange hat den Knecht <em>Fletcher Graham</em> gefressen und trägt seither sein Gesicht.
+      Sie könnte längst weitergezogen sein — aber sie will erst <b>Furcht ernten</b> und dann wieder töten.
+      Die Gruppe sitzt mit ihr in einem einzigen Raum fest, während draußen das Unwetter den Rückweg wegspült.</p>
+      <div class="flow">
+        <div class="step"><span class="n">1</span><span class="txt"><b>Ankunft</b> — Gewitter, Sturzflutgefahr, der nächste trockene Ort ist der Handelsposten. Drinnen zielen sechs verängstigte Leute auf die Gruppe. <a href="#szene1">↓</a></span></div>
+        <div class="step"><span class="n">2</span><span class="txt"><b>Der Handelsposten</b> — Earle Spotswood, Familie, Knechte. Ein Raum, ein Lager, ein Dachboden. Furchtstufe 3. <a href="#szene2">↓</a></span></div>
+        <div class="step"><span class="n">3</span><span class="txt"><b>Fuchs im Hühnerstall</b> — „Fletch" erzählt von Wesen, die Menschen fressen und ihre Gestalt annehmen. <em>Verwirrung</em> und <em>Marionette</em> lassen die anderen seltsam werden. <a href="#szene3">↓</a></span></div>
+        <div class="step"><span class="n">4</span><span class="txt"><b>Der Fremde im Regen</b> — drei Schläge an der Tür: Jack Swift jagt das Ding seit Wochen. „Einer hier ist nicht der, für den er sich ausgibt." <a href="#szene4">↓</a></span></div>
+        <div class="step"><span class="n">5</span><span class="txt"><b>Die Sturzflut</b> — auf dem Höhepunkt der Paranoia steht das Wasser 1,20 m hoch im Raum. Die Schlange taucht ab, nimmt ihre wahre Gestalt an und kämpft bis zum Tod. <a href="#szene5">↓</a></span></div>
+        <div class="step"><span class="n">6</span><span class="txt"><b>Danach</b> — Fletchers Knochen am Brunnen, Earles Bericht an die Texas Rangers, Swift zieht weiter. <a href="#szene6">↓</a></span></div>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ VORBEREITUNG ============ -->
+    <section id="vorbereitung">
+      <h2 class="scene"><span class="num">☰</span> Vorbereitung des Marshals</h2>
+
+      <p><b>Was wirklich geschehen ist:</b> Vor ein paar Nächten ging der Knecht Fletcher Graham zum Brunnen, um einen Eimer Wasser zu holen.
+      Unterwegs stellte sich ihm ein Fremder in den Weg — und verwandelte sich in eine unnatürliche, gehörnte Schlange. Bevor Fletch schreien konnte,
+      saßen ihm die Giftzähne in der Kehle. Die Kreatur fraß ihn, nahm seine Gestalt an und kehrte zum Handelsposten zurück.
+      Dort wartet sie auf die nächste Gelegenheit zu töten — und vertreibt sich bis dahin die Zeit damit, allen Angst einzujagen.
+      <em>Furcht schmeckt ihr.</em></p>
+
+      <ul class="clues">
+        <li><b>Der Einstieg:</b> Spiel das One-Sheet, wenn die Gruppe ohnehin durch Roswell kommt. Es braucht keinen Aufhänger — nur schlechtes Wetter.</li>
+        <li><b>Bereithalten:</b> das Profil <b>„Städter"</b> (Grundbuch <b>S. 151</b>, in Szene 2 abgedruckt) für die Spotswoods und die Knechte, die <b>Gehörnte Schlange</b> (Grundbuch <b>S. 162</b>, in Szene 5 abgedruckt) sowie <b>Jack Swift</b> (<a href="#statblocks">hinten bei den Statblocks</a>).</li>
+        <li><b>Nachschlagen:</b> <em>Verwirrung</em> (SWADE S. 168), <em>Marionette</em> (SWADE S. 162; im Grundbuch kommt dazu der Modifikator <em>Geistesband</em>), <em>Gift</em> (SWADE S. 116), <em>Ertrinken</em> (SWADE S. 115), <em>Furchtstufen</em> (Grundbuch S. 83).</li>
+        <li><b>Roswell:</b> Handelsposten, Süßwasserquelle und ein Depot der Lone-Star-Eisenbahn, bekannt für wenig mehr als sein Backen im Südwest-Ofen. Ein paar Kilometer entfernt stehen die Ruinen von <b>Fort Roswell</b>, geplündert in der Schlacht von 1876. Seit jenem Sommer reden die Leute über seltsame „fliegende Scheiben" am Nachthimmel — in Wahrheit entwickelte die Konföderation im Fort geheime Kriegswaffen. Grundbuch <b>S. 136</b>.</li>
+        <li><b>Furchtstufe 3:</b> <b>−1 auf alle Furchtproben</b> in der Gegend. Übernatürlich böse Kreaturen sind gegen diesen Abzug immun — die Schlange also auch.</li>
+      </ul>
+
+      <div class="prop">
+        <span class="lbl">Prop-Einsatz</span>
+        Schreib <b>Marionette</b>-Befehle auf kleine Zettel und schieb sie dem betroffenen Spieler zu — und ab und zu auch jemandem einen <em>leeren</em> Zettel.
+        Ein leerer Zettel für den Nachbarn ist der billigste Paranoia-Verstärker, den es gibt. Dazu der Sturm: eine Handvoll Reis, langsam in einer Blechdose gekippt.
+      </div>
+
+      <div class="tip">
+        <span class="lbl">Ton der Sitzung.</span>
+        Dieses Abenteuer funktioniert erst, wenn die Spieler anfangen, <em>einander</em> zu verdächtigen. Das ist gewollt — sag aber vorher an,
+        dass es um Misstrauen zwischen den Figuren geht. Wer als Marionette gezwungen wird, einen Kameraden anzugreifen, bekommt das
+        <em>sichtbar</em> aufgelöst, sobald die Wirkung endet: Niemand soll mit dem Verdacht aus dem Abend gehen, sein Mitspieler habe es so gewollt.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 1 ============ -->
+    <section id="szene1">
+      <h2 class="scene"><span class="num">1</span> Ankunft im Unwetter <span class="en">The Setup</span></h2>
+
+      <p>In dieser Nacht peitschen schwere Gewitter über die Region, und es sieht stark nach Sturzfluten aus.
+      Wer noch einen Funken Verstand hat, sucht ein Dach — und das nächste warme, trockene ist der Handelsposten der Spotswoods.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Der Handelsposten</span>
+        Der kleine Handelsposten im Ranchero-Stil wird von ein paar Laternen und dem Schein eines bauchigen Ofens erhellt. Die Regale und das Fass mit den Crackern sehen ordentlich gefüllt aus.
+        Ihr bleibt abrupt stehen, als sich euer Blick mit dem des bulligen, bärtigen Mannes hinter der Theke trifft. Er kauert dahinter und richtet mit zitternden Händen eine Schrotflinte auf euch. Eure Augen zucken nach rechts, wo ein paar weitere verängstigte Männer ihre Revolver auf euch halten. Der Bärtige sagt: „Tag auch, Fremde. Wenn ihr's freundlich meint, dann sagt das jetzt lieber."
+      </div>
+
+      <p>Solange die Gruppe mehr an einem Dach als an Blutvergießen interessiert ist, beruhigt ein <b>Erfolg bei Überreden</b> die Einheimischen:
+      Sie senken die Waffen und bitten die Ankömmlinge herein.</p>
+
+      <ul class="clues">
+        <li><b>Misserfolg:</b> Kein Kampf — diese Leute sind verängstigt, nicht mordlustig. Earle lässt die Gruppe herein, behält die Flinte aber griffbereit und stellt einen Sohn als Wache an die Tür. Alle sozialen Proben im Haus laufen für den Rest des Abends auf <b>−1</b>.</li>
+        <li><b>Kritischer Fehlschlag:</b> Einem der Knechte (nicht Fletch) geht vor Schreck ein Schuss los. Getroffen wird niemand — aber jetzt wissen alle, wie dünn das Eis ist.</li>
+        <li><b>Wer nachfragt,</b> warum sie so nervös sind, bekommt von Earle nur ein Brummen: „Schlechte Nächte zurzeit." Die Knechte schauen dabei zu Fletch. Fletch grinst.</li>
+        <li><b>Die Pferde</b> kommen in den Unterstand hinterm Haus. Nach der Flut in Szene 5 sind sie verschwunden, aber am Leben — sie stehen am nächsten Morgen nass und zitternd auf einer Anhöhe.</li>
+      </ul>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 2 ============ -->
+    <section id="szene2">
+      <h2 class="scene"><span class="num">2</span> Der Handelsposten Spotswood <span class="en">Spotswood Trading Post · Fear Level 3</span></h2>
+
+      <p><b>Earle Spotswood</b> — der Mann hinter der Theke — führt den Posten mit seiner Frau <b>Courtney</b>, den halbwüchsigen Söhnen
+      <b>Earle Jr.</b> und <b>Eli</b> sowie vier Knechten. Einer dieser vier ist seit ein paar Nächten kein Mensch mehr.</p>
+
+      <div class="locgrid">
+        <div class="loc">
+          <h4>Der Hauptraum</h4>
+          <p>Ein einziger Raum: Theke an der Rückwand, Regale, Crackerfass, bauchiger Ofen. Hier spielt praktisch der ganze Abend.</p>
+        </div>
+        <div class="loc">
+          <h4>Der Lagerraum</h4>
+          <p>Hinter der Theke. Vorräte, Felle, Werkzeug. Der einzige Ort, an dem man ungestört reden — oder etwas verstecken — kann.</p>
+        </div>
+        <div class="loc">
+          <h4>Der Dachboden</h4>
+          <p>Über dem Hauptraum schläft die Familie. Von oben überblickt man alles. Später ist es das trockenste Stück Holz im Haus.</p>
+        </div>
+        <div class="loc">
+          <h4>Der Brunnen</h4>
+          <p>Draußen, ein Stück den Weg hinunter. Hier starb Fletcher Graham. Vor der Flut findet ihn niemand — danach gehört er zum Aufräumen.</p>
+        </div>
+      </div>
+
+      <div class="callbox">
+        <b>Earles Geheimnis:</b> Er ist bezahlter Informant der <b>Texas Rangers</b> und schreibt über so ziemlich jeden einen Bericht,
+        der hier durchkommt — auch über die Gruppe. Das erklärt seine Fragen, sein Notizbuch und einen guten Teil seines Argwohns.
+        Wer es herausfindet, hat einen Verdächtigen mehr auf der Liste und einen Haken für die nächste Runde.
+      </div>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Städter</h4>
+          <span class="role">Spotswoods &amp; Knechte · Grundbuch S. 151</span>
+        </div>
+        <div class="sbbody">
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W6, Konstitution W6, Stärke W6, Verstand W6, Willenskraft W6</p>
+          <p class="traits"><b>Fertigkeiten:</b> Allgemeinwissen W4, Athletik W4, Gewerbe W8, Heimlichkeit W4, Kämpfen W4, Schießen W4, Überreden W6, Wahrnehmung W6</p>
+          <div class="derived">
+            <span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 4</span><span><b>Robustheit</b> 5</span>
+          </div>
+          <ul class="special">
+            <li><b>Earle Spotswood:</b> dazu das Talent <b>Beziehungen (Texas Ranger)</b> und <b>Überreden W8</b>. Schrotflinte unter der Theke (12/24/48, 1–3W6, FR 1).</li>
+            <li><b>Courtney Spotswood:</b> <b>Geschicklichkeit W8</b>, <b>Schießen W8</b>, Talente <b>Schnell Ziehen</b> und <b>Meisterschütze</b>. Nach dem Ding am Ofen die gefährlichste Person im Raum.</li>
+            <li><b>Earle Jr. und Eli:</b> Standardprofil. Halbwüchsige, die sich für mutiger halten, als sie sind.</li>
+            <li><b>Knechte (3):</b> Standardprofil. Sie sind es, die unter <em>Verwirrung</em> und <em>Marionette</em> die kryptischen Sätze sagen und grundlos durch den Raum stolpern.</li>
+            <li><b>„Fletcher Graham" (der vierte Knecht):</b> sieht aus wie einer von ihnen — <a href="#szene5">hat aber ganz andere Werte</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 3 ============ -->
+    <section id="szene3">
+      <h2 class="scene"><span class="num">3</span> Fuchs im Hühnerstall <span class="en">Fox in the Henhouse</span></h2>
+
+      <p>Seit die Kreatur in Fletchs Gestalt zurückkam, redet sie ohne Unterlass von Gespenstern, Erscheinungen und Dingen,
+      die nachts an die Wand klopfen. Die anderen finden die Geschichten grauenhaft — und können trotzdem nicht weghören.
+      Sobald sich die Gruppe eingerichtet hat, legt „Fletch" nach:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Fletchs Geschichte</span>
+        „Hier is' eine, die mein alter Großvater immer erzählt hat. Es gibt da so 'ne Sorte Viech — ein furchtbarer Schatten von einem Ding —, das pirscht sich an Leute ran wie ein Rotluchs an einen Hirsch. Bloß dass es dich, wenn's dich erwischt, nicht einfach vom Knochen frisst. Es frisst die Knochen gleich mit. Und wenn's fertig ist, kann's aussehen und reden und sich bewegen wie du. So kommt's nämlich nah genug an deine Freunde ran, um die auch zu fressen."
+      </div>
+
+      <div class="tip">
+        <span class="lbl">Der beste Trick des Abenteuers.</span>
+        Das Monster beschreibt am offenen Feuer haargenau sich selbst — die gleiche Dreistigkeit wie ein Brandstifter, der beim Löschen hilft.
+        Spiel „Fletch" genüsslich: Er sieht beim Erzählen jedem Einzelnen in die Augen und wartet, wer als Erster wegschaut.
+      </div>
+
+      <p>Wer eine <b>Wahrnehmungsprobe</b> besteht, bemerkt, wie Spotswood, seine Familie und die übrigen Knechte der Gruppe
+      <b>verstohlene, misstrauische Blicke</b> zuwerfen. Aus deren Sicht sind schließlich <em>die Fremden</em> neu im Haus.</p>
+
+      <h3>Der Abend wird schief</h3>
+
+      <p>Während der Sturm zunimmt und der Regen aufs Dach trommelt — durch die Ritzen tropft es in bereitgestellte Einmachgläser und Blechdosen —,
+      wird es seltsam. Die gehörnte Schlange setzt <em>Verwirrung</em> und <em>Marionette</em> auf die anderen Knechte an
+      und lässt sie merkwürdige, kryptische Dinge sagen oder ohne erkennbaren Grund durch den Raum stolpern.</p>
+
+      <ul class="clues">
+        <li><b>Verwirrung</b> (SWADE S. 168): Misslingt die Verstandsprobe, ist das Opfer <em>Abgelenkt</em> und <em>Verwundbar</em> — am Tisch heißt das: Es verhaspelt sich, starrt ins Leere, verliert den Faden mitten im Satz.</li>
+        <li><b>Marionette</b> (SWADE S. 162): vergleichender Wurf gegen die Willenskraft des Opfers. Befehle sind grob — „geh zur Tür", „sag das laut", „greif ihn an". Die Schlange nutzt sie für Sätze, die hinterher niemand erklären kann.</li>
+        <li><b>Beide Mächte</b> aktiviert sie mit <b>Willenskraft</b> und <b>ohne sichtbare Ausprägung</b>: kein Leuchten, keine Geste, kein Hinweis darauf, wer da wirkt. Sie hat <b>15 Machtpunkte</b> für den Abend — mehr als genug.</li>
+        <li><b>Drei Sätze zum Verschenken:</b> „Hab ich das laut gesagt?" &nbsp;·&nbsp; „Wer von euch war gestern Nacht am Brunnen?" &nbsp;·&nbsp; „Ich hör das Wasser. Hört ihr das Wasser denn nicht?"</li>
+      </ul>
+
+      <p>Wenn die Fantasie aller im Raum ordentlich Fahrt aufgenommen hat, klopft es drei Mal langsam und gleichmäßig an der Tür.</p>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 4 ============ -->
+    <section id="szene4">
+      <h2 class="scene"><span class="num">4</span> Der Fremde im Regen <span class="en">A Dark and Stormy Night / Raising the Stakes</span></h2>
+
+      <p>Spotswood besteht darauf, dass es ein Geist ist. Das Klopfen hört nicht auf, bis jemand öffnet.
+      Im Regen steht ein kompakter, drahtiger Kerl in einem schwarz-roten chinesischen Mantel und mit rot getönter Brille. Er ist bis auf die Haut durchnässt.</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Der Gast</span>
+        „Der Sturm wird schlimmer. Um es rechtzeitig hierher zu schaffen, musste ich … flink sein. Darf ich bei euch unterkommen?"
+      </div>
+
+      <p>Das ist der kalifornische Kampfkünstler <b>Jack Swift</b>, und er ist nicht bloß zufällig in der Gegend.
+      Swift weiß eine Menge über die Abrechnung und jagt die gehörnte Schlange seit Wochen, um ihrem Schrecken ein Ende zu setzen.
+      Sein Profil steht <a href="#statblocks">hinten bei den Statblocks</a>.</p>
+
+      <h3>Der Einsatz wird erhöht</h3>
+
+      <p>Swift plaudert höflich und wärmt sich am Ofen. Dass die Spotswoods und ihre Leute dem Neuankömmling kein Stück trauen,
+      ist sofort offensichtlich. Dann lässt er die Bombe platzen:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Swifts Eröffnung</span>
+        „Ich bin einem großen, dunklen Mann hierher gefolgt. Einem, der Reisenden auflauert und sie kaltblütig ermordet. Freunde … einer hier ist nicht der, für den er sich ausgibt."
+      </div>
+
+      <ul class="clues">
+        <li><b>Die Schlange wehrt sich:</b> Sie versucht ein paar Mal, Swifts Geist mit <em>Verwirrung</em> und <em>Marionette</em> zu formen. Gelingt es, lässt sie den Fremden ungeschickt wirken — oder, die bevorzugte Variante, zwingt ihn, ohne Vorwarnung einen NSC oder ein Gruppenmitglied anzugreifen.</li>
+        <li><b>Swift schlägt nicht sofort zurück.</b> Er spürt den arkanen Zugriff, sagt aber nichts und tut nichts: Er will erst <em>wissen</em>, wer das Ding ist, bevor er zuschlägt. Für die Gruppe sieht das aus wie die Ruhe eines Mannes, der etwas zu verbergen hat.</li>
+        <li><b>Die Einheimischen</b> nehmen Swift als ersten Verdächtigen — er ist der Letzte, der hereinkam, und der Einzige, der von Mord redet. Fletch stimmt eifrig zu und schürt nach.</li>
+        <li><b>Lass die Szene laufen</b>, bis jeder am Tisch eine eigene Theorie hat, wer hier wer ist, und einen Plan, wie er es herausfinden will. Erst dann kommt das Wasser.</li>
+      </ul>
+
+      <div class="tip">
+        <span class="lbl">Marshal, bremse hier bewusst.</span>
+        Das ist das Herz des Abenteuers. Verteile Verdachtsmomente gleichmäßig: einen auf Swift, einen auf einen Knecht,
+        einen auf Courtney — und genau einen auf Fletch, den er selbst mit einer lauten, plumpen Ausrede wieder einreißt.
+        Würfelproben sind hier Nebensache; Fragen, Sitzordnung und wer wem den Rücken zudreht, sind die Mechanik.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ ENTLARVEN ============ -->
+    <section id="entlarven">
+      <h2 class="scene"><span class="num">?</span> Wie man das Ding entlarvt <span class="en">Ergänzung des Marshals</span></h2>
+
+      <p><em>Das One-Sheet lässt diesen Teil offen — hier ein Vorrat an Prüfsteinen, falls die Gruppe systematisch vorgeht.
+      Gib nie mehr als einen pro Szene her, und lass „Fletch" jeden davon mit Humor abbürsten.</em></p>
+
+      <ul class="clues">
+        <li><b>Das Gedächtnis:</b> Die Kreatur hat Fletchs Gestalt, nicht sein Leben. Courtney oder Earle können ihn nach Dingen fragen, die er wissen müsste — wo er herkommt, wem er im Frühjahr beim Dachdecken geholfen hat. Sie antwortet knapp, lenkt ab, lacht laut. <b>Wahrnehmung −2</b>, um zu merken, dass sie nie wirklich antwortet.</li>
+        <li><b>Der Appetit:</b> Fletch rührt weder Kaffee noch Cracker an. Er hat vor ein paar Nächten gegessen.</li>
+        <li><b>Das Wasser:</b> Ein Wasserwesen scheut den Regen nicht. Wenn etwas hereingeholt werden muss, geht Fletch bereitwillig hinaus — und kommt trocken genug zurück, dass es auffällt (<b>Wahrnehmung</b>).</li>
+        <li><b>Die Haut:</b> Wer ihm die Hand schüttelt oder ihn anfasst, spürt, wie kühl er ist. Der Mann sitzt am Ofen und ist kalt wie der Türgriff.</li>
+        <li><b>Der Brunnen:</b> Wer es in der Sturmnacht hinaus zum Brunnen schafft (<b>Athletik</b> gegen Wind und Schlamm), findet dort blutige Erde und einen abgerissenen Hemdknopf — Fletchs.</li>
+        <li><b>Swifts Wissen:</b> Fragt ihn jemand direkt, was er jagt, rückt er mit der Wahrheit heraus: eine gehörnte Schlange, ein Wasserwesen, das die Gestalt seiner Beute annimmt und sie bis zu 24 Stunden nach dem Fraß halten kann — bei dieser hier längst unbegrenzt, weil niemand sie enttarnt hat.</li>
+      </ul>
+
+      <div class="callbox">
+        <b>Wenn die Gruppe sie zu früh entlarvt:</b> Die Schlange leugnet nicht lange — sie verwandelt sich zurück, zerschlägt ein Fenster
+        und ist im Regen verschwunden (Wasserwesen, Bewegungsweite 12). Lass die Flut aus Szene 5 dann sofort kommen: Draußen ist sie in
+        ihrem Element und holt sich die Nachzügler einzeln. Der Kampf findet trotzdem im Wasser statt, nur mit umgekehrten Vorzeichen —
+        jetzt jagt sie die Gruppe.
+      </div>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 5 ============ -->
+    <section id="szene5">
+      <h2 class="scene"><span class="num">5</span> Wie hoch steht das Wasser, Mama? <span class="en">How High's the Water, Mama?</span></h2>
+
+      <p>Auf dem Höhepunkt der Paranoia verlangst du <b>Wahrnehmungsproben mit −2</b>. Wem sie gelingt, der hört ein donnerndes,
+      rauschendes Wasser — viel lauter als der Regen, der aufs Dach hämmert. Wer aus dem Fenster sieht, blickt auf reißende Fluten:
+      Der Handelsposten liegt in einem Fluss, den es vor einer Stunde noch nicht gab. <b>Eine Sturzflut.</b> Der Kampfkünstler bemerkt trocken:</p>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Swifts Kommentar</span>
+        „Das nenne ich mal eine <em>flinke</em> Wendung."
+      </div>
+
+      <div class="readaloud">
+        <span class="lbl">Vorlesetext — Das Wasser kommt</span>
+        Wasser drückt unter der Tür durch und zwischen den Balken der Wände hindurch. Der Ofen erlischt in einem Stoß aus Dampf und Rauch. Innerhalb von Minuten steht das Wasser über einen Meter hoch im Raum. Die Waren der Spotswoods treiben auf der dunklen Oberfläche wie Strandgut.
+      </div>
+
+      <p><b>Jetzt kämpft die Kreatur bis zum Tod</b>, falls sie nicht entkommen kann. Sie taucht unter, nimmt ihre wahre Gestalt an
+      und schlägt aus dem Chaos heraus mit Biss und geistigem Zugriff zu — dorthin, wo es am meisten weh tut.</p>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>„Fletcher Graham" <span style="font-size:.7rem;font-weight:normal;letter-spacing:.1em">— GEHÖRNTE SCHLANGE, WILDCARD</span></h4>
+          <span class="role">Grundbuch S. 162 · 15 Machtpunkte</span>
+        </div>
+        <div class="sbbody">
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W8, Konstitution W8, Stärke W10, Verstand W4 (T), Willenskraft W8</p>
+          <p class="traits"><b>Fertigkeiten:</b> Athletik W8, Heimlichkeit W10, Kämpfen W8, Wahrnehmung W8</p>
+          <div class="derived">
+            <span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 6</span><span><b>Robustheit</b> 6</span><span><b>Schwimmend</b> 12</span>
+          </div>
+          <ul class="special">
+            <li><b>Biss:</b> Stä+W4 &nbsp;·&nbsp; <b>Hörner:</b> Stä+W6, darf anstürmen.</li>
+            <li><b>Gift (−2):</b> Wer durch den Biss Angeschlagen wird oder eine Wunde erleidet, legt eine <b>Konstitutionsprobe −2</b> ab oder erleidet die Wirkung eines <b>K.O.-Giftes</b> (SWADE S. 116): bewusstlos für 2W6 Stunden.</li>
+            <li><b>Umschlingen:</b> +2 auf Athletik- und Stärkeproben beim Ringen. Sie packt ihr Opfer und hält es fest, während sie frisst.</li>
+            <li><b>Gestaltwandeln:</b> die Macht <em>Gestaltwandeln</em>, aktiviert mit <b>Athletik</b>, ohne Machtpunktkosten. Sie sieht aus wie jede Kreatur, die sie in den letzten 24 Stunden erbeutet hat, und kann in dieser Gestalt unbegrenzt bleiben.</li>
+            <li><b>Wasserwesen:</b> Bewegungsweite 12". Im Wasser ist sie schneller als alles andere im Raum.</li>
+            <li><b>Untergetaucht:</b> <b>+5 auf Heimlichkeit</b>, solange sie unter Wasser ist. Sie schlägt zu und verschwindet wieder.</li>
+            <li><b>Mächte:</b> <em>Verwirrung</em> und <em>Marionette</em>, aktiviert mit <b>Willenskraft</b>, ohne sichtbare Ausprägung. <b>15 Machtpunkte.</b></li>
+            <li><b>Wildcard:</b> Wildcard-Würfel, drei Wunden, Bennys. Dieses Exemplar ist ein altes, gerissenes Biest mit bösartigem Humor.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Der Kampf im Wasser</h3>
+
+      <ul class="clues">
+        <li><b>Schwieriges Gelände:</b> Das geflutete Innere zählt als Schwieriges Gelände — jeder Zoll Bewegung kostet zwei.</li>
+        <li><b>Schummrige Beleuchtung:</b> Der Qualm des erloschenen Ofens drückt das Licht — <b>−1 auf Angriffsproben</b>.</li>
+        <li><b>Gift plus Wasser:</b> Ein bewusstloses Opfer treibt mit dem Gesicht nach unten. <b>Das ist der eigentliche Killer dieses Abenteuers</b> — jemand muss es halten, sonst greifen die Regeln fürs Ertrinken (SWADE S. 115). Sag das den Spielern ruhig als Beschreibung, nicht als Regelzitat: „Er sackt weg, und das Wasser steht ihm über dem Mund."</li>
+        <li><b>Die Einheimischen</b> kämpfen nicht — sie klettern auf die Theke und auf den Dachboden. Courtney ist die Ausnahme: Sie schießt auf alles, was sich im Wasser bewegt, auch auf Gruppenmitglieder, wenn niemand sie ruft.</li>
+        <li><b>Swift greift ein</b>, sobald die Schlange ihre Gestalt verliert — endlich weiß er, wen er schlagen muss. Mit <em>Der Betrunkene</em> und <em>Tan Tui</em> gleichzeitig ist er im Wasser die beste Waffe der Gruppe. Lass ihn glänzen, aber nicht den Abschluss stehlen: Er richtet die Kreatur an, den letzten Treffer überlässt du der Gruppe.</li>
+        <li><b>Das Gewitter</b> hält <b>1W6 Stunden</b> an. Wer hinausschwimmt, ist allein mit einem Wasserwesen in dessen Element.</li>
+      </ul>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ SZENE 6 ============ -->
+    <section id="szene6">
+      <h2 class="scene"><span class="num">6</span> Danach <span class="en">Ergänzung des Marshals</span></h2>
+
+      <p><em>Das One-Sheet endet mit dem Kampf. Was folgt, sind Vorschläge — nimm, was zu deiner Runde passt.</em></p>
+
+      <ul class="clues">
+        <li><b>Der Brunnen:</b> Wenn das Wasser am Morgen abläuft, liegen im Schlamm ein paar abgenagte Knochen und Fletchers Gürtelschnalle. Jemand muss es seiner Schwester in Santa Fe schreiben.</li>
+        <li><b>Earles Bericht:</b> Er schreibt alles auf — auch, was die Gruppe getan hat. Zwei Wochen später kann ein Brief der <b>Texas Rangers</b> kommen: eine Einladung, eine Warnung oder ein Auftrag.</li>
+        <li><b>Jack Swift</b> zieht am nächsten Morgen weiter, mit einem Wortspiel zum Abschied. Er ist ein guter wiederkehrender NSC — und ein besserer Aufhänger, wenn Cheu Meng ihm irgendwann hinterherschickt.</li>
+        <li><b>Furchtstufe:</b> Ein erlegtes Monster, eine gerettete Familie und eine Geschichte, die man im Depot weitererzählt — genug, um Roswell für eine Weile auf <b>Furchtstufe 2</b> zu drücken (Grundbuch S. 83). Agenten und Ranger in der Gruppe verdienen sich dafür einen Gefallen.</li>
+        <li><b>Lohn:</b> Earle hat kein Bargeld, aber einen vollen Laden — Vorräte, Munition, ein Pferd aus dem Unterstand. Gepeinigte in der Gruppe dürfen einen <b>Coup</b> versuchen; angemessen wäre eine Wasser-Fähigkeit, etwa das Schwimmen der Kreatur.</li>
+        <li><b>Der offene Faden:</b> Die Schlange ist ein <em>altes</em> Exemplar. Wessen Gestalt hatte sie <em>davor</em>? Ein Name im Notizbuch von Earle, der zweimal auftaucht, reicht für die nächste Sitzung.</li>
+      </ul>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ STATBLOCKS ============ -->
+    <section id="statblocks">
+      <h2 class="scene"><span class="num">⚔</span> Statblocks</h2>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Jack Swift</h4>
+          <span class="role">Chi-Meister aus Kalifornien · Wildcard</span>
+        </div>
+        <div class="sbbody">
+          <p>Jack Swift durchstreift den Westen auf der Suche nach Herausforderungen und sehnt sich zurück zu seiner Liebsten in Shan Fan.
+          Deren Vater ist allerdings <b>Cheu Meng</b>, brutaler Kriegsherr — und Jacks früherer Lehrmeister.</p>
+          <p class="traits"><b>Attribute:</b> Geschicklichkeit W12, Konstitution W8, Stärke W4, Verstand W6, Willenskraft W12</p>
+          <p class="traits"><b>Fertigkeiten:</b> Allgemeinwissen W6 (Okkultes), Athletik W8, Bootfahren W6, Fokus W12, Kämpfen W12, Reparieren W6, Schießen W8, Überleben W4, Wahrnehmung W6</p>
+          <div class="derived">
+            <span><b>Bewegungsweite</b> 6</span><span><b>Parade</b> 8</span><span><b>Robustheit</b> 6</span><span><b>Machtpunkte</b> 20</span>
+          </div>
+          <ul class="special">
+            <li><b>Handicaps:</b> Arrogant (schwer), Feind (leicht — Cheu Meng), Tick (macht Wortspiele mit seinem Namen).</li>
+            <li><b>Talente:</b> Arkaner Hintergrund (Chi-Meister), Chi, Kampfkünstler, Mumm, Überlegenes Kung Fu (<em>Der Betrunkene</em>, <em>Tan Tui</em>), Himmlisches Kung Fu, Verbesserter Erstschlag, Verbesserte Raserei, Neue Macht.</li>
+            <li><b>Mächte:</b> <em>Abwehren</em>, <em>Waffe verbessern</em>.</li>
+            <li><b>Der Betrunkene:</b> Gegner ziehen <b>−2</b> von Angriffsproben gegen ihn ab, seine Bewegungsweite sinkt um 2.</li>
+            <li><b>Tan Tui:</b> einmal pro Runde <b>+1 Würfeltyp</b> Schaden im waffenlosen Kampf; bei Angeschlagen oder Wunde fliegt das Ziel 1W4" zurück (1W4+2" mit Steigerung).</li>
+            <li><b>Himmlisches Kung Fu:</b> Er führt <b>beide Stile gleichzeitig</b> und wechselt sie als freie Aktion — im Wasser genau die Kombination, die ihn am Leben hält.</li>
+            <li><b>Ausrüstung:</b> zwei Sai (Stä+W4, Parade +1, +1 auf Entwaffnen), LeMat-Pistole (12/24/48, 2W6, FR 1, PB 1) mit Schrotlauf (5/10/20, 1–3W6, FR 1), rot getönte Brille, Sandalen.</li>
+          </ul>
+          <p style="font-size:.85rem;font-style:italic;margin:6px 0 0">„Jack Swift" erfunden von Louis Head.</p>
+        </div>
+      </div>
+
+      <div class="callbox">
+        <b>Umrechnung.</b> Swifts Profil im One-Sheet stammt noch aus <em>Deadlands Reloaded</em> — mit <em>Cha</em>, <em>Grit</em>,
+        der Fertigkeit <em>Mumm</em> und Talenten, die es in der Abenteuer-Edition nicht mehr gibt. Oben steht die SWADE-Fassung:
+        <em>Mumm</em> wurde zum Talent, <em>Schwimmen</em> und <em>Klettern</em> gingen in <em>Athletik</em> auf, die Chi-Mächte laufen über
+        <em>Fokus</em>. Parade 8 (2 + Kämpfen W12 ÷ 2) und Robustheit 6 (2 + Konstitution W8 ÷ 2) stimmen mit dem Original überein.
+        Für <em>Movement of the Serpent</em> gibt es in SWADE keine Entsprechung — dafür steht jetzt <b>Himmlisches Kung Fu</b>,
+        das die beiden Stile des Originals gleichzeitig erlaubt.
+      </div>
+
+      <div class="statblock">
+        <div class="sbhead">
+          <h4>Gehörnte Schlange</h4>
+          <span class="role">Grundbuch S. 162 · hier als Wildcard</span>
+        </div>
+        <div class="sbbody">
+          <p>Der Bauch einer gehörnten Schlange ist durchgehend schwarz, der übrige lange Körper von Schuppen in wechselnden
+          Grün- und Blautönen bedeckt. Der Kopf ähnelt dem einer Viper; vom Scheitel bis zum Halsansatz läuft eine Reihe kleiner,
+          knöcherner Hörner, und an jeder Seite dieses Kammes sitzt ein scharfes, etwa einen halben Meter langes Horn.
+          Diese Kreaturen leben in den tieferen Flüssen des Südwestens und lauern knapp unter der Oberfläche auf Beute,
+          die zum Trinken kommt. Wird ihre wahre Natur entdeckt, kehren sie in Schlangenform zurück und versuchen zu entkommen —
+          in die Enge getrieben, geben sie nicht kampflos auf.</p>
+          <p class="traits"><b>Werte:</b> siehe <a href="#szene5">Szene 5</a>. Dieses Exemplar ist ein Wildcard mit
+          <em>Verwirrung</em>, <em>Marionette</em> und 15 Machtpunkten.</p>
+        </div>
+      </div>
+
+      <p style="font-size:.9rem">Das Profil <b>Städter</b> für die Spotswoods und die Knechte steht in <a href="#szene2">Szene 2</a>.</p>
+    </section>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <!-- ============ TIPPS ============ -->
+    <section id="tipps">
+      <h2 class="scene"><span class="num">★</span> Marshal-Tipps</h2>
+
+      <h3>Wie man die Schlange spielt</h3>
+      <ul class="clues">
+        <li><b>Sie hat es nicht eilig.</b> Sie könnte jeden hier töten und wäre bis zum Morgen weg. Stattdessen sammelt sie Furcht — deshalb die Geschichten, deshalb die Spielchen mit den Knechten. Jede Minute, die die Gruppe mit Verdächtigen verbringt, ist für sie eine gute Minute.</li>
+        <li><b>Sie ist witzig.</b> Bösartiger Humor steht ausdrücklich im Profil: Sie lacht über die eigenen Anspielungen, schlägt vor, „einen Test" zu machen, und bietet sich als Erste dafür an.</li>
+        <li><b>Sie greift nie zuerst an,</b> solange ihre Tarnung hält. Erst wenn sie enttarnt ist oder die Flut das Haus füllt, wird sie zum Raubtier.</li>
+      </ul>
+
+      <h3>Wenn es hakt</h3>
+      <ul class="clues">
+        <li><b>Die Gruppe würfelt sich stur durch:</b> Gib ihr etwas zum Finden, das nichts beweist — Earles Notizbuch mit Berichten über jeden Gast. Ein falscher Verdächtiger hält das Misstrauen am Leben.</li>
+        <li><b>Die Gruppe sitzt still da:</b> Setz <em>Marionette</em> auf einen der Knechte an und lass ihn einem Spielercharakter ein Messer an die Kehle setzen. Danach redet der ganze Raum.</li>
+        <li><b>Die Gruppe verdächtigt sich gegenseitig ernsthaft:</b> Genau richtig — aber achte darauf, dass der beschuldigte Spieler sich wehren kann. Lass die Kreatur den Streit anheizen, nicht dich.</li>
+        <li><b>Niemand findet Fletch:</b> Auch gut. Die Flut löst es ohnehin — und dann hat das Ding den Überraschungsvorteil, den es verdient hat.</li>
+      </ul>
+
+      <h3>Was die Spieler mitnehmen sollen</h3>
+      <p>Die beste Erinnerung an diesen Abend ist nicht der Kampf im Wasser, sondern der Moment, in dem jemand einen Mitspieler
+      quer über den Tisch fragt: <em>„… bist das du?"</em> — und sich nicht sicher ist, ob die Antwort etwas wert ist.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    Spielleiter-Ablauf zu „… Is That You?", einem Savage-Worlds-One-Sheet von Matthew Cutter für
+    <em>Deadlands: The Weird West</em> (Pinnacle Entertainment Group, 2015). Regelverweise auf
+    <em>Deadlands: Der Unheimliche Westen</em> und die <em>Savage Worlds Abenteuer-Edition</em> (Ulisses Spiele).
+    Diese Zusammenfassung ist für den eigenen Spieltisch gedacht und ersetzt das Original nicht.
+  </footer>
+
+</div>
+</body>
+</html>
