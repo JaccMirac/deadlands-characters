@@ -174,7 +174,8 @@ def nav_for(depth):
     up = "../" * depth
     return ("<a href=\"%sREADME.html\">Repo</a>"
             "<a href=\"%sCharakterideen.html\">Charaktere</a>"
-            "<a href=\"%sRegelnotizen.html\">Regelnotizen</a>") % (up, up, up)
+            "<a href=\"%sRegelnotizen.html\">Regelnotizen</a>"
+            "<a href=\"%sAbenteuer/index.html\">Abenteuer</a>") % (up, up, up, up)
 
 
 def first_h1(md_text):

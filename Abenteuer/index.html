@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abenteuer — Spielleiter-Abläufe</title>
+<style>
+  :root{
+    --paper:#e9ddc2;
+    --ink:#2b1c11;
+    --ink-soft:#4a3521;
+    --blood:#8b1a12;
+    --rust:#a8471c;
+    --gold:#8a6a2f;
+    --shadow:rgba(40,20,8,.35);
+    --panel:#f3ead2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    color:var(--ink);
+    background:#1a120b;
+    line-height:1.55;
+  }
+  .page{
+    max-width:920px;margin:0 auto;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.25), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(120,70,20,.18), transparent 45%),
+      var(--paper);
+    background-blend-mode:overlay;
+    box-shadow:0 0 60px #000;
+    padding:0 0 60px;
+  }
+  header.hero{
+    background:
+      linear-gradient(rgba(20,10,4,.72),rgba(20,10,4,.82)),
+      repeating-linear-gradient(45deg,#3a2412 0 12px,#301d0e 12px 24px);
+    color:var(--paper);text-align:center;
+    padding:42px 24px 34px;
+    border-bottom:6px double var(--gold);
+  }
+  header.hero .kicker{
+    letter-spacing:.5em;text-transform:uppercase;
+    font-size:.72rem;color:var(--rust);margin:0 0 10px;
+  }
+  header.hero h1{
+    font-size:2.6rem;margin:0;letter-spacing:.04em;
+    text-shadow:0 2px 0 #000, 0 0 18px var(--blood);color:#f0e2c0;
+  }
+  header.hero .sub{font-style:italic;color:#d8c298;margin:12px 0 0;font-size:1.05rem}
+  nav.top{
+    background:#2b1c11;padding:12px 20px;
+    border-bottom:3px solid var(--gold);
+    display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;font-size:.82rem;
+  }
+  nav.top a{color:#e8cf9c;text-decoration:none;letter-spacing:.03em}
+  nav.top a:hover{color:#fff;text-shadow:0 0 8px var(--blood)}
+  main{padding:30px 34px 0}
+  p.lead{margin:0 0 24px}
+  .adv{
+    background:var(--panel);
+    border:1px solid var(--gold);border-top:5px solid var(--rust);
+    border-radius:3px;box-shadow:3px 3px 0 var(--shadow);
+    padding:18px 22px;margin:18px 0;
+  }
+  .adv h2{margin:0 0 2px;font-size:1.5rem;color:var(--blood)}
+  .adv h2 a{color:inherit;text-decoration:none;border-bottom:2px solid transparent}
+  .adv h2 a:hover{border-bottom-color:var(--blood)}
+  .adv .meta{
+    font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 10px;
+  }
+  .adv p{margin:.5em 0}
+  .adv .go{
+    display:inline-block;margin-top:10px;
+    color:var(--rust);text-decoration:none;font-size:.95rem;
+    border-bottom:1px dotted var(--rust);
+  }
+  .adv .go:hover{color:var(--blood);border-bottom-style:solid}
+  .warnline{color:var(--blood);font-weight:bold}
+  footer{
+    text-align:center;color:#8a7350;font-size:.8rem;
+    padding:30px 20px 0;font-style:italic;
+  }
+  .divider{text-align:center;color:var(--gold);margin:26px 0;font-size:1.2rem;letter-spacing:.6em}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;max-width:100%}
+    .adv{break-inside:avoid}
+  }
+  @media(max-width:600px){
+    header.hero h1{font-size:1.9rem}
+    main{padding:24px 16px 0}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="kicker">Deadlands · The Weird West</p>
+    <h1>Abenteuer</h1>
+    <p class="sub">Spielleiter-Abläufe zu One-Sheets, deutsch, für den Tisch</p>
+  </header>
+
+  <nav class="top">
+    <a href="../README.html">Repo</a>
+    <a href="../Charakterideen.html">Charaktere</a>
+    <a href="../Regelnotizen.html">Regelnotizen</a>
+  </nav>
+
+  <main>
+    <p class="lead">Jeder Ablauf fasst ein englisches One-Sheet für den deutschen Spieltisch zusammen:
+    Szene für Szene, Vorlesetexte übersetzt, Statblocks dort abgedruckt, wo die Szene sie braucht,
+    und alle Regelverweise auf <em>Deadlands: Der Unheimliche Westen</em> und die
+    <em>Savage Worlds Abenteuer-Edition</em> mit Seitenzahl. Eigene Ergänzungen sind als solche markiert.</p>
+
+    <div class="adv">
+      <h2><a href="Dead-Men-Walking_SL-Ablauf.html">Dead Men Walkin’</a></h2>
+      <p class="meta">von Shane Lacy Hensley · 7 Szenen · High Plains, Kansas</p>
+      <p>Ein geschlossener Alptraum-Kreislauf: Die Gruppe stirbt in den ersten 20 Minuten, „erwacht" in der
+      eingefrorenen Geisterstadt Perdition, löst das Rätsel um ein verängstigtes kleines Mädchen und muss den
+      <em>Devil</em> mit der einzigen Waffe bezwingen, die ihm schaden kann.</p>
+      <p class="warnline">Achtung: geplanter TPK gleich zu Beginn — vorher ansagen.</p>
+      <p>Enthält einen Runde für Runde durchgespielten Beispielkampf mit vier Figuren aus dem Einsteiger-Set.</p>
+      <a class="go" href="Dead-Men-Walking_SL-Ablauf.html">Ablauf öffnen →</a>
+    </div>
+
+    <div class="adv">
+      <h2><a href="Is-That-You_SL-Ablauf.html">… bist das du?</a></h2>
+      <p class="meta">von Matthew Cutter · 6 Szenen · Roswell, New Mexico</p>
+      <p>Eine Sturmnacht im Handelsposten der Spotswoods. Eine gehörnte Schlange hat den Knecht Fletcher Graham
+      gefressen und trägt sein Gesicht — und erzählt am Ofen genüsslich Gruselgeschichten über sich selbst,
+      während draußen die Sturzflut den Rückweg wegspült.</p>
+      <p>Kein Kampf bis zum Schluss: Das Abenteuer lebt vom Verdacht. Mit Prüfsteinen zum Entlarven und
+      Jack Swift in einer SWADE-Fassung.</p>
+      <a class="go" href="Is-That-You_SL-Ablauf.html">Ablauf öffnen →</a>
+    </div>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <p style="font-size:.9rem">Die Quell-PDFs der One-Sheets liegen nicht im Repo — die Abläufe sind
+    Zusammenfassungen für den eigenen Tisch und ersetzen die Originale nicht.</p>
+  </main>
+
+  <footer>Deadlands: The Weird West &middot; SWADE &middot; Spielleiter-Abläufe</footer>
+
+</div>
+</body>
+</html>

@@ -12,6 +12,7 @@ Charaktere fuer Deadlands: The Weird West (Savage Worlds Adventure Edition).
 | `Charaktere/` | Eine Datei pro Figur (32) — Hintergrund, Build, Aufhänger |
 | `Archetypen/` | Eine Datei pro Archetyp (13) — Voraussetzungen, archetyp-spezifische Regelnotizen |
 | `Bilder/` | Die fertigen Midjourney-Bilder, flach, benannt wie die Charakterdateien |
+| [`Abenteuer/`](Abenteuer/index.html) | Spielleiter-Abläufe zu One-Sheets, deutsch, Szene für Szene |
 | `build_html.py` | Rendert jede `.md` als `.html` daneben |
 | `build_sheets.py` | Füllt den offiziellen Deadlands-Charakterbogen aus |
 | `build_dossier.py` | Deckblatt, Hintergrund, Regeltexte und Bogen als ein PDF |
@@ -83,6 +84,25 @@ Regelbasis: `Deadlands_Grundbuch.pdf` (Ulisses, deutsch), das deutsche
 `Savage Worlds Abenteuer Edition` Grundregelwerk (Ulisses) und
 `SWADE_Savage_Worlds_Adv_Ed_Core_Rules.pdf` (englisch) — alle liegen lokal im
 Repo, sind aber per `.gitignore` ausgeschlossen.
+
+## Abenteuer
+
+Im Ordner [`Abenteuer/`](Abenteuer/index.html) liegen Spielleiter-Abläufe zu
+englischen One-Sheets, aufbereitet für den deutschen Tisch: Szene für Szene,
+Vorlesetexte übersetzt, Statblocks dort abgedruckt, wo die Szene sie braucht,
+Regelverweise auf *Der Unheimliche Westen* und die *Abenteuer-Edition* mit
+Seitenzahl. Eigene Ergänzungen sind als solche markiert.
+
+- [**Dead Men Walkin'**](Abenteuer/Dead-Men-Walking_SL-Ablauf.html) von Shane Lacy
+  Hensley — sieben Szenen auf den High Plains, mit geplantem TPK in den ersten
+  20 Minuten und einem Runde für Runde durchgespielten Beispielkampf.
+- [**… bist das du?**](Abenteuer/Is-That-You_SL-Ablauf.html) von Matthew Cutter —
+  sechs Szenen in Roswell: eine Sturmnacht, ein Gestaltwandler am Ofen und eine
+  Sturzflut. Kein Kampf bis zum Schluss.
+
+Diese Seiten sind von Hand geschrieben, nicht aus Markdown erzeugt —
+`build_html.py` fasst sie nicht an. Die Quell-PDFs der One-Sheets bleiben per
+`.gitignore` draußen.
 
 ## Vor Sitzung eins besprechen
 

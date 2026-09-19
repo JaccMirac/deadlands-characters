@@ -152,7 +152,7 @@ footer a{color:var(--muted)}
 </head>
 <body>
 <div class="wrap">
-<nav class="top"><a href="README.html">Repo</a><a href="Charakterideen.html">Charaktere</a><a href="Regelnotizen.html">Regelnotizen</a></nav>
+<nav class="top"><a href="README.html">Repo</a><a href="Charakterideen.html">Charaktere</a><a href="Regelnotizen.html">Regelnotizen</a><a href="Abenteuer/index.html">Abenteuer</a></nav>
 <h1>Deadlands Characters</h1>
 <p>Charaktere fuer Deadlands: The Weird West (Savage Worlds Adventure Edition).</p>
 <h2>Aufbau</h2>
@@ -187,6 +187,10 @@ footer a{color:var(--muted)}
 <tr>
 <td><code>Bilder/</code></td>
 <td>Die fertigen Midjourney-Bilder, flach, benannt wie die Charakterdateien</td>
+</tr>
+<tr>
+<td><a href="Abenteuer/index.html"><code>Abenteuer/</code></a></td>
+<td>Spielleiter-Abläufe zu One-Sheets, deutsch, Szene für Szene</td>
 </tr>
 <tr>
 <td><code>build_html.py</code></td>
@@ -257,6 +261,23 @@ Seitenzahl belegt (<code>Regelnotizen.md</code>); selbst übersetzt wird nichts.
 <code>Savage Worlds Abenteuer Edition</code> Grundregelwerk (Ulisses) und
 <code>SWADE_Savage_Worlds_Adv_Ed_Core_Rules.pdf</code> (englisch) — alle liegen lokal im
 Repo, sind aber per <code>.gitignore</code> ausgeschlossen.</p>
+<h2>Abenteuer</h2>
+<p>Im Ordner <a href="Abenteuer/index.html"><code>Abenteuer/</code></a> liegen Spielleiter-Abläufe zu
+englischen One-Sheets, aufbereitet für den deutschen Tisch: Szene für Szene,
+Vorlesetexte übersetzt, Statblocks dort abgedruckt, wo die Szene sie braucht,
+Regelverweise auf <em>Der Unheimliche Westen</em> und die <em>Abenteuer-Edition</em> mit
+Seitenzahl. Eigene Ergänzungen sind als solche markiert.</p>
+<ul>
+<li><a href="Abenteuer/Dead-Men-Walking_SL-Ablauf.html"><strong>Dead Men Walkin&rsquo;</strong></a> von Shane Lacy
+  Hensley — sieben Szenen auf den High Plains, mit geplantem TPK in den ersten
+  20 Minuten und einem Runde für Runde durchgespielten Beispielkampf.</li>
+<li><a href="Abenteuer/Is-That-You_SL-Ablauf.html"><strong>… bist das du?</strong></a> von Matthew Cutter —
+  sechs Szenen in Roswell: eine Sturmnacht, ein Gestaltwandler am Ofen und eine
+  Sturzflut. Kein Kampf bis zum Schluss.</li>
+</ul>
+<p>Diese Seiten sind von Hand geschrieben, nicht aus Markdown erzeugt —
+<code>build_html.py</code> fasst sie nicht an. Die Quell-PDFs der One-Sheets bleiben per
+<code>.gitignore</code> draußen.</p>
 <h2>Vor Sitzung eins besprechen</h2>
 <p>Zwei Punkte im Grundbuch, die eine Tischabsprache verdienen:</p>
 <ul>
