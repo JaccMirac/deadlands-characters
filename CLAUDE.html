@@ -441,6 +441,24 @@ Regelseiten und hängt automatisch an, was auf dem Charakterbogen keinen Platz
 mehr hatte: gekürzte Einträge und ganz weggefallene Zeilen. Deshalb füllt das
 Dossier den Bogen inzwischen bei <em>jedem</em> Lauf neu — nur so kennt es die Reste
 (<code>bs.fuelle</code> gibt sie in <code>gekuerzt</code> und <code>weggefallen</code> zurück).</p>
+<p><strong>Der Satz sucht sich seine Dichte selbst.</strong> Eine Regelseite mit drei Zeilen
+Rest kostet im Druck ein ganzes Blatt — und genau so lief es vorher: sechs der
+neun Dossiers endeten auf einer Seite, die zu 5 bis 20 Prozent gefüllt war.
+<code>_passend()</code> rendert die Regelseiten deshalb mehrfach und nimmt den
+<strong>größten Satzfaktor, der mit der kleinsten Seitenzahl auskommt</strong>. Beide
+Hälften des Satzes sind nötig: die kleinste Seitenzahl spart die Blätter, und
+weil unter allen Faktoren mit dieser Seitenzahl der größte gewinnt, ist die
+letzte Seite danach von selbst voll — ein Faktor, bei dem noch viel Luft
+bliebe, würde vom nächstgrößeren geschlagen. <code>_css()</code> skaliert dafür alle
+px-Werte, also Schriftgrade <em>und</em> Abstände; die Zeilenhöhen sind
+Verhältniszahlen und wachsen von allein mit. <code>DICHTE_MIN = 0.88</code> ist die
+Lesbarkeitsgrenze, nicht der Ehrgeiz: darunter fällt der Regeltext unter 8 pt.
+Gedehnt (bis <code>DICHTE_MAX = 1.06</code>) wird nur, wenn selbst die stärkste Stauchung
+die letzte Seite nicht einspart und sie trotzdem unter <code>FUELLUNG_OK</code> bleibt —
+dann ist das Blatt ohnehin bezahlt und darf gut aussehen. Der Lauf schreibt
+den gewählten Faktor hinter die Seitenzahl (<code>Satz 94 %</code>); steht dort nichts,
+war 100 % die beste Wahl. <strong>Das Deckblatt bleibt außen vor</strong>, es ist per
+Definition eine Seite.</p>
 <p><strong>Reihenfolge beim Verkleinern.</strong> <code>doc.subset_fonts()</code> läuft im Dossier
 <strong>vor</strong> dem Anhängen des Bogens. Es ist nur wegen der 3,5-MB-CJK-Schrift des
 Deckblatts da; der offizielle Bogen bringt fünf eingebettete Zierschriften

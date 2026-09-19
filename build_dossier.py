@@ -7,7 +7,10 @@
     Seite 3  der ausgefuellte Charakterbogen (aus build_sheets.py)
 
 Seite 2 kann auf mehrere Seiten laufen, wenn die Regeltexte lang sind; der
-Bogen ist immer die letzte Seite.
+Bogen ist immer die letzte Seite. Wie dicht dabei gesetzt wird, sucht das
+Skript selbst: es nimmt den groessten Satzfaktor, der noch mit der kleinsten
+Seitenzahl auskommt -- eine Seite mit drei Zeilen Rest kostet im Druck ein
+ganzes Blatt.
 
 WICHTIG -- Urheberrecht: die Regeltexte werden bei *jedem* Lauf frisch aus
 den lokalen PDFs gezogen und liegen **nirgends** im Repo. Ebenso die
@@ -368,12 +371,34 @@ def archiv(bild=None, cjk=False):
     return a, ("\n".join(faces) + "\n") if faces else ""
 
 
-def _seiten(html, arch_css, rect=RAND, einseitig=False):
+# Satzdichte. Der Grundsatz (1.0) ist die Vorgabe oben; gestaucht wird nur,
+# solange es ein ganzes Blatt spart, gedehnt nur, wenn sonst eine fast leere
+# Seite mitgedruckt wuerde. 0.88 ist die Lesbarkeitsgrenze: darunter faellt
+# der Regeltext unter 8 pt und ist am Tisch bei Kerzenlicht nicht mehr zu
+# gebrauchen.
+DICHTE_MIN, DICHTE_MAX, DICHTE_SCHRITT = 0.88, 1.06, 0.02
+
+# Ab dieser Fuellung der letzten Seite gilt das Blatt als bezahlt; darunter
+# wird gedehnt, damit der Text die Seite auch traegt.
+FUELLUNG_OK = 0.70
+
+
+def _css(faktor):
+    """Der Satz als Ganzes, um faktor skaliert. Nur px-Werte werden
+    angefasst -- Schriftgrade *und* Abstaende --, die Zeilenhoehen sind
+    Verhaeltniszahlen und wachsen von allein mit."""
+    if abs(faktor - 1.0) < 1e-9:
+        return CSS
+    return re.sub(r"(\d+(?:\.\d+)?)px",
+                  lambda m: u"%.2fpx" % (float(m.group(1)) * faktor), CSS)
+
+
+def _seiten(html, arch_css, rect=RAND, einseitig=False, faktor=1.0):
     """Rendert HTML in so viele Letter-Seiten, wie noetig, und gibt ein
     fertiges fitz.Document zurueck."""
     puffer = io.BytesIO()
     arch, faces = arch_css
-    story = fitz.Story(html=html, user_css=faces + CSS, archive=arch)
+    story = fitz.Story(html=html, user_css=faces + _css(faktor), archive=arch)
     schreiber = fitz.DocumentWriter(puffer)
     weiter = 1
     while weiter:
@@ -389,6 +414,54 @@ def _seiten(html, arch_css, rect=RAND, einseitig=False):
     for seite in doc:                       # Pergamentgrund unter den Text
         seite.draw_rect(PAPIER, color=None, fill=CREME, overlay=False)
     return doc
+
+
+def _fuellung(doc):
+    """Wie weit der Text die letzte Seite fuellt (0..1)."""
+    unten = [b[3] for b in doc[-1].get_text("blocks") if b[4].strip()]
+    return (max(unten) - RAND.y0) / (RAND.y1 - RAND.y0) if unten else 0.0
+
+
+def _passend(html, arch):
+    """Setzt die Regelseiten so, dass kein fast leeres Blatt uebrig bleibt.
+
+    Gesucht ist der *groesste* Satzfaktor, der mit der *kleinsten* Seitenzahl
+    auskommt. Beides zusammen ist der Trick: die kleinste Seitenzahl spart im
+    Druck ganze Blaetter, und weil unter allen Faktoren mit dieser Seitenzahl
+    der groesste gewinnt, ist die letzte Seite danach von selbst voll -- ein
+    Faktor, bei dem noch viel Luft bliebe, wuerde ja vom naechstgroesseren
+    geschlagen.
+
+    Gedehnt (ueber 1.0) wird nur im Ausnahmefall: wenn selbst die staerkste
+    Stauchung die letzte Seite nicht einspart, sie aber trotzdem kaum Text
+    traegt. Dann ist das Blatt ohnehin bezahlt und darf gut aussehen.
+    """
+    doc = _seiten(html, arch)
+    n0, f0 = doc.page_count, _fuellung(doc)
+    seiten, satz = n0, 1.0
+
+    f = 1.0
+    while f > DICHTE_MIN + 1e-9:                 # stauchen, solange es lohnt
+        f = round(f - DICHTE_SCHRITT, 2)
+        d = _seiten(html, arch, faktor=f)
+        if d.page_count < seiten:
+            doc.close()
+            doc, seiten, satz = d, d.page_count, f
+        else:
+            d.close()
+
+    if seiten == n0 and f0 < FUELLUNG_OK:        # nichts zu holen: dann fuellen
+        f = 1.0
+        while f < DICHTE_MAX - 1e-9:
+            f = round(f + DICHTE_SCHRITT, 2)
+            d = _seiten(html, arch, faktor=f)
+            if d.page_count > n0:
+                d.close()
+                break
+            doc.close()
+            doc, satz = d, f
+
+    return doc, satz
 
 
 # 2:3-Portraet, so gross wie es neben Titel und Zitat passt. Lange Zitate
@@ -482,7 +555,7 @@ def regelseiten(name, raw, d_build, reste=None):
             teile.append(md_zu_html(notiz))
         if nachtrag:
             teile.append(md_zu_html(u"\n".join(nachtrag)))
-    return _seiten(u"".join(teile), archiv())
+    return _passend(u"".join(teile), archiv())
 
 
 # ---------------------------------------------------------------------------
@@ -507,7 +580,7 @@ def dossier(pfad_md, ziel):
     doc = fitz.open()
     t = titelseite(name, arche, zitat(raw), bild, cjk_teil(raw))
     doc.insert_pdf(t); t.close()
-    r = regelseiten(name, raw, d_build, info)
+    r, satz = regelseiten(name, raw, d_build, info)
     doc.insert_pdf(r); r.close()
 
     # Verkleinern MUSS vor dem Bogen passieren. Die CJK-Schrift, derentwegen
@@ -528,7 +601,7 @@ def dossier(pfad_md, ziel):
     doc.save(ziel, garbage=4, deflate=True)
     seiten = doc.page_count
     doc.close()
-    return seiten
+    return seiten, satz
 
 
 def bh_block(raw, name):
@@ -557,10 +630,13 @@ def main(argv):
     for src in dateien:
         basis = os.path.splitext(os.path.basename(src))[0]
         ziel = os.path.join(AUSGABE, basis + "-dossier.pdf")
-        n = dossier(src, ziel)
-        if n:
+        erg = dossier(src, ziel)
+        if erg:
+            n, satz = erg
             fertig.append(ziel)
-            print(u"  %-46s %d Seiten" % (basis, n))
+            print(u"  %-46s %d Seiten%s"
+                  % (basis, n, u"" if satz == 1.0 else u"   Satz %d %%"
+                     % round(satz * 100)))
 
     if len(fertig) > 1:
         sammel = fitz.open()

@@ -300,6 +300,25 @@ mehr hatte: gekürzte Einträge und ganz weggefallene Zeilen. Deshalb füllt das
 Dossier den Bogen inzwischen bei *jedem* Lauf neu — nur so kennt es die Reste
 (`bs.fuelle` gibt sie in `gekuerzt` und `weggefallen` zurück).
 
+**Der Satz sucht sich seine Dichte selbst.** Eine Regelseite mit drei Zeilen
+Rest kostet im Druck ein ganzes Blatt — und genau so lief es vorher: sechs der
+neun Dossiers endeten auf einer Seite, die zu 5 bis 20 Prozent gefüllt war.
+`_passend()` rendert die Regelseiten deshalb mehrfach und nimmt den
+**größten Satzfaktor, der mit der kleinsten Seitenzahl auskommt**. Beide
+Hälften des Satzes sind nötig: die kleinste Seitenzahl spart die Blätter, und
+weil unter allen Faktoren mit dieser Seitenzahl der größte gewinnt, ist die
+letzte Seite danach von selbst voll — ein Faktor, bei dem noch viel Luft
+bliebe, würde vom nächstgrößeren geschlagen. `_css()` skaliert dafür alle
+px-Werte, also Schriftgrade *und* Abstände; die Zeilenhöhen sind
+Verhältniszahlen und wachsen von allein mit. `DICHTE_MIN = 0.88` ist die
+Lesbarkeitsgrenze, nicht der Ehrgeiz: darunter fällt der Regeltext unter 8 pt.
+Gedehnt (bis `DICHTE_MAX = 1.06`) wird nur, wenn selbst die stärkste Stauchung
+die letzte Seite nicht einspart und sie trotzdem unter `FUELLUNG_OK` bleibt —
+dann ist das Blatt ohnehin bezahlt und darf gut aussehen. Der Lauf schreibt
+den gewählten Faktor hinter die Seitenzahl (`Satz 94 %`); steht dort nichts,
+war 100 % die beste Wahl. **Das Deckblatt bleibt außen vor**, es ist per
+Definition eine Seite.
+
 **Reihenfolge beim Verkleinern.** `doc.subset_fonts()` läuft im Dossier
 **vor** dem Anhängen des Bogens. Es ist nur wegen der 3,5-MB-CJK-Schrift des
 Deckblatts da; der offizielle Bogen bringt fünf eingebettete Zierschriften

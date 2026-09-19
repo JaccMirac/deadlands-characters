@@ -67,6 +67,11 @@ python build_dossier.py
 Die Regeltexte werden bei jedem Lauf aus den lokalen Regelwerk-PDFs gelesen und
 liegen nicht im Repo.
 
+Wie dicht gesetzt wird, entscheidet das Skript je Figur: Es nimmt den größten
+Satzfaktor, der noch mit der kleinsten Seitenzahl auskommt. So bleibt keine
+fast leere Seite übrig, die im Druck ein volles Blatt kosten würde — der Lauf
+meldet den Faktor hinter der Seitenzahl, wenn er von 100 % abweicht.
+
 Alle Builds sind **Novize** nach Standard-Erschaffung: 5 Attributspunkte,
 12 Fertigkeitspunkte, bis zu 4 Handicap-Punkte, 250 Dollar Startgeld.
 Talente und Handicaps sind englisch benannt, mit dem **gedruckten** deutschen
