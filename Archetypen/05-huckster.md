@@ -10,6 +10,7 @@
 
 - [Cordelia „Cold Deck" Vance](../Charaktere/05-1-cordelia-cold-deck-vance.md) — **Einsteigerfigur**
 - [Elijah Prosper Teague](../Charaktere/05-2-elijah-prosper-teague.md)
+- [„Shady" Doug Liveaux](../Charaktere/05-3-shady-doug-liveaux.md) — **PEG-Pregen**
 
 ---
 

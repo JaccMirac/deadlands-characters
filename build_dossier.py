@@ -55,8 +55,8 @@ ABSCHNITTE = [u"Hintergrund", u"Die Rechnung", u"Am Tisch",
 # der Offset rechnet den PDF-Index auf die gedruckte Seitenzahl um.
 QUELLEN = [
     (u"Grundbuch",      "Deadlands_Grundbuch.pdf",                    "de",  0),
-    (u"SWADE (dt.)",    "US85001PDF_Savage_Worlds_Abenteuer_Edition_"
-                        "LZ_meta_Vierte_Auflage.pdf",                 "de",  0),
+    (u"SWADE (dt.)",    "US85001PDF_Savage_Worlds_Abenteuer-Edition_"
+                        "Sechste_Auflage_Kauf_PDF_260108_LZ_meta.pdf", "de",  0),
     (u"Deadlands: TWW", "0-deadlands-the-weird-westpdf_compress-2.pdf", "en", -1),
     (u"SWADE",          "SWADE_Savage_Worlds_Adv_Ed_Core_Rules.pdf",   "en", -1),
 ]

@@ -72,14 +72,17 @@ DE = {
     u"Superior Kung Fu":                 (u"Überlegenes Kung Fu", True),                         # GB S. 56
     u"Supernatural Attribute":           (u"Übernatürliches Attribut", True),                    # GB S. 61
     u"Ore Eater":                        (u"Erzfresser", True),                                  # GB S. 73
+    u"True Genius":                      (u"Wahres Genie", True),                                # GB S. 74
     # -- Deadlands-eigene Handicaps ---------------------------------------
     u"Grim Servant o' Death":            (u"Grimmiger Diener des Todes", True),                  # GB S. 15
     u"Night Terrors":                    (u"Nachtängste", True),                                 # GB S. 16
     u"Talisman":                         (u"Talisman", True),                                    # GB S. 16
     u"Oath of the Old Ways":              (u"Eid auf die Alten Bräuche", True),                   # GB S. 15
     u"Ailin'":                            (u"Kränkelnd", True),                                   # GB S. 16
+    u"Heavy Sleeper":                     (u"Tiefer Schlaf", True),                               # GB S. 16
     # -- Talente aus SWADE ------------------------------------------------
     u"Alertness":                        (u"Aufmerksamkeit", True),                              # SW S. 38
+    u"Attractive":                       (u"Attraktiv", True),                                   # SW S. 37
     u"Ambidextrous":                     (u"Beidhändig", True),                                  # SW S. 38
     u"Brawny":                           (u"Kräftig", True),                                     # SW S. 39
     u"Charismatic":                      (u"Charismatisch", True),                               # SW S. 38
@@ -105,6 +108,8 @@ DE = {
     u"Danger Sense":                     (u"Sechster Sinn", True),                               # SW S. 52
     # -- Handicaps aus SWADE ----------------------------------------------
     u"Illiterate":                       (u"Analphabet", True),                                  # SW S. 22
+    u"Obese":                            (u"Fettleibig", True),                                  # SW S. 24
+    u"Delusional":                       (u"Wahnvorstellungen", True),                           # SW S. 28
     u"Habit":                            (u"Angewohnheit", True),                                # SW S. 22
     u"Arrogant":                         (u"Arrogant", True),                                    # SW S. 23
     u"Outsider":                         (u"Außenseiter", True),                                 # SW S. 23

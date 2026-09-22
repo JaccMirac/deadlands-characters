@@ -159,7 +159,9 @@ footer a{color:var(--muted)}
 <p>Spielleiter-Vorbereitung für eine Runde <strong>Deadlands: The Weird West</strong> auf
 <strong>SWADE</strong>. Kein Code-Projekt — der Inhalt sind Charaktere, der einzige Code ist
 ein kleiner Renderer. 13 Archetypen, je 2 Figuren, dazu sechs weitere für den
-Einstieg, macht 32 Charaktere. Das <strong>Einsteiger-Set</strong> in <code>Charakterideen.md</code>
+Einstieg und die fünf offiziellen PEG-Pregens aus <code>Pregens_Deadlands01.pdf</code>
+(auf SWADE konvertiert, je als <code>NN-4-…</code> bzw. <code>05-3</code>/<code>09-3</code> einsortiert),
+macht 37 Charaktere. Das <strong>Einsteiger-Set</strong> in <code>Charakterideen.md</code>
 umfasst neun davon: die sechs neuen plus Cordelia Vance, Lam Ah-Yuen und
 Walking Thunder, die schon da waren. Genau diese neun stehen in <code>AUSWAHL</code>. Alles
 auf Deutsch, weil am Tisch Deutsch gesprochen wird.</p>
@@ -309,11 +311,11 @@ Schrift im Titel (<code>林亞元</code>) kann dort nicht stehen; sie wird entfe
 gemeldet. Für den Bogen zählt der lateinische Name.</p>
 <p><strong>Smartypants frisst <code>--</code>.</strong> Der Renderer läuft mit der <code>smarty</code>-Erweiterung,
 die doppelte Bindestriche zu Halbgeviertstrichen macht. In Codeblöcken tut sie
-das nachweislich <em>nicht</em>, und genau darauf verlassen sich die 33
+das nachweislich <em>nicht</em>, und genau darauf verlassen sich die 38
 Midjourney-Prompts, deren Parameter (<code>--ar 2:3 --stylize 150</code>) sonst lautlos
 unbrauchbar würden. <strong>Prompts gehören deshalb immer in einen Fenced Code
 Block.</strong> Nach Änderungen an <code>Bildprompts.md</code> gegenprüfen:</p>
-<pre><code>grep -c -- &quot;--ar 2:3 --stylize 150&quot; Bildprompts.html   # muss 33 sein
+<pre><code>grep -c -- &quot;--ar 2:3 --stylize 150&quot; Bildprompts.html   # muss 38 sein
 grep -c &quot;&amp;ndash;ar&quot; Bildprompts.html                   # muss 0 sein
 </code></pre>
 <p>Ebenfalls schon repariert und nicht wieder kaputtmachen: das <code>re.sub</code> auf
@@ -480,11 +482,12 @@ Buchtext, wo es einen gibt — das sind genau die Deadlands-<em>eigenen</em> Ein
 (Arkaner Hintergrund (Chi-Meister), Überlegenes Kung Fu, Galgenhumor) — und
 sonst den englischen aus SWADE. <code>--en</code> schaltet auf durchgehend englisch.</p>
 <h2>Was als Nächstes ansteht</h2>
-<p>Erledigt: 31 der 32 Figurenbilder liegen in <code>Bilder/</code> (dazu das NSC-Porträt
+<p>Erledigt: 31 der 37 Figurenbilder liegen in <code>Bilder/</code> (dazu das NSC-Porträt
 <code>05-1-mr-pettibone.png</code>), und <code>build_html.py</code> setzt beim Rendern von
 <code>Charaktere/X.md</code> ein vorhandenes <code>Bilder/X.png</code> als Porträt unter den Titel
-(<code>figure.portrait</code>). <strong>Es fehlen noch zwei:</strong> <code>07-3-patience-ludlow-die-quakerin</code>
-und <code>13-3-josephine-jo-pike-die-wanderfotografin</code>; die Prompts stehen bereit.</p>
+(<code>figure.portrait</code>). <strong>Es fehlen noch sieben:</strong> <code>07-3-patience-ludlow-die-quakerin</code>,
+<code>13-3-josephine-jo-pike-die-wanderfotografin</code> und die fünf PEG-Pregens
+(<code>01-4</code>, <code>05-3</code>, <code>07-4</code>, <code>09-3</code>, <code>12-4</code>); die Prompts stehen bereit.</p>
 <ol>
 <li><strong>Die Stilklammer ist noch nicht gesetzt.</strong> Der Plan steht in
    <code>Bildprompts.md</code>: einen Prompt laufen lassen, vom schönsten Ergebnis den

@@ -7,7 +7,9 @@ Handreichung für eine Sitzung, die dieses Repo zum ersten Mal sieht.
 Spielleiter-Vorbereitung für eine Runde **Deadlands: The Weird West** auf
 **SWADE**. Kein Code-Projekt — der Inhalt sind Charaktere, der einzige Code ist
 ein kleiner Renderer. 13 Archetypen, je 2 Figuren, dazu sechs weitere für den
-Einstieg, macht 32 Charaktere. Das **Einsteiger-Set** in `Charakterideen.md`
+Einstieg und die fünf offiziellen PEG-Pregens aus `Pregens_Deadlands01.pdf`
+(auf SWADE konvertiert, je als `NN-4-…` bzw. `05-3`/`09-3` einsortiert),
+macht 37 Charaktere. Das **Einsteiger-Set** in `Charakterideen.md`
 umfasst neun davon: die sechs neuen plus Cordelia Vance, Lam Ah-Yuen und
 Walking Thunder, die schon da waren. Genau diese neun stehen in `AUSWAHL`. Alles
 auf Deutsch, weil am Tisch Deutsch gesprochen wird.
@@ -140,13 +142,13 @@ gemeldet. Für den Bogen zählt der lateinische Name.
 
 **Smartypants frisst `--`.** Der Renderer läuft mit der `smarty`-Erweiterung,
 die doppelte Bindestriche zu Halbgeviertstrichen macht. In Codeblöcken tut sie
-das nachweislich *nicht*, und genau darauf verlassen sich die 33
+das nachweislich *nicht*, und genau darauf verlassen sich die 38
 Midjourney-Prompts, deren Parameter (`--ar 2:3 --stylize 150`) sonst lautlos
 unbrauchbar würden. **Prompts gehören deshalb immer in einen Fenced Code
 Block.** Nach Änderungen an `Bildprompts.md` gegenprüfen:
 
 ```
-grep -c -- "--ar 2:3 --stylize 150" Bildprompts.html   # muss 33 sein
+grep -c -- "--ar 2:3 --stylize 150" Bildprompts.html   # muss 38 sein
 grep -c "&ndash;ar" Bildprompts.html                   # muss 0 sein
 ```
 
@@ -345,11 +347,12 @@ sonst den englischen aus SWADE. `--en` schaltet auf durchgehend englisch.
 
 ## Was als Nächstes ansteht
 
-Erledigt: 31 der 32 Figurenbilder liegen in `Bilder/` (dazu das NSC-Porträt
+Erledigt: 31 der 37 Figurenbilder liegen in `Bilder/` (dazu das NSC-Porträt
 `05-1-mr-pettibone.png`), und `build_html.py` setzt beim Rendern von
 `Charaktere/X.md` ein vorhandenes `Bilder/X.png` als Porträt unter den Titel
-(`figure.portrait`). **Es fehlen noch zwei:** `07-3-patience-ludlow-die-quakerin`
-und `13-3-josephine-jo-pike-die-wanderfotografin`; die Prompts stehen bereit.
+(`figure.portrait`). **Es fehlen noch sieben:** `07-3-patience-ludlow-die-quakerin`,
+`13-3-josephine-jo-pike-die-wanderfotografin` und die fünf PEG-Pregens
+(`01-4`, `05-3`, `07-4`, `09-3`, `12-4`); die Prompts stehen bereit.
 
 1. **Die Stilklammer ist noch nicht gesetzt.** Der Plan steht in
    `Bildprompts.md`: einen Prompt laufen lassen, vom schönsten Ergebnis den

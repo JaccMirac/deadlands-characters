@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Father Sam Johnson</title>
+<style>
+:root{
+  --bg:#f4efe4; --panel:#fbf8f1; --ink:#241d16; --muted:#6b5d4c;
+  --rule:#d8cdb8; --accent:#8c2f1d; --accent-soft:#b5563f;
+  --quote-bg:#efe7d6; --code-bg:#e9e0cd; --link:#7a3b12;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+    --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+    --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17140f; --panel:#1f1b15; --ink:#ece4d6; --muted:#a2937d;
+  --rule:#3a3227; --accent:#e0755c; --accent-soft:#c9634c;
+  --quote-bg:#241f18; --code-bg:#2a241c; --link:#e2a06f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+nav.top{
+  font:600 .72rem/1 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid var(--rule);
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+}
+nav.top a{color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--accent)}
+h1{
+  font-size:2rem;line-height:1.15;margin:0 0 1.5rem;
+  font-weight:700;letter-spacing:-.01em;
+}
+h2{
+  font-size:1.05rem;margin:2.75rem 0 .9rem;color:var(--accent);
+  font:700 .82rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+h3{font-size:1.12rem;margin:2rem 0 .6rem;font-weight:700}
+p,ul,ol{margin:0 0 1.05rem}
+ul,ol{padding-left:1.35rem}
+li{margin-bottom:.4rem}
+li>ul,li>ol{margin-top:.4rem}
+a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+a:hover{color:var(--accent);border-bottom-color:var(--accent-soft)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
+blockquote{
+  margin:1.5rem 0;padding:.9rem 1.25rem;background:var(--quote-bg);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+  font-size:1.05rem;
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote h3{margin-top:0;font-size:1rem;color:var(--accent)}
+code{
+  background:var(--code-bg);padding:.12em .38em;border-radius:3px;
+  font:.86em/1.4 ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+pre{background:var(--code-bg);padding:1rem;border-radius:5px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tablewrap{overflow-x:auto;margin:0 0 1.25rem}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+th,td{padding:.5rem .7rem;text-align:left;border-bottom:1px solid var(--rule);
+      vertical-align:top}
+th{
+  font:700 .72rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+tbody tr:last-child td{border-bottom:0}
+figure.portrait{margin:0 0 2rem}
+figure.portrait img{
+  display:block;width:100%;max-width:22rem;margin:0 auto;height:auto;
+  border-radius:6px;border:1px solid var(--rule);
+}
+footer{
+  margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:.85rem;
+}
+footer a{color:var(--muted)}
+
+/* ---- Baukasten / Charakterbogen ---- */
+.charsheet{
+  margin:0 0 2.5rem;padding:1.15rem 1.35rem 1.35rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:8px;
+}
+.charsheet h3{
+  margin:0 0 .55rem;font:700 .72rem/1.3 ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.charsheet .cs-pts{
+  font:700 .68rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;
+  color:var(--muted);border:1px solid var(--rule);border-radius:999px;
+  padding:.22em .6em;white-space:nowrap;
+}
+.charsheet .cs-pts.bad{color:#fff;background:var(--accent);border-color:var(--accent)}
+.cs-cols{display:grid;grid-template-columns:1fr 1.5fr;gap:1.75rem}
+@media(max-width:36rem){.cs-cols{grid-template-columns:1fr;gap:1.4rem}}
+.charsheet table{width:100%;font-size:.9rem;border-collapse:collapse}
+.charsheet td,.charsheet th{padding:.26rem .45rem;border:0;vertical-align:baseline}
+.charsheet tbody tr:not(:last-child) td{border-bottom:1px solid var(--rule)}
+.charsheet .die{font-weight:700;white-space:nowrap}
+.charsheet .lnk{color:var(--muted);font-size:.82em}
+.charsheet .num{text-align:right;font-variant-numeric:tabular-nums;
+  color:var(--muted);white-space:nowrap}
+.charsheet .free{color:var(--muted);font-style:italic}
+.cs-derived{
+  margin:1.2rem 0 0;padding-top:.95rem;border-top:1px solid var(--rule);
+  font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.03em;
+  display:flex;flex-wrap:wrap;gap:.45rem 1.75rem;
+}
+.cs-derived span{color:var(--muted)}
+.cs-derived b{color:var(--ink);font-weight:700}
+.cs-ledger{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:36rem){.cs-ledger{grid-template-columns:1fr;gap:1.4rem}}
+.cs-ledger ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-ledger li{margin-bottom:.3rem}
+.cs-ledger .tag{color:var(--muted);font-size:.82em}
+.cs-kit{margin-top:1.2rem;padding-top:.95rem;border-top:1px solid var(--rule)}
+.cs-kit h4{
+  margin:0 0 .5rem;font:700 .68rem/1.3 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+}
+.cs-kit + .cs-kit{margin-top:1.1rem}
+.cs-kit ul{margin:0;padding-left:1.15rem;font-size:.9rem}
+.cs-kit li{margin-bottom:.25rem}
+.cs-kit .note{color:var(--muted);font-size:.88em}
+.cs-kit .cost{color:var(--muted);font-variant-numeric:tabular-nums}
+.cs-purse{margin-top:.55rem;font:.82rem/1.5 ui-sans-serif,system-ui,sans-serif;
+  color:var(--muted);letter-spacing:.03em}
+.cs-purse b{color:var(--ink)}
+.cs-purse.bad b{color:var(--accent)}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.top{display:none}
+  .wrap{max-width:none;padding:0}
+  a{color:#000;border:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="top"><a href="../README.html">Repo</a><a href="../Charakterideen.html">Charaktere</a><a href="../Regelnotizen.html">Regelnotizen</a></nav>
+<h1>Father Sam Johnson</h1>
+<p><em>Archetyp: <a href="../Archetypen/07-blessed.html">BLESSED (Gesegnete)</a></em></p>
+<p><em>Offizieller PEG-Pregen (<code>Pregens_Deadlands01.pdf</code>, Deadlands Reloaded), für SWADE neu gebaut.</em></p>
+<blockquote>
+<p><em>Ein Engel sagte ihm, das Flüstern hinter den Maschinen seien Dämonen. Er hat gekündigt, sich Gott zugewandt und auf dem Weg hinaus eine Gatling-Schrotflinte mitgenommen. Er nennt das seine letzte Sünde. Hellstromme nennt es Diebstahl im Wert von zweitausend Dollar.</em></p>
+</blockquote>
+<section class="charsheet"><div class="cs-cols"><div class="cs-block"><h3>Attributes <span class="cs-pts">5 / 5</span></h3><div class="tablewrap"><table><tbody><tr><td>Agility</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Smarts</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Spirit</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Strength</td><td class="die">d8</td><td class="num">2</td></tr><tr><td>Vigor</td><td class="die">d4</td><td class="num">0</td></tr></tbody></table></div></div><div class="cs-block"><h3>Skills <span class="cs-pts">12 / 12</span></h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Attr.</th><th>Die</th><th class="num">Pts.</th></tr></thead><tbody><tr><td>Faith</td><td class="lnk">Spi</td><td class="die">d8</td><td class="num">4</td></tr><tr><td>Persuasion</td><td class="lnk">Spi</td><td class="die">d6</td><td class="num">1</td></tr><tr><td>Repair</td><td class="lnk">Sma</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Shooting</td><td class="lnk">Agi</td><td class="die">d6</td><td class="num">2</td></tr><tr><td>Healing</td><td class="lnk">Sma</td><td class="die">d4</td><td class="num">1</td></tr><tr><td>Occult</td><td class="lnk">Sma</td><td class="die">d4</td><td class="num">1</td></tr><tr><td>Fighting</td><td class="lnk">Agi</td><td class="die">d4</td><td class="num">1</td></tr><tr><td>Notice</td><td class="lnk">Sma</td><td class="die">d4</td><td class="num"><span class="free">core</span></td></tr></tbody></table></div></div></div><div class="cs-derived"><span>Pace</span> <b>5</b><span>Parry</span> <b>4</b><span>Toughness</span> <b>5 (4 + 1 Fettleibig)</b></div><div class="cs-ledger"><div class="cs-block"><h3>Hindrances <span class="cs-pts">4 / 4</span></h3><ul><li>Wanted (Major) <span class="tag">2</span></li><li>Vow (Minor) <span class="tag">1</span></li><li>Obese (Minor) <span class="tag">1</span></li></ul></div><div class="cs-block"><h3>Edges</h3><ul><li>Arcane Background (Blessed) <span class="tag">free: Human</span></li><li>Guts <span class="tag">Hindrance</span></li><li>Luck <span class="tag">Hindrance</span></li></ul></div></div><div class="cs-kit"><h4>Gear</h4><ul><li>Schrotpatronen, 40 <span class="cost">$4</span></li><li>Werkzeugsatz <span class="cost">$25</span> <span class="note">&mdash; ignoriert bis zu 2 Punkte Abzug beim Reparieren — er weiß noch, wie die Höllenmaschinen von innen aussehen</span></li><li>Priesterrobe <span class="cost">$5</span> <span class="note">&mdash; als Kleidung gekauft; an der Hüfte glänzt der Stoff, wo die Trommel schleift</span></li><li>Billig-Pferd „Charity" <span class="cost">$75</span> <span class="note">&mdash; störrischer Appaloosa, halber Preis: sie geht nur an, wenn man ihr gut zuredet, und Sam redet gut zu</span></li><li>Sattel und Satteltaschen <span class="cost">$30</span></li><li>Bibel <span class="note">&mdash; zwischen Hesekiel und Daniel liegt ein gefalteter Konstruktionsplan, den er nie wieder ansieht</span></li><li>Feldflasche <span class="cost">$1</span></li><li>Schlafsack <span class="cost">$4</span></li><li>Reise-Rationen, 5 Tage <span class="cost">$2,50</span></li><li>Streichhölzer, Schachtel <span class="cost">50¢</span></li></ul><div class="cs-purse">$148 ausgegeben von $250 &middot; <b>$102</b> Bargeld</div></div><div class="cs-kit"><h4>Weapons</h4><div class="tablewrap"><table><thead><tr><th>Weapon</th><th>Range</th><th>Damage</th><th>AP</th><th>RoF</th><th>Wt.</th><th>Cost</th></tr></thead><tbody><tr><td>Gatling-Schrotflinte</td><td>12/24/48</td><td>1–3W6</td><td>–</td><td>2</td><td>7,5</td><td>–</td></tr><tr><td colspan="7" class="note">15 Schuss, nur volle Feuerrate, Mindeststärke W8 · „geliehen" bei Hellstromme Industries</td></tr><tr><td>Axtstiel</td><td>–</td><td>Stä+W4</td><td>–</td><td>–</td><td>0,5</td><td>$1</td></tr><tr><td colspan="7" class="note">als Keule gekauft (GB S. 29)</td></tr></tbody></table></div></div><div class="cs-kit"><h4>Powers (15 PP)</h4><div class="tablewrap"><table><thead><tr><th>Power</th><th>PP</th><th>Range</th><th>Dur.</th><th>Effect</th></tr></thead><tbody><tr><td>Heiliges Symbol</td><td>3</td><td>Selbst</td><td>5</td><td>übernatürlich Böse müssen eine Willenskraftprobe bestehen, um ihn direkt anzugreifen; –2 für die Kreatur bei einer Steigerung</td></tr><tr><td>Heilung</td><td>3</td><td>Berührung</td><td>Sofort</td><td>entfernt eine Wunde, die jünger als eine Stunde ist; zwei bei einer Steigerung</td></tr><tr><td>Waffe verbessern</td><td>2</td><td>Verstand</td><td>5</td><td>Schaden der Waffe +2, +4 bei einer Steigerung — der Segen liegt auf der Trommel</td></tr></tbody></table></div></div><div class="cs-kit"><p class="note">Die Gatling-Schrotflinte kostet eigentlich $1.000 — sie ist Teil der Vorgeschichte, so steht es ausdrücklich im PEG-Original („That's the nice thing about RPGs — sometimes you get to break the rules!"). Der Steckbrief über $2.000 gehört zum selben Geschäft.</p></div><div class="cs-kit"><p class="note">Guts: freie Wiederholung bei Furchtproben · Luck: ein zusätzlicher Benny je Sitzung</p></div><div class="cs-kit"><p class="note">Sünde (GB S. 62): leicht = –2 auf Glaube für eine Woche · schwer = eine Woche ohne Mächte · Todsünde = Mächte weg bis zur Sühne</p></div></section>
+<p><strong>Hintergrund.</strong> Father Sam war eine Zeit lang Feinmechaniker bei <strong>Hellstromme Industries</strong>, bis er eine Vision über die Maschinen hatte, an denen er mitbaute: Ein Engel sagte ihm, die Eingebung hinter den Apparaten sei in Wahrheit das Murmeln von Dämonen. Er schwor jede weitere Mitarbeit an den Höllenmaschinen ab und gab sich Gott hin — seine letzte Sünde war das „Ausleihen“ einer Gatling-Schrotflinte aus der Fabrik, in der er arbeitete. Er weiß noch, wie man die eine oder andere Höllenmaschine repariert, und er beschützt die Unschuldigen mit seiner Gatling. Aber weiter geht es heutzutage nicht mehr.</p>
+<p><strong>Build.</strong> Geschicklichkeit W6, Verstand W6, Geist W6, <strong>Stärke W8</strong>, Konstitution W4 · Bewegung 5, Parade 4, Robustheit 5 (4 + 1 Fettleibig)
+<strong>Glaube W8</strong>, Überreden W6, Reparieren W6, Schießen W6, Heilen W4, Okkultismus W4, Kämpfen W4, Bemerken W4
+Talente: <strong>Arcane Background (Blessed)</strong> (<em>Arkaner Hintergrund (Gesegneter)</em>), <strong>Guts</strong> (<em>Mumm</em>), <strong>Luck</strong> (<em>Glück</em>)
+Handicaps: <strong>Wanted</strong> (<em>Gesucht</em>) — Major: 2.000 Dollar, gezahlt von Hellstromme Industries · <strong>Vow</strong> (<em>Schwur</em>) — Minor: die Unschuldigen vor dem Bösen beschützen · <strong>Obese</strong> (<em>Fettleibig</em>) — Minor: Größe +1, Bewegung –1, Sprintwürfel W4
+Mächte (15 MP): <strong>Heiliges Symbol</strong> (Pflicht), <strong>Heilung</strong>, <strong>Waffe verbessern</strong> — der Segen liegt auf der Trommel: wenn Sam betet, dreht sie sich eine Spur zu leicht.
+<em>Die Stärke W8 ist kein Zufall: die Gatling-Schrotflinte verlangt Mindeststärke W8 — deshalb hat das PEG-Original sie ihm gegeben, und deshalb bleibt sie. Reloadeds „Conviction“ gibt es in SWADE nicht als Talent (dort ist Conviction eine Setting-Regel); daraus wurden Mumm und Glück — die Überzeugung und der Engel, der die Hand über ihn hält. Bewegung 5 und Robustheit 5 stimmen mit dem Original überein.</em></p>
+<p><strong>Aufhänger.</strong> Zweitausend Dollar sind für eine geliehene Flinte zu viel Geld — selbst für Hellstromme. Entweder will der Doktor ein Exempel, oder Sam hat auf dem Weg hinaus mehr mitgenommen als eine Waffe: den Plan in der Bibel zum Beispiel, den er nie wieder ansieht. Und dann ist da die Frage, die er sich nachts stellt: ob der Engel echt war — oder nur die höflichste Stimme im selben Chor.</p>
+<p><strong>Notizen.</strong> So sehen die sechs Zeilen des Bogens am Tisch aus.</p>
+<ul>
+<li><strong>Arcane Background (Blessed)</strong> (<em>Arkaner Hintergrund (Gesegneter)</em>) — Glaube W8, drei Mächte, 15 Machtpunkte. Kein Kartenziehen, keine Fehlfunktion: ein kritischer Fehlschlag kostet eine Stufe Erschöpfung, sonst nichts. Dafür gilt die Sündenregel — und Sams Gelübde macht Wegsehen zur Sünde.</li>
+<li><strong>Guts</strong> (<em>Mumm</em>) — Freie Wiederholung bei Furchtproben. Er hat die Dämonen hinter den Maschinen flüstern hören; so leicht erschrickt er nicht mehr.</li>
+<li><strong>Luck</strong> (<em>Glück</em>) — Ein zusätzlicher Benny je Sitzung. Er sagt danke, jedes Mal, nach oben.</li>
+<li><strong>Wanted</strong> (<em>Gesucht</em>) — Major: 2.000 Dollar von Hellstromme Industries. Die Pinkertons, die das Geld verdienen wollen, sind das kleinere Problem; das größere ist, dass Hellstromme offenbar genau weiß, was die Flinte wert ist.</li>
+<li><strong>Vow</strong> (<em>Schwur</em>) — Minor: die Unschuldigen beschützen. Er steht zwischen ihnen und dem Bösen, buchstäblich, mit seiner ganzen Breite.</li>
+<li><strong>Obese</strong> (<em>Fettleibig</em>) — Minor: Größe +1, Bewegung 5. Er läuft niemandem hinterher. Er muss auch nicht — die Gatling hat Reichweite.</li>
+</ul>
+<p><strong>Warum es Spaß macht.</strong> Ein Priester mit einer Gatling-Schrotflinte ist ein ganzer Charakterbogen in fünf Wörtern. Mechanisch ist er zwei Figuren in einer: der einfachste arkane Hintergrund des Spiels (Glaube würfeln, fertig) und die größte Waffe, die ein Novize tragen kann. Und die Spannung spielt sich von selbst — jede Salve aus fünfzehn Läufen stellt die Frage, ob zwischen den Zielen ein Unschuldiger steht, und sein Schwur verbietet ihm, sie falsch zu beantworten.</p>
+<hr />
+<p>Regelgrundlage: <a href="../Regelnotizen.html">Regelnotizen</a> · <a href="../Archetypen/07-blessed.html">Archetyp-Notizen</a></p>
+<footer>Deadlands: The Weird West &middot; SWADE &middot; erzeugt aus 07-4-father-sam-johnson.md</footer>
+</div>
+</body>
+</html>

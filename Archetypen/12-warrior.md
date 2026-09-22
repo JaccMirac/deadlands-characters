@@ -5,6 +5,7 @@
 - [Wakȟíŋyaŋ Máni („Walking Thunder") — Oglala Lakota](../Charaktere/12-1-wakhiya-mani-walking-thunder-oglala-lakota.md) — **Einsteigerfigur**
 - [Delia „Del" Cobb — Freigelassene, Deserteurin, Preisboxerin](../Charaktere/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.md)
 - [Owain „Owen" Tregarth — neun Tage unter Tage](../Charaktere/12-3-owain-owen-tregarth-der-bergmann.md) — **Einsteigerfigur**
+- [„Plays with Fire"](../Charaktere/12-4-plays-with-fire.md) — **PEG-Pregen**
 
 ---
 

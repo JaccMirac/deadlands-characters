@@ -1,6 +1,6 @@
 # Bildprompts (Midjourney 8.2)
 
-Ein Prompt pro Figur, 32 Stück plus ein NSC, in derselben Reihenfolge wie
+Ein Prompt pro Figur, 37 Stück plus ein NSC, in derselben Reihenfolge wie
 [`Charakterideen.md`](Charakterideen.md). Die Prompts sind englisch, weil
 Midjourney englische Bildbegriffe deutlich zuverlässiger auflöst; die
 Bildidee darüber steht auf Deutsch.
@@ -13,7 +13,7 @@ Versions-Flag. Das `--preview`-Flag aus der Testphase wird nicht mehr
 gebraucht. Wer *zurück* will, hängt `--v 8.1` an. Die Prompts unten sind
 deshalb ohne Versionsangabe geschrieben — sie sind 8.2, weil alles 8.2 ist.
 
-**Ein Deck, ein Look.** 33 Bilder sehen nur dann nach einem Satz
+**Ein Deck, ein Look.** 38 Bilder sehen nur dann nach einem Satz
 Charakterkarten aus, wenn sie eine gemeinsame Stilklammer haben. Der
 Werkzeugkasten dafür in 8.2:
 
@@ -26,7 +26,7 @@ Werkzeugkasten dafür in 8.2:
 | `--hd` | größere Ausgabe, wenn gedruckt werden soll |
 
 Praktisch: **einen** Prompt laufen lassen, das schönste Bild auswählen,
-dessen `--sref`-Code ziehen und ihn an alle 33 anhängen. Der Stilblock
+dessen `--sref`-Code ziehen und ihn an alle 38 anhängen. Der Stilblock
 steht trotzdem in jedem Prompt ausgeschrieben, damit jeder einzeln
 funktioniert.
 
@@ -111,6 +111,16 @@ full length figure, environmental shot of a lean fair-haired woman of twenty-one
 ```
 
 Ablage: `Bilder/01-3-hazel-quist-die-trickschutzin.png`
+
+### [Gabriela „Vendetta" Vasquez](Charaktere/01-4-gabriela-vendetta-vasquez.md)
+
+*Ganz in Schwarz, zwei Peacemaker, ein Blick, der Rechnungen führt. Der PEG-Pregen.*
+
+```
+half-length portrait of a striking Mexican gunfighter woman of twenty-eight dressed all in black, black duster and black stetson, two Colt Peacemakers in a quick draw rig, a bowie knife on the belt, beautiful unforgiving face with eyes that keep accounts, a black mare behind her, falling snow on a high mountain pass, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/01-4-gabriela-vendetta-vasquez.png`
 
 ---
 
@@ -238,6 +248,16 @@ half-length portrait of a thin Black schoolteacher in his forties, wire rimmed s
 
 Ablage: `Bilder/05-2-elijah-prosper-teague.png`
 
+### [„Shady" Doug Liveaux](Charaktere/05-3-shady-doug-liveaux.md)
+
+*Der Arztsohn aus New Orleans, der Hoyle entzifferte. Der PEG-Pregen.*
+
+```
+half-length portrait of a young Creole gambler of twenty-six from New Orleans in a fine tailored suit and silk vest, fanning a hand of playing cards that seems one card too many, a derringer half hidden at the cuff, an educated knowing half-smile, dim saloon back room lit by a single oil lamp, curling cigar smoke, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/05-3-shady-doug-liveaux.png`
+
 ---
 
 ## 06 · [HEXSLINGER (Runenschütze)](Archetypen/06-hexslinger.md)
@@ -296,6 +316,16 @@ half-length portrait of a spare grey-haired woman of forty-three in undyed grey 
 
 Ablage: `Bilder/07-3-patience-ludlow-die-quakerin.png`
 
+### [Father Sam Johnson](Charaktere/07-4-father-sam-johnson.md)
+
+*Der Priester mit der geliehenen Gatling. Der PEG-Pregen.*
+
+```
+half-length portrait of a heavyset preacher of forty-five in a worn black cassock, kind sweating earnest face, carrying an enormous multi-barreled gatling shotgun across his chest the way other men carry a relic, a small bible in the breast pocket, a stubborn appaloosa horse behind him, dusty wooden church steps, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/07-4-father-sam-johnson.png`
+
 ---
 
 ## 08 · [SHAMAN (Schamanen)](Archetypen/08-shaman.md)
@@ -343,6 +373,16 @@ half-length portrait of a grinning gap toothed river salvage tinker of thirty in
 ```
 
 Ablage: `Bilder/09-2-obadiah-pigeon-tuck.png`
+
+### [„Doc Lightning" — Harvey Edward Millstone](Charaktere/09-3-doc-lightning-harvey-edward-millstone.md)
+
+*Die Blitzkanone aus New York, im Feldversuch an großen Kreaturen. Der PEG-Pregen.*
+
+```
+half-length portrait of a wiry inventor of thirty-two with wild hair and singed eyebrows, brass goggles pushed up on his forehead, cradling a copper-coiled lightning gun with leyden jars and a brass horn, faint arcs of static crawling over the coils, caught mid-sentence talking to someone who is not there, cluttered wagon workbench of spare parts behind him, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/09-3-doc-lightning-harvey-edward-millstone.png`
 
 ---
 
@@ -425,6 +465,16 @@ half-length portrait of a thickset dark-haired Welsh coal miner of thirty-five, 
 ```
 
 Ablage: `Bilder/12-3-owain-owen-tregarth-der-bergmann.png`
+
+### [„Plays with Fire"](Charaktere/12-4-plays-with-fire.md)
+
+*Er darf alles ansehen und nichts anfassen. Der PEG-Pregen.*
+
+```
+half-length portrait of a young Plains Indian warrior in buckskin and a wool trade blanket, a bow across his back and a tomahawk at his belt, leaning forward to study a hissing steam traction engine with open fascination, hands held deliberately behind his back, locomotive smoke on the horizon, wet plate collodion tintype, 1884 American West, natural daylight, shallow depth of field, warm sepia with cold slate shadows, fine silver grain, faint plate edge flaws --ar 2:3 --stylize 150
+```
+
+Ablage: `Bilder/12-4-plays-with-fire.png`
 
 ---
 

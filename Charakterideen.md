@@ -1,6 +1,6 @@
 # Deadlands: The Weird West — Charakterideen
 
-Zwei Konzepte pro Archetyp, dazu ein **Einsteiger-Set** aus sechs weiteren Figuren (siehe unten) — 32 Charaktere insgesamt. Regelbasis: *Deadlands Grundbuch* (Ulisses, SWADE-Ausgabe) + *SWADE Core Rules*.
+Zwei Konzepte pro Archetyp, dazu ein **Einsteiger-Set** aus sechs weiteren Figuren und die **fünf offiziellen PEG-Pregens** (beide siehe unten) — 37 Charaktere insgesamt. Regelbasis: *Deadlands Grundbuch* (Ulisses, SWADE-Ausgabe) + *SWADE Core Rules*.
 Alle Builds sind Novize, nach Standard-Erschaffung (5 Attributspunkte, 12 Fertigkeitspunkte, max. 4 Handicap-Punkte).
 Talente/Handicaps sind englisch benannt, mit dem deutschen Begriff aus dem Grundbuch in Klammern.
 
@@ -81,6 +81,26 @@ der zum ersten Mal einen Wildwürfel sieht.
 
 ---
 
+## Die offiziellen PEG-Pregens — fünf Figuren, für SWADE neu gebaut
+
+Die fünf vorgefertigten Charaktere aus Pinnacles kostenlosem
+`Pregens_Deadlands01.pdf` — geschrieben für **Deadlands Reloaded**, hier
+regelkonform auf SWADE-Novize konvertiert (Guts, Charisma, Streetwise und die
+Knowledge-Fertigkeiten gibt es in SWADE nicht mehr; was daraus wurde, steht
+in jeder Datei unter **Build**). Hintergründe und Spielgefühl sind die der
+Originale; die abgeleiteten Werte stimmen, wo die Punkte es hergeben, mit dem
+PEG-Blatt überein.
+
+| Figur | Archetyp | Der ganze Charakter in einem Satz |
+| --- | --- | --- |
+| [Gabriela „Vendetta" Vasquez](Charaktere/01-4-gabriela-vendetta-vasquez.md) | Gunslinger | Ex-Black-River, ganz in Schwarz; Duellantin mit einem Rachedurst breiter als der Colorado |
+| [„Shady" Doug Liveaux](Charaktere/05-3-shady-doug-liveaux.md) | Huckster | Arztsohn aus New Orleans, der Hoyle entzifferte; Geschoss im Ärmel, Neugier als Berufsrisiko |
+| [Father Sam Johnson](Charaktere/07-4-father-sam-johnson.md) | Blessed | Ex-Hellstromme-Mechaniker mit Gatling-Schrotflinte und 2.000-Dollar-Steckbrief |
+| [„Doc Lightning" Millstone](Charaktere/09-3-doc-lightning-harvey-edward-millstone.md) | Mad Scientist | Blitzkanone aus New York; übermütig, paranoid, und die unsichtbaren Freunde hören zu |
+| [„Plays with Fire"](Charaktere/12-4-plays-with-fire.md) | Warrior | Krieger der Alten Bräuche, fasziniert von genau der Technik, die sein Eid ihm verbietet |
+
+---
+
 
 ### [GUNSLINGER (Revolverheld)](Archetypen/01-gunslinger.md)
 
@@ -88,6 +108,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 - [Wilhelmina „Billie" Kessler](Charaktere/01-2-wilhelmina-billie-kessler.md)
 
 - [Hazel Quist — „Glass Hazel", die Trickschützin](Charaktere/01-3-hazel-quist-die-trickschutzin.md) — **Einsteigerfigur**
+- [Gabriela „Vendetta" Vasquez](Charaktere/01-4-gabriela-vendetta-vasquez.md) — **PEG-Pregen**
 ### [BOUNTY HUNTER (Kopfgeldjäger)](Archetypen/02-bounty-hunter.md)
 
 - [Absalom Freed, genannt „the Long Sunday"](Charaktere/02-1-absalom-freed-genannt-the-long-sunday.md)
@@ -109,6 +130,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 
 - [Cordelia „Cold Deck" Vance](Charaktere/05-1-cordelia-cold-deck-vance.md) — **Einsteigerfigur**
 - [Elijah Prosper Teague](Charaktere/05-2-elijah-prosper-teague.md)
+- [„Shady" Doug Liveaux](Charaktere/05-3-shady-doug-liveaux.md) — **PEG-Pregen**
 
 ### [HEXSLINGER (Runenschütze)](Archetypen/06-hexslinger.md)
 
@@ -121,6 +143,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 - [Hermano Sixto Trujillo y Vigil](Charaktere/07-2-hermano-sixto-trujillo-y-vigil.md)
 
 - [Patience Ludlow — die Quäkerin mit dem Wagenbaum](Charaktere/07-3-patience-ludlow-die-quakerin.md) — **Einsteigerfigur**
+- [Father Sam Johnson](Charaktere/07-4-father-sam-johnson.md) — **PEG-Pregen**
 ### [SHAMAN (Schamanen)](Archetypen/08-shaman.md)
 
 - [Asdzą́ą́ Łibáhí — „Grey Woman"](Charaktere/08-1-asdzaa-libahi-grey-woman.md)
@@ -130,6 +153,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 
 - [Doktor Konstanze Hallweg](Charaktere/09-1-doktor-konstanze-hallweg.md)
 - [Obadiah „Pigeon" Tuck](Charaktere/09-2-obadiah-pigeon-tuck.md)
+- [„Doc Lightning" — Harvey Edward Millstone](Charaktere/09-3-doc-lightning-harvey-edward-millstone.md) — **PEG-Pregen**
 
 ### [AGENT (Agenten)](Archetypen/10-agent.md)
 
@@ -147,6 +171,7 @@ der zum ersten Mal einen Wildwürfel sieht.
 - [Delia „Del" Cobb — Freigelassene, Deserteurin, Preisboxerin](Charaktere/12-2-delia-del-cobb-freigelassene-deserteurin-preisboxerin.md)
 
 - [Owain „Owen" Tregarth — neun Tage unter Tage](Charaktere/12-3-owain-owen-tregarth-der-bergmann.md) — **Einsteigerfigur**
+- [„Plays with Fire"](Charaktere/12-4-plays-with-fire.md) — **PEG-Pregen**
 ### [EXPLORER (Entdecker)](Archetypen/13-explorer.md)
 
 - [Wilhelmina „Willa" Kerner — Naturforscherin der Akademie der Entdecker](Charaktere/13-1-wilhelmina-willa-kerner-naturforscherin-der-akademie-der-entdecker.md)

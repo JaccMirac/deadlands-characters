@@ -12,6 +12,7 @@
 
 - [Doktor Konstanze Hallweg](../Charaktere/09-1-doktor-konstanze-hallweg.md)
 - [Obadiah „Pigeon" Tuck](../Charaktere/09-2-obadiah-pigeon-tuck.md)
+- [„Doc Lightning" — Harvey Edward Millstone](../Charaktere/09-3-doc-lightning-harvey-edward-millstone.md) — **PEG-Pregen**
 
 ---
 

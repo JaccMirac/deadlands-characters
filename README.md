@@ -6,10 +6,10 @@ Charaktere fuer Deadlands: The Weird West (Savage Worlds Adventure Edition).
 
 | Pfad | Inhalt |
 | --- | --- |
-| [`Charakterideen.md`](Charakterideen.md) | Übersicht: alle 13 Archetypen mit je 2 Figuren, dazu das Einsteiger-Set aus 6 weiteren |
+| [`Charakterideen.md`](Charakterideen.md) | Übersicht: alle 13 Archetypen mit je 2 Figuren, dazu das Einsteiger-Set aus 6 weiteren und die 5 offiziellen PEG-Pregens |
 | [`Regelnotizen.md`](Regelnotizen.md) | Regelkorrekturen und Novize-Fallen, die für alle Builds gelten |
 | [`Bildprompts.md`](Bildprompts.md) | Ein Midjourney-8.2-Prompt pro Figur, plus Stilklammer für den ganzen Satz |
-| `Charaktere/` | Eine Datei pro Figur (32) — Hintergrund, Build, Aufhänger |
+| `Charaktere/` | Eine Datei pro Figur (37) — Hintergrund, Build, Aufhänger |
 | `Archetypen/` | Eine Datei pro Archetyp (13) — Voraussetzungen, archetyp-spezifische Regelnotizen |
 | `Bilder/` | Die fertigen Midjourney-Bilder, flach, benannt wie die Charakterdateien |
 | [`Abenteuer/`](Abenteuer/index.html) | Spielleiter-Abläufe zu One-Sheets, deutsch, Szene für Szene |
