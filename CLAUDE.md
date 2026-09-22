@@ -19,7 +19,7 @@ von der alles verlinkt ist.
 
 | Pfad | Inhalt |
 | --- | --- |
-| `Charakterideen.md` | Inhaltsverzeichnis aller 32 Figuren, nach Archetyp |
+| `Charakterideen.md` | Inhaltsverzeichnis aller 37 Figuren, nach Archetyp |
 | `Regelnotizen.md` | Regelkorrekturen, die für **alle** Builds gelten |
 | `Bildprompts.md` | Ein Midjourney-Prompt je Figur + Stilklammer |
 | `Charaktere/NN-N-slug.md` | Eine Datei je Figur — Hintergrund, Build, Aufhänger |
