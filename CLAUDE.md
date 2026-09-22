@@ -347,12 +347,10 @@ sonst den englischen aus SWADE. `--en` schaltet auf durchgehend englisch.
 
 ## Was als Nächstes ansteht
 
-Erledigt: 31 der 37 Figurenbilder liegen in `Bilder/` (dazu das NSC-Porträt
+Erledigt: **alle 37 Figurenbilder** liegen in `Bilder/` (dazu das NSC-Porträt
 `05-1-mr-pettibone.png`), und `build_html.py` setzt beim Rendern von
 `Charaktere/X.md` ein vorhandenes `Bilder/X.png` als Porträt unter den Titel
-(`figure.portrait`). **Es fehlen noch sieben:** `07-3-patience-ludlow-die-quakerin`,
-`13-3-josephine-jo-pike-die-wanderfotografin` und die fünf PEG-Pregens
-(`01-4`, `05-3`, `07-4`, `09-3`, `12-4`); die Prompts stehen bereit.
+(`figure.portrait`). Seit dem 22.09.2026 fehlt keines mehr.
 
 1. **Die Stilklammer ist noch nicht gesetzt.** Der Plan steht in
    `Bildprompts.md`: einen Prompt laufen lassen, vom schönsten Ergebnis den
